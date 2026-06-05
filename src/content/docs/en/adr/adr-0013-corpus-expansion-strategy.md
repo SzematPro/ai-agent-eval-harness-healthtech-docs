@@ -178,8 +178,8 @@ designed to test retrieval and citation against the new KB cards.
 
 ## More Information
 
-- Out-of-domain detection (companion ADR): [ADR-0012](./adr-0012-free-form-out-of-domain-detection.md)
-- RAG stack: [ADR-0004](./adr-0004-rag-stack.md)
+- Out-of-domain detection (companion ADR): [ADR-0012](/ai-agent-eval-harness-healthtech-docs/en/adr/adr-0012-free-form-out-of-domain-detection/)
+- RAG stack: [ADR-0004](/ai-agent-eval-harness-healthtech-docs/en/adr/adr-0004-rag-stack/)
 - Data policy: a synthetic-only corpus, no datasets restricted by a data
   use agreement.
 - MADR 4.0.0: <https://adr.github.io/madr/>

@@ -79,7 +79,7 @@ La carga de la prueba en el PR para cualquier nueva fuente de datos propuesta:
 2. Cadena de procedencia (quién la produjo originalmente, cuándo, qué ediciones
    aplicó el repo).
 3. Aserción explícita de compatibilidad con Apache 2.0 (la postura de
-   licenciamiento del proyecto según [ADR-0008](./adr-0008-licensing.md)).
+   licenciamiento del proyecto según [ADR-0008](/ai-agent-eval-harness-healthtech-docs/es-419/adr/adr-0008-licensing/)).
 4. El mantenedor revisa los tres puntos anteriores antes de fusionar el PR.
 
 Todas las tarjetas de la KB y los casos de evaluación se publican con la
@@ -92,9 +92,9 @@ directamente.
 - La política de seguridad declara la lista de exclusión y el enunciado de la política.
 - El directorio del conjunto de datos sintéticos lleva una auditoría de licencias
   por fuente.
-- La [declaración de datos](../reference/data.md) publicada es la ficha del
+- La [declaración de datos](/ai-agent-eval-harness-healthtech-docs/es-419/reference/data/) publicada es la ficha del
   conjunto de datos con la procedencia por tarjeta.
-- La [ficha de datos](../governance/data-card.md) de gobernanza es la vista
+- La [ficha de datos](/ai-agent-eval-harness-healthtech-docs/es-419/governance/data-card/) de gobernanza es la vista
   orientada a la gobernanza de lo mismo.
 - Antes de la fusión: la lista de verificación de revisión del PR incluye la
   puerta de carga de la prueba para cualquier archivo de datos nuevo.
@@ -120,7 +120,7 @@ directamente.
   evaluaciones licenciadas adicionales para una cobertura real.
 - La restricción exclusivamente sintética descarta el uso de señales de deriva del
   mundo real (sin telemetría de desviación al estilo de MIMIC). El [plan de
-  detección de deriva](../governance/drift-detection-plan.md) es honesto sobre
+  detección de deriva](/ai-agent-eval-harness-healthtech-docs/es-419/governance/drift-detection-plan/) es honesto sobre
   esta brecha.
 - Un colaborador que quiera añadir un conjunto de datos licenciado útil tiene que
   hacer el trabajo de (a) encontrar una alternativa de dominio público, o
@@ -167,9 +167,9 @@ directamente.
 
 ## Más información
 
-- [Declaración de datos](../reference/data.md) — ficha del conjunto de datos
-- [Ficha de datos](../governance/data-card.md) — ficha del conjunto de datos orientada a la gobernanza
-- [ADR-0004](./adr-0004-rag-stack.md) — stack de RAG (el consumidor del
+- [Declaración de datos](/ai-agent-eval-harness-healthtech-docs/es-419/reference/data/) — ficha del conjunto de datos
+- [Ficha de datos](/ai-agent-eval-harness-healthtech-docs/es-419/governance/data-card/) — ficha del conjunto de datos orientada a la gobernanza
+- [ADR-0004](/ai-agent-eval-harness-healthtech-docs/es-419/adr/adr-0004-rag-stack/) — stack de RAG (el consumidor del
   corpus sintético)
-- [ADR-0008](./adr-0008-licensing.md) — postura de licenciamiento del proyecto
+- [ADR-0008](/ai-agent-eval-harness-healthtech-docs/es-419/adr/adr-0008-licensing/) — postura de licenciamiento del proyecto
 - MADR 4.0.0: <https://adr.github.io/madr/>

@@ -16,7 +16,7 @@ This documentation describes a public reference implementation evaluated on 100%
 
 The agent's response-generation node buffered the entire LLM response before downstream parsing, citation verification, and the SSE node-completed event fired. The user-visible latency was therefore the wall-clock from first token to last token, plus the parse step, before anything appeared in the SPA. On a 500-token JSON-mode reply at Groq's typical 250 tok/s, that is ~2 seconds of silence between the node-started event and the first character of the assistant message.
 
-The deployed Groq endpoint already exposes a Server-Sent-Events streaming surface (`chat/completions` with `stream: true`); the per-token deltas arrive on the wire as the model generates them. The SPA already runs an EventSource against the chat endpoint and consumes per-node SSE lifecycle events ([ADR-0010](./adr-0010-streaming-execution-graph.md)). The infrastructure to surface the deltas exists; this ADR records the design decisions made when wiring the two ends together.
+The deployed Groq endpoint already exposes a Server-Sent-Events streaming surface (`chat/completions` with `stream: true`); the per-token deltas arrive on the wire as the model generates them. The SPA already runs an EventSource against the chat endpoint and consumes per-node SSE lifecycle events ([ADR-0010](/ai-agent-eval-harness-healthtech-docs/en/adr/adr-0010-streaming-execution-graph/)). The infrastructure to surface the deltas exists; this ADR records the design decisions made when wiring the two ends together.
 
 ## Decision
 
@@ -51,7 +51,7 @@ One Protocol method; streaming is a callback the adapter invokes per token.
 Maximises streaming coverage by extending Cerebras and OpenAI adapters at the same time.
 
 - Pro: more user wins per increment.
-- Con: Cerebras and OpenAI streaming under the cascading fallback tier-switching is not validated; could leak half-streamed responses on a fallback; the cascade design itself is buffered-only (per the fallback design in [ADR-0002](./adr-0002-llm-vendor-abstraction.md)).
+- Con: Cerebras and OpenAI streaming under the cascading fallback tier-switching is not validated; could leak half-streamed responses on a fallback; the cascade design itself is buffered-only (per the fallback design in [ADR-0002](/ai-agent-eval-harness-healthtech-docs/en/adr/adr-0002-llm-vendor-abstraction/)).
 - Deferred: noted as future work below.
 
 ### A4: SPA renders deltas in a separate panel; main message area still buffers
@@ -74,7 +74,7 @@ Two render targets: a debug-style raw stream panel, plus the main message area t
 ### Negative
 
 - The cascading fallback is bypassed when streaming. On a Groq primary-stream failure, the consumer sees an SSE error event and must retry. Cascading-fallback for streamed turns is a future-state design that this ADR does not commit to.
-- The SPA's progressive render must handle partial-JSON states (the LLM is JSON-mode under [ADR-0020](./adr-0020-structured-agent-reply.md); tokens arrive as `{"kind":"...","text":"..."}` character by character). The render layer strips the JSON envelope and renders only the inner `text` value; a partial `"text":"...` requires careful UI logic.
+- The SPA's progressive render must handle partial-JSON states (the LLM is JSON-mode under [ADR-0020](/ai-agent-eval-harness-healthtech-docs/en/adr/adr-0020-structured-agent-reply/); tokens arrive as `{"kind":"...","text":"..."}` character by character). The render layer strips the JSON envelope and renders only the inner `text` value; a partial `"text":"...` requires careful UI logic.
 - The streaming chunk's latency figure is the cumulative time since the stream opened; the per-chunk wall-clock delta is not reported because it is rarely meaningful for downstream accounting.
 
 ### Neutral
@@ -101,6 +101,6 @@ Reverting the SPA change restores the buffered render with no other code changes
 
 ## See also
 
-- [ADR-0002](./adr-0002-llm-vendor-abstraction.md) (LLM vendor abstraction): the Protocol surface this ADR extends.
-- [ADR-0010](./adr-0010-streaming-execution-graph.md) (streaming execution graph): the SSE framework this ADR adds an event to.
-- [ADR-0020](./adr-0020-structured-agent-reply.md) (structured agent reply): the JSON-mode contract that streamed deltas carry through verbatim.
+- [ADR-0002](/ai-agent-eval-harness-healthtech-docs/en/adr/adr-0002-llm-vendor-abstraction/) (LLM vendor abstraction): the Protocol surface this ADR extends.
+- [ADR-0010](/ai-agent-eval-harness-healthtech-docs/en/adr/adr-0010-streaming-execution-graph/) (streaming execution graph): the SSE framework this ADR adds an event to.
+- [ADR-0020](/ai-agent-eval-harness-healthtech-docs/en/adr/adr-0020-structured-agent-reply/) (structured agent reply): the JSON-mode contract that streamed deltas carry through verbatim.

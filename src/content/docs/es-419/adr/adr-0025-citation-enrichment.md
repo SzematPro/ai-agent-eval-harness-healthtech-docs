@@ -21,9 +21,9 @@ Se consideraron dos enfoques de enriquecimiento:
 1. **Enriquecimiento del lado del cliente.** La SPA llama a un nuevo endpoint de metadatos de tarjeta para obtener los metadatos en el momento del renderizado.
 2. **Enriquecimiento del lado del servidor (elegido).** La capa de la API deriva los campos a partir del contexto recuperado ya presente en el estado del agente y los adjunta a los objetos de citación antes de serializar la respuesta del chat.
 
-Se eligió el enriquecimiento del lado del servidor porque los metadatos de la KB ya están en memoria en el momento de construir la respuesta (los objetos de fragmento de contexto en el contexto recuperado), el LLM nunca debe emitir URLs para preservar la restricción de honestidad ([ADR-0020](./adr-0020-structured-agent-reply.md)), y añadir un nuevo endpoint público solo para los datos del popover ampliaría la superficie de la API sin un beneficio proporcional.
+Se eligió el enriquecimiento del lado del servidor porque los metadatos de la KB ya están en memoria en el momento de construir la respuesta (los objetos de fragmento de contexto en el contexto recuperado), el LLM nunca debe emitir URLs para preservar la restricción de honestidad ([ADR-0020](/ai-agent-eval-harness-healthtech-docs/es-419/adr/adr-0020-structured-agent-reply/)), y añadir un nuevo endpoint público solo para los datos del popover ampliaría la superficie de la API sin un beneficio proporcional.
 
-El contrato de citaciones de la respuesta del chat ([ADR-0020](./adr-0020-structured-agent-reply.md)) es compatible hacia atrás: los tres campos nuevos tienen "ausente" por defecto, de modo que los consumidores existentes (evaluadores de evaluación, puerta de red team, arnés de certificación) que leen solo el identificador de la tarjeta no se ven afectados.
+El contrato de citaciones de la respuesta del chat ([ADR-0020](/ai-agent-eval-harness-healthtech-docs/es-419/adr/adr-0020-structured-agent-reply/)) es compatible hacia atrás: los tres campos nuevos tienen "ausente" por defecto, de modo que los consumidores existentes (evaluadores de evaluación, puerta de red team, arnés de certificación) que leen solo el identificador de la tarjeta no se ven afectados.
 
 ## Decisión
 
@@ -50,7 +50,7 @@ Extender el modelo de citación con tres campos opcionales y poblarlos del lado 
 
 **(C) Degradación con elegancia.** Cada elemento de enriquecimiento se envuelve de modo que un fallo devuelve la citación original sin cambios. Un fragmento faltante, un origen vacío o un campo de metadatos defectuoso rinde un valor ausente en el campo correspondiente en lugar de una respuesta de error. El ayudante nunca lanza una excepción.
 
-**(D) La clave de búsqueda es el slug desnudo de la tarjeta.** Tras la deduplicación por padre en el nodo de recuperación, el identificador del fragmento de contexto es igual al identificador del padre, igual al slug de la tarjeta (p. ej., `card-hyp-01`). No hay separador `::` en la clave de búsqueda. Un identificador de subfragmento (`card-hyp-01::00`) nunca coincidiría con el identificador de tarjeta de una citación porque las citaciones están a granularidad de tarjeta ([ADR-0021](./adr-0021-parent-document-retrieval.md)).
+**(D) La clave de búsqueda es el slug desnudo de la tarjeta.** Tras la deduplicación por padre en el nodo de recuperación, el identificador del fragmento de contexto es igual al identificador del padre, igual al slug de la tarjeta (p. ej., `card-hyp-01`). No hay separador `::` en la clave de búsqueda. Un identificador de subfragmento (`card-hyp-01::00`) nunca coincidiría con el identificador de tarjeta de una citación porque las citaciones están a granularidad de tarjeta ([ADR-0021](/ai-agent-eval-harness-healthtech-docs/es-419/adr/adr-0021-parent-document-retrieval/)).
 
 **(E) Los campos opcionales aditivos preservan la compatibilidad hacia atrás.** Una citación construida solo a partir de un identificador de tarjeta aún se construye con los tres campos nuevos ausentes. Los evaluadores de evaluación, la puerta de red team y el arnés de certificación leen solo el identificador de la tarjeta; no se ven afectados.
 
@@ -95,5 +95,5 @@ Añadir un endpoint público que la SPA llama para obtener los metadatos de la t
 - Una tarjeta de la KB ingerida sin campo de origen en los metadatos de Chroma rinde una URL de origen ausente; esto se manifiesta como un popover sin enlace. El conjunto de datos sintético actual pobla el origen para cada tarjeta, de modo que esto es un riesgo de conjunto de datos degradado, no un caso común.
 
 **Referencias cruzadas:**
-- [ADR-0020](./adr-0020-structured-agent-reply.md) — Respuesta estructurada del agente (el contrato de citaciones de respuesta del chat compatible hacia atrás que este ADR extiende)
-- [ADR-0023](./adr-0023-hybrid-retrieval.md) — Recuperación híbrida (la etiqueta de ruta híbrida y la semántica de logits del reordenador que este ADR lee)
+- [ADR-0020](/ai-agent-eval-harness-healthtech-docs/es-419/adr/adr-0020-structured-agent-reply/) — Respuesta estructurada del agente (el contrato de citaciones de respuesta del chat compatible hacia atrás que este ADR extiende)
+- [ADR-0023](/ai-agent-eval-harness-healthtech-docs/es-419/adr/adr-0023-hybrid-retrieval/) — Recuperación híbrida (la etiqueta de ruta híbrida y la semántica de logits del reordenador que este ADR lee)

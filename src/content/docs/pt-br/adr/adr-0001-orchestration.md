@@ -108,7 +108,7 @@ que este projeto conta.
   com o HITL desabilitado e nunca exercita a pausa
 - O LangGraph é neutro em relação a fornecedores: os nós chamam o Protocol
   `LLMClient` do projeto, não um objeto de provedor específico da LangChain, de
-  modo que a abstração no [ADR-0002](./adr-0002-llm-vendor-abstraction.md) é
+  modo que a abstração no [ADR-0002](/ai-agent-eval-harness-healthtech-docs/pt-br/adr/adr-0002-llm-vendor-abstraction/) é
   preservada
 - O status GA 1.0 (2025-10-22) sinaliza que o framework passou da
   janela de turbulência 0.x típica de bibliotecas de agentes
@@ -218,7 +218,7 @@ comportamento de pausa, e um caminho baseado em `interrupt()` permanece
 incompatível com o harness de avaliação de passagem única e sem chaves, e é por
 isso que ele é opcional. Red flags agudas NÃO são roteadas pelo `interrupt()`:
 elas entram em curto-circuito antes, no `guardrail_pre`, para um template de
-emergência (ver [ADR-0005](./adr-0005-guardrails.md)) e o `review_response`
+emergência (ver [ADR-0005](/ai-agent-eval-harness-healthtech-docs/pt-br/adr/adr-0005-guardrails/)) e o `review_response`
 nunca as pausa.
 
 **Fábrica de checkpointer.** A fábrica de checkpointer retorna um

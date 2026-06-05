@@ -280,7 +280,7 @@ inversión significativa.
 
 **Ruta de migración.** La misma imagen de Docker puede desplegarse en
 cualquier host con capacidad de Docker. El nivel gratuito del Render Web
-Service está documentado como alternativa (consulta [despliegue](deploy.md)).
+Service está documentado como alternativa (consulta [despliegue](/ai-agent-eval-harness-healthtech-docs/es-419/reference/deploy/)).
 Pasar a producción significa elegir un proveedor de nube, configurar el
 autoescalado y agregar terminación TLS a nivel del balanceador de carga.
 
@@ -359,7 +359,7 @@ CI). Las dependencias están ancladas mediante el lockfile con monitoreo de
 Dependabot. Sin PHI, sin datos reales de EHR, sin información identificatoria
 de pacientes (datos 100% sintéticos). El agente opera bajo el encuadre de
 General Wellness / CDS de la FDA 2026 (consulta la
-[postura regulatoria](regulatory-posture.md)). La redacción de PII se aplica
+[postura regulatoria](/ai-agent-eval-harness-healthtech-docs/es-419/reference/regulatory-posture/)). La redacción de PII se aplica
 en el ingreso. La huella digital de las claves de la demo usa sha256
 anonimizado con rotación diaria.
 
@@ -386,13 +386,13 @@ código de la aplicación.
 
 | Tema | ADR |
 |-------|-----|
-| Marco de orquestación (StateGraph de seis nodos) | [ADR-0001](../adr/adr-0001-orchestration.md) |
-| Abstracción de proveedor de LLM (Protocol + adaptadores) | [ADR-0002](../adr/adr-0002-llm-vendor-abstraction.md) |
-| Arnés de evaluación (DeepEval + Ragas + Promptfoo) | [ADR-0003](../adr/adr-0003-eval-harness.md) |
-| Stack de RAG (Chroma embebido) | [ADR-0004](../adr/adr-0004-rag-stack.md) |
-| Barreras de seguridad (alcance + rechazo + escalamiento) | [ADR-0005](../adr/adr-0005-guardrails.md) |
-| Observabilidad (OTel + OpenInference) | [ADR-0006](../adr/adr-0006-observability.md) |
-| Despliegue (HF Spaces + Docker SDK) | [ADR-0007](../adr/adr-0007-deployment.md) |
-| Capa de datos (nivel gratuito de Supabase) | [ADR-0011](../adr/adr-0011-data-layer-supabase.md) |
-| Extensión de voz (ElevenLabs TTS/STT) | [ADR-0014](../adr/adr-0014-voice-extension.md) |
-| Arquitectura de streaming (eventos SSE) | [ADR-0010](../adr/adr-0010-streaming-execution-graph.md) |
+| Marco de orquestación (StateGraph de seis nodos) | [ADR-0001](/ai-agent-eval-harness-healthtech-docs/es-419/adr/adr-0001-orchestration/) |
+| Abstracción de proveedor de LLM (Protocol + adaptadores) | [ADR-0002](/ai-agent-eval-harness-healthtech-docs/es-419/adr/adr-0002-llm-vendor-abstraction/) |
+| Arnés de evaluación (DeepEval + Ragas + Promptfoo) | [ADR-0003](/ai-agent-eval-harness-healthtech-docs/es-419/adr/adr-0003-eval-harness/) |
+| Stack de RAG (Chroma embebido) | [ADR-0004](/ai-agent-eval-harness-healthtech-docs/es-419/adr/adr-0004-rag-stack/) |
+| Barreras de seguridad (alcance + rechazo + escalamiento) | [ADR-0005](/ai-agent-eval-harness-healthtech-docs/es-419/adr/adr-0005-guardrails/) |
+| Observabilidad (OTel + OpenInference) | [ADR-0006](/ai-agent-eval-harness-healthtech-docs/es-419/adr/adr-0006-observability/) |
+| Despliegue (HF Spaces + Docker SDK) | [ADR-0007](/ai-agent-eval-harness-healthtech-docs/es-419/adr/adr-0007-deployment/) |
+| Capa de datos (nivel gratuito de Supabase) | [ADR-0011](/ai-agent-eval-harness-healthtech-docs/es-419/adr/adr-0011-data-layer-supabase/) |
+| Extensión de voz (ElevenLabs TTS/STT) | [ADR-0014](/ai-agent-eval-harness-healthtech-docs/es-419/adr/adr-0014-voice-extension/) |
+| Arquitectura de streaming (eventos SSE) | [ADR-0010](/ai-agent-eval-harness-healthtech-docs/es-419/adr/adr-0010-streaming-execution-graph/) |

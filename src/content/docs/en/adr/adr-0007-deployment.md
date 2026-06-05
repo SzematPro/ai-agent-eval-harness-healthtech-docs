@@ -28,7 +28,7 @@ what runs in prod.
 The agent is single-process FastAPI / Uvicorn, with an embedded
 Chroma store and a baked-in fallback embedder, dispatching LLM calls
 to an external provider (Groq by default; see
-[ADR-0002](./adr-0002-llm-vendor-abstraction.md)). No GPU, no model
+[ADR-0002](/ai-agent-eval-harness-healthtech-docs/en/adr/adr-0002-llm-vendor-abstraction/)). No GPU, no model
 weight to host, no persistent disk beyond the 30-50 card synthetic KB.
 
 How do we ship a public, always-reachable demo URL of this agent
@@ -157,7 +157,7 @@ Space card so a reader is not surprised.
   contingency.
 - **CPU-only**: the Space cannot host a local LLM; the demo
   depends on an external provider for completions. By design (see
-  [ADR-0002](./adr-0002-llm-vendor-abstraction.md)).
+  [ADR-0002](/ai-agent-eval-harness-healthtech-docs/en/adr/adr-0002-llm-vendor-abstraction/)).
 - **YAML front-matter in the Space card** is incompatible with
   GitHub's renderer, so the deploy workflow has to swap the root
   README in a deploy-only commit.
@@ -228,7 +228,7 @@ Space card so a reader is not surprised.
 
 ## More Information
 
-- Operator runbook: [deploy reference](../reference/deploy.md)
+- Operator runbook: [deploy reference](/ai-agent-eval-harness-healthtech-docs/en/reference/deploy/)
 - Hugging Face Spaces Docker SDK docs:
   <https://huggingface.co/docs/hub/spaces-sdks-docker>
 - Hugging Face pricing (Spaces hardware tiers):
@@ -257,7 +257,7 @@ deterministic tests and on for the live Space:
   cascades through Cerebras (free fallback) and Anthropic (paid last
   resort) before any error reaches the frontend. A non-429 4xx is a
   genuine client error and is re-raised unchanged. Consistent with the
-  [ADR-0002](./adr-0002-llm-vendor-abstraction.md) vendor abstraction -
+  [ADR-0002](/ai-agent-eval-harness-healthtech-docs/en/adr/adr-0002-llm-vendor-abstraction/) vendor abstraction -
   the fallback is a Protocol-level wrapper, not a node-level change.
 - **Short-TTL response cache.** A bounded, short-TTL in-process cache
   keyed on the normalized (input, locale, model) tuple, so the SPA
@@ -265,7 +265,7 @@ deterministic tests and on for the live Space:
 
 **Single-worker consequence.** All three primitives are per-process,
 as is the in-memory HITL checkpointer (see
-[ADR-0001](./adr-0001-orchestration.md)). The Space therefore runs a
+[ADR-0001](/ai-agent-eval-harness-healthtech-docs/en/adr/adr-0001-orchestration/)). The Space therefore runs a
 single uvicorn worker by design; a second worker would not share the
 limiter, the cache, or the paused-thread state. A multi-worker
 deployment would need a shared store (Redis, Postgres), which is out of
@@ -274,5 +274,5 @@ the `Dockerfile` comment.
 
 **Baked-in embedder.** The shipped default embedder is
 `BAAI/bge-small-en-v1.5`, CPU-Basic-friendly on the Space free tier.
-See [ADR-0004](./adr-0004-rag-stack.md) for the embedder decision; the
+See [ADR-0004](/ai-agent-eval-harness-healthtech-docs/en/adr/adr-0004-rag-stack/) for the embedder decision; the
 deployment posture here is unaffected by the model choice.

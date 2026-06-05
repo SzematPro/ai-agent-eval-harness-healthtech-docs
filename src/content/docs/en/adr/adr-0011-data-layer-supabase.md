@@ -190,8 +190,8 @@ usage costs funded by the operator, not hosting costs.
 
 - Supabase free tier: <https://supabase.com/pricing>
 - Supabase dashboard: <https://supabase.com/dashboard>
-- ADR-0007 (deployment target): [ADR-0007](./adr-0007-deployment.md)
-- ADR-0004 (RAG stack, unchanged): [ADR-0004](./adr-0004-rag-stack.md)
-- ADR-0001 (orchestration, Postgres checkpointer factory): [ADR-0001](./adr-0001-orchestration.md)
-- ADR-0016 (Continuous Improvement Layer storage choice): [ADR-0016](./adr-0016-continuous-improvement-storage.md)
+- ADR-0007 (deployment target): [ADR-0007](/ai-agent-eval-harness-healthtech-docs/en/adr/adr-0007-deployment/)
+- ADR-0004 (RAG stack, unchanged): [ADR-0004](/ai-agent-eval-harness-healthtech-docs/en/adr/adr-0004-rag-stack/)
+- ADR-0001 (orchestration, Postgres checkpointer factory): [ADR-0001](/ai-agent-eval-harness-healthtech-docs/en/adr/adr-0001-orchestration/)
+- ADR-0016 (Continuous Improvement Layer storage choice): [ADR-0016](/ai-agent-eval-harness-healthtech-docs/en/adr/adr-0016-continuous-improvement-storage/)
 - MADR 4.0.0: <https://adr.github.io/madr/>

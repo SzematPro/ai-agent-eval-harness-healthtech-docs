@@ -13,8 +13,8 @@ This documentation describes a public reference implementation evaluated on 100%
 > `ai-agent-eval-harness-healthtech` reference implementation, including consent
 > mechanisms, deepfake risk awareness, and the voice data handling policy.
 >
-> Read alongside the [regulatory posture](../reference/regulatory-posture.md) and the
-> [voice extension design decision](../adr/adr-0014-voice-extension.md).
+> Read alongside the [regulatory posture](/ai-agent-eval-harness-healthtech-docs/en/reference/regulatory-posture/) and the
+> [voice extension design decision](/ai-agent-eval-harness-healthtech-docs/en/adr/adr-0014-voice-extension/).
 
 ## Voice Integration Overview
 
@@ -141,8 +141,8 @@ framework:
 
 ## See Also
 
-- [Regulatory posture](../reference/regulatory-posture.md) -- regulatory boundary
-- [Model card](../reference/model-card.md) -- CHAI Applied Model Card
-- [Multilingual safety parity](multilingual-safety-parity.md) -- multilingual safety
-- [HIPAA readiness assessment](hipaa-readiness.md) -- HIPAA readiness
-- [Voice extension design](../adr/adr-0014-voice-extension.md) -- voice extension design
+- [Regulatory posture](/ai-agent-eval-harness-healthtech-docs/en/reference/regulatory-posture/) -- regulatory boundary
+- [Model card](/ai-agent-eval-harness-healthtech-docs/en/reference/model-card/) -- CHAI Applied Model Card
+- [Multilingual safety parity](/ai-agent-eval-harness-healthtech-docs/en/governance/multilingual-safety-parity/) -- multilingual safety
+- [HIPAA readiness assessment](/ai-agent-eval-harness-healthtech-docs/en/governance/hipaa-readiness/) -- HIPAA readiness
+- [Voice extension design](/ai-agent-eval-harness-healthtech-docs/en/adr/adr-0014-voice-extension/) -- voice extension design

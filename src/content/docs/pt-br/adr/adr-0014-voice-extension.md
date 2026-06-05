@@ -324,12 +324,12 @@ custo e a complexidade de um WebSocket de áudio persistente.
 
 ## Mais informações
 
-- Abstração de fornecedor de LLM: [ADR-0002](./adr-0002-llm-vendor-abstraction.md)
-- Alvo de implantação e restrição de $0/mês: [ADR-0007](./adr-0007-deployment.md)
-- Arquitetura de streaming e padrão de extensão SSE: [ADR-0010](./adr-0010-streaming-execution-graph.md)
-- Camada de dados e rastreamento de custo (Supabase): [ADR-0011](./adr-0011-data-layer-supabase.md)
-- Melhoria contínua e armazenamento de uso: [ADR-0016](./adr-0016-continuous-improvement-storage.md)
-- Guardrails e redação de privacidade: [ADR-0005](./adr-0005-guardrails.md)
+- Abstração de fornecedor de LLM: [ADR-0002](/ai-agent-eval-harness-healthtech-docs/pt-br/adr/adr-0002-llm-vendor-abstraction/)
+- Alvo de implantação e restrição de $0/mês: [ADR-0007](/ai-agent-eval-harness-healthtech-docs/pt-br/adr/adr-0007-deployment/)
+- Arquitetura de streaming e padrão de extensão SSE: [ADR-0010](/ai-agent-eval-harness-healthtech-docs/pt-br/adr/adr-0010-streaming-execution-graph/)
+- Camada de dados e rastreamento de custo (Supabase): [ADR-0011](/ai-agent-eval-harness-healthtech-docs/pt-br/adr/adr-0011-data-layer-supabase/)
+- Melhoria contínua e armazenamento de uso: [ADR-0016](/ai-agent-eval-harness-healthtech-docs/pt-br/adr/adr-0016-continuous-improvement-storage/)
+- Guardrails e redação de privacidade: [ADR-0005](/ai-agent-eval-harness-healthtech-docs/pt-br/adr/adr-0005-guardrails/)
 - Documentação da API do ElevenLabs: <https://elevenlabs.io/docs/api-reference>
 - Modelo `eleven_multilingual_v2` do ElevenLabs: <https://elevenlabs.io/docs/speech-synthesis/models>
 - ElevenLabs Scribe STT: <https://elevenlabs.io/docs/capabilities/speech-to-text>

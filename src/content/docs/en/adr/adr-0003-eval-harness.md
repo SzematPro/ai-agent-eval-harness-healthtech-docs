@@ -9,13 +9,13 @@ This documentation describes a public reference implementation evaluated on 100%
 
 # ADR-0003: Eval harness (hand-rolled pytest core + composable scorers)
 
-- Status: Accepted; superseded in part by [ADR-0009](./adr-0009-judge-model-cerebras.md) on the judge-model choice
+- Status: Accepted; superseded in part by [ADR-0009](/ai-agent-eval-harness-healthtech-docs/en/adr/adr-0009-judge-model-cerebras/) on the judge-model choice
 - Date: 2026-03-18
 - Decision-makers: Waldemar Szemat
 
 > Supersession note: this ADR records Anthropic Claude Haiku as the
 > pinned LLM judge. That specific choice is superseded by
-> [ADR-0009](./adr-0009-judge-model-cerebras.md), which records Cerebras
+> [ADR-0009](/ai-agent-eval-harness-healthtech-docs/en/adr/adr-0009-judge-model-cerebras/), which records Cerebras
 > (`gpt-oss-120b`) as the eval judge the harness runs today. The rest of
 > this ADR (the hand-rolled pytest core, the DeepEval / Ragas / Phoenix /
 > Promptfoo composition, the three workflows) still stands. The body
@@ -101,7 +101,7 @@ pinned). The harness has three workflows:
 
 Phoenix is the observability sink during eval runs: every turn
 emits OTel spans through the project's existing OpenInference
-wiring (see [ADR-0006](./adr-0006-observability.md)), Phoenix collects
+wiring (see [ADR-0006](/ai-agent-eval-harness-healthtech-docs/en/adr/adr-0006-observability/)), Phoenix collects
 them, and the harness attaches Phoenix's trace URLs to the eval report.
 Inspect AI (UK AISI) is reserved as a bonus capability-eval task,
 optional for the initial milestone.

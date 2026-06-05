@@ -384,12 +384,12 @@ La decisión se implementó y se confirmó conforme a los siguientes criterios:
 
 ## Más información
 
-- [ADR-0001: Framework de orquestación](./adr-0001-orchestration.md) -
+- [ADR-0001: Framework de orquestación](/ai-agent-eval-harness-healthtech-docs/es-419/adr/adr-0001-orchestration/) -
   LangGraph, la fuente de la API de transmisión y del grafo compilado desde el
   que se maneja el flujo.
-- [ADR-0006: Stack de observabilidad](./adr-0006-observability.md) - los
+- [ADR-0006: Stack de observabilidad](/ai-agent-eval-harness-healthtech-docs/es-419/adr/adr-0006-observability/) - los
   spans de OpenTelemetry por nodo que ya miden el tiempo de los nodos.
-- [ADR-0007: Objetivo de despliegue](./adr-0007-deployment.md) - Hugging Face
+- [ADR-0007: Objetivo de despliegue](/ai-agent-eval-harness-healthtech-docs/es-419/adr/adr-0007-deployment/) - Hugging Face
   Spaces, la postura de único worker y el proxy que el flujo SSE debe
   atravesar sin búfer.
 - Especificación WHATWG HTML de eventos enviados por el servidor:

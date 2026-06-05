@@ -23,7 +23,7 @@ English-only marker tables.
 This is fragile in three concrete ways:
 
 1. The marker tables are English-only. The harness ships es-419 and
-   pt-BR locales ([ADR-0001](./adr-0001-orchestration.md)) but the
+   pt-BR locales ([ADR-0001](/ai-agent-eval-harness-healthtech-docs/en/adr/adr-0001-orchestration/)) but the
    scorers cannot see a refusal in those locales unless the prose
    happens to contain the English substrings. A separate multilingual
    regex existed in parallel in the guardrail layer — two parallel
@@ -56,7 +56,7 @@ keeping the SPA's existing assistant-text rendering unchanged?
   carry, so the scorer becomes a one-line discriminator check.
 - **Span budget**: trace attributes for the structured reply must fit
   the existing observability budget (metadata-only span policy from
-  [ADR-0006](./adr-0006-observability.md)).
+  [ADR-0006](/ai-agent-eval-harness-healthtech-docs/en/adr/adr-0006-observability/)).
 
 ## Considered Options
 
@@ -203,12 +203,12 @@ The per-provider JSON-mode posture:
 
 ## More Information
 
-- [ADR-0001](./adr-0001-orchestration.md) — agent state and LangGraph
-- [ADR-0002](./adr-0002-llm-vendor-abstraction.md) — LLM client
+- [ADR-0001](/ai-agent-eval-harness-healthtech-docs/en/adr/adr-0001-orchestration/) — agent state and LangGraph
+- [ADR-0002](/ai-agent-eval-harness-healthtech-docs/en/adr/adr-0002-llm-vendor-abstraction/) — LLM client
   Protocol
-- [ADR-0003](./adr-0003-eval-harness.md) — scorer Protocol
-- [ADR-0005](./adr-0005-guardrails.md) — refusal and escalation
+- [ADR-0003](/ai-agent-eval-harness-healthtech-docs/en/adr/adr-0003-eval-harness/) — scorer Protocol
+- [ADR-0005](/ai-agent-eval-harness-healthtech-docs/en/adr/adr-0005-guardrails/) — refusal and escalation
   contract
-- [ADR-0006](./adr-0006-observability.md) — metadata-only span
+- [ADR-0006](/ai-agent-eval-harness-healthtech-docs/en/adr/adr-0006-observability/) — metadata-only span
   policy
 - MADR 4.0.0: <https://adr.github.io/madr/>

@@ -229,4 +229,4 @@ recuperación de cero coincidencias; una pregunta fuera de corpus por poco se
 responde contra la tarjeta más cercana. El umbral se deja en su lugar,
 desactivado, para que un corpus más amplio y temáticamente más diverso pueda
 habilitarlo más adelante. Ver la
-[ficha del modelo](../reference/model-card.md) para la limitación completa.
+[ficha del modelo](/ai-agent-eval-harness-healthtech-docs/es-419/reference/model-card/) para la limitación completa.

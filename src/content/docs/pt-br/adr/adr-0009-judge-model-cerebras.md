@@ -12,11 +12,11 @@ Esta documentação descreve uma implementação de referência pública avaliad
 - Status: Aceito
 - Data: 2026-05-20
 - Responsáveis pela decisão: Waldemar Szemat
-- Substitui (em parte): [ADR-0003](./adr-0003-eval-harness.md), apenas na escolha do modelo juiz
+- Substitui (em parte): [ADR-0003](/ai-agent-eval-harness-healthtech-docs/pt-br/adr/adr-0003-eval-harness/), apenas na escolha do modelo juiz
 
 ## Contexto e definição do problema
 
-A [ADR-0003](./adr-0003-eval-harness.md) ("Arcabouço de avaliação") foi aceita em
+A [ADR-0003](/ai-agent-eval-harness-healthtech-docs/pt-br/adr/adr-0003-eval-harness/) ("Arcabouço de avaliação") foi aceita em
 2026-03-18. Ela selecionou a arquitetura geral de avaliação (um núcleo
 artesanal em pytest orquestrando DeepEval, Ragas, Phoenix e Promptfoo) e,
 dentro dessa arquitetura, nomeou o **Anthropic Claude Haiku** como o juiz
@@ -184,8 +184,8 @@ corresponder a um documento desatualizado, em vez do contrário.
 
 ## Mais informações
 
-- [ADR-0003: Arcabouço de avaliação](./adr-0003-eval-harness.md) (a decisão substituída em parte)
-- [ADR-0002: Abstração de fornecedor de LLM](./adr-0002-llm-vendor-abstraction.md) (o Protocol de cliente LLM que o adaptador do juiz implementa)
+- [ADR-0003: Arcabouço de avaliação](/ai-agent-eval-harness-healthtech-docs/pt-br/adr/adr-0003-eval-harness/) (a decisão substituída em parte)
+- [ADR-0002: Abstração de fornecedor de LLM](/ai-agent-eval-harness-healthtech-docs/pt-br/adr/adr-0002-llm-vendor-abstraction/) (o Protocol de cliente LLM que o adaptador do juiz implementa)
 - Documentação do Cerebras Inference: <https://inference-docs.cerebras.ai/>
 - MADR 4.0.0: <https://adr.github.io/madr/>
 

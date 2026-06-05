@@ -21,9 +21,9 @@ Two enrichment approaches were considered:
 1. **Client-side enrichment.** The SPA calls a new card-metadata endpoint to fetch metadata at render time.
 2. **Server-side enrichment (chosen).** The API layer derives the fields from the retrieved context already present on the agent state and attaches them to the citation objects before serialising the chat response.
 
-Server-side enrichment was chosen because the KB metadata is already in memory at response-build time (the context-chunk objects in the retrieved context), the LLM must never emit URLs to preserve the honesty constraint ([ADR-0020](./adr-0020-structured-agent-reply.md)), and adding a new public endpoint just for popover data would widen the API surface without a commensurate benefit.
+Server-side enrichment was chosen because the KB metadata is already in memory at response-build time (the context-chunk objects in the retrieved context), the LLM must never emit URLs to preserve the honesty constraint ([ADR-0020](/ai-agent-eval-harness-healthtech-docs/en/adr/adr-0020-structured-agent-reply/)), and adding a new public endpoint just for popover data would widen the API surface without a commensurate benefit.
 
-The chat-response citations contract ([ADR-0020](./adr-0020-structured-agent-reply.md)) is backward-compatible: all three new fields default to absent, so existing consumers (eval scorers, red-team gate, cert harness) that read only the card id are unaffected.
+The chat-response citations contract ([ADR-0020](/ai-agent-eval-harness-healthtech-docs/en/adr/adr-0020-structured-agent-reply/)) is backward-compatible: all three new fields default to absent, so existing consumers (eval scorers, red-team gate, cert harness) that read only the card id are unaffected.
 
 ## Decision
 
@@ -50,7 +50,7 @@ Extend the citation model with three optional fields and populate them server-si
 
 **(C) Graceful degradation.** Each enrichment item is wrapped so a failure returns the original citation unchanged. A missing chunk, empty source, or bad metadata field yields an absent value in the corresponding field rather than an error response. The helper never raises.
 
-**(D) Lookup key is the bare card slug.** After dedupe-by-parent in the retrieve node, the context-chunk id equals the parent id equals the card slug (e.g., `card-hyp-01`). There is no `::` separator in the lookup key. A sub-chunk id (`card-hyp-01::00`) would never match a citation's card id because citations are at card granularity ([ADR-0021](./adr-0021-parent-document-retrieval.md)).
+**(D) Lookup key is the bare card slug.** After dedupe-by-parent in the retrieve node, the context-chunk id equals the parent id equals the card slug (e.g., `card-hyp-01`). There is no `::` separator in the lookup key. A sub-chunk id (`card-hyp-01::00`) would never match a citation's card id because citations are at card granularity ([ADR-0021](/ai-agent-eval-harness-healthtech-docs/en/adr/adr-0021-parent-document-retrieval/)).
 
 **(E) Additive optional fields preserve backward compatibility.** A citation constructed from only a card id still constructs with all three new fields absent. The eval scorers, the red-team gate, and the certification harness read only the card id; they are unaffected.
 
@@ -95,5 +95,5 @@ Add a public endpoint the SPA calls to fetch card metadata on demand.
 - An ingested KB card with no source field in Chroma metadata yields an absent source URL; this surfaces as a popover with no link. The current synthetic dataset populates the source for every card, so this is a degraded-dataset risk, not a common case.
 
 **Cross-references:**
-- [ADR-0020](./adr-0020-structured-agent-reply.md) — Structured Agent Reply (the backward-compatible chat-response citations contract this ADR extends)
-- [ADR-0023](./adr-0023-hybrid-retrieval.md) — Hybrid Retrieval (the hybrid-path label and reranker-logit semantics this ADR reads)
+- [ADR-0020](/ai-agent-eval-harness-healthtech-docs/en/adr/adr-0020-structured-agent-reply/) — Structured Agent Reply (the backward-compatible chat-response citations contract this ADR extends)
+- [ADR-0023](/ai-agent-eval-harness-healthtech-docs/en/adr/adr-0023-hybrid-retrieval/) — Hybrid Retrieval (the hybrid-path label and reranker-logit semantics this ADR reads)

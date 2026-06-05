@@ -177,8 +177,8 @@ projetados para testar recuperação e citação contra os novos cards de KB.
 
 ## Mais informações
 
-- Detecção fora de domínio (ADR companheira): [ADR-0012](./adr-0012-free-form-out-of-domain-detection.md)
-- Pilha de RAG: [ADR-0004](./adr-0004-rag-stack.md)
+- Detecção fora de domínio (ADR companheira): [ADR-0012](/ai-agent-eval-harness-healthtech-docs/pt-br/adr/adr-0012-free-form-out-of-domain-detection/)
+- Pilha de RAG: [ADR-0004](/ai-agent-eval-harness-healthtech-docs/pt-br/adr/adr-0004-rag-stack/)
 - Política de dados: um corpus apenas sintético, sem datasets restritos por um acordo
   de uso de dados.
 - MADR 4.0.0: <https://adr.github.io/madr/>

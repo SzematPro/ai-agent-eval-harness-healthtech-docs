@@ -13,8 +13,8 @@ Esta documentación describe una implementación de referencia pública evaluada
 > implementación de referencia `ai-agent-eval-harness-healthtech`, incluidos los mecanismos
 > de consentimiento, la conciencia del riesgo de deepfakes y la política de manejo de datos de voz.
 >
-> Léase junto con la [postura regulatoria](../reference/regulatory-posture.md) y la
-> [decisión de diseño de la extensión de voz](../adr/adr-0014-voice-extension.md).
+> Léase junto con la [postura regulatoria](/ai-agent-eval-harness-healthtech-docs/es-419/reference/regulatory-posture/) y la
+> [decisión de diseño de la extensión de voz](/ai-agent-eval-harness-healthtech-docs/es-419/adr/adr-0014-voice-extension/).
 
 ## Descripción general de la integración de voz
 
@@ -141,8 +141,8 @@ deepfakes:
 
 ## Véase también
 
-- [Postura regulatoria](../reference/regulatory-posture.md) -- límite regulatorio
-- [Ficha del modelo](../reference/model-card.md) -- CHAI Applied Model Card
-- [Paridad de seguridad multilingüe](multilingual-safety-parity.md) -- seguridad multilingüe
-- [Evaluación de preparación para HIPAA](hipaa-readiness.md) -- preparación para HIPAA
-- [Diseño de la extensión de voz](../adr/adr-0014-voice-extension.md) -- diseño de la extensión de voz
+- [Postura regulatoria](/ai-agent-eval-harness-healthtech-docs/es-419/reference/regulatory-posture/) -- límite regulatorio
+- [Ficha del modelo](/ai-agent-eval-harness-healthtech-docs/es-419/reference/model-card/) -- CHAI Applied Model Card
+- [Paridad de seguridad multilingüe](/ai-agent-eval-harness-healthtech-docs/es-419/governance/multilingual-safety-parity/) -- seguridad multilingüe
+- [Evaluación de preparación para HIPAA](/ai-agent-eval-harness-healthtech-docs/es-419/governance/hipaa-readiness/) -- preparación para HIPAA
+- [Diseño de la extensión de voz](/ai-agent-eval-harness-healthtech-docs/es-419/adr/adr-0014-voice-extension/) -- diseño de la extensión de voz

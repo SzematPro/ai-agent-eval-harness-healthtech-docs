@@ -353,12 +353,12 @@ seguintes critérios:
 
 ## Mais informações
 
-- [ADR-0001: Arcabouço de orquestração](./adr-0001-orchestration.md) -
+- [ADR-0001: Arcabouço de orquestração](/ai-agent-eval-harness-healthtech-docs/pt-br/adr/adr-0001-orchestration/) -
   LangGraph, a fonte da API de streaming e do grafo compilado de onde o
   stream é conduzido.
-- [ADR-0006: Pilha de observabilidade](./adr-0006-observability.md) - os
+- [ADR-0006: Pilha de observabilidade](/ai-agent-eval-harness-healthtech-docs/pt-br/adr/adr-0006-observability/) - os
   spans por nó do OpenTelemetry que já medem o tempo dos nós.
-- [ADR-0007: Alvo de implantação](./adr-0007-deployment.md) - Hugging Face
+- [ADR-0007: Alvo de implantação](/ai-agent-eval-harness-healthtech-docs/pt-br/adr/adr-0007-deployment/) - Hugging Face
   Spaces, a postura de worker único e o proxy que o stream SSE precisa
   atravessar sem bufferização.
 - Especificação de server-sent events do WHATWG HTML:

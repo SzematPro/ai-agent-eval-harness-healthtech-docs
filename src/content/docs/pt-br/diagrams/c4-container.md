@@ -34,7 +34,7 @@ um checkpointer em memória por padrão, ou um checkpointer durável apoiado em
 Postgres quando uma string de conexão de banco de dados é configurada (o
 caminho durável para retomadas de HITL que atravessam um reinício de
 processo). Consulte
-[ADR-0001](../adr/adr-0001-orchestration.md) para a justificativa.
+[ADR-0001](/ai-agent-eval-harness-healthtech-docs/pt-br/adr/adr-0001-orchestration/) para a justificativa.
 
 ```mermaid
 C4Container

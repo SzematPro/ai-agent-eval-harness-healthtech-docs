@@ -15,8 +15,8 @@ Esta documentación describe una implementación de referencia pública evaluada
 > 2024. Este documento evalúa qué principios de protección de datos observa la
 > implementación de referencia y qué requeriría un despliegue en Chile.
 >
-> Léase junto con la [postura regulatoria](../reference/regulatory-posture.md) y la
-> [evaluación de preparación para HIPAA](hipaa-readiness.md).
+> Léase junto con la [postura regulatoria](/ai-agent-eval-harness-healthtech-docs/es-419/reference/regulatory-posture/) y la
+> [evaluación de preparación para HIPAA](/ai-agent-eval-harness-healthtech-docs/es-419/governance/hipaa-readiness/).
 
 ## Contexto legislativo
 
@@ -118,8 +118,8 @@ requeriría:
 
 ## Véase también
 
-- [Postura regulatoria](../reference/regulatory-posture.md) -- límite regulatorio
-- [Mapeo de la CMF Norma 20](cmf-norma-20.md) -- mapeo del regulador financiero chileno
-- [Evaluación de preparación para HIPAA](hipaa-readiness.md) -- evaluación de preparación para HIPAA
-- [Documentación de redacción de PII](pii-redaction.md) -- documentación de redacción de PII
-- [Diseño de observabilidad](../adr/adr-0006-observability.md) -- diseño de observabilidad
+- [Postura regulatoria](/ai-agent-eval-harness-healthtech-docs/es-419/reference/regulatory-posture/) -- límite regulatorio
+- [Mapeo de la CMF Norma 20](/ai-agent-eval-harness-healthtech-docs/es-419/governance/cmf-norma-20/) -- mapeo del regulador financiero chileno
+- [Evaluación de preparación para HIPAA](/ai-agent-eval-harness-healthtech-docs/es-419/governance/hipaa-readiness/) -- evaluación de preparación para HIPAA
+- [Documentación de redacción de PII](/ai-agent-eval-harness-healthtech-docs/es-419/governance/pii-redaction/) -- documentación de redacción de PII
+- [Diseño de observabilidad](/ai-agent-eval-harness-healthtech-docs/es-419/adr/adr-0006-observability/) -- diseño de observabilidad

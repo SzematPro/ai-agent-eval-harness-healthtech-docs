@@ -15,8 +15,8 @@ and the [MITRE ATLAS](https://atlas.mitre.org/) adversarial threat matrix. This
 document identifies which threats are mitigated by existing controls, which are
 partially addressed, and which require additional work for production deployment.
 
-Read alongside the [regulatory posture](../reference/regulatory-posture.md), the
-[NIST AI RMF mapping](nist-ai-rmf.md), and the [guardrails decision](../adr/adr-0005-guardrails.md).
+Read alongside the [regulatory posture](/ai-agent-eval-harness-healthtech-docs/en/reference/regulatory-posture/), the
+[NIST AI RMF mapping](/ai-agent-eval-harness-healthtech-docs/en/governance/nist-ai-rmf/), and the [guardrails decision](/ai-agent-eval-harness-healthtech-docs/en/adr/adr-0005-guardrails/).
 
 ## Threat Model Scope
 
@@ -51,7 +51,7 @@ Hugging Face Spaces free tier and is not designed for production infrastructure 
 | Property | Value |
 |----------|-------|
 | **Threat** | Compromised LLM provider, poisoned model weights, or malicious dependency |
-| **Mitigations in place** | The LLM client Protocol abstraction (see the [LLM vendor abstraction decision](../adr/adr-0002-llm-vendor-abstraction.md)) allows provider switching without code changes; the dependency lockfile pins all dependencies; automated dependency monitoring is enabled; no runtime model downloads (pre-trained models accessed via API) |
+| **Mitigations in place** | The LLM client Protocol abstraction (see the [LLM vendor abstraction decision](/ai-agent-eval-harness-healthtech-docs/en/adr/adr-0002-llm-vendor-abstraction/)) allows provider switching without code changes; the dependency lockfile pins all dependencies; automated dependency monitoring is enabled; no runtime model downloads (pre-trained models accessed via API) |
 | **Residual risk** | No verification of LLM provider integrity; no model provenance attestation; dependency pinning prevents drift but does not prevent initial compromise |
 | **Control** | The LLM client layer, the dependency lockfile, and automated dependency monitoring |
 
@@ -192,9 +192,9 @@ A production deployment would need to strengthen mitigations across several dime
 
 ## See Also
 
-- [Regulatory posture](../reference/regulatory-posture.md) -- regulatory boundary
-- [NIST AI RMF mapping](nist-ai-rmf.md) -- NIST AI RMF mapping
-- [EU AI Act classification](eu-ai-act.md) -- EU AI Act classification
-- [Guardrails decision](../adr/adr-0005-guardrails.md) -- guardrails design
-- [Observability decision](../adr/adr-0006-observability.md) -- observability design
-- [LLM vendor abstraction decision](../adr/adr-0002-llm-vendor-abstraction.md) -- LLM vendor abstraction
+- [Regulatory posture](/ai-agent-eval-harness-healthtech-docs/en/reference/regulatory-posture/) -- regulatory boundary
+- [NIST AI RMF mapping](/ai-agent-eval-harness-healthtech-docs/en/governance/nist-ai-rmf/) -- NIST AI RMF mapping
+- [EU AI Act classification](/ai-agent-eval-harness-healthtech-docs/en/governance/eu-ai-act/) -- EU AI Act classification
+- [Guardrails decision](/ai-agent-eval-harness-healthtech-docs/en/adr/adr-0005-guardrails/) -- guardrails design
+- [Observability decision](/ai-agent-eval-harness-healthtech-docs/en/adr/adr-0006-observability/) -- observability design
+- [LLM vendor abstraction decision](/ai-agent-eval-harness-healthtech-docs/en/adr/adr-0002-llm-vendor-abstraction/) -- LLM vendor abstraction

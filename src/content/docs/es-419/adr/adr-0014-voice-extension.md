@@ -352,12 +352,12 @@ persistente.
 
 ## Más información
 
-- Abstracción de proveedor de LLM: [ADR-0002](./adr-0002-llm-vendor-abstraction.md)
-- Objetivo de despliegue y restricción de $0/mes: [ADR-0007](./adr-0007-deployment.md)
-- Arquitectura de transmisión y patrón de extensión SSE: [ADR-0010](./adr-0010-streaming-execution-graph.md)
-- Capa de datos y seguimiento de costos (Supabase): [ADR-0011](./adr-0011-data-layer-supabase.md)
-- Mejora continua y almacenamiento de uso: [ADR-0016](./adr-0016-continuous-improvement-storage.md)
-- Barreras de seguridad y redacción de privacidad: [ADR-0005](./adr-0005-guardrails.md)
+- Abstracción de proveedor de LLM: [ADR-0002](/ai-agent-eval-harness-healthtech-docs/es-419/adr/adr-0002-llm-vendor-abstraction/)
+- Objetivo de despliegue y restricción de $0/mes: [ADR-0007](/ai-agent-eval-harness-healthtech-docs/es-419/adr/adr-0007-deployment/)
+- Arquitectura de transmisión y patrón de extensión SSE: [ADR-0010](/ai-agent-eval-harness-healthtech-docs/es-419/adr/adr-0010-streaming-execution-graph/)
+- Capa de datos y seguimiento de costos (Supabase): [ADR-0011](/ai-agent-eval-harness-healthtech-docs/es-419/adr/adr-0011-data-layer-supabase/)
+- Mejora continua y almacenamiento de uso: [ADR-0016](/ai-agent-eval-harness-healthtech-docs/es-419/adr/adr-0016-continuous-improvement-storage/)
+- Barreras de seguridad y redacción de privacidad: [ADR-0005](/ai-agent-eval-harness-healthtech-docs/es-419/adr/adr-0005-guardrails/)
 - Documentación de la API de ElevenLabs: <https://elevenlabs.io/docs/api-reference>
 - Modelo `eleven_multilingual_v2` de ElevenLabs: <https://elevenlabs.io/docs/speech-synthesis/models>
 - ElevenLabs Scribe STT: <https://elevenlabs.io/docs/capabilities/speech-to-text>

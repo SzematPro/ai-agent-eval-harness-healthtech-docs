@@ -31,8 +31,8 @@ A execução padrão do runner usa dois grupos de pontuadores:
   desabilitado e a barreira de limiar roda apenas contra os pontuadores
   deterministas. O modelo juiz é o Cerebras `gpt-oss-120b`.
 
-Consulte [ADR-0003](../adr/adr-0003-eval-harness.md) para a política de
-limiares e [ADR-0009](../adr/adr-0009-judge-model-cerebras.md) para a escolha
+Consulte [ADR-0003](/ai-agent-eval-harness-healthtech-docs/pt-br/adr/adr-0003-eval-harness/) para a política de
+limiares e [ADR-0009](/ai-agent-eval-harness-healthtech-docs/pt-br/adr/adr-0009-judge-model-cerebras/) para a escolha
 do modelo juiz.
 
 ```mermaid

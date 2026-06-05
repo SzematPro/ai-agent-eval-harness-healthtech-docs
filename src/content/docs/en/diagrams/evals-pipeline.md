@@ -31,8 +31,8 @@ The runner default uses two groups of scorers:
   disabled and the threshold gate runs against the deterministic scorers
   only. The judge model is Cerebras `gpt-oss-120b`.
 
-See [ADR-0003](../adr/adr-0003-eval-harness.md) for the threshold policy
-and [ADR-0009](../adr/adr-0009-judge-model-cerebras.md) for the judge-model
+See [ADR-0003](/ai-agent-eval-harness-healthtech-docs/en/adr/adr-0003-eval-harness/) for the threshold policy
+and [ADR-0009](/ai-agent-eval-harness-healthtech-docs/en/adr/adr-0009-judge-model-cerebras/) for the judge-model
 choice.
 
 ```mermaid

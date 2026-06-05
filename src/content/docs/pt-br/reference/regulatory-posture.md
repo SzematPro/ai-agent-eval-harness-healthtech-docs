@@ -214,7 +214,7 @@ ferramenta de decisão clínica. Concretamente:
   tratado pela camada do LLM e do prompt de sistema, não pelo roteador
   determinístico (ele precisa de um léxico de nomes de medicamentos que uma
   lista de regex não consegue carregar); veja
-  [ADR-0005](../adr/adr-0005-guardrails.md).
+  [ADR-0005](/ai-agent-eval-harness-healthtech-docs/pt-br/adr/adr-0005-guardrails/).
 
 ## O que o agente NÃO faz
 
@@ -281,7 +281,7 @@ regulatória é uma propriedade do sistema relevante para a segurança.
 
 ## Veja também
 
-- [decisão de salvaguardas](../adr/adr-0005-guardrails.md) - design das salvaguardas.
-- [dados](data.md) - política de dados exclusivamente sintéticos e a
+- [decisão de salvaguardas](/ai-agent-eval-harness-healthtech-docs/pt-br/adr/adr-0005-guardrails/) - design das salvaguardas.
+- [dados](/ai-agent-eval-harness-healthtech-docs/pt-br/reference/data/) - política de dados exclusivamente sintéticos e a
   lista completa de exclusões.
-- [política de segurança](security.md) - política de divulgação.
+- [política de segurança](/ai-agent-eval-harness-healthtech-docs/pt-br/reference/security/) - política de divulgação.

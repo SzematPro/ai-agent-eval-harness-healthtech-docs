@@ -17,7 +17,7 @@ cara de reverter e explica por que ela foi tomada.
 ## Convenções
 
 - **Formato**: [MADR 4.0.0](https://adr.github.io/madr/). O template
-  canônico é [o template de ADR](./adr-template.md). Copie-o para qualquer
+  canônico é [o template de ADR](/ai-agent-eval-harness-healthtech-docs/pt-br/adr/adr-template/). Copie-o para qualquer
   nova decisão; não invente estruturas ad-hoc.
 - **Ciclo de vida do status**: `Proposed` -> `Accepted` -> `Superseded`. Um
   ADR substituído nunca é excluído; ele é renomeado para preservar o registro
@@ -36,14 +36,14 @@ cara de reverter e explica por que ela foi tomada.
 
 | ID | Título | Status | Resumo em uma linha |
 |----|-------|--------|------------------|
-| [ADR-0001](./adr-0001-orchestration.md) | Framework de orquestração | Accepted | LangGraph 1.x em vez de CrewAI, Microsoft Agent Framework, Claude Agent SDK, Pydantic AI, AutoGen. Grafo de seis nós com um nó HITL `review_response` opcional via `interrupt()` e uma fábrica de checkpointer `MemorySaver` / `AsyncPostgresSaver`. |
-| [ADR-0002](./adr-0002-llm-vendor-abstraction.md) | Abstração de fornecedor de LLM | Accepted | Um Protocol `LLMClient` fino sobre adaptadores LangChain mais Groq / Cerebras diretos via REST compatível com OpenAI, alternado por uma variável de ambiente `LLM_PROVIDER`. |
-| [ADR-0003](./adr-0003-eval-harness.md) | Harness de avaliação | Accepted; substituído em parte pelo ADR-0009 | Núcleo artesanal em pytest + DeepEval + Ragas + Phoenix + Promptfoo. A escolha do modelo juiz (Anthropic Claude Haiku) é substituída pelo ADR-0009. |
-| [ADR-0004](./adr-0004-rag-stack.md) | Stack de RAG | Accepted | Chroma embarcado como primário com `BAAI/bge-small-en-v1.5` como embedder padrão usando recuperação assimétrica consciente de instruções; Qdrant Cloud e Voyage AI documentados como alternativas em nuvem. |
-| [ADR-0005](./adr-0005-guardrails.md) | Guardrails e postura regulatória | Accepted | Classificador de escopo, templates de recusa e um roteador de escalonamento determinístico de sete categorias como módulos de primeira classe; contrato de design = linha de orientação FDA 2026 General Wellness / CDS Software. |
-| [ADR-0006](./adr-0006-observability.md) | Stack de observabilidade | Accepted | Formato de transmissão OpenTelemetry + OpenInference; Langfuse Cloud Hobby para a demo ao vivo, Phoenix auto-hospedado para execuções de avaliação, Pydantic Logfire documentado como alternativa. |
-| [ADR-0007](./adr-0007-deployment.md) | Alvo de implantação | Accepted | Hugging Face Spaces, Docker SDK, nível gratuito CPU Basic; Render Web Service documentado como a segunda escolha do operador. Camada de resiliência de implantação: rate limiter por sessão, fallback de provedor Groq -> Cerebras -> Anthropic, cache de resposta com TTL curto. |
-| [ADR-0008](./adr-0008-licensing.md) | Licença de código | Accepted | Licença de código alterada de MIT para Apache 2.0 na v1.0.0. |
+| [ADR-0001](/ai-agent-eval-harness-healthtech-docs/pt-br/adr/adr-0001-orchestration/) | Framework de orquestração | Accepted | LangGraph 1.x em vez de CrewAI, Microsoft Agent Framework, Claude Agent SDK, Pydantic AI, AutoGen. Grafo de seis nós com um nó HITL `review_response` opcional via `interrupt()` e uma fábrica de checkpointer `MemorySaver` / `AsyncPostgresSaver`. |
+| [ADR-0002](/ai-agent-eval-harness-healthtech-docs/pt-br/adr/adr-0002-llm-vendor-abstraction/) | Abstração de fornecedor de LLM | Accepted | Um Protocol `LLMClient` fino sobre adaptadores LangChain mais Groq / Cerebras diretos via REST compatível com OpenAI, alternado por uma variável de ambiente `LLM_PROVIDER`. |
+| [ADR-0003](/ai-agent-eval-harness-healthtech-docs/pt-br/adr/adr-0003-eval-harness/) | Harness de avaliação | Accepted; substituído em parte pelo ADR-0009 | Núcleo artesanal em pytest + DeepEval + Ragas + Phoenix + Promptfoo. A escolha do modelo juiz (Anthropic Claude Haiku) é substituída pelo ADR-0009. |
+| [ADR-0004](/ai-agent-eval-harness-healthtech-docs/pt-br/adr/adr-0004-rag-stack/) | Stack de RAG | Accepted | Chroma embarcado como primário com `BAAI/bge-small-en-v1.5` como embedder padrão usando recuperação assimétrica consciente de instruções; Qdrant Cloud e Voyage AI documentados como alternativas em nuvem. |
+| [ADR-0005](/ai-agent-eval-harness-healthtech-docs/pt-br/adr/adr-0005-guardrails/) | Guardrails e postura regulatória | Accepted | Classificador de escopo, templates de recusa e um roteador de escalonamento determinístico de sete categorias como módulos de primeira classe; contrato de design = linha de orientação FDA 2026 General Wellness / CDS Software. |
+| [ADR-0006](/ai-agent-eval-harness-healthtech-docs/pt-br/adr/adr-0006-observability/) | Stack de observabilidade | Accepted | Formato de transmissão OpenTelemetry + OpenInference; Langfuse Cloud Hobby para a demo ao vivo, Phoenix auto-hospedado para execuções de avaliação, Pydantic Logfire documentado como alternativa. |
+| [ADR-0007](/ai-agent-eval-harness-healthtech-docs/pt-br/adr/adr-0007-deployment/) | Alvo de implantação | Accepted | Hugging Face Spaces, Docker SDK, nível gratuito CPU Basic; Render Web Service documentado como a segunda escolha do operador. Camada de resiliência de implantação: rate limiter por sessão, fallback de provedor Groq -> Cerebras -> Anthropic, cache de resposta com TTL curto. |
+| [ADR-0008](/ai-agent-eval-harness-healthtech-docs/pt-br/adr/adr-0008-licensing/) | Licença de código | Accepted | Licença de código alterada de MIT para Apache 2.0 na v1.0.0. |
 | ADR-0009 | Modelo juiz da avaliação | Accepted | O juiz da avaliação é o Cerebras (`gpt-oss-120b`); substitui a escolha do juiz Anthropic Claude Haiku no ADR-0003. |
 | ADR-0010 | Streaming do grafo de execução do agente para a UI | Accepted | O Agent Execution Graph da v1.1 transmite eventos por nó para a SPA via server-sent events, com adesão opcional por negociação de conteúdo via cabeçalho `Accept`; o contrato JSON `/chat` da v1.0.0 permanece inalterado. Não substitui nada. |
 | ADR-0011 | Camada de dados (Supabase para dados operacionais da demo) | Accepted | Postgres gerenciado no nível gratuito do Supabase para chaves da demo, interações, sugestões de melhoria, solicitações de chaves da demo, consentimentos de chaves da demo, sessões da demo e uso de turnos da demo. O RAG continua sendo Chroma (ADR-0004, inalterado). |

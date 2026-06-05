@@ -227,7 +227,7 @@ graph LR
 
 **Lacuna de produção.** Uma implantação de produção precisa de múltiplos workers atrás de um balanceador de carga, auto-escalonamento para lidar com picos de tráfego, implantações sem tempo de inatividade e uptime com SLA (tipicamente 99,9% ou mais). Os arranques a frio devem ser eliminados. O próprio código do agente é portável -- FastAPI com uvicorn funciona atrás de qualquer proxy reverso -- mas a camada de infraestrutura precisa de investimento significativo.
 
-**Caminho de migração.** A mesma imagem Docker pode implantar em qualquer host com capacidade Docker. A camada gratuita do Render Web Service está documentada como fallback (veja [deploy](deploy.md)). Migrar para produção significa escolher um provedor de nuvem, configurar o auto-escalonamento e adicionar terminação TLS no nível do balanceador de carga.
+**Caminho de migração.** A mesma imagem Docker pode implantar em qualquer host com capacidade Docker. A camada gratuita do Render Web Service está documentada como fallback (veja [deploy](/ai-agent-eval-harness-healthtech-docs/pt-br/reference/deploy/)). Migrar para produção significa escolher um provedor de nuvem, configurar o auto-escalonamento e adicionar terminação TLS no nível do balanceador de carga.
 
 ### 5.2 Armazenamento/Dados
 
@@ -255,7 +255,7 @@ graph LR
 
 ### 5.5 Segurança/Conformidade
 
-**Estado atual.** Sem segredos no repositório (imposto pelo gitleaks no CI). As dependências são fixadas via o lockfile com monitoramento do Dependabot. Sem PHI, sem dados reais de EHR, sem informação identificável de paciente (dados 100% sintéticos). O agente opera sob o enquadramento de General Wellness / CDS de 2026 da FDA (veja [postura regulatória](regulatory-posture.md)). A redação de PII é aplicada na entrada. O fingerprinting das chaves da demo usa sha256 anonimizado com rotação diária.
+**Estado atual.** Sem segredos no repositório (imposto pelo gitleaks no CI). As dependências são fixadas via o lockfile com monitoramento do Dependabot. Sem PHI, sem dados reais de EHR, sem informação identificável de paciente (dados 100% sintéticos). O agente opera sob o enquadramento de General Wellness / CDS de 2026 da FDA (veja [postura regulatória](/ai-agent-eval-harness-healthtech-docs/pt-br/reference/regulatory-posture/)). A redação de PII é aplicada na entrada. O fingerprinting das chaves da demo usa sha256 anonimizado com rotação diária.
 
 **Lacuna de produção.** Uma implantação de produção que manipule dados reais de pacientes precisaria de: Web Application Firewall e proteção contra DDoS, segredos gerenciados (Vault, AWS Secrets Manager), Business Associate Agreements com todos os provedores de LLM, conformidade com a HIPAA Security Rule (avaliação de risco, notificação de violação, acesso mínimo necessário), certificação SOC 2 Type II, testes de penetração regulares e um plano de resposta a incidentes. A postura regulatória mudaria de General Wellness para um arcabouço de conformidade completo.
 
@@ -267,13 +267,13 @@ graph LR
 
 | Tópico | ADR |
 |-------|-----|
-| Arcabouço de orquestração (StateGraph de seis nós) | [ADR-0001](../adr/adr-0001-orchestration.md) |
-| Abstração de fornecedor de LLM (Protocol + adaptadores) | [ADR-0002](../adr/adr-0002-llm-vendor-abstraction.md) |
-| Arcabouço de avaliação (DeepEval + Ragas + Promptfoo) | [ADR-0003](../adr/adr-0003-eval-harness.md) |
-| Pilha RAG (Chroma embedded) | [ADR-0004](../adr/adr-0004-rag-stack.md) |
-| Salvaguardas (escopo + recusa + escalonamento) | [ADR-0005](../adr/adr-0005-guardrails.md) |
-| Observabilidade (OTel + OpenInference) | [ADR-0006](../adr/adr-0006-observability.md) |
-| Implantação (HF Spaces + Docker SDK) | [ADR-0007](../adr/adr-0007-deployment.md) |
-| Camada de dados (Supabase camada gratuita) | [ADR-0011](../adr/adr-0011-data-layer-supabase.md) |
-| Extensão de voz (ElevenLabs TTS/STT) | [ADR-0014](../adr/adr-0014-voice-extension.md) |
-| Arquitetura de streaming (eventos SSE) | [ADR-0010](../adr/adr-0010-streaming-execution-graph.md) |
+| Arcabouço de orquestração (StateGraph de seis nós) | [ADR-0001](/ai-agent-eval-harness-healthtech-docs/pt-br/adr/adr-0001-orchestration/) |
+| Abstração de fornecedor de LLM (Protocol + adaptadores) | [ADR-0002](/ai-agent-eval-harness-healthtech-docs/pt-br/adr/adr-0002-llm-vendor-abstraction/) |
+| Arcabouço de avaliação (DeepEval + Ragas + Promptfoo) | [ADR-0003](/ai-agent-eval-harness-healthtech-docs/pt-br/adr/adr-0003-eval-harness/) |
+| Pilha RAG (Chroma embedded) | [ADR-0004](/ai-agent-eval-harness-healthtech-docs/pt-br/adr/adr-0004-rag-stack/) |
+| Salvaguardas (escopo + recusa + escalonamento) | [ADR-0005](/ai-agent-eval-harness-healthtech-docs/pt-br/adr/adr-0005-guardrails/) |
+| Observabilidade (OTel + OpenInference) | [ADR-0006](/ai-agent-eval-harness-healthtech-docs/pt-br/adr/adr-0006-observability/) |
+| Implantação (HF Spaces + Docker SDK) | [ADR-0007](/ai-agent-eval-harness-healthtech-docs/pt-br/adr/adr-0007-deployment/) |
+| Camada de dados (Supabase camada gratuita) | [ADR-0011](/ai-agent-eval-harness-healthtech-docs/pt-br/adr/adr-0011-data-layer-supabase/) |
+| Extensão de voz (ElevenLabs TTS/STT) | [ADR-0014](/ai-agent-eval-harness-healthtech-docs/pt-br/adr/adr-0014-voice-extension/) |
+| Arquitetura de streaming (eventos SSE) | [ADR-0010](/ai-agent-eval-harness-healthtech-docs/pt-br/adr/adr-0010-streaming-execution-graph/) |

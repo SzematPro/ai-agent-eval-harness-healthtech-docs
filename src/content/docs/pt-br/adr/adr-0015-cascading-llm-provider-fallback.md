@@ -160,10 +160,10 @@ acumulador de custo registre o gasto contra o provedor correto.
 
 ## Mais informações
 
-- [ADR-0002](./adr-0002-llm-vendor-abstraction.md) -- abstração de fornecedor de
+- [ADR-0002](/ai-agent-eval-harness-healthtech-docs/pt-br/adr/adr-0002-llm-vendor-abstraction/) -- abstração de fornecedor de
   LLM (o Protocol sobre o qual a cascata compõe)
-- [ADR-0007](./adr-0007-deployment.md) -- alvo de implantação e os
+- [ADR-0007](/ai-agent-eval-harness-healthtech-docs/pt-br/adr/adr-0007-deployment/) -- alvo de implantação e os
   fatores por trás da camada de resiliência
-- [ADR-0017](./adr-0017-free-tier-deployment-resilience.md) -- o
+- [ADR-0017](/ai-agent-eval-harness-healthtech-docs/pt-br/adr/adr-0017-free-tier-deployment-resilience/) -- o
   limitador de taxa em processo complementar e o cache de respostas
 - MADR 4.0.0: <https://adr.github.io/madr/>

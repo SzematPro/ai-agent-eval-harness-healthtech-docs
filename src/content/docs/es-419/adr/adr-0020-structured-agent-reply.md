@@ -23,7 +23,7 @@ tablas de marcadores solo en inglés.
 Esto es frágil de tres formas concretas:
 
 1. Las tablas de marcadores están solo en inglés. El arnés incluye los idiomas
-   es-419 y pt-BR ([ADR-0001](./adr-0001-orchestration.md)), pero los
+   es-419 y pt-BR ([ADR-0001](/ai-agent-eval-harness-healthtech-docs/es-419/adr/adr-0001-orchestration/)), pero los
    evaluadores no pueden ver una negativa en esos idiomas a menos que la prosa
    contenga por casualidad las subcadenas en inglés. Una expresión regular
    multilingüe distinta existía en paralelo en la capa de barreras de seguridad —
@@ -60,7 +60,7 @@ asistente existente en la SPA?
   discriminador de una sola línea.
 - **Presupuesto de spans**: los atributos de traza para la respuesta estructurada
   deben caber en el presupuesto de observabilidad existente (política de spans con
-  solo metadatos de [ADR-0006](./adr-0006-observability.md)).
+  solo metadatos de [ADR-0006](/ai-agent-eval-harness-healthtech-docs/es-419/adr/adr-0006-observability/)).
 
 ## Opciones consideradas
 
@@ -208,11 +208,11 @@ La postura del modo JSON por proveedor:
 
 ## Más información
 
-- [ADR-0001](./adr-0001-orchestration.md) — estado del agente y LangGraph
-- [ADR-0002](./adr-0002-llm-vendor-abstraction.md) — Protocolo del cliente
+- [ADR-0001](/ai-agent-eval-harness-healthtech-docs/es-419/adr/adr-0001-orchestration/) — estado del agente y LangGraph
+- [ADR-0002](/ai-agent-eval-harness-healthtech-docs/es-419/adr/adr-0002-llm-vendor-abstraction/) — Protocolo del cliente
   de LLM
-- [ADR-0003](./adr-0003-eval-harness.md) — Protocolo del evaluador
-- [ADR-0005](./adr-0005-guardrails.md) — contrato de negativa y escalación
-- [ADR-0006](./adr-0006-observability.md) — política de spans con solo
+- [ADR-0003](/ai-agent-eval-harness-healthtech-docs/es-419/adr/adr-0003-eval-harness/) — Protocolo del evaluador
+- [ADR-0005](/ai-agent-eval-harness-healthtech-docs/es-419/adr/adr-0005-guardrails/) — contrato de negativa y escalación
+- [ADR-0006](/ai-agent-eval-harness-healthtech-docs/es-419/adr/adr-0006-observability/) — política de spans con solo
   metadatos
 - MADR 4.0.0: <https://adr.github.io/madr/>

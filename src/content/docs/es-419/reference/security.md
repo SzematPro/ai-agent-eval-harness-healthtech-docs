@@ -34,7 +34,7 @@ Fuera de alcance: las vulnerabilidades en un fork derivado que introduzca
 un despliegue de producción, las vulnerabilidades en la infraestructura de
 proveedores de LLM de terceros y las afirmaciones de seguridad clínica
 sobre las salidas del modelo (el agente no es un dispositivo médico;
-consulta la [postura regulatoria](regulatory-posture.md)).
+consulta la [postura regulatoria](/ai-agent-eval-harness-healthtech-docs/es-419/reference/regulatory-posture/)).
 
 ## Reporte de una vulnerabilidad
 
@@ -70,7 +70,7 @@ paciente, ningún dato bajo un Acuerdo de Uso de Datos (PhysioNet DUA,
 i2b2/n2c2 DUA, equivalentes), ni ningún conjunto de datos cuya licencia
 prohíba la redistribución (MedDialog, ChatDoctor / HealthCareMagic-100K,
 MIMIC-IV, MIMIC-IV-Note, Asclepius). La ficha de datos en
-[datos](data.md) incluye la lista completa de exclusiones y la
+[datos](/ai-agent-eval-harness-healthtech-docs/es-419/reference/data/) incluye la lista completa de exclusiones y la
 justificación.
 
 Si una persona contribuyente propone agregar un conjunto de datos, la
@@ -121,13 +121,13 @@ se cerrarán.
   proyecto después de la sincronización inicial de dependencias.
 - **Pin de dependencia congelado.** `rank-bm25` está anclado
   intencionalmente en su versión final `0.2.2` (consulta
-  [ADR-0023](../adr/adr-0023-hybrid-retrieval.md), Decisión B): un pin
+  [ADR-0023](/ai-agent-eval-harness-healthtech-docs/es-419/adr/adr-0023-hybrid-retrieval/), Decisión B): un pin
   deliberado de fin de vida, no un descuido por desatención; el job de CI
   `pip-audit` igualmente lo controla por avisos.
 
 ## Postura regulatoria
 
-Consulta la [postura regulatoria](regulatory-posture.md) para conocer el
+Consulta la [postura regulatoria](/ai-agent-eval-harness-healthtech-docs/es-419/reference/regulatory-posture/) para conocer el
 límite de bienestar/CDS de la FDA que el diseño respeta, la guía de la OMS
 sobre LMM que el proyecto sigue y la lista explícita de cosas que el agente
 NO hace. Un reporte de vulnerabilidad que afirme una falla de clasificación

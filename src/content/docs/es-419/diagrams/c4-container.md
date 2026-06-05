@@ -33,7 +33,7 @@ entre solicitudes. La capa de persistencia admite inyección de checkpointer:
 un checkpointer en memoria por defecto, o un checkpointer durable respaldado por
 Postgres cuando se configura una cadena de conexión a la base de datos (la ruta
 durable para reanudaciones HITL que abarcan un reinicio de proceso). Consulta
-[ADR-0001](../adr/adr-0001-orchestration.md) para conocer la justificación.
+[ADR-0001](/ai-agent-eval-harness-healthtech-docs/es-419/adr/adr-0001-orchestration/) para conocer la justificación.
 
 ```mermaid
 C4Container

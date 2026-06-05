@@ -123,6 +123,6 @@ normalização quando o termo é específico de um setor.
 
 Este glossário cobre os termos canônicos usados ao longo da documentação e
 dos ADRs. Se um termo estiver faltando, a fonte de verdade substantiva vive
-na [postura regulatória](regulatory-posture.md) (postura regulatória e
-exclusões) e em [dados](data.md) (auditoria de licença do dataset e lista de
+na [postura regulatória](/ai-agent-eval-harness-healthtech-docs/pt-br/reference/regulatory-posture/) (postura regulatória e
+exclusões) e em [dados](/ai-agent-eval-harness-healthtech-docs/pt-br/reference/data/) (auditoria de licença do dataset e lista de
 exclusões).

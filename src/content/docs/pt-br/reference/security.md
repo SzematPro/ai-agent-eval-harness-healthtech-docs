@@ -31,7 +31,7 @@ afirmação clínica em uma saída do modelo deve citar um cartão da KB. Fora d
 escopo: vulnerabilidades em um fork derivado que introduza uma implantação de
 produção, vulnerabilidades na infraestrutura de provedores de LLM terceiros, e
 alegações de segurança clínica sobre as saídas do modelo (o agente não é um
-dispositivo médico - veja [postura regulatória](regulatory-posture.md)).
+dispositivo médico - veja [postura regulatória](/ai-agent-eval-harness-healthtech-docs/pt-br/reference/regulatory-posture/)).
 
 ## Reportando uma vulnerabilidade
 
@@ -63,7 +63,7 @@ pessoal, nenhum dado derivado de um registro real de paciente, nenhum dado sob
 um Data Use Agreement (PhysioNet DUA, i2b2/n2c2 DUA, equivalentes), e nenhum
 dataset cuja licença proíba a redistribuição (MedDialog, ChatDoctor /
 HealthCareMagic-100K, MIMIC-IV, MIMIC-IV-Note, Asclepius). O cartão do dataset
-em [dados](data.md) carrega a lista completa de exclusões e a justificativa.
+em [dados](/ai-agent-eval-harness-healthtech-docs/pt-br/reference/data/) carrega a lista completa de exclusões e a justificativa.
 
 Se um contribuidor propuser a adição de um dataset, o ônus da prova recai sobre
 o PR para demonstrar (a) procedência sintética, (b) uma licença de
@@ -109,13 +109,13 @@ que introduzam dados sem essa prova serão fechados.
   stage; instale-o por meio da configuração de pre-commit do projeto após a
   sincronização inicial de dependências.
 - **Pin de dependência congelado.** O `rank-bm25` é intencionalmente fixado em
-  sua versão final `0.2.2` (veja a [ADR-0023](../adr/adr-0023-hybrid-retrieval.md),
+  sua versão final `0.2.2` (veja a [ADR-0023](/ai-agent-eval-harness-healthtech-docs/pt-br/adr/adr-0023-hybrid-retrieval/),
   Decisão B) - um pin deliberado de fim de vida, não desatualizado por
   negligência; o job de CI `pip-audit` ainda assim o controla por avisos.
 
 ## Postura regulatória
 
-Veja a [postura regulatória](regulatory-posture.md) para o limite de
+Veja a [postura regulatória](/ai-agent-eval-harness-healthtech-docs/pt-br/reference/regulatory-posture/) para o limite de
 bem-estar/CDS da FDA que o design respeita, o guia de LMM da WHO que o projeto
 acompanha e a lista explícita de coisas que o agente NÃO faz. Um reporte de
 vulnerabilidade que alegue uma falha de classificação regulatória deveria

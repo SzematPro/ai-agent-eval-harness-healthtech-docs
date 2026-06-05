@@ -217,8 +217,8 @@ revisión". No existe ningún cambio de estado automatizado.
 ## Más información
 
 - Capa gratuita de Supabase: <https://supabase.com/pricing>
-- ADR-0011 (capa de datos, Supabase para los datos operativos de la demo): [ADR-0011](./adr-0011-data-layer-supabase.md)
-- ADR-0007 (objetivo de despliegue): [ADR-0007](./adr-0007-deployment.md)
+- ADR-0011 (capa de datos, Supabase para los datos operativos de la demo): [ADR-0011](/ai-agent-eval-harness-healthtech-docs/es-419/adr/adr-0011-data-layer-supabase/)
+- ADR-0007 (objetivo de despliegue): [ADR-0007](/ai-agent-eval-harness-healthtech-docs/es-419/adr/adr-0007-deployment/)
 - GDPR Art. 25 (Protección de Datos por Diseño y por Defecto): <https://gdpr-info.eu/art-25-gdpr/>
 - Desidentificación HIPAA Safe Harbor: <https://www.hhs.gov/hipaa/for-professionals/privacy/special-topics/de-identification/index.html>
 - Chile Ley 19.628 + Reforma 21.719: <https://www.bcn.cl/leychile/navegar?idNorma=4125>

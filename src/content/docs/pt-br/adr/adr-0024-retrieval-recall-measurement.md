@@ -14,7 +14,7 @@ Esta documentação descreve uma implementação de referência pública avaliad
 
 ## Contexto
 
-O pipeline de recuperação híbrida ([ADR-0023](./adr-0023-hybrid-retrieval.md)) apresenta um conjunto top-`k` de cartões
+O pipeline de recuperação híbrida ([ADR-0023](/ai-agent-eval-harness-healthtech-docs/pt-br/adr/adr-0023-hybrid-retrieval/)) apresenta um conjunto top-`k` de cartões
 pais por turno. Até agora, a qualidade da recuperação era observada apenas de forma indireta, por
 métricas que acoplam recuperação com geração: um avaliador de cobertura de citação avalia
 se a *resposta* citou um cartão esperado, e um avaliador de fundamentação
@@ -50,7 +50,7 @@ As escolhas fixadas:
     nomeia "recall@4", então é emitido; a ressalva do limite inferior está documentada
     aqui e no relatório.
   - `nDCG@k` = nDCG de ganho binário, o único sinal sensível à classificação (a razão pela
-    qual a [ADR-0023](./adr-0023-hybrid-retrieval.md) adicionou um reranker cross-encoder). Cada cartão gold tem relevância 1
+    qual a [ADR-0023](/ai-agent-eval-harness-healthtech-docs/pt-br/adr/adr-0023-hybrid-retrieval/) adicionou um reranker cross-encoder). Cada cartão gold tem relevância 1
     (os rótulos não carregam relevância graduada); `DCG = Σ 1/log2(rank+2)` sobre
     as posições top-k que contêm um cartão gold (rank com base 0); `IDCG` soma o mesmo
     sobre `min(|gold|, k)` posições ideais, de modo que o nDCG nunca excede 1.0 quando os cartões gold
@@ -174,19 +174,19 @@ As escolhas fixadas:
 - **Desacoplar relevância de suficiência de citação.** Se os números de recall justificarem,
   adicionar um campo explícito de ids-relevantes separado do disjuntivo
   `must_cite_one_of`, e expandir a cobertura de gold sintético para es-419 / pt-BR
-  rumo à paridade com en ([ADR-0019](./adr-0019-synthetic-only-data-invariant.md) somente sintético).
+  rumo à paridade com en ([ADR-0019](/ai-agent-eval-harness-healthtech-docs/pt-br/adr/adr-0019-synthetic-only-data-invariant/) somente sintético).
 - **Conectar um arquivo de linha de base versionado + passo de restauração/atualização na CI** para tornar o
   caminho de tolerância a regressão ativo para todas as dimensões de agregado.
 
 ## Reversão
 
 Remover o avaliador de recall da recuperação do conjunto padrão do runner; a métrica
-simplesmente deixa de ser calculada. O pipeline de recuperação ([ADR-0023](./adr-0023-hybrid-retrieval.md)) permanece intocado.
+simplesmente deixa de ser calculada. O pipeline de recuperação ([ADR-0023](/ai-agent-eval-harness-healthtech-docs/pt-br/adr/adr-0023-hybrid-retrieval/)) permanece intocado.
 
 ## Veja também
 
-- [ADR-0023](./adr-0023-hybrid-retrieval.md) (recuperação híbrida): a superfície que este avaliador mede.
-- [ADR-0021](./adr-0021-parent-document-retrieval.md) (recuperação de documento pai): o passo de deduplicação por pai que define
+- [ADR-0023](/ai-agent-eval-harness-healthtech-docs/pt-br/adr/adr-0023-hybrid-retrieval/) (recuperação híbrida): a superfície que este avaliador mede.
+- [ADR-0021](/ai-agent-eval-harness-healthtech-docs/pt-br/adr/adr-0021-parent-document-retrieval/) (recuperação de documento pai): o passo de deduplicação por pai que define
   a identidade de cartão usada aqui.
-- [ADR-0003](./adr-0003-eval-harness.md) (harness de avaliação): a arquitetura de avaliador / runner / portão estendida.
-- [ADR-0019](./adr-0019-synthetic-only-data-invariant.md) (invariante de dados somente sintéticos): restringe qualquer expansão de rótulos gold.
+- [ADR-0003](/ai-agent-eval-harness-healthtech-docs/pt-br/adr/adr-0003-eval-harness/) (harness de avaliação): a arquitetura de avaliador / runner / portão estendida.
+- [ADR-0019](/ai-agent-eval-harness-healthtech-docs/pt-br/adr/adr-0019-synthetic-only-data-invariant/) (invariante de dados somente sintéticos): restringe qualquer expansão de rótulos gold.

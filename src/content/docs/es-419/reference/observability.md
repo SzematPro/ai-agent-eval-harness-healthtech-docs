@@ -13,7 +13,7 @@ Esta documentación describe una implementación de referencia pública evaluada
 > exportación (Langfuse Cloud Hobby, Phoenix autohospedado, OTLP genérico)
 > y un acumulador de costo + latencia por turno que aparece en cada
 > respuesta de `/chat` y en cada reporte de evaluación. Consulta
-> [ADR-0006](../adr/adr-0006-observability.md) para la decisión; este
+> [ADR-0006](/ai-agent-eval-harness-healthtech-docs/es-419/adr/adr-0006-observability/) para la decisión; este
 > archivo es el manual del operador.
 
 ## 1. Panorama
@@ -143,7 +143,7 @@ mantiene la topología consistente.
 
 El temporizado por nodo también se expone fuera de la canalización de OTel.
 El modo de streaming SSE en `/chat` y `/chat/resume` (consulta
-[ADR-0010](../adr/adr-0010-streaming-execution-graph.md)) emite un evento
+[ADR-0010](/ai-agent-eval-harness-healthtech-docs/es-419/adr/adr-0010-streaming-execution-graph/)) emite un evento
 `node_started` y un evento `node_completed` por cada nodo ejecutado, donde
 el `node_completed` lleva un `duration_ms` medido por el emisor: el
 intervalo de reloj de pared entre los eventos de inicio y fin del nodo para
@@ -171,7 +171,7 @@ Cada span lleva ÚNICAMENTE METADATOS:
 de la respuesta del asistente ni ninguna PHI.** Esto lo impone una prueba
 unitaria dedicada que verifica el invariante de privacidad. Violar este
 invariante implica una puerta de CI fallida. La motivación es la
-[postura regulatoria](regulatory-posture.md): las trazas salen del proceso
+[postura regulatoria](/ai-agent-eval-harness-healthtech-docs/es-419/reference/regulatory-posture/): las trazas salen del proceso
 local; los mensajes del usuario no deben salir.
 
 Si necesitas inspeccionar una transcripción, hazlo desde los registros de

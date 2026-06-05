@@ -15,8 +15,8 @@ e à matriz adversarial de ameaças [MITRE ATLAS](https://atlas.mitre.org/). Est
 documento identifica quais ameaças são mitigadas por controles existentes, quais estão
 parcialmente abordadas e quais exigem trabalho adicional para a implantação em produção.
 
-Leia em conjunto com a [postura regulatória](../reference/regulatory-posture.md), o
-[mapeamento do NIST AI RMF](nist-ai-rmf.md) e a [decisão de salvaguardas](../adr/adr-0005-guardrails.md).
+Leia em conjunto com a [postura regulatória](/ai-agent-eval-harness-healthtech-docs/pt-br/reference/regulatory-posture/), o
+[mapeamento do NIST AI RMF](/ai-agent-eval-harness-healthtech-docs/pt-br/governance/nist-ai-rmf/) e a [decisão de salvaguardas](/ai-agent-eval-harness-healthtech-docs/pt-br/adr/adr-0005-guardrails/).
 
 ## Escopo do modelo de ameaças
 
@@ -51,7 +51,7 @@ nível gratuito do Hugging Face Spaces e não é projetada para segurança de in
 | Propriedade | Valor |
 |----------|-------|
 | **Ameaça** | Provedor de LLM comprometido, pesos de modelo envenenados ou dependência maliciosa |
-| **Mitigações em vigor** | A abstração Protocol do cliente de LLM (veja a [decisão de abstração de fornecedor de LLM](../adr/adr-0002-llm-vendor-abstraction.md)) permite a troca de provedor sem alterações de código; o lockfile de dependências fixa todas as dependências; o monitoramento automatizado de dependências está habilitado; sem downloads de modelos em tempo de execução (modelos pré-treinados acessados via API) |
+| **Mitigações em vigor** | A abstração Protocol do cliente de LLM (veja a [decisão de abstração de fornecedor de LLM](/ai-agent-eval-harness-healthtech-docs/pt-br/adr/adr-0002-llm-vendor-abstraction/)) permite a troca de provedor sem alterações de código; o lockfile de dependências fixa todas as dependências; o monitoramento automatizado de dependências está habilitado; sem downloads de modelos em tempo de execução (modelos pré-treinados acessados via API) |
 | **Risco residual** | Sem verificação da integridade do provedor de LLM; sem atestação de proveniência do modelo; a fixação de dependências evita drift, mas não evita um comprometimento inicial |
 | **Controle** | A camada do cliente de LLM, o lockfile de dependências e o monitoramento automatizado de dependências |
 
@@ -197,9 +197,9 @@ Uma implantação em produção precisaria fortalecer as mitigações em várias
 
 ## Veja também
 
-- [Postura regulatória](../reference/regulatory-posture.md) -- fronteira regulatória
-- [Mapeamento do NIST AI RMF](nist-ai-rmf.md) -- mapeamento do NIST AI RMF
-- [Classificação do Regulamento de IA da UE](eu-ai-act.md) -- classificação do Regulamento de IA da UE
-- [Decisão de salvaguardas](../adr/adr-0005-guardrails.md) -- projeto de salvaguardas
-- [Decisão de observabilidade](../adr/adr-0006-observability.md) -- projeto de observabilidade
-- [Decisão de abstração de fornecedor de LLM](../adr/adr-0002-llm-vendor-abstraction.md) -- abstração de fornecedor de LLM
+- [Postura regulatória](/ai-agent-eval-harness-healthtech-docs/pt-br/reference/regulatory-posture/) -- fronteira regulatória
+- [Mapeamento do NIST AI RMF](/ai-agent-eval-harness-healthtech-docs/pt-br/governance/nist-ai-rmf/) -- mapeamento do NIST AI RMF
+- [Classificação do Regulamento de IA da UE](/ai-agent-eval-harness-healthtech-docs/pt-br/governance/eu-ai-act/) -- classificação do Regulamento de IA da UE
+- [Decisão de salvaguardas](/ai-agent-eval-harness-healthtech-docs/pt-br/adr/adr-0005-guardrails/) -- projeto de salvaguardas
+- [Decisão de observabilidade](/ai-agent-eval-harness-healthtech-docs/pt-br/adr/adr-0006-observability/) -- projeto de observabilidade
+- [Decisão de abstração de fornecedor de LLM](/ai-agent-eval-harness-healthtech-docs/pt-br/adr/adr-0002-llm-vendor-abstraction/) -- abstração de fornecedor de LLM

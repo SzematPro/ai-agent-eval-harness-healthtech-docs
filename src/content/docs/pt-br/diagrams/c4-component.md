@@ -10,7 +10,7 @@ Esta documentação descreve uma implementação de referência pública avaliad
 # Componentes C4 - Runtime do agente LangGraph
 
 A visão de componentes decompõe o contêiner `LangGraph Agent Runtime`
-(consulte [c4-container.md](./c4-container.md)) nos componentes que um único
+(consulte [c4-container.md](/ai-agent-eval-harness-healthtech-docs/pt-br/diagrams/c4-container/)) nos componentes que um único
 turno de `/chat` de fato executa: os nós do grafo e os módulos de guardrail
 de primeira classe que esses nós invocam.
 
@@ -47,8 +47,8 @@ camada orquestrada separada - são módulos chamados de dentro de três nós:
   de rejeição. Ele chama o `interrupt()` do LangGraph para pausar à espera
   da aprovação humana.
 
-Consulte [agent-state-machine.md](./agent-state-machine.md) para o fluxo de
-controle e [ADR-0005](../adr/adr-0005-guardrails.md) para o design dos
+Consulte [agent-state-machine.md](/ai-agent-eval-harness-healthtech-docs/pt-br/diagrams/agent-state-machine/) para o fluxo de
+controle e [ADR-0005](/ai-agent-eval-harness-healthtech-docs/pt-br/adr/adr-0005-guardrails/) para o design dos
 guardrails.
 
 ```mermaid

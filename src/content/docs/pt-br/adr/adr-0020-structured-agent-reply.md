@@ -23,7 +23,7 @@ tabelas de marcadores apenas em inglês.
 Isso é frágil de três maneiras concretas:
 
 1. As tabelas de marcadores são apenas em inglês. O harness inclui as localidades
-   es-419 e pt-BR ([ADR-0001](./adr-0001-orchestration.md)), mas os
+   es-419 e pt-BR ([ADR-0001](/ai-agent-eval-harness-healthtech-docs/pt-br/adr/adr-0001-orchestration/)), mas os
    avaliadores não conseguem enxergar uma recusa nessas localidades a menos que a
    prosa contenha por acaso as substrings em inglês. Uma expressão regular
    multilíngue distinta existia em paralelo na camada de guardrails — duas camadas
@@ -60,7 +60,7 @@ SPA?
   uma única linha.
 - **Orçamento de spans**: os atributos de trace para a resposta estruturada
   devem caber no orçamento de observabilidade existente (política de spans apenas
-  com metadados da [ADR-0006](./adr-0006-observability.md)).
+  com metadados da [ADR-0006](/ai-agent-eval-harness-healthtech-docs/pt-br/adr/adr-0006-observability/)).
 
 ## Opções consideradas
 
@@ -208,11 +208,11 @@ A postura do modo JSON por provedor:
 
 ## Mais informações
 
-- [ADR-0001](./adr-0001-orchestration.md) — estado do agente e LangGraph
-- [ADR-0002](./adr-0002-llm-vendor-abstraction.md) — Protocolo do cliente
+- [ADR-0001](/ai-agent-eval-harness-healthtech-docs/pt-br/adr/adr-0001-orchestration/) — estado do agente e LangGraph
+- [ADR-0002](/ai-agent-eval-harness-healthtech-docs/pt-br/adr/adr-0002-llm-vendor-abstraction/) — Protocolo do cliente
   de LLM
-- [ADR-0003](./adr-0003-eval-harness.md) — Protocolo do avaliador
-- [ADR-0005](./adr-0005-guardrails.md) — contrato de recusa e escalação
-- [ADR-0006](./adr-0006-observability.md) — política de spans apenas com
+- [ADR-0003](/ai-agent-eval-harness-healthtech-docs/pt-br/adr/adr-0003-eval-harness/) — Protocolo do avaliador
+- [ADR-0005](/ai-agent-eval-harness-healthtech-docs/pt-br/adr/adr-0005-guardrails/) — contrato de recusa e escalação
+- [ADR-0006](/ai-agent-eval-harness-healthtech-docs/pt-br/adr/adr-0006-observability/) — política de spans apenas com
   metadados
 - MADR 4.0.0: <https://adr.github.io/madr/>

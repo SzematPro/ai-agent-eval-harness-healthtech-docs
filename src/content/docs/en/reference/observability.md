@@ -13,7 +13,7 @@ This documentation describes a public reference implementation evaluated on 100%
 > destinations (Langfuse Cloud Hobby, Phoenix self-hosted, generic OTLP),
 > and a per-turn cost + latency accumulator that lands on every
 > `/chat` response and every eval report. See
-> [ADR-0006](../adr/adr-0006-observability.md) for the decision; this file
+> [ADR-0006](/ai-agent-eval-harness-healthtech-docs/en/adr/adr-0006-observability/) for the decision; this file
 > is the operator manual.
 
 ## 1. Overview
@@ -140,7 +140,7 @@ own a tracer, so the graph-layer span keeps the topology consistent.
 
 Per-node timing is also surfaced outside the OTel pipeline. The SSE
 streaming mode on `/chat` and `/chat/resume` (see
-[ADR-0010](../adr/adr-0010-streaming-execution-graph.md)) emits a
+[ADR-0010](/ai-agent-eval-harness-healthtech-docs/en/adr/adr-0010-streaming-execution-graph/)) emits a
 `node_started` and a `node_completed` event per executed node, the
 `node_completed` carrying an emitter-measured `duration_ms` - the
 wall-clock interval between the node's start and end events for the
@@ -167,7 +167,7 @@ Every span carries METADATA only:
 response text, or any PHI.** This is enforced by a dedicated unit
 test that asserts the privacy invariant. Violating this invariant means
 a failing CI gate. The motivation is the
-[regulatory posture](regulatory-posture.md): traces leave
+[regulatory posture](/ai-agent-eval-harness-healthtech-docs/en/reference/regulatory-posture/): traces leave
 the local process; user messages must not.
 
 If you need to inspect a transcript, do it from the FastAPI logs in

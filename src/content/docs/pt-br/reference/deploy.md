@@ -132,7 +132,7 @@ O Agent Execution Graph é alimentado por um modo de streaming server-sent-event
 `Accept: text/event-stream` recebe um corpo `text/event-stream` de eventos de
 execução por nó em vez do `ChatResponse` em JSON. O design de streaming está
 registrado na
-[ADR-0010](../adr/adr-0010-streaming-execution-graph.md).
+[ADR-0010](/ai-agent-eval-harness-healthtech-docs/pt-br/adr/adr-0010-streaming-execution-graph/).
 
 Para que o grafo ao vivo pareça ao vivo, esses eventos precisam chegar ao
 navegador *incrementalmente* - conforme cada nó roda - em vez de serem

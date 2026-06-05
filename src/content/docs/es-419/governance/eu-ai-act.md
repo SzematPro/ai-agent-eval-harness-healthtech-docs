@@ -15,8 +15,8 @@ Mapea la implementación de referencia `ai-agent-eval-harness-healthtech` frente
 según los niveles de riesgo de la Ley y mapea los artículos relevantes a los patrones
 de gobernanza existentes del repositorio.
 
-Léase junto con la [postura regulatoria](../reference/regulatory-posture.md) y el
-[mapeo del NIST AI RMF](nist-ai-rmf.md).
+Léase junto con la [postura regulatoria](/ai-agent-eval-harness-healthtech-docs/es-419/reference/regulatory-posture/) y el
+[mapeo del NIST AI RMF](/ai-agent-eval-harness-healthtech-docs/es-419/governance/nist-ai-rmf/).
 
 ## Clasificación del nivel de riesgo
 
@@ -52,7 +52,7 @@ con versiones), diseñada para que el operador humano, no el modelo, tenga la de
 
 La implementación de referencia usa modelos fundacionales (Groq, Cerebras, OpenAI, Anthropic)
 detrás de un delgado Protocol del cliente LLM (véase la
-[decisión de abstracción de proveedores de LLM](../adr/adr-0002-llm-vendor-abstraction.md)). No
+[decisión de abstracción de proveedores de LLM](/ai-agent-eval-harness-healthtech-docs/es-419/adr/adr-0002-llm-vendor-abstraction/)). No
 comercializa por sí misma un modelo GPAI en el mercado de la UE. Las obligaciones de GPAI (documentación
 técnica, cumplimiento de derechos de autor, resumen de los datos de entrenamiento) recaen sobre los
 proveedores de los modelos, no sobre esta aplicación derivada.
@@ -64,9 +64,9 @@ proveedores de los modelos, no sobre esta aplicación derivada.
 | Art. 9 (Gestión de riesgos) | Identificación, análisis y mitigación continuos de riesgos | El arnés de evaluación identifica regresiones de seguridad/citación/escalamiento en cada cambio; los registros de decisiones de arquitectura documentan las decisiones de tratamiento del riesgo | No hay un sistema formal de gestión de riesgos con revisión periódica; no hay un registro de riesgos sistemático |
 | Art. 10 (Datos y gobernanza de datos) | Gobernanza de datos de entrenamiento/validación, representatividad, examen de sesgos | La declaración de datos documenta la metodología de generación, la procedencia, las licencias y la lista de exclusiones; la puntuación de paridad entre locales examina el sesgo entre locales | La gobernanza de datos cubre solo conjuntos de datos sintéticos; no hay un marco de gobernanza de datos reales |
 | Art. 11 + Anexo IV (Documentación técnica) | Descripción del sistema, especificaciones de diseño, métricas de rendimiento | La ficha del modelo (formato CHAI), la especificación del sistema, los registros de decisiones de arquitectura, la postura regulatoria, la declaración de datos | La documentación es exhaustiva para una implementación de referencia; el Anexo IV requiere un formato y una profundidad específicos |
-| Art. 12 (Conservación de registros / logging) | Registro automático de eventos para la trazabilidad | Spans de OpenTelemetry y OpenInference en cada nodo, llamada al LLM, recuperación y decisión de barrera de seguridad (véase la [decisión de observabilidad](../adr/adr-0006-observability.md)); sumideros de Langfuse Cloud y Phoenix | El registro existe pero es de grado de observabilidad, no de grado de auditoría; no hay registros a prueba de manipulaciones; no hay un período de retención definido |
+| Art. 12 (Conservación de registros / logging) | Registro automático de eventos para la trazabilidad | Spans de OpenTelemetry y OpenInference en cada nodo, llamada al LLM, recuperación y decisión de barrera de seguridad (véase la [decisión de observabilidad](/ai-agent-eval-harness-healthtech-docs/es-419/adr/adr-0006-observability/)); sumideros de Langfuse Cloud y Phoenix | El registro existe pero es de grado de observabilidad, no de grado de auditoría; no hay registros a prueba de manipulaciones; no hay un período de retención definido |
 | Art. 13 (Transparencia y suministro de información) | Sistema diseñado para la transparencia; los usuarios comprenden los resultados | Rastro de decisiones de barrera de seguridad en cada respuesta; conjunto de citaciones en cada afirmación clínica; ficha del modelo pública; la respuesta de la demostración lleva un aviso | La transparencia es a nivel de respuesta; el Art. 13 requiere documentación orientada al implementador y explicaciones orientadas al usuario |
-| Art. 14 (Supervisión humana) | Diseñado para una supervisión humana eficaz | Nodo opcional de revisión con humano en el ciclo mediante una interrupción de LangGraph (véase la [decisión del grafo de ejecución por streaming](../adr/adr-0010-streaming-execution-graph.md)); el operador humano puede aprobar/editar/rechazar borradores de alto riesgo | La revisión con humano en el ciclo está desactivada por defecto; no hay una interfaz de supervisión humana dedicada para el monitoreo; no hay documentación del mecanismo de anulación |
+| Art. 14 (Supervisión humana) | Diseñado para una supervisión humana eficaz | Nodo opcional de revisión con humano en el ciclo mediante una interrupción de LangGraph (véase la [decisión del grafo de ejecución por streaming](/ai-agent-eval-harness-healthtech-docs/es-419/adr/adr-0010-streaming-execution-graph/)); el operador humano puede aprobar/editar/rechazar borradores de alto riesgo | La revisión con humano en el ciclo está desactivada por defecto; no hay una interfaz de supervisión humana dedicada para el monitoreo; no hay documentación del mecanismo de anulación |
 | Art. 15 (Exactitud, robustez, ciberseguridad) | Niveles apropiados de exactitud, robustez y ciberseguridad | Compuerta de evaluación determinista (218/218 aprobados); red-team nocturno; barreras de seguridad antes del LLM; redacción de PII; instrumentación de OpenTelemetry; escaneo de secretos en CI | La exactitud se mide sobre datos sintéticos; la robustez se prueba sobre un conjunto adversario curado; no hay pruebas de penetración ni evaluación formal de seguridad |
 | Art. 17 (Sistema de gestión de la calidad) | SGC documentado para sistemas de alto riesgo | El arnés de evaluación como sistema de medición; control de cambios basado en registros de decisiones; compuertas de evaluación que bloquean cambios; notas de versión | No hay un SGC formal; no hay un manual de calidad; no hay un ciclo de auditoría interna |
 
@@ -88,7 +88,7 @@ Lo que el repositorio demuestra hoy:
   repositorio es una demostración de ingeniería consciente de la gobernanza, no una evaluación de
   conformidad
 
-El documento de [postura regulatoria](../reference/regulatory-posture.md) registra la
+El documento de [postura regulatoria](/ai-agent-eval-harness-healthtech-docs/es-419/reference/regulatory-posture/) registra la
 frontera bienestar/CDS que mantiene al sistema del lado del bienestar general de la línea,
 y las plantillas de rechazo hacen cumplir esa frontera en el código.
 
@@ -123,8 +123,8 @@ a "formalizar y extender patrones existentes".
 
 ## Véase también
 
-- [Postura regulatoria](../reference/regulatory-posture.md) -- frontera regulatoria que el diseño respeta
-- [Ficha del modelo](../reference/model-card.md) -- Ficha de Modelo Aplicada CHAI
-- [Mapeo del NIST AI RMF](nist-ai-rmf.md) -- mapeo del NIST AI RMF
-- [Modelo de amenazas OWASP / ATLAS](owasp-atlas-threat-model.md) -- modelo de amenazas
-- [Decisión de barreras de seguridad](../adr/adr-0005-guardrails.md) -- diseño de barreras de seguridad
+- [Postura regulatoria](/ai-agent-eval-harness-healthtech-docs/es-419/reference/regulatory-posture/) -- frontera regulatoria que el diseño respeta
+- [Ficha del modelo](/ai-agent-eval-harness-healthtech-docs/es-419/reference/model-card/) -- Ficha de Modelo Aplicada CHAI
+- [Mapeo del NIST AI RMF](/ai-agent-eval-harness-healthtech-docs/es-419/governance/nist-ai-rmf/) -- mapeo del NIST AI RMF
+- [Modelo de amenazas OWASP / ATLAS](/ai-agent-eval-harness-healthtech-docs/es-419/governance/owasp-atlas-threat-model/) -- modelo de amenazas
+- [Decisión de barreras de seguridad](/ai-agent-eval-harness-healthtech-docs/es-419/adr/adr-0005-guardrails/) -- diseño de barreras de seguridad

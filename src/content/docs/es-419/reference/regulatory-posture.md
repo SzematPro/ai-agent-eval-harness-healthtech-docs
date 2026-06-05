@@ -219,7 +219,7 @@ herramienta de decisión clínica. Concretamente:
   embarazo + teratógeno lo maneja la capa del LLM y del prompt de sistema,
   no el enrutador determinista (necesita un léxico de nombres de fármacos
   que una lista de regex no puede cargar); consulta
-  [ADR-0005](../adr/adr-0005-guardrails.md).
+  [ADR-0005](/ai-agent-eval-harness-healthtech-docs/es-419/adr/adr-0005-guardrails/).
 
 ## Lo que el agente NO hace
 
@@ -286,8 +286,8 @@ propiedad del sistema relevante para la seguridad.
 
 ## Consulta también
 
-- [decisión de barreras de seguridad](../adr/adr-0005-guardrails.md) -
+- [decisión de barreras de seguridad](/ai-agent-eval-harness-healthtech-docs/es-419/adr/adr-0005-guardrails/) -
   diseño de las barreras de seguridad.
-- [datos](data.md) - política de datos solo sintéticos y la
+- [datos](/ai-agent-eval-harness-healthtech-docs/es-419/reference/data/) - política de datos solo sintéticos y la
   lista completa de exclusiones.
-- [política de seguridad](security.md) - política de divulgación.
+- [política de seguridad](/ai-agent-eval-harness-healthtech-docs/es-419/reference/security/) - política de divulgación.

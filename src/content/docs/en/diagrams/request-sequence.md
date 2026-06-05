@@ -27,8 +27,8 @@ no-match turn comes back as an assistant message in the graph's final
 state. OpenTelemetry spans are opened in every node and around the LLM
 call.
 
-See [c4-container.md](./c4-container.md) for the static decomposition and
-[c4-component.md](./c4-component.md) for the node-and-module view.
+See [c4-container.md](/ai-agent-eval-harness-healthtech-docs/en/diagrams/c4-container/) for the static decomposition and
+[c4-component.md](/ai-agent-eval-harness-healthtech-docs/en/diagrams/c4-component/) for the node-and-module view.
 
 ## Single completed turn
 
@@ -142,7 +142,7 @@ genuinely bypassed conditional node, and ends with a terminal
 `turn_completed` event carrying the full `ChatResponse`. A failure after
 the first byte is an in-stream `error` event; a failure before the first
 byte is a normal HTTP error. See
-[ADR-0010](../adr/adr-0010-streaming-execution-graph.md) for the event
+[ADR-0010](/ai-agent-eval-harness-healthtech-docs/en/adr/adr-0010-streaming-execution-graph/) for the event
 schema.
 
 ```mermaid

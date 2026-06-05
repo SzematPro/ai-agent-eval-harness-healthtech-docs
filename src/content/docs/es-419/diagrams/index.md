@@ -17,9 +17,9 @@ con Mermaid y documentan el sistema tal como está construido.
 
 ## Índice
 
-- [Máquina de estados del agente](./agent-state-machine.md)
-- [Diagrama de componentes C4](./c4-component.md)
-- [Diagrama de contenedores C4](./c4-container.md)
-- [Diagrama de contexto C4](./c4-context.md)
-- [Canalización de evaluación](./evals-pipeline.md)
-- [Secuencia de solicitudes](./request-sequence.md)
+- [Máquina de estados del agente](/ai-agent-eval-harness-healthtech-docs/es-419/diagrams/agent-state-machine/)
+- [Diagrama de componentes C4](/ai-agent-eval-harness-healthtech-docs/es-419/diagrams/c4-component/)
+- [Diagrama de contenedores C4](/ai-agent-eval-harness-healthtech-docs/es-419/diagrams/c4-container/)
+- [Diagrama de contexto C4](/ai-agent-eval-harness-healthtech-docs/es-419/diagrams/c4-context/)
+- [Canalización de evaluación](/ai-agent-eval-harness-healthtech-docs/es-419/diagrams/evals-pipeline/)
+- [Secuencia de solicitudes](/ai-agent-eval-harness-healthtech-docs/es-419/diagrams/request-sequence/)

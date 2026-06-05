@@ -128,7 +128,7 @@ streaming mode on `POST /chat` and `POST /chat/resume`: a request that
 carries `Accept: text/event-stream` gets a `text/event-stream` body of
 per-node execution events instead of the JSON `ChatResponse`. The
 streaming design is recorded in
-[ADR-0010](../adr/adr-0010-streaming-execution-graph.md).
+[ADR-0010](/ai-agent-eval-harness-healthtech-docs/en/adr/adr-0010-streaming-execution-graph/).
 
 For the live graph to feel live, those events must reach the browser
 *incrementally* - as each node runs - rather than being buffered and

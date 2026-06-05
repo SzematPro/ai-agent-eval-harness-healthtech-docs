@@ -17,8 +17,8 @@ Esta documentación describe una implementación de referencia pública evaluada
 > documentación del modelo, arnés de evaluación, barreras de seguridad, observabilidad -- se mapean directamente a
 > los principios de gestión de riesgo de modelos que las entidades reguladas por la CMF deben seguir.
 >
-> Léase junto con la [postura regulatoria](../reference/regulatory-posture.md) y el
-> [mapeo del NIST AI RMF](nist-ai-rmf.md).
+> Léase junto con la [postura regulatoria](/ai-agent-eval-harness-healthtech-docs/es-419/reference/regulatory-posture/) y el
+> [mapeo del NIST AI RMF](/ai-agent-eval-harness-healthtech-docs/es-419/governance/nist-ai-rmf/).
 
 ## Aplicabilidad
 
@@ -130,9 +130,9 @@ modelos.
 
 ## Véase también
 
-- [Postura regulatoria](../reference/regulatory-posture.md) -- límite regulatorio
-- [Ficha del modelo](../reference/model-card.md) -- CHAI Applied Model Card
-- [Mapeo del NIST AI RMF](nist-ai-rmf.md) -- mapeo del NIST AI RMF
-- [Mapeo de la Ley 19.628 de Chile](chile-ley-19628.md) -- mapeo de protección de datos de Chile
-- [Plan de detección de deriva](drift-detection-plan.md) -- plan de detección de deriva
-- [Diseño de barreras de seguridad](../adr/adr-0005-guardrails.md) -- diseño de barreras de seguridad
+- [Postura regulatoria](/ai-agent-eval-harness-healthtech-docs/es-419/reference/regulatory-posture/) -- límite regulatorio
+- [Ficha del modelo](/ai-agent-eval-harness-healthtech-docs/es-419/reference/model-card/) -- CHAI Applied Model Card
+- [Mapeo del NIST AI RMF](/ai-agent-eval-harness-healthtech-docs/es-419/governance/nist-ai-rmf/) -- mapeo del NIST AI RMF
+- [Mapeo de la Ley 19.628 de Chile](/ai-agent-eval-harness-healthtech-docs/es-419/governance/chile-ley-19628/) -- mapeo de protección de datos de Chile
+- [Plan de detección de deriva](/ai-agent-eval-harness-healthtech-docs/es-419/governance/drift-detection-plan/) -- plan de detección de deriva
+- [Diseño de barreras de seguridad](/ai-agent-eval-harness-healthtech-docs/es-419/adr/adr-0005-guardrails/) -- diseño de barreras de seguridad

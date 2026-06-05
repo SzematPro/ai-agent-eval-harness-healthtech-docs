@@ -161,10 +161,10 @@ cost accumulator records spend against the correct provider.
 
 ## More Information
 
-- [ADR-0002](./adr-0002-llm-vendor-abstraction.md) -- LLM vendor
+- [ADR-0002](/ai-agent-eval-harness-healthtech-docs/en/adr/adr-0002-llm-vendor-abstraction/) -- LLM vendor
   abstraction (the Protocol the cascade composes over)
-- [ADR-0007](./adr-0007-deployment.md) -- deployment target and the
+- [ADR-0007](/ai-agent-eval-harness-healthtech-docs/en/adr/adr-0007-deployment/) -- deployment target and the
   drivers behind the resilience layer
-- [ADR-0017](./adr-0017-free-tier-deployment-resilience.md) -- the
+- [ADR-0017](/ai-agent-eval-harness-healthtech-docs/en/adr/adr-0017-free-tier-deployment-resilience/) -- the
   complementary in-process rate limiter and response cache
 - MADR 4.0.0: <https://adr.github.io/madr/>

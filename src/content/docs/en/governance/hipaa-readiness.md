@@ -15,8 +15,8 @@ and Breach Notification Rules. This is an honest assessment: the system is a
 reference implementation that does not handle PHI and is not subject to HIPAA.
 The assessment identifies what exists today and what a PHI-handling deployment would need.
 
-Read alongside the [regulatory posture](../reference/regulatory-posture.md) and the
-[PII redaction documentation](pii-redaction.md).
+Read alongside the [regulatory posture](/ai-agent-eval-harness-healthtech-docs/en/reference/regulatory-posture/) and the
+[PII redaction documentation](/ai-agent-eval-harness-healthtech-docs/en/governance/pii-redaction/).
 
 ## Applicability
 
@@ -63,7 +63,7 @@ context where it would process PHI on behalf of a covered entity.
 | Requirement (45 CFR 164.312) | Current State | Production Path |
 |-------------------------------|--------------|-----------------|
 | **Access control** | No runtime user authentication for demo API; no PHI to protect | Unique user identification; emergency access procedure; automatic logoff; encryption and decryption of PHI at rest |
-| **Audit controls** | OpenTelemetry spans with OpenInference semantic conventions on every node, LLM call, retrieval, and guardrail decision (see the [observability decision](../adr/adr-0006-observability.md)); Langfuse Cloud and Phoenix sinks | Comprehensive audit logging with tamper-evident storage; 6-year retention; query interface for audit review; real-time alerting on anomalous access patterns |
+| **Audit controls** | OpenTelemetry spans with OpenInference semantic conventions on every node, LLM call, retrieval, and guardrail decision (see the [observability decision](/ai-agent-eval-harness-healthtech-docs/en/adr/adr-0006-observability/)); Langfuse Cloud and Phoenix sinks | Comprehensive audit logging with tamper-evident storage; 6-year retention; query interface for audit review; real-time alerting on anomalous access patterns |
 | **Integrity controls** | Eval harness detects behavioural regressions; the chat response schema is locked; synthetic data files are version-controlled | Electronic mechanisms to authenticate PHI; integrity controls to prevent unauthorised alteration; backup integrity verification |
 | **Transmission security** | HTTPS on Hugging Face Spaces (platform-provided); API returns structured JSON | End-to-end encryption in transit (TLS 1.3 minimum); network segmentation; VPN for administrative access |
 
@@ -90,7 +90,7 @@ to process PHI would need:
 
 As of 2026, most major LLM providers offer BAA-eligible tiers for enterprise customers.
 The thin LLM client Protocol abstraction (see the
-[LLM vendor abstraction decision](../adr/adr-0002-llm-vendor-abstraction.md)) supports
+[LLM vendor abstraction decision](/ai-agent-eval-harness-healthtech-docs/en/adr/adr-0002-llm-vendor-abstraction/)) supports
 switching providers to ones with appropriate BAAs without code changes.
 
 ## Current State
@@ -100,7 +100,7 @@ being subject to HIPAA:
 
 - **No PHI**: The system handles only synthetic data. No real patient data enters the
   repository, the demo, or the eval pipeline at any point. This is enforced by a
-  data-acceptance check and documented in the [data statement](../reference/data.md).
+  data-acceptance check and documented in the [data statement](/ai-agent-eval-harness-healthtech-docs/en/reference/data/).
 - **PII redaction**: A redaction stage detects and redacts email, phone numbers (US, Chile,
   Brazil formats), RUT, CPF, DNI, SSN, credit card numbers (Luhn-validated), and PHI
   patterns (MRN, DOB) at both input and output stages.
@@ -109,7 +109,7 @@ being subject to HIPAA:
   is available when a database connection string is configured.
 - **Audit trail**: OpenTelemetry spans with OpenInference semantic conventions wrap every
   node, LLM call, retrieval, and guardrail decision (see the
-  [observability decision](../adr/adr-0006-observability.md)). The user's message text is
+  [observability decision](/ai-agent-eval-harness-healthtech-docs/en/adr/adr-0006-observability/)). The user's message text is
   explicitly excluded from spans (privacy invariant enforced by an automated test).
 - **Privacy-by-design**: User message text never enters OpenTelemetry spans, logs, or trace
   attributes. This is a hard constraint enforced by an automated test invariant.
@@ -150,8 +150,8 @@ implementation cannot demonstrate on its own.
 
 ## See Also
 
-- [Regulatory posture](../reference/regulatory-posture.md) -- regulatory boundary
-- [PII redaction](pii-redaction.md) -- PII redaction documentation
-- [Audit logging plan](audit-logging-plan.md) -- audit logging plan
-- [ISO 42001 / SOC 2 readiness](iso42001-soc2.md) -- ISO 42001 / SOC 2 readiness
-- [Observability decision](../adr/adr-0006-observability.md) -- observability design
+- [Regulatory posture](/ai-agent-eval-harness-healthtech-docs/en/reference/regulatory-posture/) -- regulatory boundary
+- [PII redaction](/ai-agent-eval-harness-healthtech-docs/en/governance/pii-redaction/) -- PII redaction documentation
+- [Audit logging plan](/ai-agent-eval-harness-healthtech-docs/en/governance/audit-logging-plan/) -- audit logging plan
+- [ISO 42001 / SOC 2 readiness](/ai-agent-eval-harness-healthtech-docs/en/governance/iso42001-soc2/) -- ISO 42001 / SOC 2 readiness
+- [Observability decision](/ai-agent-eval-harness-healthtech-docs/en/adr/adr-0006-observability/) -- observability design

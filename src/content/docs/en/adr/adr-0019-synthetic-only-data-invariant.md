@@ -76,7 +76,7 @@ The PR burden of proof for any proposed new data source:
 2. Provenance chain (who originally produced it, when, what edits
    the repo applied).
 3. Explicit compatibility assertion against Apache 2.0 (the project's
-   license posture per [ADR-0008](./adr-0008-licensing.md)).
+   license posture per [ADR-0008](/ai-agent-eval-harness-healthtech-docs/en/adr/adr-0008-licensing/)).
 4. The maintainer reviews the three items above before the PR is
    merged.
 
@@ -88,9 +88,9 @@ synthetic corpus can verify the policy directly.
 
 - The security policy states the exclusion list and policy statement.
 - The synthetic dataset directory carries a per-source license audit.
-- The published [data statement](../reference/data.md) is the dataset
+- The published [data statement](/ai-agent-eval-harness-healthtech-docs/en/reference/data/) is the dataset
   card with provenance per card.
-- The governance [data card](../governance/data-card.md) is the
+- The governance [data card](/ai-agent-eval-harness-healthtech-docs/en/governance/data-card/) is the
   governance-facing view of the same.
 - Pre-merge: the PR review checklist includes the burden-of-proof gate
   for any new data file.
@@ -115,7 +115,7 @@ synthetic corpus can verify the policy directly.
   additional licensed evals for true coverage.
 - The synthetic-only constraint forecloses the use of real-world
   drift signals (no MIMIC-style deviation telemetry). The [drift
-  detection plan](../governance/drift-detection-plan.md) is honest
+  detection plan](/ai-agent-eval-harness-healthtech-docs/en/governance/drift-detection-plan/) is honest
   about this gap.
 - A contributor who wants to add a useful licensed dataset has to do
   the work of either (a) finding a public-domain alternative, or
@@ -160,9 +160,9 @@ synthetic corpus can verify the policy directly.
 
 ## More Information
 
-- [Data statement](../reference/data.md) — dataset card
-- [Data card](../governance/data-card.md) — governance-facing dataset card
-- [ADR-0004](./adr-0004-rag-stack.md) — RAG stack (the consumer of
+- [Data statement](/ai-agent-eval-harness-healthtech-docs/en/reference/data/) — dataset card
+- [Data card](/ai-agent-eval-harness-healthtech-docs/en/governance/data-card/) — governance-facing dataset card
+- [ADR-0004](/ai-agent-eval-harness-healthtech-docs/en/adr/adr-0004-rag-stack/) — RAG stack (the consumer of
   the synthetic corpus)
-- [ADR-0008](./adr-0008-licensing.md) — project licensing posture
+- [ADR-0008](/ai-agent-eval-harness-healthtech-docs/en/adr/adr-0008-licensing/) — project licensing posture
 - MADR 4.0.0: <https://adr.github.io/madr/>

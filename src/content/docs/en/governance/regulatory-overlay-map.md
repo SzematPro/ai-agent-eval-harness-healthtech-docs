@@ -15,13 +15,13 @@ the agent state machine links to the governance documents relevant to it.
 
 | Node Type | Governance Docs | Relevance Summary |
 |-----------|----------------|-------------------|
-| `intake` | [HIPAA readiness](hipaa-readiness.md), [Chile Ley 19.628](chile-ley-19628.md), [CMF Norma 20](cmf-norma-20.md) | Input handling, PII ingress, jurisdictional compliance |
-| `guardrail_pre` | [PII redaction](pii-redaction.md), [OWASP ATLAS threat model](owasp-atlas-threat-model.md), [Voice consent and deepfake](voice-consent-deepfake.md) | PII detection, adversarial defense, voice consent |
-| `retrieve_context` | [Data card](data-card.md), [Drift detection plan](drift-detection-plan.md) | Data provenance, knowledge base integrity |
-| `generate_response` | [NIST AI RMF](nist-ai-rmf.md), [EU AI Act](eu-ai-act.md), [Multilingual safety parity](multilingual-safety-parity.md) | Risk management, regulatory classification, locale safety |
-| `review_response` | [Audit logging plan](audit-logging-plan.md), [ISO 42001 / SOC 2](iso42001-soc2.md) | Human-in-the-loop audit, management system controls |
-| `guardrail_post` | [Data card](data-card.md), [Drift detection plan](drift-detection-plan.md), [Audit logging plan](audit-logging-plan.md) | Output verification, citation integrity, audit trail |
-| `closing` | [ISO 42001 / SOC 2](iso42001-soc2.md) | Session finalization, management system compliance |
+| `intake` | [HIPAA readiness](/ai-agent-eval-harness-healthtech-docs/en/governance/hipaa-readiness/), [Chile Ley 19.628](/ai-agent-eval-harness-healthtech-docs/en/governance/chile-ley-19628/), [CMF Norma 20](/ai-agent-eval-harness-healthtech-docs/en/governance/cmf-norma-20/) | Input handling, PII ingress, jurisdictional compliance |
+| `guardrail_pre` | [PII redaction](/ai-agent-eval-harness-healthtech-docs/en/governance/pii-redaction/), [OWASP ATLAS threat model](/ai-agent-eval-harness-healthtech-docs/en/governance/owasp-atlas-threat-model/), [Voice consent and deepfake](/ai-agent-eval-harness-healthtech-docs/en/governance/voice-consent-deepfake/) | PII detection, adversarial defense, voice consent |
+| `retrieve_context` | [Data card](/ai-agent-eval-harness-healthtech-docs/en/governance/data-card/), [Drift detection plan](/ai-agent-eval-harness-healthtech-docs/en/governance/drift-detection-plan/) | Data provenance, knowledge base integrity |
+| `generate_response` | [NIST AI RMF](/ai-agent-eval-harness-healthtech-docs/en/governance/nist-ai-rmf/), [EU AI Act](/ai-agent-eval-harness-healthtech-docs/en/governance/eu-ai-act/), [Multilingual safety parity](/ai-agent-eval-harness-healthtech-docs/en/governance/multilingual-safety-parity/) | Risk management, regulatory classification, locale safety |
+| `review_response` | [Audit logging plan](/ai-agent-eval-harness-healthtech-docs/en/governance/audit-logging-plan/), [ISO 42001 / SOC 2](/ai-agent-eval-harness-healthtech-docs/en/governance/iso42001-soc2/) | Human-in-the-loop audit, management system controls |
+| `guardrail_post` | [Data card](/ai-agent-eval-harness-healthtech-docs/en/governance/data-card/), [Drift detection plan](/ai-agent-eval-harness-healthtech-docs/en/governance/drift-detection-plan/), [Audit logging plan](/ai-agent-eval-harness-healthtech-docs/en/governance/audit-logging-plan/) | Output verification, citation integrity, audit trail |
+| `closing` | [ISO 42001 / SOC 2](/ai-agent-eval-harness-healthtech-docs/en/governance/iso42001-soc2/) | Session finalization, management system compliance |
 
 ## Notes
 

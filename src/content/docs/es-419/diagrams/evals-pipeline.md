@@ -31,8 +31,8 @@ La ejecución por defecto del runner usa dos grupos de puntuadores:
   ejecuta solo contra los puntuadores deterministas. El modelo juez es Cerebras
   `gpt-oss-120b`.
 
-Consulta [ADR-0003](../adr/adr-0003-eval-harness.md) para la política de umbrales
-y [ADR-0009](../adr/adr-0009-judge-model-cerebras.md) para la elección del modelo
+Consulta [ADR-0003](/ai-agent-eval-harness-healthtech-docs/es-419/adr/adr-0003-eval-harness/) para la política de umbrales
+y [ADR-0009](/ai-agent-eval-harness-healthtech-docs/es-419/adr/adr-0009-judge-model-cerebras/) para la elección del modelo
 juez.
 
 ```mermaid

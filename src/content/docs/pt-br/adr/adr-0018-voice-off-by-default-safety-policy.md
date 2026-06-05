@@ -15,7 +15,7 @@ Esta documentação descreve uma implementação de referência pública avaliad
 
 ## Contexto e definição do problema
 
-A [ADR-0014](./adr-0014-voice-extension.md) adicionou voz (TTS via ElevenLabs
+A [ADR-0014](/ai-agent-eval-harness-healthtech-docs/pt-br/adr/adr-0014-voice-extension/) adicionou voz (TTS via ElevenLabs
 `eleven_multilingual_v2`, STT via ElevenLabs Scribe) como uma extensão da
 SPA da demo. Aquela ADR captura o design, mas não codifica a postura de
 segurança para o estado padrão do interruptor de voz.
@@ -72,7 +72,7 @@ do estado do interruptor, de modo que o contexto de consentimento nunca desapare
   de consentimento que liga o interruptor.
 - A nota de governança sobre deepfake e consentimento documenta a política e
   referencia esta ADR (consulte [política de consentimento de voz e
-  deepfake](../governance/voice-consent-deepfake.md)).
+  deepfake](/ai-agent-eval-harness-healthtech-docs/pt-br/governance/voice-consent-deepfake/)).
 - Paridade de localidade: o interruptor está DESLIGADO por padrão em en, es-419,
   pt-BR; o modal de divulgação é totalmente traduzido nas três.
 
@@ -126,6 +126,6 @@ do estado do interruptor, de modo que o contexto de consentimento nunca desapare
 
 ## Mais informações
 
-- [ADR-0014](./adr-0014-voice-extension.md) — design da extensão de voz
-- [Política de consentimento de voz e deepfake](../governance/voice-consent-deepfake.md)
+- [ADR-0014](/ai-agent-eval-harness-healthtech-docs/pt-br/adr/adr-0014-voice-extension/) — design da extensão de voz
+- [Política de consentimento de voz e deepfake](/ai-agent-eval-harness-healthtech-docs/pt-br/governance/voice-consent-deepfake/)
 - MADR 4.0.0: <https://adr.github.io/madr/>

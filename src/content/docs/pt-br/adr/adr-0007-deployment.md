@@ -28,7 +28,7 @@ o que roda em produção.
 O agente é FastAPI / Uvicorn de processo único, com um armazenamento
 Chroma embarcado e um embedder de fallback embutido, despachando chamadas de LLM
 para um provedor externo (Groq por padrão; ver
-[ADR-0002](./adr-0002-llm-vendor-abstraction.md)). Sem GPU, sem peso de
+[ADR-0002](/ai-agent-eval-harness-healthtech-docs/pt-br/adr/adr-0002-llm-vendor-abstraction/)). Sem GPU, sem peso de
 modelo para hospedar, sem disco persistente além da KB sintética de 30-50 cartões.
 
 Como distribuímos uma URL de demo pública e sempre alcançável deste agente
@@ -156,7 +156,7 @@ card do Space para que um leitor não seja surpreendido.
   contingência.
 - **Somente CPU**: o Space não consegue hospedar um LLM local; a demo
   depende de um provedor externo para completions. Por design (ver
-  [ADR-0002](./adr-0002-llm-vendor-abstraction.md)).
+  [ADR-0002](/ai-agent-eval-harness-healthtech-docs/pt-br/adr/adr-0002-llm-vendor-abstraction/)).
 - **O front-matter YAML no card do Space** é incompatível com
   o renderizador do GitHub, então o workflow de implantação tem que trocar o README
   raiz em um commit exclusivo de implantação.
@@ -227,7 +227,7 @@ card do Space para que um leitor não seja surpreendido.
 
 ## Mais Informações
 
-- Runbook do operador: [referência de implantação](../reference/deploy.md)
+- Runbook do operador: [referência de implantação](/ai-agent-eval-harness-healthtech-docs/pt-br/reference/deploy/)
 - Documentação do Docker SDK do Hugging Face Spaces:
   <https://huggingface.co/docs/hub/spaces-sdks-docker>
 - Preços do Hugging Face (níveis de hardware dos Spaces):
@@ -256,7 +256,7 @@ testes determinísticos e ligadas para o Space ao vivo:
   pura) cascateia por Cerebras (fallback gratuito) e Anthropic (último
   recurso pago) antes que qualquer erro alcance o frontend. Um 4xx que não seja 429 é um
   erro genuíno de cliente e é relançado inalterado. Consistente com a
-  abstração de fornecedor do [ADR-0002](./adr-0002-llm-vendor-abstraction.md) -
+  abstração de fornecedor do [ADR-0002](/ai-agent-eval-harness-healthtech-docs/pt-br/adr/adr-0002-llm-vendor-abstraction/) -
   o fallback é um wrapper em nível de Protocol, não uma mudança em nível de nó.
 - **Cache de resposta com TTL curto.** Um cache em processo limitado e de TTL curto,
   chaveado na tupla normalizada (entrada, localidade, modelo), de modo que os cliques de
@@ -264,7 +264,7 @@ testes determinísticos e ligadas para o Space ao vivo:
 
 **Consequência de worker único.** Todas as três primitivas são por processo,
 assim como o checkpointer HITL em memória (ver
-[ADR-0001](./adr-0001-orchestration.md)). O Space, portanto, roda um
+[ADR-0001](/ai-agent-eval-harness-healthtech-docs/pt-br/adr/adr-0001-orchestration/)). O Space, portanto, roda um
 único worker uvicorn por design; um segundo worker não compartilharia o
 limiter, o cache ou o estado de thread pausada. Uma implantação multi-worker
 precisaria de um armazenamento compartilhado (Redis, Postgres), o que está fora
@@ -273,5 +273,5 @@ no comentário do `Dockerfile`.
 
 **Embedder embutido.** O embedder padrão distribuído é
 `BAAI/bge-small-en-v1.5`, compatível com CPU Basic no nível gratuito do Space.
-Ver [ADR-0004](./adr-0004-rag-stack.md) para a decisão do embedder; a
+Ver [ADR-0004](/ai-agent-eval-harness-healthtech-docs/pt-br/adr/adr-0004-rag-stack/) para a decisão do embedder; a
 postura de implantação aqui não é afetada pela escolha do modelo.

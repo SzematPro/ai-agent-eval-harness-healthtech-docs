@@ -180,10 +180,10 @@ proveedor correcto.
 
 ## Más información
 
-- [ADR-0002](./adr-0002-llm-vendor-abstraction.md) -- abstracción de proveedor
+- [ADR-0002](/ai-agent-eval-harness-healthtech-docs/es-419/adr/adr-0002-llm-vendor-abstraction/) -- abstracción de proveedor
   de LLM (el Protocol sobre el que se compone la cascada)
-- [ADR-0007](./adr-0007-deployment.md) -- objetivo de despliegue y los
+- [ADR-0007](/ai-agent-eval-harness-healthtech-docs/es-419/adr/adr-0007-deployment/) -- objetivo de despliegue y los
   factores detrás de la capa de resiliencia
-- [ADR-0017](./adr-0017-free-tier-deployment-resilience.md) -- el limitador de
+- [ADR-0017](/ai-agent-eval-harness-healthtech-docs/es-419/adr/adr-0017-free-tier-deployment-resilience/) -- el limitador de
   tasa en proceso complementario y la caché de respuestas
 - MADR 4.0.0: <https://adr.github.io/madr/>

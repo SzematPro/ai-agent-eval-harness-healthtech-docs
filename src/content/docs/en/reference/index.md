@@ -17,11 +17,11 @@ the system as built and evaluated on synthetic data.
 
 ## Index
 
-- [Dataset card](./data.md)
-- [Deploy](./deploy.md)
-- [Enterprise agent stack](./enterprise-agent-stack.md)
-- [Glossary](./glossary.md)
-- [Model card](./model-card.md)
-- [Observability](./observability.md)
-- [Regulatory posture](./regulatory-posture.md)
-- [Security policy](./security.md)
+- [Dataset card](/ai-agent-eval-harness-healthtech-docs/en/reference/data/)
+- [Deploy](/ai-agent-eval-harness-healthtech-docs/en/reference/deploy/)
+- [Enterprise agent stack](/ai-agent-eval-harness-healthtech-docs/en/reference/enterprise-agent-stack/)
+- [Glossary](/ai-agent-eval-harness-healthtech-docs/en/reference/glossary/)
+- [Model card](/ai-agent-eval-harness-healthtech-docs/en/reference/model-card/)
+- [Observability](/ai-agent-eval-harness-healthtech-docs/en/reference/observability/)
+- [Regulatory posture](/ai-agent-eval-harness-healthtech-docs/en/reference/regulatory-posture/)
+- [Security policy](/ai-agent-eval-harness-healthtech-docs/en/reference/security/)

@@ -10,7 +10,7 @@ Esta documentación describe una implementación de referencia pública evaluada
 # Componentes C4 - Runtime del agente LangGraph
 
 La vista de componentes descompone el contenedor `LangGraph Agent Runtime`
-(consulta [c4-container.md](./c4-container.md)) en los componentes que un único
+(consulta [c4-container.md](/ai-agent-eval-harness-healthtech-docs/es-419/diagrams/c4-container/)) en los componentes que un único
 turno de `/chat` ejecuta realmente: los nodos del grafo y los módulos de
 barreras de seguridad de primera clase que esos nodos invocan.
 
@@ -47,8 +47,8 @@ aparte; son módulos llamados desde el interior de tres nodos:
   rechazo. Llama a `interrupt()` de LangGraph para pausar a la espera de la
   aprobación humana.
 
-Consulta [agent-state-machine.md](./agent-state-machine.md) para el flujo de
-control y [ADR-0005](../adr/adr-0005-guardrails.md) para el diseño de las
+Consulta [agent-state-machine.md](/ai-agent-eval-harness-healthtech-docs/es-419/diagrams/agent-state-machine/) para el flujo de
+control y [ADR-0005](/ai-agent-eval-harness-healthtech-docs/es-419/adr/adr-0005-guardrails/) para el diseño de las
 barreras de seguridad.
 
 ```mermaid

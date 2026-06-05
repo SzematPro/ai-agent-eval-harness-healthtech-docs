@@ -13,8 +13,8 @@ This documentation describes a public reference implementation evaluated on 100%
 > the `ai-agent-eval-harness-healthtech` reference implementation. Covers the detection
 > patterns, pipeline integration, and limitations of the current PII redaction module.
 >
-> Read alongside the [HIPAA readiness assessment](hipaa-readiness.md) and the
-> [Chile Ley 19.628 mapping](chile-ley-19628.md).
+> Read alongside the [HIPAA readiness assessment](/ai-agent-eval-harness-healthtech-docs/en/governance/hipaa-readiness/) and the
+> [Chile Ley 19.628 mapping](/ai-agent-eval-harness-healthtech-docs/en/governance/chile-ley-19628/).
 
 ## PII Redaction Architecture
 
@@ -176,7 +176,7 @@ Production-grade PII redaction would require:
 
 ## See Also
 
-- [HIPAA readiness assessment](hipaa-readiness.md) -- HIPAA readiness assessment
-- [Chile Ley 19.628 mapping](chile-ley-19628.md) -- Chile data protection mapping
-- [Audit logging plan](audit-logging-plan.md) -- audit logging plan
-- [Guardrails design](../adr/adr-0005-guardrails.md) -- guardrails design
+- [HIPAA readiness assessment](/ai-agent-eval-harness-healthtech-docs/en/governance/hipaa-readiness/) -- HIPAA readiness assessment
+- [Chile Ley 19.628 mapping](/ai-agent-eval-harness-healthtech-docs/en/governance/chile-ley-19628/) -- Chile data protection mapping
+- [Audit logging plan](/ai-agent-eval-harness-healthtech-docs/en/governance/audit-logging-plan/) -- audit logging plan
+- [Guardrails design](/ai-agent-eval-harness-healthtech-docs/en/adr/adr-0005-guardrails/) -- guardrails design

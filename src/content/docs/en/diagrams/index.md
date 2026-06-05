@@ -17,9 +17,9 @@ as built.
 
 ## Index
 
-- [Agent State Machine](./agent-state-machine.md)
-- [C4 Component Diagram](./c4-component.md)
-- [C4 Container Diagram](./c4-container.md)
-- [C4 Context Diagram](./c4-context.md)
-- [Evaluation Pipeline](./evals-pipeline.md)
-- [Request Sequence](./request-sequence.md)
+- [Agent State Machine](/ai-agent-eval-harness-healthtech-docs/en/diagrams/agent-state-machine/)
+- [C4 Component Diagram](/ai-agent-eval-harness-healthtech-docs/en/diagrams/c4-component/)
+- [C4 Container Diagram](/ai-agent-eval-harness-healthtech-docs/en/diagrams/c4-container/)
+- [C4 Context Diagram](/ai-agent-eval-harness-healthtech-docs/en/diagrams/c4-context/)
+- [Evaluation Pipeline](/ai-agent-eval-harness-healthtech-docs/en/diagrams/evals-pipeline/)
+- [Request Sequence](/ai-agent-eval-harness-healthtech-docs/en/diagrams/request-sequence/)

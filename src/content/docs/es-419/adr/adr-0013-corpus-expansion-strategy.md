@@ -195,8 +195,8 @@ citación contra las nuevas tarjetas KB.
 
 ## Más información
 
-- Detección fuera de dominio (ADR complementario): [ADR-0012](./adr-0012-free-form-out-of-domain-detection.md)
-- Stack de RAG: [ADR-0004](./adr-0004-rag-stack.md)
+- Detección fuera de dominio (ADR complementario): [ADR-0012](/ai-agent-eval-harness-healthtech-docs/es-419/adr/adr-0012-free-form-out-of-domain-detection/)
+- Stack de RAG: [ADR-0004](/ai-agent-eval-harness-healthtech-docs/es-419/adr/adr-0004-rag-stack/)
 - Política de datos: un corpus de solo sintéticos, sin conjuntos de datos
   restringidos por un acuerdo de uso de datos.
 - MADR 4.0.0: <https://adr.github.io/madr/>

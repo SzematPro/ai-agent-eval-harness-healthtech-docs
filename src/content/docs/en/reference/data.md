@@ -51,7 +51,7 @@ No external funding. No corporate sponsor. No institutional partner.
 The synthetic datasets are published under the MIT license. The
 surrounding code is licensed under Apache-2.0 (it was MIT through
 v0.6.0 and switched at v1.0.0, see
-[ADR-0008](../adr/adr-0008-licensing.md)); the
+[ADR-0008](/ai-agent-eval-harness-healthtech-docs/en/adr/adr-0008-licensing/)); the
 data-license and code-license decisions are independent.
 
 ## Motivation
@@ -87,7 +87,7 @@ patient interaction; clinical validation of any clinical claim;
 substitution for IRB-approved human-subject research; benchmarking
 clinical decision support tools (the dataset is patient-facing, not
 clinician-facing, by design - see
-[regulatory posture](regulatory-posture.md)).
+[regulatory posture](/ai-agent-eval-harness-healthtech-docs/en/reference/regulatory-posture/)).
 
 ## Primary data subject
 
@@ -149,7 +149,7 @@ methodology above is the record of how the corpus was built.
 The corpus expansion appended 24 new KB cards and 138 new eval cases
 across eight medication-adherence domains, following the append-to-existing
 strategy decided in
-[ADR-0013](../adr/adr-0013-corpus-expansion-strategy.md).
+[ADR-0013](/ai-agent-eval-harness-healthtech-docs/en/adr/adr-0013-corpus-expansion-strategy/).
 
 ### New KB card domains (24 cards, 3 per domain)
 
@@ -207,7 +207,7 @@ declarations.
 
 - **Code: Apache-2.0.** The code was MIT through v0.6.0 and switched
   to Apache-2.0 at v1.0.0; the rationale is in
-  [ADR-0008](../adr/adr-0008-licensing.md).
+  [ADR-0008](/ai-agent-eval-harness-healthtech-docs/en/adr/adr-0008-licensing/).
 - **Synthetic eval corpus: MIT**, distributed inside the repository.
 - **Synthetic KB cards: MIT** for the paraphrased card content;
   attribution to DailyMed / MedlinePlus / WHO EML preserved in the
@@ -287,9 +287,9 @@ extension.
   corpus is roadmap; it would also let the retrieval similarity
   threshold (`retrieval_min_similarity`, shipped disabled) be enabled -
   see the near-miss off-corpus limitation in
-  [model card](model-card.md). The corpus expansion added 24 KB cards
+  [model card](/ai-agent-eval-harness-healthtech-docs/en/reference/model-card/). The corpus expansion added 24 KB cards
   and 138 eval cases across 8 new domains, documented in
-  [ADR-0013](../adr/adr-0013-corpus-expansion-strategy.md).
+  [ADR-0013](/ai-agent-eval-harness-healthtech-docs/en/adr/adr-0013-corpus-expansion-strategy/).
 - **Locale parity.** es-419 and pt-BR are held to the same bar in
   the eval harness, but the underlying persona generation has a known
   bias toward US-English clinical vocabulary. The producer-critic
@@ -314,11 +314,11 @@ extension.
 
 ## See also
 
-- [model card](model-card.md) - the model card for the agent,
+- [model card](/ai-agent-eval-harness-healthtech-docs/en/reference/model-card/) - the model card for the agent,
   in CHAI Applied Model Card format.
-- [regulatory posture](regulatory-posture.md) - the
+- [regulatory posture](/ai-agent-eval-harness-healthtech-docs/en/reference/regulatory-posture/) - the
   regulatory boundary the data respects.
-- [security policy](security.md) - disclosure policy and the
+- [security policy](/ai-agent-eval-harness-healthtech-docs/en/reference/security/) - disclosure policy and the
   "no PHI ever" hard constraint.
 - Google Data Cards Playbook: <https://sites.research.google/datacardsplaybook/>.
 - CHAI Applied Model Card format: <https://www.chai.org/workgroup/applied-model>.

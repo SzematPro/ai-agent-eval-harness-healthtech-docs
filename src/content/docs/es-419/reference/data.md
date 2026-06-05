@@ -55,7 +55,7 @@ Sin financiamiento externo. Sin patrocinador corporativo. Sin socio
 institucional. Los conjuntos de datos sintéticos se publican bajo la
 licencia MIT. El código que los rodea está licenciado bajo Apache-2.0 (fue
 MIT hasta la v0.6.0 y cambió en la v1.0.0, consulta
-[ADR-0008](../adr/adr-0008-licensing.md)); las decisiones de licencia de
+[ADR-0008](/ai-agent-eval-harness-healthtech-docs/es-419/adr/adr-0008-licensing/)); las decisiones de licencia de
 los datos y del código son independientes.
 
 ## Motivación
@@ -94,7 +94,7 @@ afirmación clínica; sustitución de la investigación con sujetos humanos
 aprobada por un IRB; benchmarking de herramientas de soporte a la decisión
 clínica (el conjunto de datos está orientado al paciente, no orientado al
 clínico, por diseño; consulta la
-[postura regulatoria](regulatory-posture.md)).
+[postura regulatoria](/ai-agent-eval-harness-healthtech-docs/es-419/reference/regulatory-posture/)).
 
 ## Sujeto primario de los datos
 
@@ -159,7 +159,7 @@ corpus.
 La expansión del corpus agregó 24 nuevas tarjetas de KB y 138 nuevos casos
 de evaluación a lo largo de ocho dominios de adherencia a la medicación,
 siguiendo la estrategia de agregar-a-lo-existente decidida en
-[ADR-0013](../adr/adr-0013-corpus-expansion-strategy.md).
+[ADR-0013](/ai-agent-eval-harness-healthtech-docs/es-419/adr/adr-0013-corpus-expansion-strategy/).
 
 ### Nuevos dominios de tarjetas de KB (24 tarjetas, 3 por dominio)
 
@@ -218,7 +218,7 @@ separadas e independientes.
 
 - **Código: Apache-2.0.** El código fue MIT hasta la v0.6.0 y cambió a
   Apache-2.0 en la v1.0.0; la justificación está en
-  [ADR-0008](../adr/adr-0008-licensing.md).
+  [ADR-0008](/ai-agent-eval-harness-healthtech-docs/es-419/adr/adr-0008-licensing/).
 - **Corpus de evaluación sintético: MIT**, distribuido dentro del
   repositorio.
 - **Tarjetas de KB sintéticas: MIT** para el contenido parafraseado de las
@@ -306,10 +306,10 @@ repositorio no extiende, avala ni supervisa ninguna extensión de ese tipo.
   hoja de ruta; también permitiría habilitar el umbral de similitud de
   recuperación (`retrieval_min_similarity`, entregado desactivado); consulta
   la limitación de las preguntas casi-coincidentes fuera del corpus en la
-  [ficha del modelo](model-card.md). La expansión del corpus agregó 24
+  [ficha del modelo](/ai-agent-eval-harness-healthtech-docs/es-419/reference/model-card/). La expansión del corpus agregó 24
   tarjetas de KB y 138 casos de evaluación a lo largo de 8 nuevos dominios,
   documentada en
-  [ADR-0013](../adr/adr-0013-corpus-expansion-strategy.md).
+  [ADR-0013](/ai-agent-eval-harness-healthtech-docs/es-419/adr/adr-0013-corpus-expansion-strategy/).
 - **Paridad de locale.** es-419 y pt-BR se sostienen al mismo estándar en el
   arnés de evaluación, pero la generación de personas subyacente tiene un
   sesgo conocido hacia el vocabulario clínico en inglés de EE. UU. El bucle
@@ -335,11 +335,11 @@ repositorio no extiende, avala ni supervisa ninguna extensión de ese tipo.
 
 ## Consulta también
 
-- [ficha del modelo](model-card.md) - la ficha del modelo para el agente,
+- [ficha del modelo](/ai-agent-eval-harness-healthtech-docs/es-419/reference/model-card/) - la ficha del modelo para el agente,
   en formato CHAI Applied Model Card.
-- [postura regulatoria](regulatory-posture.md) - el
+- [postura regulatoria](/ai-agent-eval-harness-healthtech-docs/es-419/reference/regulatory-posture/) - el
   límite regulatorio que los datos respetan.
-- [política de seguridad](security.md) - política de divulgación y la
+- [política de seguridad](/ai-agent-eval-harness-healthtech-docs/es-419/reference/security/) - política de divulgación y la
   restricción dura de "nada de PHI nunca".
 - Google Data Cards Playbook: <https://sites.research.google/datacardsplaybook/>.
 - Formato CHAI Applied Model Card: <https://www.chai.org/workgroup/applied-model>.

@@ -52,13 +52,13 @@ nodo en un no-op y el grafo continúa exactamente como lo hace el grafo de seis
 nodos. Las señales de alerta agudas nunca llegan a esta pausa: se les hace
 cortocircuito aguas arriba en `guardrail_pre`.
 
-Consulta [ADR-0001](../adr/adr-0001-orchestration.md) para la justificación de
-la orquestación, [c4-component.md](./c4-component.md) para la descomposición en
-nodos y módulos, y [request-sequence.md](./request-sequence.md) para el flujo de
+Consulta [ADR-0001](/ai-agent-eval-harness-healthtech-docs/es-419/adr/adr-0001-orchestration/) para la justificación de
+la orquestación, [c4-component.md](/ai-agent-eval-harness-healthtech-docs/es-419/diagrams/c4-component/) para la descomposición en
+nodos y módulos, y [request-sequence.md](/ai-agent-eval-harness-healthtech-docs/es-419/diagrams/request-sequence/) para el flujo de
 interacción de un solo turno.
 
 El grafo de ejecución del agente en la aplicación de página única de la demo
-([ADR-0010](../adr/adr-0010-streaming-execution-graph.md))
+([ADR-0010](/ai-agent-eval-harness-healthtech-docs/es-419/adr/adr-0010-streaming-execution-graph/))
 es una visualización en vivo, dentro del navegador, de esta misma topología:
 dibuja el conjunto real de nodos y aristas del grafo compilado que se muestra
 abajo e ilumina cada nodo a medida que un turno se transmite. La ruta de emisión

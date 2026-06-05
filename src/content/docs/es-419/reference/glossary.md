@@ -123,6 +123,6 @@ organismo de normalización cuando el término es específico de un sector.
 
 Este glosario cubre los términos canónicos usados en la documentación y los
 ADR. Si falta un término, la fuente de verdad sustantiva vive en la
-[postura regulatoria](regulatory-posture.md) (postura regulatoria y
-exclusiones) y en [datos](data.md) (auditoría de licencias del conjunto de
+[postura regulatoria](/ai-agent-eval-harness-healthtech-docs/es-419/reference/regulatory-posture/) (postura regulatoria y
+exclusiones) y en [datos](/ai-agent-eval-harness-healthtech-docs/es-419/reference/data/) (auditoría de licencias del conjunto de
 datos y lista de exclusiones).

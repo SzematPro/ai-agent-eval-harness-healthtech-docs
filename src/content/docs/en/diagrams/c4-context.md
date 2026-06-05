@@ -17,7 +17,7 @@ API or a carrier value-added-service surface). External technical
 dependencies are split into LLM providers, an embedding provider, the
 vector store, and an observability backend.
 
-See also [c4-container.md](./c4-container.md) for the next-level
+See also [c4-container.md](/ai-agent-eval-harness-healthtech-docs/en/diagrams/c4-container/) for the next-level
 decomposition.
 
 ```mermaid

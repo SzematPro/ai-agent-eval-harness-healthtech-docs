@@ -111,7 +111,7 @@ cuenta este proyecto.
 - LangGraph es neutral respecto al proveedor: los nodos llaman al Protocol
   `LLMClient` del proyecto, no a un objeto de proveedor específico de
   LangChain, de modo que se preserva la abstracción de
-  [ADR-0002](./adr-0002-llm-vendor-abstraction.md)
+  [ADR-0002](/ai-agent-eval-harness-healthtech-docs/es-419/adr/adr-0002-llm-vendor-abstraction/)
 - El estado GA 1.0 (2025-10-22) indica que el framework ya pasó la ventana de
   agitación 0.x típica de las bibliotecas de agentes
 
@@ -221,7 +221,7 @@ en `interrupt()` sigue siendo incompatible con el arnés de evaluación de un
 solo paso y sin claves, razón por la cual es opcional. Las señales de alerta
 agudas NO se enrutan a través de `interrupt()`: cortocircuitan aguas arriba en
 `guardrail_pre` hacia una plantilla de emergencia (ver
-[ADR-0005](./adr-0005-guardrails.md)) y `review_response` nunca las pausa.
+[ADR-0005](/ai-agent-eval-harness-healthtech-docs/es-419/adr/adr-0005-guardrails/)) y `review_response` nunca las pausa.
 
 **Fábrica de checkpointer.** La fábrica de checkpointer devuelve un
 `MemorySaver` en memoria por defecto y un `AsyncPostgresSaver` cuando se

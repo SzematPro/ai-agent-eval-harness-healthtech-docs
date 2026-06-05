@@ -17,7 +17,7 @@ para empresas o una superficie de servicio de valor agregado de una operadora).
 Las dependencias técnicas externas se dividen en proveedores de LLM, un
 proveedor de embeddings, el almacén vectorial y un backend de observabilidad.
 
-Consulta también [c4-container.md](./c4-container.md) para la descomposición
+Consulta también [c4-container.md](/ai-agent-eval-harness-healthtech-docs/es-419/diagrams/c4-container/) para la descomposición
 del siguiente nivel.
 
 ```mermaid

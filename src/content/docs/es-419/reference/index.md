@@ -17,11 +17,11 @@ sistema tal como está construido y evaluado con datos sintéticos.
 
 ## Índice
 
-- [Ficha de datos](./data.md)
-- [Despliegue](./deploy.md)
-- [Stack empresarial del agente](./enterprise-agent-stack.md)
-- [Glosario](./glossary.md)
-- [Ficha del modelo](./model-card.md)
-- [Observabilidad](./observability.md)
-- [Postura regulatoria](./regulatory-posture.md)
-- [Política de seguridad](./security.md)
+- [Ficha de datos](/ai-agent-eval-harness-healthtech-docs/es-419/reference/data/)
+- [Despliegue](/ai-agent-eval-harness-healthtech-docs/es-419/reference/deploy/)
+- [Stack empresarial del agente](/ai-agent-eval-harness-healthtech-docs/es-419/reference/enterprise-agent-stack/)
+- [Glosario](/ai-agent-eval-harness-healthtech-docs/es-419/reference/glossary/)
+- [Ficha del modelo](/ai-agent-eval-harness-healthtech-docs/es-419/reference/model-card/)
+- [Observabilidad](/ai-agent-eval-harness-healthtech-docs/es-419/reference/observability/)
+- [Postura regulatoria](/ai-agent-eval-harness-healthtech-docs/es-419/reference/regulatory-posture/)
+- [Política de seguridad](/ai-agent-eval-harness-healthtech-docs/es-419/reference/security/)

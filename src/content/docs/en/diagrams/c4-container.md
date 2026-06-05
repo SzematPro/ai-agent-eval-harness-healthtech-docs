@@ -31,7 +31,7 @@ across requests. The persistence layer is checkpointer-injectable: an
 in-memory checkpointer by default, or a durable Postgres-backed
 checkpointer when a database connection string is configured (the durable
 path for HITL resumes spanning a process restart). See
-[ADR-0001](../adr/adr-0001-orchestration.md) for the rationale.
+[ADR-0001](/ai-agent-eval-harness-healthtech-docs/en/adr/adr-0001-orchestration/) for the rationale.
 
 ```mermaid
 C4Container

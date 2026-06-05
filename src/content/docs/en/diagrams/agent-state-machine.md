@@ -49,13 +49,13 @@ reject). A `clear` verdict makes the node a no-op and the graph flows on
 exactly as the six-node graph does. Acute red flags never reach this
 pause: they are short-circuited upstream in `guardrail_pre`.
 
-See [ADR-0001](../adr/adr-0001-orchestration.md) for the orchestration
-rationale, [c4-component.md](./c4-component.md) for the node-and-module
-decomposition, and [request-sequence.md](./request-sequence.md) for the
+See [ADR-0001](/ai-agent-eval-harness-healthtech-docs/en/adr/adr-0001-orchestration/) for the orchestration
+rationale, [c4-component.md](/ai-agent-eval-harness-healthtech-docs/en/diagrams/c4-component/) for the node-and-module
+decomposition, and [request-sequence.md](/ai-agent-eval-harness-healthtech-docs/en/diagrams/request-sequence/) for the
 single-turn interaction flow.
 
 The Agent Execution Graph in the demo single-page app
-([ADR-0010](../adr/adr-0010-streaming-execution-graph.md))
+([ADR-0010](/ai-agent-eval-harness-healthtech-docs/en/adr/adr-0010-streaming-execution-graph/))
 is a live, in-browser visualization of this same topology: it draws the
 real compiled node set and edges shown below and lights each node as a
 turn streams. The streaming emission path and visualization did not change

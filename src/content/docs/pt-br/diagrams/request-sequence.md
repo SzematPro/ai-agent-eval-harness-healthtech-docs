@@ -27,8 +27,8 @@ subsequente, então até um turno de recusa ou de sem correspondência volta
 como uma mensagem do assistente no estado final do grafo. Spans do
 OpenTelemetry são abertos em cada nó e ao redor da chamada ao LLM.
 
-Consulte [c4-container.md](./c4-container.md) para a decomposição estática e
-[c4-component.md](./c4-component.md) para a visão de nós e módulos.
+Consulte [c4-container.md](/ai-agent-eval-harness-healthtech-docs/pt-br/diagrams/c4-container/) para a decomposição estática e
+[c4-component.md](/ai-agent-eval-harness-healthtech-docs/pt-br/diagrams/c4-component/) para a visão de nós e módulos.
 
 ## Turno único concluído
 
@@ -142,7 +142,7 @@ sintetizado por nó condicional genuinamente ignorado, e termina com um
 evento terminal `turn_completed` carregando o `ChatResponse` completo. Uma
 falha após o primeiro byte é um evento `error` dentro do fluxo; uma falha
 antes do primeiro byte é um erro HTTP normal. Consulte
-[ADR-0010](../adr/adr-0010-streaming-execution-graph.md) para o schema de
+[ADR-0010](/ai-agent-eval-harness-healthtech-docs/pt-br/adr/adr-0010-streaming-execution-graph/) para o schema de
 eventos.
 
 ```mermaid

@@ -31,7 +31,7 @@ Out of scope: vulnerabilities in a downstream fork that introduces a
 production deployment, vulnerabilities in third-party LLM provider
 infrastructure, and clinical-safety claims about model outputs (the
 agent is not a medical device - see
-[regulatory posture](regulatory-posture.md)).
+[regulatory posture](/ai-agent-eval-harness-healthtech-docs/en/reference/regulatory-posture/)).
 
 ## Reporting a vulnerability
 
@@ -64,7 +64,7 @@ information, any data derived from a real patient record, any data
 under a Data Use Agreement (PhysioNet DUA, i2b2/n2c2 DUA, equivalent),
 and any dataset whose license forbids redistribution
 (MedDialog, ChatDoctor / HealthCareMagic-100K, MIMIC-IV, MIMIC-IV-Note,
-Asclepius). The dataset card in [data](data.md) carries
+Asclepius). The dataset card in [data](/ai-agent-eval-harness-healthtech-docs/en/reference/data/) carries
 the full exclusion list and the rationale.
 
 If a contributor proposes a dataset addition, the burden of proof is on
@@ -108,13 +108,13 @@ introduce data without that proof will be closed.
   it through the project's pre-commit configuration after the initial
   dependency sync.
 - **Frozen dependency pin.** `rank-bm25` is intentionally pinned at its
-  final release `0.2.2` (see [ADR-0023](../adr/adr-0023-hybrid-retrieval.md), Decision B) -
+  final release `0.2.2` (see [ADR-0023](/ai-agent-eval-harness-healthtech-docs/en/adr/adr-0023-hybrid-retrieval/), Decision B) -
   a deliberate end-of-life pin, not stale-by-neglect; the `pip-audit` CI
   job still gates it for advisories.
 
 ## Regulatory posture
 
-See [regulatory posture](regulatory-posture.md) for the
+See [regulatory posture](/ai-agent-eval-harness-healthtech-docs/en/reference/regulatory-posture/) for the
 FDA wellness/CDS boundary the design respects, the WHO LMM guidance the
 project tracks, and the explicit list of things the agent does NOT do.
 A vulnerability report that asserts a regulatory-classification failure

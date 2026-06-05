@@ -14,8 +14,8 @@ This documentation describes a public reference implementation evaluated on 100%
 > Covers eval-harness-based drift detection, model performance regression, and knowledge
 > base relevance monitoring.
 >
-> Read alongside the [model card](../reference/model-card.md) and the
-> [audit logging plan](audit-logging-plan.md).
+> Read alongside the [model card](/ai-agent-eval-harness-healthtech-docs/en/reference/model-card/) and the
+> [audit logging plan](/ai-agent-eval-harness-healthtech-docs/en/governance/audit-logging-plan/).
 
 ## Types of Drift
 
@@ -155,8 +155,8 @@ Production-grade drift detection would require:
 
 ## See Also
 
-- [Model card](../reference/model-card.md) -- CHAI Applied Model Card, Key Metrics
-- [Data statement](../reference/data.md) -- dataset card with generation methodology
-- [Audit logging plan](audit-logging-plan.md) -- audit logging plan
-- [NIST AI RMF mapping](nist-ai-rmf.md) -- NIST AI RMF Measure function
-- [Eval harness design](../adr/adr-0003-eval-harness.md) -- eval harness design
+- [Model card](/ai-agent-eval-harness-healthtech-docs/en/reference/model-card/) -- CHAI Applied Model Card, Key Metrics
+- [Data statement](/ai-agent-eval-harness-healthtech-docs/en/reference/data/) -- dataset card with generation methodology
+- [Audit logging plan](/ai-agent-eval-harness-healthtech-docs/en/governance/audit-logging-plan/) -- audit logging plan
+- [NIST AI RMF mapping](/ai-agent-eval-harness-healthtech-docs/en/governance/nist-ai-rmf/) -- NIST AI RMF Measure function
+- [Eval harness design](/ai-agent-eval-harness-healthtech-docs/en/adr/adr-0003-eval-harness/) -- eval harness design

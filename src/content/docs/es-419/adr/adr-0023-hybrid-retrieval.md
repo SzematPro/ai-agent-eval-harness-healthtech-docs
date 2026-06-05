@@ -14,7 +14,7 @@ Esta documentación describe una implementación de referencia pública evaluada
 
 ## Contexto
 
-La capa de recuperación hacía aflorar el contexto con una única ruta densa (bi-encoder): el turno del usuario se incrusta con el prefijo de consulta de BGE y los subfragmentos más cercanos se leen de Chroma ([ADR-0004](./adr-0004-rag-stack.md)), luego se deduplican a tarjetas padre ([ADR-0021](./adr-0021-parent-document-retrieval.md)). La recuperación densa captura la similitud semántica pero pierde las coincidencias léxicas exactas cuando la consulta y una tarjeta comparten tokens poco frecuentes (el nombre de un fármaco, el modelo de un dispositivo, una unidad de dosis específica) que la incrustación suaviza. Un índice puramente léxico tiene la debilidad inversa: pierde la paráfrasis. Para un agente de adherencia a la medicación cuyo corpus es denso en entidades nombradas, ninguna de las dos señales por sí sola es suficiente.
+La capa de recuperación hacía aflorar el contexto con una única ruta densa (bi-encoder): el turno del usuario se incrusta con el prefijo de consulta de BGE y los subfragmentos más cercanos se leen de Chroma ([ADR-0004](/ai-agent-eval-harness-healthtech-docs/es-419/adr/adr-0004-rag-stack/)), luego se deduplican a tarjetas padre ([ADR-0021](/ai-agent-eval-harness-healthtech-docs/es-419/adr/adr-0021-parent-document-retrieval/)). La recuperación densa captura la similitud semántica pero pierde las coincidencias léxicas exactas cuando la consulta y una tarjeta comparten tokens poco frecuentes (el nombre de un fármaco, el modelo de un dispositivo, una unidad de dosis específica) que la incrustación suaviza. Un índice puramente léxico tiene la debilidad inversa: pierde la paráfrasis. Para un agente de adherencia a la medicación cuyo corpus es denso en entidades nombradas, ninguna de las dos señales por sí sola es suficiente.
 
 El remedio estándar es la recuperación híbrida: ejecutar un generador léxico y uno denso en paralelo, fusionar sus rankings, luego reescalar los candidatos fusionados con un cross-encoder que lee la consulta y el candidato de forma conjunta. Este ADR registra las decisiones tomadas al añadir esa canalización.
 
@@ -24,7 +24,7 @@ Reemplazar el paso de recuperación solo densa con una canalización de tres eta
 
 1. **Dos generadores de candidatos en paralelo** sobre el mismo corpus de subfragmentos: BM25 (léxico) y la ruta densa de Chroma existente (semántica).
 2. **Reciprocal Rank Fusion** combina las dos listas ordenadas en una sola sin calibración de puntuaciones entre los sistemas.
-3. **Reordenamiento con cross-encoder** reescala los candidatos fusionados frente al texto de la consulta; los supervivientes se deduplican luego a padres ([ADR-0021](./adr-0021-parent-document-retrieval.md)), se truncan a `top_k`, y se filtran por el umbral existente de similitud mínima.
+3. **Reordenamiento con cross-encoder** reescala los candidatos fusionados frente al texto de la consulta; los supervivientes se deduplican luego a padres ([ADR-0021](/ai-agent-eval-harness-healthtech-docs/es-419/adr/adr-0021-parent-document-retrieval/)), se truncan a `top_k`, y se filtran por el umbral existente de similitud mínima.
 
 Las decisiones de ingeniería fijadas:
 
@@ -81,7 +81,7 @@ Usar el filtrado `where` de Chroma junto a la búsqueda densa en lugar de un ín
 
 ### Neutrales
 
-- La invariante de deduplicación por padre ([ADR-0021](./adr-0021-parent-document-retrieval.md)) no cambia: se ejecuta después de la fusión + reordenamiento, aún sobre identidades de subfragmento.
+- La invariante de deduplicación por padre ([ADR-0021](/ai-agent-eval-harness-healthtech-docs/es-419/adr/adr-0021-parent-document-retrieval/)) no cambia: se ejecuta después de la fusión + reordenamiento, aún sobre identidades de subfragmento.
 - La tokenización es minúsculas + eliminación de puntuación; la tokenización que tiene en cuenta el idioma para es-419 / pt-BR se difiere hasta que las métricas de recall lo justifiquen.
 
 ## Notas de implementación
@@ -103,5 +103,5 @@ Establecer la bandera de entorno de exclusión de la híbrida para restaurar la 
 
 ## Véase también
 
-- [ADR-0004](./adr-0004-rag-stack.md) (stack de RAG): el almacén denso + incrustador que esta canalización extiende.
-- [ADR-0021](./adr-0021-parent-document-retrieval.md) (recuperación de documento padre): el paso de deduplicación por padre que se ejecuta después de la fusión + reordenamiento.
+- [ADR-0004](/ai-agent-eval-harness-healthtech-docs/es-419/adr/adr-0004-rag-stack/) (stack de RAG): el almacén denso + incrustador que esta canalización extiende.
+- [ADR-0021](/ai-agent-eval-harness-healthtech-docs/es-419/adr/adr-0021-parent-document-retrieval/) (recuperación de documento padre): el paso de deduplicación por padre que se ejecuta después de la fusión + reordenamiento.

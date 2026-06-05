@@ -139,7 +139,7 @@ server-sent-events (SSE) en `POST /chat` y `POST /chat/resume`: una
 solicitud que porta `Accept: text/event-stream` obtiene un cuerpo
 `text/event-stream` de eventos de ejecución por nodo en lugar del
 `ChatResponse` JSON. El diseño de streaming está registrado en
-[ADR-0010](../adr/adr-0010-streaming-execution-graph.md).
+[ADR-0010](/ai-agent-eval-harness-healthtech-docs/es-419/adr/adr-0010-streaming-execution-graph/).
 
 Para que el grafo en vivo se sienta vivo, esos eventos deben llegar al
 navegador *de forma incremental* -a medida que cada nodo se ejecuta- en

@@ -14,8 +14,8 @@ Esta documentação descreve uma implementação de referência pública avaliad
 > Cobre a detecção de deriva baseada no harness de eval, a regressão de desempenho do modelo e o monitoramento
 > de relevância da base de conhecimento.
 >
-> Leia em conjunto com o [model card](../reference/model-card.md) e o
-> [plano de registro de auditoria](audit-logging-plan.md).
+> Leia em conjunto com o [model card](/ai-agent-eval-harness-healthtech-docs/pt-br/reference/model-card/) e o
+> [plano de registro de auditoria](/ai-agent-eval-harness-healthtech-docs/pt-br/governance/audit-logging-plan/).
 
 ## Tipos de deriva
 
@@ -155,8 +155,8 @@ A detecção de deriva de nível de produção exigiria:
 
 ## Veja também
 
-- [Model card](../reference/model-card.md) -- CHAI Applied Model Card, Key Metrics
-- [Data statement](../reference/data.md) -- card do conjunto de dados com metodologia de geração
-- [Plano de registro de auditoria](audit-logging-plan.md) -- plano de registro de auditoria
-- [Mapeamento do NIST AI RMF](nist-ai-rmf.md) -- função Measure do NIST AI RMF
-- [Design do harness de eval](../adr/adr-0003-eval-harness.md) -- design do harness de eval
+- [Model card](/ai-agent-eval-harness-healthtech-docs/pt-br/reference/model-card/) -- CHAI Applied Model Card, Key Metrics
+- [Data statement](/ai-agent-eval-harness-healthtech-docs/pt-br/reference/data/) -- card do conjunto de dados com metodologia de geração
+- [Plano de registro de auditoria](/ai-agent-eval-harness-healthtech-docs/pt-br/governance/audit-logging-plan/) -- plano de registro de auditoria
+- [Mapeamento do NIST AI RMF](/ai-agent-eval-harness-healthtech-docs/pt-br/governance/nist-ai-rmf/) -- função Measure do NIST AI RMF
+- [Design do harness de eval](/ai-agent-eval-harness-healthtech-docs/pt-br/adr/adr-0003-eval-harness/) -- design do harness de eval

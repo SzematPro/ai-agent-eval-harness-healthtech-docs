@@ -14,8 +14,8 @@ Esta documentação descreve uma implementação de referência pública avaliad
 > Este plano cobre o que é registrado hoje, o que não é registrado e o que um deployment
 > regulado precisaria.
 >
-> Leia em conjunto com o [design de observabilidade](../adr/adr-0006-observability.md) e a
-> [avaliação de prontidão para HIPAA](hipaa-readiness.md).
+> Leia em conjunto com o [design de observabilidade](/ai-agent-eval-harness-healthtech-docs/pt-br/adr/adr-0006-observability/) e a
+> [avaliação de prontidão para HIPAA](/ai-agent-eval-harness-healthtech-docs/pt-br/governance/hipaa-readiness/).
 
 ## Arquitetura de registro
 
@@ -147,8 +147,8 @@ O registro de auditoria de nível de produção exigiria:
 
 ## Veja também
 
-- [Design de observabilidade](../adr/adr-0006-observability.md) -- design de observabilidade
-- [Avaliação de prontidão para HIPAA](hipaa-readiness.md) -- avaliação de prontidão para HIPAA
-- [Redação de PII](pii-redaction.md) -- documentação de redação de PII
-- [Prontidão para ISO 42001 / SOC 2](iso42001-soc2.md) -- prontidão para ISO 42001 / SOC 2
-- [Plano de detecção de deriva](drift-detection-plan.md) -- plano de detecção de deriva
+- [Design de observabilidade](/ai-agent-eval-harness-healthtech-docs/pt-br/adr/adr-0006-observability/) -- design de observabilidade
+- [Avaliação de prontidão para HIPAA](/ai-agent-eval-harness-healthtech-docs/pt-br/governance/hipaa-readiness/) -- avaliação de prontidão para HIPAA
+- [Redação de PII](/ai-agent-eval-harness-healthtech-docs/pt-br/governance/pii-redaction/) -- documentação de redação de PII
+- [Prontidão para ISO 42001 / SOC 2](/ai-agent-eval-harness-healthtech-docs/pt-br/governance/iso42001-soc2/) -- prontidão para ISO 42001 / SOC 2
+- [Plano de detecção de deriva](/ai-agent-eval-harness-healthtech-docs/pt-br/governance/drift-detection-plan/) -- plano de detecção de deriva

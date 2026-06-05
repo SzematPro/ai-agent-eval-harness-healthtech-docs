@@ -150,8 +150,8 @@ Comportamento:
 
 ## Mais informações
 
-- [ADR-0007](./adr-0007-deployment.md) -- alvo de implantação e o
+- [ADR-0007](/ai-agent-eval-harness-healthtech-docs/pt-br/adr/adr-0007-deployment/) -- alvo de implantação e o
   orçamento de $0/mês
-- [ADR-0015](./adr-0015-cascading-llm-provider-fallback.md) -- a
+- [ADR-0015](/ai-agent-eval-harness-healthtech-docs/pt-br/adr/adr-0015-cascading-llm-provider-fallback/) -- a
   camada complementar de fallback em cascata
 - MADR 4.0.0: <https://adr.github.io/madr/>

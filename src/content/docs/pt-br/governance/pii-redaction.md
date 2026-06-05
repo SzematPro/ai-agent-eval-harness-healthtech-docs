@@ -13,8 +13,8 @@ Esta documentação descreve uma implementação de referência pública avaliad
 > implementação de referência `ai-agent-eval-harness-healthtech`. Cobre os padrões de detecção,
 > a integração no pipeline e as limitações do módulo atual de redação de PII.
 >
-> Leia em conjunto com a [avaliação de prontidão para HIPAA](hipaa-readiness.md) e o
-> [mapeamento da Ley 19.628 do Chile](chile-ley-19628.md).
+> Leia em conjunto com a [avaliação de prontidão para HIPAA](/ai-agent-eval-harness-healthtech-docs/pt-br/governance/hipaa-readiness/) e o
+> [mapeamento da Ley 19.628 do Chile](/ai-agent-eval-harness-healthtech-docs/pt-br/governance/chile-ley-19628/).
 
 ## Arquitetura de redação de PII
 
@@ -176,7 +176,7 @@ A redação de PII de nível de produção exigiria:
 
 ## Veja também
 
-- [Avaliação de prontidão para HIPAA](hipaa-readiness.md) -- avaliação de prontidão para HIPAA
-- [Mapeamento da Ley 19.628 do Chile](chile-ley-19628.md) -- mapeamento de proteção de dados do Chile
-- [Plano de registro de auditoria](audit-logging-plan.md) -- plano de registro de auditoria
-- [Design de guardrails](../adr/adr-0005-guardrails.md) -- design de guardrails
+- [Avaliação de prontidão para HIPAA](/ai-agent-eval-harness-healthtech-docs/pt-br/governance/hipaa-readiness/) -- avaliação de prontidão para HIPAA
+- [Mapeamento da Ley 19.628 do Chile](/ai-agent-eval-harness-healthtech-docs/pt-br/governance/chile-ley-19628/) -- mapeamento de proteção de dados do Chile
+- [Plano de registro de auditoria](/ai-agent-eval-harness-healthtech-docs/pt-br/governance/audit-logging-plan/) -- plano de registro de auditoria
+- [Design de guardrails](/ai-agent-eval-harness-healthtech-docs/pt-br/adr/adr-0005-guardrails/) -- design de guardrails

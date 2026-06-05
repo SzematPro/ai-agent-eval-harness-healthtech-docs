@@ -242,13 +242,13 @@ The migration shipped in three stages:
 
 ## More Information
 
-- [ADR-0001](./adr-0001-orchestration.md) — agent state and LangGraph;
+- [ADR-0001](/ai-agent-eval-harness-healthtech-docs/en/adr/adr-0001-orchestration/) — agent state and LangGraph;
   defines the context-chunk shape.
-- [ADR-0004](./adr-0004-rag-stack.md) — embedding stack and Chroma
+- [ADR-0004](/ai-agent-eval-harness-healthtech-docs/en/adr/adr-0004-rag-stack/) — embedding stack and Chroma
   persistent store.
-- [ADR-0005](./adr-0005-guardrails.md) — citation extraction and
+- [ADR-0005](/ai-agent-eval-harness-healthtech-docs/en/adr/adr-0005-guardrails/) — citation extraction and
   verification contract; unchanged by this ADR.
-- [ADR-0020](./adr-0020-structured-agent-reply.md) — structured agent
+- [ADR-0020](/ai-agent-eval-harness-healthtech-docs/en/adr/adr-0020-structured-agent-reply/) — structured agent
   reply; the parent-expanded context chunk keeps the LLM context
   invariant the JSON-mode prompt depends on.
 - MADR 4.0.0: <https://adr.github.io/madr/>

@@ -14,9 +14,9 @@ This documentation describes a public reference implementation evaluated on 100%
 > Latin-American Spanish (es-419), and Brazilian Portuguese (pt-BR). This assessment
 > evaluates whether users in all three locales receive equivalent safety protections.
 >
-> Read alongside the [data statement](../reference/data.md), the
-> [model card](../reference/model-card.md), and the
-> [OWASP ATLAS threat model](owasp-atlas-threat-model.md).
+> Read alongside the [data statement](/ai-agent-eval-harness-healthtech-docs/en/reference/data/), the
+> [model card](/ai-agent-eval-harness-healthtech-docs/en/reference/model-card/), and the
+> [OWASP ATLAS threat model](/ai-agent-eval-harness-healthtech-docs/en/governance/owasp-atlas-threat-model/).
 
 ## Locale Coverage
 
@@ -164,8 +164,8 @@ Achieving full multilingual safety parity in a production deployment:
 
 ## See Also
 
-- [Data statement](../reference/data.md) -- synthetic dataset card with locale methodology
-- [Model card](../reference/model-card.md) -- CHAI Applied Model Card, Fairness section
-- [Voice consent and deepfake policy](voice-consent-deepfake.md) -- voice consent policy
-- [PII redaction](pii-redaction.md) -- PII redaction per locale
-- [Guardrails design](../adr/adr-0005-guardrails.md) -- guardrails design
+- [Data statement](/ai-agent-eval-harness-healthtech-docs/en/reference/data/) -- synthetic dataset card with locale methodology
+- [Model card](/ai-agent-eval-harness-healthtech-docs/en/reference/model-card/) -- CHAI Applied Model Card, Fairness section
+- [Voice consent and deepfake policy](/ai-agent-eval-harness-healthtech-docs/en/governance/voice-consent-deepfake/) -- voice consent policy
+- [PII redaction](/ai-agent-eval-harness-healthtech-docs/en/governance/pii-redaction/) -- PII redaction per locale
+- [Guardrails design](/ai-agent-eval-harness-healthtech-docs/en/adr/adr-0005-guardrails/) -- guardrails design

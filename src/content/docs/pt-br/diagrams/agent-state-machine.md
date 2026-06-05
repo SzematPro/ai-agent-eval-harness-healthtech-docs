@@ -51,13 +51,13 @@ veredito `clear` torna o nó um no-op e o grafo segue exatamente como o grafo
 de seis nós faz. Sinais de alerta agudos nunca alcançam essa pausa: eles
 sofrem curto-circuito antes, em `guardrail_pre`.
 
-Consulte [ADR-0001](../adr/adr-0001-orchestration.md) para a justificativa
-da orquestração, [c4-component.md](./c4-component.md) para a decomposição em
-nós e módulos, e [request-sequence.md](./request-sequence.md) para o fluxo
+Consulte [ADR-0001](/ai-agent-eval-harness-healthtech-docs/pt-br/adr/adr-0001-orchestration/) para a justificativa
+da orquestração, [c4-component.md](/ai-agent-eval-harness-healthtech-docs/pt-br/diagrams/c4-component/) para a decomposição em
+nós e módulos, e [request-sequence.md](/ai-agent-eval-harness-healthtech-docs/pt-br/diagrams/request-sequence/) para o fluxo
 de interação de turno único.
 
 O Grafo de Execução do Agente na single-page app de demonstração
-([ADR-0010](../adr/adr-0010-streaming-execution-graph.md))
+([ADR-0010](/ai-agent-eval-harness-healthtech-docs/pt-br/adr/adr-0010-streaming-execution-graph/))
 é uma visualização ao vivo, no navegador, dessa mesma topologia: ele desenha
 o conjunto real de nós e arestas compilados mostrado abaixo e acende cada nó
 conforme um turno é transmitido. O caminho de emissão por streaming e a

@@ -227,4 +227,4 @@ without false-refusing the latter. The agent refuses on zero-hit
 retrieval; a near-miss off-corpus question is answered against the
 closest card. The threshold is left in place, disabled, so a broader,
 more topically diverse corpus can enable it later. See the
-[model card](../reference/model-card.md) for the full limitation.
+[model card](/ai-agent-eval-harness-healthtech-docs/en/reference/model-card/) for the full limitation.

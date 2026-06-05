@@ -227,4 +227,4 @@ corpus sem recusar falsamente esta última. O agente recusa diante de uma
 recuperação de zero acertos; uma pergunta fora do corpus por pouco é respondida
 contra o cartão mais próximo. O limiar é deixado no lugar, desativado, para que
 um corpus mais amplo e tematicamente mais diverso possa habilitá-lo mais tarde.
-Ver a [model card](../reference/model-card.md) para a limitação completa.
+Ver a [model card](/ai-agent-eval-harness-healthtech-docs/pt-br/reference/model-card/) para a limitação completa.

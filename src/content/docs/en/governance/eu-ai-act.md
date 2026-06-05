@@ -15,8 +15,8 @@ Maps the `ai-agent-eval-harness-healthtech` reference implementation against
 under the Act's risk tiers and maps relevant articles to the repository's
 existing governance patterns.
 
-Read alongside the [regulatory posture](../reference/regulatory-posture.md) and the
-[NIST AI RMF mapping](nist-ai-rmf.md).
+Read alongside the [regulatory posture](/ai-agent-eval-harness-healthtech-docs/en/reference/regulatory-posture/) and the
+[NIST AI RMF mapping](/ai-agent-eval-harness-healthtech-docs/en/governance/nist-ai-rmf/).
 
 ## Risk-Tier Classification
 
@@ -52,7 +52,7 @@ the human operator, not the model, holds the routing decision.
 
 The reference implementation uses foundation models (Groq, Cerebras, OpenAI, Anthropic)
 behind a thin LLM client Protocol (see the
-[LLM vendor abstraction decision](../adr/adr-0002-llm-vendor-abstraction.md)). It does not
+[LLM vendor abstraction decision](/ai-agent-eval-harness-healthtech-docs/en/adr/adr-0002-llm-vendor-abstraction/)). It does not
 itself place a GPAI model on the EU market. The GPAI obligations (technical documentation,
 copyright compliance, training-data summary) fall on the model providers, not on this
 downstream application.
@@ -64,9 +64,9 @@ downstream application.
 | Art. 9 (Risk management) | Continuous identification, analysis, mitigation of risks | Eval harness identifies safety/citation/escalation regressions on every change; architecture decision records document risk treatment decisions | No formal risk-management system with periodic review; no systematic risk-register |
 | Art. 10 (Data and data governance) | Training/validation data governance, representativeness, bias examination | The data statement documents generation methodology, provenance, licensing, exclusion list; locale-parity scoring examines cross-locale bias | Data governance covers synthetic datasets only; no real-data governance framework |
 | Art. 11 + Annex IV (Technical documentation) | System description, design specifications, performance metrics | Model card (CHAI format), the system specification, the architecture decision records, the regulatory posture, the data statement | Documentation is thorough for a reference implementation; Annex IV requires specific format and depth |
-| Art. 12 (Record-keeping / logging) | Automatic logging of events for traceability | OpenTelemetry and OpenInference spans on every node, LLM call, retrieval, guardrail decision (see the [observability decision](../adr/adr-0006-observability.md)); Langfuse Cloud and Phoenix sinks | Logging exists but is observability-grade, not audit-grade; no tamper-evident logs; no defined retention period |
+| Art. 12 (Record-keeping / logging) | Automatic logging of events for traceability | OpenTelemetry and OpenInference spans on every node, LLM call, retrieval, guardrail decision (see the [observability decision](/ai-agent-eval-harness-healthtech-docs/en/adr/adr-0006-observability/)); Langfuse Cloud and Phoenix sinks | Logging exists but is observability-grade, not audit-grade; no tamper-evident logs; no defined retention period |
 | Art. 13 (Transparency and provision of information) | System designed for transparency; users understand outcomes | Guardrail-decision trace on every response; citation set on every clinical assertion; public model card; demo response carries disclaimer | Transparency is response-level; Art. 13 requires deployer-facing documentation and user-facing explanations |
-| Art. 14 (Human oversight) | Designed for effective human oversight | Optional human-in-the-loop review node using a LangGraph interrupt (see the [streaming execution graph decision](../adr/adr-0010-streaming-execution-graph.md)); human operator can approve/edit/reject high-risk drafts | Human-in-the-loop review is off by default; no dedicated human-oversight interface for monitoring; no override mechanism documentation |
+| Art. 14 (Human oversight) | Designed for effective human oversight | Optional human-in-the-loop review node using a LangGraph interrupt (see the [streaming execution graph decision](/ai-agent-eval-harness-healthtech-docs/en/adr/adr-0010-streaming-execution-graph/)); human operator can approve/edit/reject high-risk drafts | Human-in-the-loop review is off by default; no dedicated human-oversight interface for monitoring; no override mechanism documentation |
 | Art. 15 (Accuracy, robustness, cybersecurity) | Appropriate levels of accuracy, robustness, and cybersecurity | Deterministic eval gate (218/218 pass); nightly red-team; guardrails-before-LLM; PII redaction; OpenTelemetry instrumentation; secret scanning in CI | Accuracy measured on synthetic data; robustness tested on curated adversarial set; no penetration testing or formal security assessment |
 | Art. 17 (Quality management system) | Documented QMS for high-risk systems | Eval harness as measurement system; decision-record-based change control; change-blocking eval gates; release notes | No formal QMS; no quality manual; no internal audit cycle |
 
@@ -88,7 +88,7 @@ What the repository demonstrates today:
   repository is a demonstration of governance-aware engineering, not a conformity
   assessment
 
-The [regulatory posture](../reference/regulatory-posture.md) document records the
+The [regulatory posture](/ai-agent-eval-harness-healthtech-docs/en/reference/regulatory-posture/) document records the
 wellness/CDS boundary that keeps the system on the general-wellness side of the line,
 and the refusal templates enforce that boundary in code.
 
@@ -123,8 +123,8 @@ to "formalise and extend existing patterns."
 
 ## See Also
 
-- [Regulatory posture](../reference/regulatory-posture.md) -- regulatory boundary the design respects
-- [Model card](../reference/model-card.md) -- CHAI Applied Model Card
-- [NIST AI RMF mapping](nist-ai-rmf.md) -- NIST AI RMF mapping
-- [OWASP / ATLAS threat model](owasp-atlas-threat-model.md) -- threat model
-- [Guardrails decision](../adr/adr-0005-guardrails.md) -- guardrails design
+- [Regulatory posture](/ai-agent-eval-harness-healthtech-docs/en/reference/regulatory-posture/) -- regulatory boundary the design respects
+- [Model card](/ai-agent-eval-harness-healthtech-docs/en/reference/model-card/) -- CHAI Applied Model Card
+- [NIST AI RMF mapping](/ai-agent-eval-harness-healthtech-docs/en/governance/nist-ai-rmf/) -- NIST AI RMF mapping
+- [OWASP / ATLAS threat model](/ai-agent-eval-harness-healthtech-docs/en/governance/owasp-atlas-threat-model/) -- threat model
+- [Guardrails decision](/ai-agent-eval-harness-healthtech-docs/en/adr/adr-0005-guardrails/) -- guardrails design

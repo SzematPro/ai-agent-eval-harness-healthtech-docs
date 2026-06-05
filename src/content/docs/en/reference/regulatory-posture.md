@@ -206,7 +206,7 @@ Concretely:
   guidance and ending the in-app interaction. The pregnancy + teratogen
   pattern is handled by the LLM and system-prompt layer, not the
   deterministic router (it needs a drug-name lexicon a regex list
-  cannot carry); see [ADR-0005](../adr/adr-0005-guardrails.md).
+  cannot carry); see [ADR-0005](/ai-agent-eval-harness-healthtech-docs/en/adr/adr-0005-guardrails/).
 
 ## What the agent does NOT do
 
@@ -270,7 +270,7 @@ regulatory posture is a security-relevant property of the system.
 
 ## See also
 
-- [guardrails decision](../adr/adr-0005-guardrails.md) - guardrails design.
-- [data](data.md) - synthetic-only data policy and the
+- [guardrails decision](/ai-agent-eval-harness-healthtech-docs/en/adr/adr-0005-guardrails/) - guardrails design.
+- [data](/ai-agent-eval-harness-healthtech-docs/en/reference/data/) - synthetic-only data policy and the
   full exclusion list.
-- [security policy](security.md) - disclosure policy.
+- [security policy](/ai-agent-eval-harness-healthtech-docs/en/reference/security/) - disclosure policy.

@@ -28,8 +28,8 @@ subsiguientes, así que incluso un turno de rehusa o sin coincidencia regresa co
 un mensaje del asistente en el estado final del grafo. Se abren spans de
 OpenTelemetry en cada nodo y alrededor de la llamada al LLM.
 
-Consulta [c4-container.md](./c4-container.md) para la descomposición estática y
-[c4-component.md](./c4-component.md) para la vista de nodos y módulos.
+Consulta [c4-container.md](/ai-agent-eval-harness-healthtech-docs/es-419/diagrams/c4-container/) para la descomposición estática y
+[c4-component.md](/ai-agent-eval-harness-healthtech-docs/es-419/diagrams/c4-component/) para la vista de nodos y módulos.
 
 ## Un turno completado
 
@@ -143,7 +143,7 @@ un `node_completed` `skipped` sintetizado por cada nodo condicional genuinamente
 omitido, y termina con un evento terminal `turn_completed` que lleva el
 `ChatResponse` completo. Una falla después del primer byte es un evento `error`
 dentro del flujo; una falla antes del primer byte es un error HTTP normal.
-Consulta [ADR-0010](../adr/adr-0010-streaming-execution-graph.md) para el esquema
+Consulta [ADR-0010](/ai-agent-eval-harness-healthtech-docs/es-419/adr/adr-0010-streaming-execution-graph/) para el esquema
 de eventos.
 
 ```mermaid

@@ -15,7 +15,7 @@ This documentation describes a public reference implementation evaluated on 100%
 
 ## Context and Problem Statement
 
-[ADR-0014](./adr-0014-voice-extension.md) added voice (TTS via ElevenLabs
+[ADR-0014](/ai-agent-eval-harness-healthtech-docs/en/adr/adr-0014-voice-extension/) added voice (TTS via ElevenLabs
 `eleven_multilingual_v2`, STT via ElevenLabs Scribe) as an extension to
 the demo SPA. That ADR captures the design but does not codify the safety
 stance for the default state of the voice toggle.
@@ -73,7 +73,7 @@ toggle state, so the consent context never disappears.
   flips the toggle ON.
 - The deepfake-and-consent governance note documents the policy and
   references this ADR (see [voice consent and deepfake
-  policy](../governance/voice-consent-deepfake.md)).
+  policy](/ai-agent-eval-harness-healthtech-docs/en/governance/voice-consent-deepfake/)).
 - Locale parity: the toggle is OFF by default in en, es-419, pt-BR;
   the disclosure modal is fully translated in all three.
 
@@ -126,6 +126,6 @@ toggle state, so the consent context never disappears.
 
 ## More Information
 
-- [ADR-0014](./adr-0014-voice-extension.md) — voice extension design
-- [Voice consent and deepfake policy](../governance/voice-consent-deepfake.md)
+- [ADR-0014](/ai-agent-eval-harness-healthtech-docs/en/adr/adr-0014-voice-extension/) — voice extension design
+- [Voice consent and deepfake policy](/ai-agent-eval-harness-healthtech-docs/en/governance/voice-consent-deepfake/)
 - MADR 4.0.0: <https://adr.github.io/madr/>

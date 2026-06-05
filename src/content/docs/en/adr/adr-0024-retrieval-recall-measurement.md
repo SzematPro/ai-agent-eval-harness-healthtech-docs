@@ -14,7 +14,7 @@ This documentation describes a public reference implementation evaluated on 100%
 
 ## Context
 
-The hybrid retrieval pipeline ([ADR-0023](./adr-0023-hybrid-retrieval.md)) surfaces a top-`k` set of parent
+The hybrid retrieval pipeline ([ADR-0023](/ai-agent-eval-harness-healthtech-docs/en/adr/adr-0023-hybrid-retrieval/)) surfaces a top-`k` set of parent
 cards per turn. Until now retrieval quality was observed only indirectly, by
 metrics that couple retrieval with generation: a citation-coverage scorer grades
 whether the *response* cited an expected card, and a judge-backed
@@ -50,7 +50,7 @@ The locked choices:
     names "recall@4", so it is emitted; the lower-bound caveat is documented
     here and in the report.
   - `nDCG@k` = binary-gain nDCG, the only rank-sensitive signal (the reason
-    [ADR-0023](./adr-0023-hybrid-retrieval.md) added a cross-encoder reranker). Every gold card has relevance 1
+    [ADR-0023](/ai-agent-eval-harness-healthtech-docs/en/adr/adr-0023-hybrid-retrieval/) added a cross-encoder reranker). Every gold card has relevance 1
     (the labels carry no graded relevance); `DCG = Σ 1/log2(rank+2)` over
     top-k positions holding a gold card (0-based rank); `IDCG` sums the same
     over `min(|gold|, k)` ideal positions, so nDCG never exceeds 1.0 when gold
@@ -174,19 +174,19 @@ The locked choices:
 - **Decouple relevance from citation sufficiency.** If recall numbers warrant,
   add an explicit relevant-ids field separate from the disjunctive
   `must_cite_one_of`, and expand synthetic gold coverage for es-419 / pt-BR
-  toward parity with en ([ADR-0019](./adr-0019-synthetic-only-data-invariant.md) synthetic-only).
+  toward parity with en ([ADR-0019](/ai-agent-eval-harness-healthtech-docs/en/adr/adr-0019-synthetic-only-data-invariant/) synthetic-only).
 - **Wire a committed baseline file + CI restore/update step** to make the
   regression-tolerance path live for all aggregate dimensions.
 
 ## Rollback
 
 Remove the retrieval-recall scorer from the runner's default set; the metric
-simply stops being computed. The retrieval pipeline ([ADR-0023](./adr-0023-hybrid-retrieval.md)) is untouched.
+simply stops being computed. The retrieval pipeline ([ADR-0023](/ai-agent-eval-harness-healthtech-docs/en/adr/adr-0023-hybrid-retrieval/)) is untouched.
 
 ## See also
 
-- [ADR-0023](./adr-0023-hybrid-retrieval.md) (hybrid retrieval): the surface this scorer measures.
-- [ADR-0021](./adr-0021-parent-document-retrieval.md) (parent-document retrieval): the dedupe-by-parent step that defines
+- [ADR-0023](/ai-agent-eval-harness-healthtech-docs/en/adr/adr-0023-hybrid-retrieval/) (hybrid retrieval): the surface this scorer measures.
+- [ADR-0021](/ai-agent-eval-harness-healthtech-docs/en/adr/adr-0021-parent-document-retrieval/) (parent-document retrieval): the dedupe-by-parent step that defines
   the card identity used here.
-- [ADR-0003](./adr-0003-eval-harness.md) (eval harness): the scorer / runner / gate architecture extended.
-- [ADR-0019](./adr-0019-synthetic-only-data-invariant.md) (synthetic-only data invariant): constrains any gold-label expansion.
+- [ADR-0003](/ai-agent-eval-harness-healthtech-docs/en/adr/adr-0003-eval-harness/) (eval harness): the scorer / runner / gate architecture extended.
+- [ADR-0019](/ai-agent-eval-harness-healthtech-docs/en/adr/adr-0019-synthetic-only-data-invariant/) (synthetic-only data invariant): constrains any gold-label expansion.

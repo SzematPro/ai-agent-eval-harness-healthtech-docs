@@ -201,8 +201,8 @@ mudança automatizada de status existe.
 ## Mais informações
 
 - Supabase camada gratuita: <https://supabase.com/pricing>
-- ADR-0011 (camada de dados, Supabase para dados operacionais da demo): [ADR-0011](./adr-0011-data-layer-supabase.md)
-- ADR-0007 (alvo de implantação): [ADR-0007](./adr-0007-deployment.md)
+- ADR-0011 (camada de dados, Supabase para dados operacionais da demo): [ADR-0011](/ai-agent-eval-harness-healthtech-docs/pt-br/adr/adr-0011-data-layer-supabase/)
+- ADR-0007 (alvo de implantação): [ADR-0007](/ai-agent-eval-harness-healthtech-docs/pt-br/adr/adr-0007-deployment/)
 - GDPR Art. 25 (Proteção de Dados por Concepção e por Padrão): <https://gdpr-info.eu/art-25-gdpr/>
 - Desidentificação HIPAA Safe Harbor: <https://www.hhs.gov/hipaa/for-professionals/privacy/special-topics/de-identification/index.html>
 - Chile Ley 19.628 + Reforma 21.719: <https://www.bcn.cl/leychile/navegar?idNorma=4125>

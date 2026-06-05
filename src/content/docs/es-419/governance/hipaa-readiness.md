@@ -16,8 +16,8 @@ honesta: el sistema es una implementación de referencia que no maneja PHI y no 
 a HIPAA. La evaluación identifica lo que existe hoy y lo que necesitaría un despliegue que
 maneje PHI.
 
-Léase junto con la [postura regulatoria](../reference/regulatory-posture.md) y la
-[documentación de redacción de PII](pii-redaction.md).
+Léase junto con la [postura regulatoria](/ai-agent-eval-harness-healthtech-docs/es-419/reference/regulatory-posture/) y la
+[documentación de redacción de PII](/ai-agent-eval-harness-healthtech-docs/es-419/governance/pii-redaction/).
 
 ## Aplicabilidad
 
@@ -65,7 +65,7 @@ desplegara en un contexto en el que procesaría PHI en nombre de una entidad cub
 | Requisito (45 CFR 164.312) | Estado actual | Camino a producción |
 |-------------------------------|--------------|-----------------|
 | **Control de acceso** | Sin autenticación de usuario en tiempo de ejecución para la API de demostración; sin PHI que proteger | Identificación única de usuario; procedimiento de acceso de emergencia; cierre de sesión automático; cifrado y descifrado de PHI en reposo |
-| **Controles de auditoría** | Spans de OpenTelemetry con convenciones semánticas de OpenInference en cada nodo, llamada al LLM, recuperación y decisión de barrera de seguridad (véase la [decisión de observabilidad](../adr/adr-0006-observability.md)); sumideros de Langfuse Cloud y Phoenix | Registro de auditoría integral con almacenamiento a prueba de manipulaciones; retención de 6 años; interfaz de consulta para la revisión de auditorías; alertas en tiempo real ante patrones de acceso anómalos |
+| **Controles de auditoría** | Spans de OpenTelemetry con convenciones semánticas de OpenInference en cada nodo, llamada al LLM, recuperación y decisión de barrera de seguridad (véase la [decisión de observabilidad](/ai-agent-eval-harness-healthtech-docs/es-419/adr/adr-0006-observability/)); sumideros de Langfuse Cloud y Phoenix | Registro de auditoría integral con almacenamiento a prueba de manipulaciones; retención de 6 años; interfaz de consulta para la revisión de auditorías; alertas en tiempo real ante patrones de acceso anómalos |
 | **Controles de integridad** | El arnés de evaluación detecta regresiones de comportamiento; el esquema de respuesta del chat está bloqueado; los archivos de datos sintéticos están bajo control de versiones | Mecanismos electrónicos para autenticar PHI; controles de integridad para prevenir alteraciones no autorizadas; verificación de integridad de los respaldos |
 | **Seguridad de la transmisión** | HTTPS en Hugging Face Spaces (provisto por la plataforma); la API devuelve JSON estructurado | Cifrado de extremo a extremo en tránsito (TLS 1.3 como mínimo); segmentación de red; VPN para acceso administrativo |
 
@@ -92,7 +92,7 @@ para procesar PHI necesitaría:
 
 A partir de 2026, la mayoría de los principales proveedores de LLM ofrecen planes elegibles para BAA
 a clientes empresariales. La delgada abstracción de Protocol del cliente LLM (véase la
-[decisión de abstracción de proveedores de LLM](../adr/adr-0002-llm-vendor-abstraction.md)) permite
+[decisión de abstracción de proveedores de LLM](/ai-agent-eval-harness-healthtech-docs/es-419/adr/adr-0002-llm-vendor-abstraction/)) permite
 cambiar a proveedores con los BAA apropiados sin cambios en el código.
 
 ## Estado actual
@@ -102,7 +102,7 @@ no estar sujeta a HIPAA:
 
 - **Sin PHI**: El sistema maneja únicamente datos sintéticos. Ningún dato real de pacientes ingresa al
   repositorio, a la demostración ni a la canalización de evaluación en ningún momento. Esto se aplica
-  mediante una verificación de aceptación de datos y se documenta en la [declaración de datos](../reference/data.md).
+  mediante una verificación de aceptación de datos y se documenta en la [declaración de datos](/ai-agent-eval-harness-healthtech-docs/es-419/reference/data/).
 - **Redacción de PII**: Una etapa de redacción detecta y redacta correo electrónico, números de teléfono
   (formatos de EE. UU., Chile, Brasil), RUT, CPF, DNI, SSN, números de tarjeta de crédito (validados con Luhn)
   y patrones de PHI (MRN, fecha de nacimiento) tanto en la etapa de entrada como en la de salida.
@@ -111,7 +111,7 @@ no estar sujeta a HIPAA:
   respaldado por Postgres cuando se configura una cadena de conexión a base de datos.
 - **Rastro de auditoría**: Spans de OpenTelemetry con convenciones semánticas de OpenInference envuelven cada
   nodo, llamada al LLM, recuperación y decisión de barrera de seguridad (véase la
-  [decisión de observabilidad](../adr/adr-0006-observability.md)). El texto del mensaje del usuario se
+  [decisión de observabilidad](/ai-agent-eval-harness-healthtech-docs/es-419/adr/adr-0006-observability/)). El texto del mensaje del usuario se
   excluye explícitamente de los spans (invariante de privacidad aplicado por una prueba automatizada).
 - **Privacidad por diseño**: El texto del mensaje del usuario nunca entra en los spans, registros ni
   atributos de traza de OpenTelemetry. Esta es una restricción estricta aplicada por un invariante de prueba
@@ -153,8 +153,8 @@ implementación de referencia no puede demostrar por sí sola.
 
 ## Véase también
 
-- [Postura regulatoria](../reference/regulatory-posture.md) -- frontera regulatoria
-- [Redacción de PII](pii-redaction.md) -- documentación de redacción de PII
-- [Plan de registro de auditoría](audit-logging-plan.md) -- plan de registro de auditoría
-- [Preparación para ISO 42001 / SOC 2](iso42001-soc2.md) -- preparación para ISO 42001 / SOC 2
-- [Decisión de observabilidad](../adr/adr-0006-observability.md) -- diseño de observabilidad
+- [Postura regulatoria](/ai-agent-eval-harness-healthtech-docs/es-419/reference/regulatory-posture/) -- frontera regulatoria
+- [Redacción de PII](/ai-agent-eval-harness-healthtech-docs/es-419/governance/pii-redaction/) -- documentación de redacción de PII
+- [Plan de registro de auditoría](/ai-agent-eval-harness-healthtech-docs/es-419/governance/audit-logging-plan/) -- plan de registro de auditoría
+- [Preparación para ISO 42001 / SOC 2](/ai-agent-eval-harness-healthtech-docs/es-419/governance/iso42001-soc2/) -- preparación para ISO 42001 / SOC 2
+- [Decisión de observabilidad](/ai-agent-eval-harness-healthtech-docs/es-419/adr/adr-0006-observability/) -- diseño de observabilidad

@@ -227,7 +227,7 @@ graph LR
 
 **Production gap.** A production deployment needs multiple workers behind a load balancer, auto-scaling to handle traffic spikes, zero-downtime deployments, and SLA-backed uptime (typically 99.9% or higher). Cold starts must be eliminated. The agent code itself is portable -- FastAPI with uvicorn works behind any reverse proxy -- but the infrastructure layer needs significant investment.
 
-**Migration path.** The same Docker image can deploy to any Docker-capable host. The Render Web Service free tier is documented as a fallback (see [deploy](deploy.md)). Moving to production means choosing a cloud provider, configuring auto-scaling, and adding TLS termination at the load balancer level.
+**Migration path.** The same Docker image can deploy to any Docker-capable host. The Render Web Service free tier is documented as a fallback (see [deploy](/ai-agent-eval-harness-healthtech-docs/en/reference/deploy/)). Moving to production means choosing a cloud provider, configuring auto-scaling, and adding TLS termination at the load balancer level.
 
 ### 5.2 Storage/Data
 
@@ -255,7 +255,7 @@ graph LR
 
 ### 5.5 Security/Compliance
 
-**Current state.** No secrets in the repository (enforced by gitleaks in CI). Dependencies are pinned via the lockfile with Dependabot monitoring. No PHI, no real EHR data, no patient-identifiable information (100% synthetic data). The agent operates under FDA 2026 General Wellness / CDS framing (see [regulatory posture](regulatory-posture.md)). PII redaction is applied at ingress. Demo key fingerprinting uses anonymized sha256 with daily rotation.
+**Current state.** No secrets in the repository (enforced by gitleaks in CI). Dependencies are pinned via the lockfile with Dependabot monitoring. No PHI, no real EHR data, no patient-identifiable information (100% synthetic data). The agent operates under FDA 2026 General Wellness / CDS framing (see [regulatory posture](/ai-agent-eval-harness-healthtech-docs/en/reference/regulatory-posture/)). PII redaction is applied at ingress. Demo key fingerprinting uses anonymized sha256 with daily rotation.
 
 **Production gap.** A production deployment handling real patient data would need: Web Application Firewall and DDoS protection, managed secrets (Vault, AWS Secrets Manager), Business Associate Agreements with all LLM providers, HIPAA Security Rule compliance (risk assessment, breach notification, minimum necessary access), SOC 2 Type II certification, regular penetration testing, and an incident response plan. The regulatory posture would shift from General Wellness to a full compliance framework.
 
@@ -267,13 +267,13 @@ graph LR
 
 | Topic | ADR |
 |-------|-----|
-| Orchestration framework (six-node StateGraph) | [ADR-0001](../adr/adr-0001-orchestration.md) |
-| LLM vendor abstraction (Protocol + adapters) | [ADR-0002](../adr/adr-0002-llm-vendor-abstraction.md) |
-| Eval harness (DeepEval + Ragas + Promptfoo) | [ADR-0003](../adr/adr-0003-eval-harness.md) |
-| RAG stack (Chroma embedded) | [ADR-0004](../adr/adr-0004-rag-stack.md) |
-| Guardrails (scope + refusal + escalation) | [ADR-0005](../adr/adr-0005-guardrails.md) |
-| Observability (OTel + OpenInference) | [ADR-0006](../adr/adr-0006-observability.md) |
-| Deployment (HF Spaces + Docker SDK) | [ADR-0007](../adr/adr-0007-deployment.md) |
-| Data layer (Supabase free tier) | [ADR-0011](../adr/adr-0011-data-layer-supabase.md) |
-| Voice extension (ElevenLabs TTS/STT) | [ADR-0014](../adr/adr-0014-voice-extension.md) |
-| Streaming architecture (SSE events) | [ADR-0010](../adr/adr-0010-streaming-execution-graph.md) |
+| Orchestration framework (six-node StateGraph) | [ADR-0001](/ai-agent-eval-harness-healthtech-docs/en/adr/adr-0001-orchestration/) |
+| LLM vendor abstraction (Protocol + adapters) | [ADR-0002](/ai-agent-eval-harness-healthtech-docs/en/adr/adr-0002-llm-vendor-abstraction/) |
+| Eval harness (DeepEval + Ragas + Promptfoo) | [ADR-0003](/ai-agent-eval-harness-healthtech-docs/en/adr/adr-0003-eval-harness/) |
+| RAG stack (Chroma embedded) | [ADR-0004](/ai-agent-eval-harness-healthtech-docs/en/adr/adr-0004-rag-stack/) |
+| Guardrails (scope + refusal + escalation) | [ADR-0005](/ai-agent-eval-harness-healthtech-docs/en/adr/adr-0005-guardrails/) |
+| Observability (OTel + OpenInference) | [ADR-0006](/ai-agent-eval-harness-healthtech-docs/en/adr/adr-0006-observability/) |
+| Deployment (HF Spaces + Docker SDK) | [ADR-0007](/ai-agent-eval-harness-healthtech-docs/en/adr/adr-0007-deployment/) |
+| Data layer (Supabase free tier) | [ADR-0011](/ai-agent-eval-harness-healthtech-docs/en/adr/adr-0011-data-layer-supabase/) |
+| Voice extension (ElevenLabs TTS/STT) | [ADR-0014](/ai-agent-eval-harness-healthtech-docs/en/adr/adr-0014-voice-extension/) |
+| Streaming architecture (SSE events) | [ADR-0010](/ai-agent-eval-harness-healthtech-docs/en/adr/adr-0010-streaming-execution-graph/) |

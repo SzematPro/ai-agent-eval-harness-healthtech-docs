@@ -17,9 +17,9 @@ documentam o sistema tal como construído.
 
 ## Índice
 
-- [Máquina de estados do agente](./agent-state-machine.md)
-- [Diagrama de componentes C4](./c4-component.md)
-- [Diagrama de contêineres C4](./c4-container.md)
-- [Diagrama de contexto C4](./c4-context.md)
-- [Pipeline de avaliação](./evals-pipeline.md)
-- [Sequência de requisição](./request-sequence.md)
+- [Máquina de estados do agente](/ai-agent-eval-harness-healthtech-docs/pt-br/diagrams/agent-state-machine/)
+- [Diagrama de componentes C4](/ai-agent-eval-harness-healthtech-docs/pt-br/diagrams/c4-component/)
+- [Diagrama de contêineres C4](/ai-agent-eval-harness-healthtech-docs/pt-br/diagrams/c4-container/)
+- [Diagrama de contexto C4](/ai-agent-eval-harness-healthtech-docs/pt-br/diagrams/c4-context/)
+- [Pipeline de avaliação](/ai-agent-eval-harness-healthtech-docs/pt-br/diagrams/evals-pipeline/)
+- [Sequência de requisição](/ai-agent-eval-harness-healthtech-docs/pt-br/diagrams/request-sequence/)

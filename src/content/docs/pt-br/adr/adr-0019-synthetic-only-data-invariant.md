@@ -75,7 +75,7 @@ O ônus da prova no PR para qualquer nova fonte de dados proposta:
 2. Cadeia de proveniência (quem o produziu originalmente, quando, quais edições
    o repositório aplicou).
 3. Afirmação explícita de compatibilidade com a Apache 2.0 (a postura de
-   licenciamento do projeto, conforme a [ADR-0008](./adr-0008-licensing.md)).
+   licenciamento do projeto, conforme a [ADR-0008](/ai-agent-eval-harness-healthtech-docs/pt-br/adr/adr-0008-licensing/)).
 4. O mantenedor revisa os três itens acima antes que o PR seja
    mesclado.
 
@@ -88,9 +88,9 @@ examine o corpus sintético possa verificar a política diretamente.
 - A política de segurança declara a lista de exclusão e a declaração de política.
 - O diretório do conjunto de dados sintéticos carrega uma auditoria de licença por
   fonte.
-- A [declaração de dados](../reference/data.md) publicada é o cartão do conjunto de
+- A [declaração de dados](/ai-agent-eval-harness-healthtech-docs/pt-br/reference/data/) publicada é o cartão do conjunto de
   dados, com proveniência por cartão.
-- O [cartão de dados](../governance/data-card.md) de governança é a visão voltada à
+- O [cartão de dados](/ai-agent-eval-harness-healthtech-docs/pt-br/governance/data-card/) de governança é a visão voltada à
   governança do mesmo.
 - Pré-merge: a lista de verificação de revisão do PR inclui o portão do ônus da
   prova para qualquer novo arquivo de dados.
@@ -114,7 +114,7 @@ examine o corpus sintético possa verificar a política diretamente.
   avaliações licenciadas adicionais para cobertura real.
 - A restrição de somente sintético elimina o uso de sinais de drift do mundo real
   (sem telemetria de desvio no estilo MIMIC). O [plano de detecção de
-  drift](../governance/drift-detection-plan.md) é honesto quanto a essa lacuna.
+  drift](/ai-agent-eval-harness-healthtech-docs/pt-br/governance/drift-detection-plan/) é honesto quanto a essa lacuna.
 - Um contribuidor que queira adicionar um conjunto de dados licenciado útil tem de
   fazer o trabalho de (a) encontrar uma alternativa de domínio público, ou
   (b) produzir uma paráfrase somente sintética, ou (c) não contribuir com os
@@ -156,9 +156,9 @@ examine o corpus sintético possa verificar a política diretamente.
 
 ## Mais informações
 
-- [Declaração de dados](../reference/data.md) — cartão do conjunto de dados
-- [Cartão de dados](../governance/data-card.md) — cartão do conjunto de dados voltado à governança
-- [ADR-0004](./adr-0004-rag-stack.md) — pilha de RAG (a consumidora do
+- [Declaração de dados](/ai-agent-eval-harness-healthtech-docs/pt-br/reference/data/) — cartão do conjunto de dados
+- [Cartão de dados](/ai-agent-eval-harness-healthtech-docs/pt-br/governance/data-card/) — cartão do conjunto de dados voltado à governança
+- [ADR-0004](/ai-agent-eval-harness-healthtech-docs/pt-br/adr/adr-0004-rag-stack/) — pilha de RAG (a consumidora do
   corpus sintético)
-- [ADR-0008](./adr-0008-licensing.md) — postura de licenciamento do projeto
+- [ADR-0008](/ai-agent-eval-harness-healthtech-docs/pt-br/adr/adr-0008-licensing/) — postura de licenciamento do projeto
 - MADR 4.0.0: <https://adr.github.io/madr/>

@@ -14,8 +14,8 @@ This documentation describes a public reference implementation evaluated on 100%
 > This plan covers what is logged today, what is not logged, and what a regulated
 > deployment would need.
 >
-> Read alongside the [observability design](../adr/adr-0006-observability.md) and the
-> [HIPAA readiness assessment](hipaa-readiness.md).
+> Read alongside the [observability design](/ai-agent-eval-harness-healthtech-docs/en/adr/adr-0006-observability/) and the
+> [HIPAA readiness assessment](/ai-agent-eval-harness-healthtech-docs/en/governance/hipaa-readiness/).
 
 ## Logging Architecture
 
@@ -147,8 +147,8 @@ Production-grade audit logging would require:
 
 ## See Also
 
-- [Observability design](../adr/adr-0006-observability.md) -- observability design
-- [HIPAA readiness assessment](hipaa-readiness.md) -- HIPAA readiness assessment
-- [PII redaction](pii-redaction.md) -- PII redaction documentation
-- [ISO 42001 / SOC 2 readiness](iso42001-soc2.md) -- ISO 42001 / SOC 2 readiness
-- [Drift detection plan](drift-detection-plan.md) -- drift detection plan
+- [Observability design](/ai-agent-eval-harness-healthtech-docs/en/adr/adr-0006-observability/) -- observability design
+- [HIPAA readiness assessment](/ai-agent-eval-harness-healthtech-docs/en/governance/hipaa-readiness/) -- HIPAA readiness assessment
+- [PII redaction](/ai-agent-eval-harness-healthtech-docs/en/governance/pii-redaction/) -- PII redaction documentation
+- [ISO 42001 / SOC 2 readiness](/ai-agent-eval-harness-healthtech-docs/en/governance/iso42001-soc2/) -- ISO 42001 / SOC 2 readiness
+- [Drift detection plan](/ai-agent-eval-harness-healthtech-docs/en/governance/drift-detection-plan/) -- drift detection plan

@@ -10,7 +10,7 @@ This documentation describes a public reference implementation evaluated on 100%
 # C4 Component - LangGraph Agent Runtime
 
 The component view decomposes the `LangGraph Agent Runtime` container
-(see [c4-container.md](./c4-container.md)) into the components a single
+(see [c4-container.md](/ai-agent-eval-harness-healthtech-docs/en/diagrams/c4-container/)) into the components a single
 `/chat` turn actually executes: the graph nodes and the first-class
 guardrail modules that those nodes invoke.
 
@@ -45,8 +45,8 @@ orchestrated tier - they are modules called from inside three nodes:
   on a reject. It calls LangGraph `interrupt()` to pause for human
   sign-off.
 
-See [agent-state-machine.md](./agent-state-machine.md) for the control
-flow and [ADR-0005](../adr/adr-0005-guardrails.md) for the guardrail
+See [agent-state-machine.md](/ai-agent-eval-harness-healthtech-docs/en/diagrams/agent-state-machine/) for the control
+flow and [ADR-0005](/ai-agent-eval-harness-healthtech-docs/en/adr/adr-0005-guardrails/) for the guardrail
 design.
 
 ```mermaid

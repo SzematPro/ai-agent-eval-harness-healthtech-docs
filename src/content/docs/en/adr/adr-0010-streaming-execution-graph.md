@@ -356,12 +356,12 @@ following criteria:
 
 ## More Information
 
-- [ADR-0001: Orchestration framework](./adr-0001-orchestration.md) -
+- [ADR-0001: Orchestration framework](/ai-agent-eval-harness-healthtech-docs/en/adr/adr-0001-orchestration/) -
   LangGraph, the source of the streaming API and the compiled graph the
   stream is driven from.
-- [ADR-0006: Observability stack](./adr-0006-observability.md) - the
+- [ADR-0006: Observability stack](/ai-agent-eval-harness-healthtech-docs/en/adr/adr-0006-observability/) - the
   per-node OpenTelemetry spans that already measure node timing.
-- [ADR-0007: Deployment target](./adr-0007-deployment.md) - Hugging Face
+- [ADR-0007: Deployment target](/ai-agent-eval-harness-healthtech-docs/en/adr/adr-0007-deployment/) - Hugging Face
   Spaces, the single-worker posture, and the proxy the SSE stream must
   traverse unbuffered.
 - WHATWG HTML server-sent events specification:

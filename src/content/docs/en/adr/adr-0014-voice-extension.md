@@ -327,12 +327,12 @@ cost and complexity of a persistent audio WebSocket.
 
 ## More Information
 
-- LLM vendor abstraction: [ADR-0002](./adr-0002-llm-vendor-abstraction.md)
-- Deployment target and $0/month constraint: [ADR-0007](./adr-0007-deployment.md)
-- Streaming architecture and SSE extension pattern: [ADR-0010](./adr-0010-streaming-execution-graph.md)
-- Data layer and cost tracking (Supabase): [ADR-0011](./adr-0011-data-layer-supabase.md)
-- Continuous improvement and usage storage: [ADR-0016](./adr-0016-continuous-improvement-storage.md)
-- Guardrails and privacy redaction: [ADR-0005](./adr-0005-guardrails.md)
+- LLM vendor abstraction: [ADR-0002](/ai-agent-eval-harness-healthtech-docs/en/adr/adr-0002-llm-vendor-abstraction/)
+- Deployment target and $0/month constraint: [ADR-0007](/ai-agent-eval-harness-healthtech-docs/en/adr/adr-0007-deployment/)
+- Streaming architecture and SSE extension pattern: [ADR-0010](/ai-agent-eval-harness-healthtech-docs/en/adr/adr-0010-streaming-execution-graph/)
+- Data layer and cost tracking (Supabase): [ADR-0011](/ai-agent-eval-harness-healthtech-docs/en/adr/adr-0011-data-layer-supabase/)
+- Continuous improvement and usage storage: [ADR-0016](/ai-agent-eval-harness-healthtech-docs/en/adr/adr-0016-continuous-improvement-storage/)
+- Guardrails and privacy redaction: [ADR-0005](/ai-agent-eval-harness-healthtech-docs/en/adr/adr-0005-guardrails/)
 - ElevenLabs API documentation: <https://elevenlabs.io/docs/api-reference>
 - ElevenLabs `eleven_multilingual_v2` model: <https://elevenlabs.io/docs/speech-synthesis/models>
 - ElevenLabs Scribe STT: <https://elevenlabs.io/docs/capabilities/speech-to-text>

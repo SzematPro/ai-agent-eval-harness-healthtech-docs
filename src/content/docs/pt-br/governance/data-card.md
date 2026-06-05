@@ -9,11 +9,11 @@ Esta documentação descreve uma implementação de referência pública avaliad
 
 # Data Card - Conjunto de eval sintético e base de conhecimento
 
-> Este documento é o complemento voltado à governança do [data statement](../reference/data.md).
+> Este documento é o complemento voltado à governança do [data statement](/ai-agent-eval-harness-healthtech-docs/pt-br/reference/data/).
 > Enquanto o data statement fornece o card completo do conjunto de dados segundo a estrutura do Google Data Cards Playbook,
 > este documento foca na rastreabilidade de proveniência, na postura de licenciamento e no alinhamento
-> regulatório. Leia em conjunto com o [model card](../reference/model-card.md) e a
-> [postura regulatória](../reference/regulatory-posture.md).
+> regulatório. Leia em conjunto com o [model card](/ai-agent-eval-harness-healthtech-docs/pt-br/reference/model-card/) e a
+> [postura regulatória](/ai-agent-eval-harness-healthtech-docs/pt-br/reference/regulatory-posture/).
 
 ## Visão geral
 
@@ -46,7 +46,7 @@ A metodologia de geração segue um pipeline de quatro etapas: criação de pers
 condições amostrados a partir de faixas epidemiológicas publicadas), geração de diálogos com
 pontuação produtor-crítico quanto à fidelidade à entrevista motivacional, à conformidade de escopo e à
 ancoragem, curadoria manual de cada turno gerado e injeção manual de casos adversariais.
-A metodologia completa está documentada no [data statement](../reference/data.md).
+A metodologia completa está documentada no [data statement](/ai-agent-eval-harness-healthtech-docs/pt-br/reference/data/).
 
 ### Cards da base de conhecimento
 
@@ -111,7 +111,7 @@ de identificabilidade.
 Controles de governança de dados que existem hoje:
 
 - **Política somente sintética**: imposta pelo fluxo de contribuição e documentada no
-  [data statement](../reference/data.md)
+  [data statement](/ai-agent-eval-harness-healthtech-docs/pt-br/reference/data/)
 - **Metadados de proveniência**: cada card de KB carrega `source_url`, `accessed_at` e
   `source_license`; o loader rejeita cards sem proveniência
 - **Paridade entre configurações regionais**: o harness de eval mantém en, es-419 e pt-BR sob limiares idênticos
@@ -121,7 +121,7 @@ Controles de governança de dados que existem hoje:
 - **Declaração de IRB**: nenhum dado de sujeito humano; a aprovação de IRB não é aplicável (veja a
   seção de IRB do data statement)
 
-Limitações conhecidas herdadas do [data statement](../reference/data.md):
+Limitações conhecidas herdadas do [data statement](/ai-agent-eval-harness-healthtech-docs/pt-br/reference/data/):
 
 - Corpus de domínio único; a cobertura é intencionalmente estreita
 - Viés de vocabulário clínico em inglês dos EUA nos dados sintéticos, parcialmente corrigido pelo
@@ -153,7 +153,7 @@ sintéticos e abordar o seguinte:
 
 ## Veja também
 
-- [Data statement](../reference/data.md) -- card completo do conjunto de dados com metodologia de geração
-- [Model card](../reference/model-card.md) -- CHAI Applied Model Card para o agente
-- [Postura regulatória](../reference/regulatory-posture.md) -- fronteira FDA/WHO/MHRA/EU AI Act
-- [Avaliação de prontidão para HIPAA](hipaa-readiness.md) -- documento de governança específico para HIPAA
+- [Data statement](/ai-agent-eval-harness-healthtech-docs/pt-br/reference/data/) -- card completo do conjunto de dados com metodologia de geração
+- [Model card](/ai-agent-eval-harness-healthtech-docs/pt-br/reference/model-card/) -- CHAI Applied Model Card para o agente
+- [Postura regulatória](/ai-agent-eval-harness-healthtech-docs/pt-br/reference/regulatory-posture/) -- fronteira FDA/WHO/MHRA/EU AI Act
+- [Avaliação de prontidão para HIPAA](/ai-agent-eval-harness-healthtech-docs/pt-br/governance/hipaa-readiness/) -- documento de governança específico para HIPAA

@@ -17,8 +17,8 @@ Esta documentação descreve uma implementação de referência pública avaliad
 > documentação de modelos, harness de eval, guardrails, observabilidade -- mapeiam-se diretamente
 > aos princípios de gestão de risco de modelos que as entidades reguladas pela CMF devem seguir.
 >
-> Leia em conjunto com a [postura regulatória](../reference/regulatory-posture.md) e o
-> [mapeamento do NIST AI RMF](nist-ai-rmf.md).
+> Leia em conjunto com a [postura regulatória](/ai-agent-eval-harness-healthtech-docs/pt-br/reference/regulatory-posture/) e o
+> [mapeamento do NIST AI RMF](/ai-agent-eval-harness-healthtech-docs/pt-br/governance/nist-ai-rmf/).
 
 ## Aplicabilidade
 
@@ -130,9 +130,9 @@ de modelos.
 
 ## Veja também
 
-- [Postura regulatória](../reference/regulatory-posture.md) -- fronteira regulatória
-- [Model card](../reference/model-card.md) -- CHAI Applied Model Card
-- [Mapeamento do NIST AI RMF](nist-ai-rmf.md) -- mapeamento do NIST AI RMF
-- [Mapeamento da Ley 19.628 do Chile](chile-ley-19628.md) -- mapeamento de proteção de dados do Chile
-- [Plano de detecção de deriva](drift-detection-plan.md) -- plano de detecção de deriva
-- [Design de guardrails](../adr/adr-0005-guardrails.md) -- design de guardrails
+- [Postura regulatória](/ai-agent-eval-harness-healthtech-docs/pt-br/reference/regulatory-posture/) -- fronteira regulatória
+- [Model card](/ai-agent-eval-harness-healthtech-docs/pt-br/reference/model-card/) -- CHAI Applied Model Card
+- [Mapeamento do NIST AI RMF](/ai-agent-eval-harness-healthtech-docs/pt-br/governance/nist-ai-rmf/) -- mapeamento do NIST AI RMF
+- [Mapeamento da Ley 19.628 do Chile](/ai-agent-eval-harness-healthtech-docs/pt-br/governance/chile-ley-19628/) -- mapeamento de proteção de dados do Chile
+- [Plano de detecção de deriva](/ai-agent-eval-harness-healthtech-docs/pt-br/governance/drift-detection-plan/) -- plano de detecção de deriva
+- [Design de guardrails](/ai-agent-eval-harness-healthtech-docs/pt-br/adr/adr-0005-guardrails/) -- design de guardrails

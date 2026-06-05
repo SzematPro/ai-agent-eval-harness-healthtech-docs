@@ -105,7 +105,7 @@ mental model is exactly the architecture story this project tells.
   disabled and never exercises the pause
 - LangGraph is vendor-neutral: nodes call the project's `LLMClient`
   Protocol, not a LangChain-specific provider object, so the
-  abstraction in [ADR-0002](./adr-0002-llm-vendor-abstraction.md) is
+  abstraction in [ADR-0002](/ai-agent-eval-harness-healthtech-docs/en/adr/adr-0002-llm-vendor-abstraction/) is
   preserved
 - 1.0 GA status (2025-10-22) signals that the framework is past the
   0.x churn window typical of agent libraries
@@ -215,7 +215,7 @@ graph and the eval harness run with no pause behaviour, and an
 single-pass eval harness, which is why it is opt-in. Acute red flags are
 NOT routed through `interrupt()`: they short-circuit upstream in
 `guardrail_pre` to an emergency template (see
-[ADR-0005](./adr-0005-guardrails.md)) and `review_response` never pauses
+[ADR-0005](/ai-agent-eval-harness-healthtech-docs/en/adr/adr-0005-guardrails/)) and `review_response` never pauses
 them.
 
 **Checkpointer factory.** The checkpointer factory returns an in-memory

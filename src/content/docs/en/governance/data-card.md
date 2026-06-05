@@ -9,11 +9,11 @@ This documentation describes a public reference implementation evaluated on 100%
 
 # Data Card - Synthetic Eval Set and Knowledge Base
 
-> This document is the governance-facing companion to the [data statement](../reference/data.md).
+> This document is the governance-facing companion to the [data statement](/ai-agent-eval-harness-healthtech-docs/en/reference/data/).
 > Where the data statement provides the full dataset card under the Google Data Cards Playbook structure,
 > this document focuses on provenance traceability, licensing posture, and regulatory
-> alignment. Read alongside the [model card](../reference/model-card.md) and the
-> [regulatory posture](../reference/regulatory-posture.md).
+> alignment. Read alongside the [model card](/ai-agent-eval-harness-healthtech-docs/en/reference/model-card/) and the
+> [regulatory posture](/ai-agent-eval-harness-healthtech-docs/en/reference/regulatory-posture/).
 
 ## Overview
 
@@ -46,7 +46,7 @@ Generation methodology follows a four-stage pipeline: persona creation (five con
 clusters sampled from published epidemiological ranges), dialogue generation with
 producer-critic scoring on motivational-interviewing fidelity, scope compliance, and
 groundedness, manual curation of every generated turn, and hand-authored adversarial
-case injection. Full methodology is documented in the [data statement](../reference/data.md).
+case injection. Full methodology is documented in the [data statement](/ai-agent-eval-harness-healthtech-docs/en/reference/data/).
 
 ### Knowledge-Base Cards
 
@@ -111,7 +111,7 @@ review.
 Key data governance controls that exist today:
 
 - **Synthetic-only policy**: enforced by the contribution workflow and documented in
-  the [data statement](../reference/data.md)
+  the [data statement](/ai-agent-eval-harness-healthtech-docs/en/reference/data/)
 - **Provenance metadata**: every KB card carries `source_url`, `accessed_at`, and
   `source_license`; the loader rejects cards without provenance
 - **Locale parity**: the eval harness holds en, es-419, and pt-BR to identical thresholds
@@ -121,7 +121,7 @@ Key data governance controls that exist today:
 - **IRB statement**: no human-subject data; IRB approval is not applicable (see the
   data statement IRB section)
 
-Known limitations carried from the [data statement](../reference/data.md):
+Known limitations carried from the [data statement](/ai-agent-eval-harness-healthtech-docs/en/reference/data/):
 
 - Single-domain corpus; coverage is intentionally narrow
 - US-English clinical vocabulary bias in synthetic data, partially corrected by the
@@ -153,7 +153,7 @@ datasets and address the following:
 
 ## See Also
 
-- [Data statement](../reference/data.md) -- full dataset card with generation methodology
-- [Model card](../reference/model-card.md) -- CHAI Applied Model Card for the agent
-- [Regulatory posture](../reference/regulatory-posture.md) -- FDA/WHO/MHRA/EU AI Act boundary
-- [HIPAA readiness assessment](hipaa-readiness.md) -- HIPAA-specific governance doc
+- [Data statement](/ai-agent-eval-harness-healthtech-docs/en/reference/data/) -- full dataset card with generation methodology
+- [Model card](/ai-agent-eval-harness-healthtech-docs/en/reference/model-card/) -- CHAI Applied Model Card for the agent
+- [Regulatory posture](/ai-agent-eval-harness-healthtech-docs/en/reference/regulatory-posture/) -- FDA/WHO/MHRA/EU AI Act boundary
+- [HIPAA readiness assessment](/ai-agent-eval-harness-healthtech-docs/en/governance/hipaa-readiness/) -- HIPAA-specific governance doc

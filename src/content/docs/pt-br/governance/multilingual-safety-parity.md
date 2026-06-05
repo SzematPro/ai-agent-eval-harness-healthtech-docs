@@ -14,9 +14,9 @@ Esta documentação descreve uma implementação de referência pública avaliad
 > espanhol latino-americano (es-419) e português brasileiro (pt-BR). Esta avaliação
 > avalia se os usuários nas três configurações regionais recebem proteções de segurança equivalentes.
 >
-> Leia em conjunto com o [data statement](../reference/data.md), o
-> [model card](../reference/model-card.md) e o
-> [modelo de ameaças OWASP ATLAS](owasp-atlas-threat-model.md).
+> Leia em conjunto com o [data statement](/ai-agent-eval-harness-healthtech-docs/pt-br/reference/data/), o
+> [model card](/ai-agent-eval-harness-healthtech-docs/pt-br/reference/model-card/) e o
+> [modelo de ameaças OWASP ATLAS](/ai-agent-eval-harness-healthtech-docs/pt-br/governance/owasp-atlas-threat-model/).
 
 ## Cobertura por configuração regional
 
@@ -164,8 +164,8 @@ Alcançar a paridade total de segurança multilíngue em um deployment em produ�
 
 ## Veja também
 
-- [Data statement](../reference/data.md) -- card do conjunto de dados sintético com metodologia de configuração regional
-- [Model card](../reference/model-card.md) -- CHAI Applied Model Card, seção Fairness
-- [Política de consentimento de voz e deepfake](voice-consent-deepfake.md) -- política de consentimento de voz
-- [Redação de PII](pii-redaction.md) -- redação de PII por configuração regional
-- [Design de guardrails](../adr/adr-0005-guardrails.md) -- design de guardrails
+- [Data statement](/ai-agent-eval-harness-healthtech-docs/pt-br/reference/data/) -- card do conjunto de dados sintético com metodologia de configuração regional
+- [Model card](/ai-agent-eval-harness-healthtech-docs/pt-br/reference/model-card/) -- CHAI Applied Model Card, seção Fairness
+- [Política de consentimento de voz e deepfake](/ai-agent-eval-harness-healthtech-docs/pt-br/governance/voice-consent-deepfake/) -- política de consentimento de voz
+- [Redação de PII](/ai-agent-eval-harness-healthtech-docs/pt-br/governance/pii-redaction/) -- redação de PII por configuração regional
+- [Design de guardrails](/ai-agent-eval-harness-healthtech-docs/pt-br/adr/adr-0005-guardrails/) -- design de guardrails

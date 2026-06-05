@@ -123,6 +123,6 @@ the term is sector-specific.
 
 This glossary covers the canonical terms used across the documentation
 and ADRs. If a term is missing, the substantive source of truth lives
-in [regulatory posture](regulatory-posture.md) (regulatory posture and
-exclusions) and [data](data.md) (dataset licence audit and exclusion
+in [regulatory posture](/ai-agent-eval-harness-healthtech-docs/en/reference/regulatory-posture/) (regulatory posture and
+exclusions) and [data](/ai-agent-eval-harness-healthtech-docs/en/reference/data/) (dataset licence audit and exclusion
 list).

@@ -195,7 +195,7 @@ reescrever o grafo do agente.
   <https://www.gov.uk/government/publications/software-and-artificial-intelligence-ai-as-a-medical-device>
 - NVIDIA NeMo Guardrails: <https://github.com/NVIDIA/NeMo-Guardrails>
 - Guardrails AI: <https://www.guardrailsai.com/docs>
-- Documento companheiro: [postura regulatória](../reference/regulatory-posture.md)
+- Documento companheiro: [postura regulatória](/ai-agent-eval-harness-healthtech-docs/pt-br/reference/regulatory-posture/)
 - MADR 4.0.0: <https://adr.github.io/madr/>
 
 ## Roteador de escalonamento tal como construído

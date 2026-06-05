@@ -297,5 +297,5 @@ adapted, and integrated.
   <https://opensource.org/license/apache-2-0>
 - Apache Software Foundation guidance on NOTICE files:
   <https://www.apache.org/legal/src-headers.html>
-- Adjacent ADR: [ADR-0007: Deployment target](./adr-0007-deployment.md)
+- Adjacent ADR: [ADR-0007: Deployment target](/ai-agent-eval-harness-healthtech-docs/en/adr/adr-0007-deployment/)
 - MADR 4.0.0: <https://adr.github.io/madr/>

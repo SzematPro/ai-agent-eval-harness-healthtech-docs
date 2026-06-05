@@ -194,7 +194,7 @@ para lo fuera de tema que no es de dominio).
 
 ## Más información
 
-- ADR de barreras de seguridad: [ADR-0005](./adr-0005-guardrails.md)
-- ADR de observabilidad: [ADR-0006](./adr-0006-observability.md)
-- Estrategia de expansión del corpus (ADR complementario): [ADR-0013](./adr-0013-corpus-expansion-strategy.md)
+- ADR de barreras de seguridad: [ADR-0005](/ai-agent-eval-harness-healthtech-docs/es-419/adr/adr-0005-guardrails/)
+- ADR de observabilidad: [ADR-0006](/ai-agent-eval-harness-healthtech-docs/es-419/adr/adr-0006-observability/)
+- Estrategia de expansión del corpus (ADR complementario): [ADR-0013](/ai-agent-eval-harness-healthtech-docs/es-419/adr/adr-0013-corpus-expansion-strategy/)
 - MADR 4.0.0: <https://adr.github.io/madr/>

@@ -9,11 +9,11 @@ Esta documentación describe una implementación de referencia pública evaluada
 
 # Ficha de datos - Conjunto de evaluación sintético y base de conocimiento
 
-> Este documento es el complemento orientado a la gobernanza de la [declaración de datos](../reference/data.md).
+> Este documento es el complemento orientado a la gobernanza de la [declaración de datos](/ai-agent-eval-harness-healthtech-docs/es-419/reference/data/).
 > Mientras la declaración de datos proporciona la ficha completa del conjunto de datos según la estructura del Google Data Cards Playbook,
 > este documento se centra en la trazabilidad de la procedencia, la postura de licenciamiento y la alineación
-> regulatoria. Léase junto con la [ficha del modelo](../reference/model-card.md) y la
-> [postura regulatoria](../reference/regulatory-posture.md).
+> regulatoria. Léase junto con la [ficha del modelo](/ai-agent-eval-harness-healthtech-docs/es-419/reference/model-card/) y la
+> [postura regulatoria](/ai-agent-eval-harness-healthtech-docs/es-419/reference/regulatory-posture/).
 
 ## Descripción general
 
@@ -46,7 +46,7 @@ La metodología de generación sigue un pipeline de cuatro etapas: creación de 
 condiciones muestreados de rangos epidemiológicos publicados), generación de diálogos con
 puntuación productor-crítico sobre la fidelidad a la entrevista motivacional, el cumplimiento del alcance y la
 fundamentación, curaduría manual de cada turno generado e inyección de casos adversariales redactados a mano.
-La metodología completa se documenta en la [declaración de datos](../reference/data.md).
+La metodología completa se documenta en la [declaración de datos](/ai-agent-eval-harness-healthtech-docs/es-419/reference/data/).
 
 ### Tarjetas de la base de conocimiento
 
@@ -111,7 +111,7 @@ de identificabilidad.
 Controles de gobernanza de datos clave que existen hoy:
 
 - **Política exclusivamente sintética**: aplicada por el flujo de contribución y documentada en
-  la [declaración de datos](../reference/data.md)
+  la [declaración de datos](/ai-agent-eval-harness-healthtech-docs/es-419/reference/data/)
 - **Metadatos de procedencia**: cada tarjeta de KB lleva `source_url`, `accessed_at` y
   `source_license`; el cargador rechaza las tarjetas sin procedencia
 - **Paridad entre configuraciones regionales**: el arnés de evaluación sujeta en, es-419 y pt-BR a umbrales idénticos
@@ -121,7 +121,7 @@ Controles de gobernanza de datos clave que existen hoy:
 - **Declaración de IRB**: sin datos de sujetos humanos; la aprobación del IRB no aplica (véase la
   sección IRB de la declaración de datos)
 
-Limitaciones conocidas heredadas de la [declaración de datos](../reference/data.md):
+Limitaciones conocidas heredadas de la [declaración de datos](/ai-agent-eval-harness-healthtech-docs/es-419/reference/data/):
 
 - Corpus de dominio único; la cobertura es intencionalmente estrecha
 - Sesgo de vocabulario clínico en inglés estadounidense en los datos sintéticos, corregido parcialmente por el
@@ -153,7 +153,7 @@ sintéticos y atender lo siguiente:
 
 ## Véase también
 
-- [Declaración de datos](../reference/data.md) -- ficha completa del conjunto de datos con metodología de generación
-- [Ficha del modelo](../reference/model-card.md) -- CHAI Applied Model Card del agente
-- [Postura regulatoria](../reference/regulatory-posture.md) -- límite FDA/WHO/MHRA/Ley de IA de la UE
-- [Evaluación de preparación para HIPAA](hipaa-readiness.md) -- documento de gobernanza específico de HIPAA
+- [Declaración de datos](/ai-agent-eval-harness-healthtech-docs/es-419/reference/data/) -- ficha completa del conjunto de datos con metodología de generación
+- [Ficha del modelo](/ai-agent-eval-harness-healthtech-docs/es-419/reference/model-card/) -- CHAI Applied Model Card del agente
+- [Postura regulatoria](/ai-agent-eval-harness-healthtech-docs/es-419/reference/regulatory-posture/) -- límite FDA/WHO/MHRA/Ley de IA de la UE
+- [Evaluación de preparación para HIPAA](/ai-agent-eval-harness-healthtech-docs/es-419/governance/hipaa-readiness/) -- documento de gobernanza específico de HIPAA

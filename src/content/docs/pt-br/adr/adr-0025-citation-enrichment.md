@@ -21,9 +21,9 @@ Duas abordagens de enriquecimento foram consideradas:
 1. **Enriquecimento no lado do cliente.** A SPA chama um novo endpoint de metadados de cartão para buscar os metadados no momento da renderização.
 2. **Enriquecimento no lado do servidor (escolhido).** A camada da API deriva os campos do contexto recuperado já presente no estado do agente e os anexa aos objetos de citação antes de serializar a resposta do chat.
 
-O enriquecimento no lado do servidor foi escolhido porque os metadados da KB já estão em memória no momento da construção da resposta (os objetos de chunk de contexto no contexto recuperado), o LLM nunca deve emitir URLs para preservar a restrição de honestidade ([ADR-0020](./adr-0020-structured-agent-reply.md)), e adicionar um novo endpoint público apenas para os dados do popover ampliaria a superfície da API sem um benefício proporcional.
+O enriquecimento no lado do servidor foi escolhido porque os metadados da KB já estão em memória no momento da construção da resposta (os objetos de chunk de contexto no contexto recuperado), o LLM nunca deve emitir URLs para preservar a restrição de honestidade ([ADR-0020](/ai-agent-eval-harness-healthtech-docs/pt-br/adr/adr-0020-structured-agent-reply/)), e adicionar um novo endpoint público apenas para os dados do popover ampliaria a superfície da API sem um benefício proporcional.
 
-O contrato de citações da resposta do chat ([ADR-0020](./adr-0020-structured-agent-reply.md)) é compatível retroativamente: todos os três novos campos têm como padrão ausente, de modo que os consumidores existentes (avaliadores de avaliação, portão de red-team, harness de certificação) que leem apenas o id do cartão não são afetados.
+O contrato de citações da resposta do chat ([ADR-0020](/ai-agent-eval-harness-healthtech-docs/pt-br/adr/adr-0020-structured-agent-reply/)) é compatível retroativamente: todos os três novos campos têm como padrão ausente, de modo que os consumidores existentes (avaliadores de avaliação, portão de red-team, harness de certificação) que leem apenas o id do cartão não são afetados.
 
 ## Decisão
 
@@ -50,7 +50,7 @@ Estender o modelo de citação com três campos opcionais e populá-los no lado 
 
 **(C) Degradação elegante.** Cada item de enriquecimento é envolvido de modo que uma falha retorne a citação original inalterada. Um chunk ausente, um source vazio ou um campo de metadados ruim produz um valor ausente no campo correspondente, em vez de uma resposta de erro. O helper nunca levanta exceção.
 
-**(D) A chave de busca é o slug puro do cartão.** Após a deduplicação por pai no nó de recuperação, o id do chunk de contexto é igual ao id do pai, igual ao slug do cartão (por exemplo, `card-hyp-01`). Não há separador `::` na chave de busca. Um id de subchunk (`card-hyp-01::00`) nunca corresponderia ao id de cartão de uma citação, porque as citações estão na granularidade do cartão ([ADR-0021](./adr-0021-parent-document-retrieval.md)).
+**(D) A chave de busca é o slug puro do cartão.** Após a deduplicação por pai no nó de recuperação, o id do chunk de contexto é igual ao id do pai, igual ao slug do cartão (por exemplo, `card-hyp-01`). Não há separador `::` na chave de busca. Um id de subchunk (`card-hyp-01::00`) nunca corresponderia ao id de cartão de uma citação, porque as citações estão na granularidade do cartão ([ADR-0021](/ai-agent-eval-harness-healthtech-docs/pt-br/adr/adr-0021-parent-document-retrieval/)).
 
 **(E) Campos opcionais aditivos preservam a compatibilidade retroativa.** Uma citação construída apenas a partir de um id de cartão ainda é construída com todos os três novos campos ausentes. Os avaliadores de avaliação, o portão de red-team e o harness de certificação leem apenas o id do cartão; eles não são afetados.
 
@@ -95,5 +95,5 @@ Adicionar um endpoint público que a SPA chama para buscar os metadados do cart�
 - Um cartão da KB ingerido sem campo source nos metadados do Chroma produz uma URL de origem ausente; isso aparece como um popover sem link. O conjunto de dados sintético atual popula o source para cada cartão, então este é um risco de conjunto de dados degradado, não um caso comum.
 
 **Referências cruzadas:**
-- [ADR-0020](./adr-0020-structured-agent-reply.md) — Resposta estruturada do agente (o contrato de citações da resposta do chat, compatível retroativamente, que esta ADR estende)
-- [ADR-0023](./adr-0023-hybrid-retrieval.md) — Recuperação híbrida (o rótulo de caminho híbrido e a semântica de logit do reranker que esta ADR lê)
+- [ADR-0020](/ai-agent-eval-harness-healthtech-docs/pt-br/adr/adr-0020-structured-agent-reply/) — Resposta estruturada do agente (o contrato de citações da resposta do chat, compatível retroativamente, que esta ADR estende)
+- [ADR-0023](/ai-agent-eval-harness-healthtech-docs/pt-br/adr/adr-0023-hybrid-retrieval/) — Recuperação híbrida (o rótulo de caminho híbrido e a semântica de logit do reranker que esta ADR lê)

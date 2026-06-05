@@ -18,7 +18,7 @@ uma operadora). As dependências técnicas externas são divididas em
 provedores de LLM, um provedor de embeddings, o armazenamento vetorial e
 um backend de observabilidade.
 
-Consulte também [c4-container.md](./c4-container.md) para a decomposição do
+Consulte também [c4-container.md](/ai-agent-eval-harness-healthtech-docs/pt-br/diagrams/c4-container/) para a decomposição do
 próximo nível.
 
 ```mermaid

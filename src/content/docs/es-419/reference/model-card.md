@@ -26,7 +26,7 @@ Esta documentación describe una implementación de referencia pública evaluada
 > respecto de lo que el código de este proyecto realmente hace, y cada campo
 > que no aplica a una implementación de referencia no desplegada lo dice de
 > forma explícita en lugar de dejarse en blanco o inventarse. Léela junto a
-> la [postura regulatoria](regulatory-posture.md) y los [datos](data.md).
+> la [postura regulatoria](/ai-agent-eval-harness-healthtech-docs/es-419/reference/regulatory-posture/) y los [datos](/ai-agent-eval-harness-healthtech-docs/es-419/reference/data/).
 
 ---
 
@@ -36,11 +36,11 @@ Esta documentación describe una implementación de referencia pública evaluada
 |---|---|
 | **Nombre** | Agente conversacional de adherencia a la medicación (`ai-agent-eval-harness-healthtech`) |
 | **Desarrollador** | Waldemar Szemat. Implementación de referencia pública; sin patrocinador corporativo, sin socio institucional, sin financiamiento externo. |
-| **Consultas o para reportar una incidencia** | <waldemar@szemat.pro>. Proceso de divulgación de seguridad en la [política de seguridad](security.md). Incidencias: el rastreador de incidencias del repositorio público. |
+| **Consultas o para reportar una incidencia** | <waldemar@szemat.pro>. Proceso de divulgación de seguridad en la [política de seguridad](/ai-agent-eval-harness-healthtech-docs/es-419/reference/security/). Incidencias: el rastreador de incidencias del repositorio público. |
 | **Etapa de publicación** | Implementación de referencia pública, `v2.1.0`. No es un producto comercial, no es un dispositivo médico publicado, no está en uso clínico. |
 | **Fecha de publicación** | Publicación pública inicial 2026-05-14; publicación actual `v2.1.0`. |
 | **Disponibilidad global** | Código fuente público bajo Apache-2.0. Una demo interactiva opcional se ejecuta en Hugging Face Spaces (nivel gratuito) cuando las claves de proveedor del host están configuradas. Sin restricción geográfica y sin comercialización en ninguna jurisdicción; es un artefacto de código, no un servicio ofrecido. |
-| **Aprobación regulatoria, si aplica** | Ninguna. No se ha buscado ni obtenido autorización de la FDA, marcado CE, notificación a la MHRA ni ninguna otra autorización regulatoria. Ninguna es aplicable: esto no es un dispositivo médico (consulta las Advertencias y la [postura regulatoria](regulatory-posture.md)). |
+| **Aprobación regulatoria, si aplica** | Ninguna. No se ha buscado ni obtenido autorización de la FDA, marcado CE, notificación a la MHRA ni ninguna otra autorización regulatoria. Ninguna es aplicable: esto no es un dispositivo médico (consulta las Advertencias y la [postura regulatoria](/ai-agent-eval-harness-healthtech-docs/es-419/reference/regulatory-posture/)). |
 | **Versión** | `v2.1.0`. El versionado es semántico; el prompt del agente, la base de conocimiento y el corpus de evaluación se versionan junto con el código. |
 
 ---
@@ -149,14 +149,14 @@ contra **personas-paciente sintéticas**, generadas por LLM a lo largo de
 cinco grupos de afecciones (hipertensión, diabetes mellitus tipo 2, VIH como
 el ancla de adherencia a largo plazo, warfarina como el ancla de índice
 terapéutico estrecho, asma como el ancla de PRN-vs-programado). Ninguna
-persona corresponde a un individuo real; consulta los [datos](data.md).
+persona corresponde a un individuo real; consulta los [datos](/ai-agent-eval-harness-healthtech-docs/es-419/reference/data/).
 
 ### Entornos y casos de uso fuera de alcance con advertencia
 
 Este artefacto **no** debe usarse para ninguno de los siguientes. La lista es
 la declaración canónica de lo que está fuera de alcance; la imponen el
 clasificador de alcance, las plantillas de rechazo y el arnés de evaluación, y
-es el mismo límite que la [postura regulatoria](regulatory-posture.md)
+es el mismo límite que la [postura regulatoria](/ai-agent-eval-harness-healthtech-docs/es-419/reference/regulatory-posture/)
 registra en su totalidad.
 
 - **Uso clínico real de cualquier tipo.** No despliegues este agente para
@@ -273,7 +273,7 @@ conocidos*.
   sesgo conocido hacia el encuadre clínico en inglés de EE. UU. Los segmentos
   de evaluación en es-419 y pt-BR se sostienen a los *mismos* umbrales que el
   inglés, y un bucle de generación productor-crítico corrige parcialmente el
-  sesgo, pero el sesgo de locale residual se reconoce en los [datos](data.md).
+  sesgo, pero el sesgo de locale residual se reconoce en los [datos](/ai-agent-eval-harness-healthtech-docs/es-419/reference/data/).
 - **Las tarjetas de la base de conocimiento están en inglés.** El agente y el
   arnés de evaluación son conscientes del locale de extremo a extremo, pero
   las tarjetas de la KB en sí están en inglés. Una pasada de KB localizada
@@ -368,7 +368,7 @@ sustituye una.
     en es-419, 59 en pt-BR. Generados por LLM a partir de personas sintéticas
     con un bucle productor-crítico, luego curados manualmente al 100%, luego
     aumentados con semillas adversariales escritas a mano. Metodología completa
-    en los [datos](data.md).
+    en los [datos](/ai-agent-eval-harness-healthtech-docs/es-419/reference/data/).
   - *Base de conocimiento* - 36 tarjetas sintéticas parafraseadas de DailyMed
     (FDA Structured Product Labeling, dominio público), MedlinePlus (US NLM,
     dominio público) y la WHO Essential Medicines List (solo parafraseada).
@@ -426,11 +426,11 @@ sustituye una.
   nunca se escribe en un span, registro o atributo de traza**, impuesto por
   una prueba unitaria dedicada; redacción de PII antes de que cualquier texto
   llegue al LLM; un proceso publicado de divulgación de seguridad en la
-  [política de seguridad](security.md). El diseño está mapeado a la guía de
+  [política de seguridad](/ai-agent-eval-harness-healthtech-docs/es-419/reference/security/). El diseño está mapeado a la guía de
   General-Wellness / Clinical-Decision-Support de la FDA 2026, la guía de la
   OMS 2024 sobre modelos multimodales grandes, las Good Machine Learning
   Practice de la MHRA y los artículos de gobernanza de modelos de la Ley de IA
-  de la UE en la [postura regulatoria](regulatory-posture.md).
+  de la UE en la [postura regulatoria](/ai-agent-eval-harness-healthtech-docs/es-419/reference/regulatory-posture/).
 - **Mecanismos de transparencia, inteligibilidad y responsabilidad.** Cada
   respuesta de `POST /chat` lleva su **traza completa de decisiones de las
   barreras de seguridad** y su **conjunto de citaciones**, en el mismo esquema
@@ -468,7 +468,7 @@ sustituye una.
   diseño se apoya en la experiencia de campo previa del autor liderando la
   ingeniería de un producto de adherencia a la medicación de salud digital en
   LATAM, y en los documentos de guía publicados enumerados en la
-  [postura regulatoria](regulatory-posture.md). Esto se declara con
+  [postura regulatoria](/ai-agent-eval-harness-healthtech-docs/es-419/reference/regulatory-posture/). Esto se declara con
   franqueza porque la ficha de CHAI lo pide y la respuesta honesta es
   "ninguna, por la naturaleza del artefacto".
 
@@ -521,7 +521,7 @@ sustituye una.
 - **Descripción de los datos de prueba.** El corpus sintético de 218 casos:
   100 en inglés (que abarcan las categorías golden, adversarial y de
   no-coincidencia), 59 en es-419, 59 en pt-BR. Plenamente sintético; consulta
-  los [datos](data.md).
+  los [datos](/ai-agent-eval-harness-healthtech-docs/es-419/reference/data/).
 - **Proceso de validación y justificación.** Ejecutada por el target de
   evaluación y por el flujo de trabajo de CI de evaluación en cada pull
   request. Es una validación de ingeniería de software del comportamiento de
@@ -624,7 +624,7 @@ sustituye una.
   consentimiento del paciente aplicable porque el sistema no tiene pacientes
   reales ni datos reales de pacientes; el conjunto de datos es plenamente
   sintético y no porta PHI ni PII (consulta la declaración del IRB en los
-  [datos](data.md)). La divulgación *sí* está integrada de todos modos: cada
+  [datos](/ai-agent-eval-harness-healthtech-docs/es-419/reference/data/)). La divulgación *sí* está integrada de todos modos: cada
   respuesta de la demo lleva un banner persistente y un pie de página en línea
   que declaran que es una demostración, que usa datos sintéticos, que no es un
   dispositivo médico y que las preguntas médicas van al clínico del usuario. Si
@@ -638,13 +638,13 @@ sustituye una.
 
 ### Consulta también
 
-- [postura regulatoria](regulatory-posture.md) - el límite de la FDA / OMS /
+- [postura regulatoria](/ai-agent-eval-harness-healthtech-docs/es-419/reference/regulatory-posture/) - el límite de la FDA / OMS /
   MHRA / Ley de IA de la UE que el diseño respeta, y la lista canónica de lo
   que está fuera de alcance.
-- [datos](data.md) - la ficha del conjunto de datos sintético (formato Google
+- [datos](/ai-agent-eval-harness-healthtech-docs/es-419/reference/data/) - la ficha del conjunto de datos sintético (formato Google
   Data Cards Playbook), metodología de generación, postura de licencias,
   declaración del IRB.
-- [política de seguridad](security.md) - proceso de divulgación de seguridad.
+- [política de seguridad](/ai-agent-eval-harness-healthtech-docs/es-419/reference/security/) - proceso de divulgación de seguridad.
 - CHAI Applied Model Card (plantilla seguida por este documento):
   <https://www.chai.org/workgroup/applied-model> y
   <https://github.com/coalition-for-health-ai/mc-schema>.

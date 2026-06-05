@@ -14,7 +14,7 @@ Esta documentación describe una implementación de referencia pública evaluada
 
 ## Contexto
 
-La canalización de recuperación híbrida ([ADR-0023](./adr-0023-hybrid-retrieval.md)) hace aflorar un conjunto de las `k` mejores tarjetas
+La canalización de recuperación híbrida ([ADR-0023](/ai-agent-eval-harness-healthtech-docs/es-419/adr/adr-0023-hybrid-retrieval/)) hace aflorar un conjunto de las `k` mejores tarjetas
 padre por turno. Hasta ahora la calidad de la recuperación se observaba solo de forma indirecta, mediante
 métricas que acoplan la recuperación con la generación: un evaluador de cobertura de citaciones califica
 si la *respuesta* citó una tarjeta esperada, y un evaluador de fundamentación respaldado
@@ -50,7 +50,7 @@ Las decisiones fijadas:
     se llama "recall@4", de modo que se emite; la salvedad de la cota inferior se documenta
     aquí y en el informe.
   - `nDCG@k` = nDCG de ganancia binaria, la única señal sensible al ranking (la razón por la que
-    [ADR-0023](./adr-0023-hybrid-retrieval.md) añadió un reordenador cross-encoder). Cada tarjeta dorada tiene relevancia 1
+    [ADR-0023](/ai-agent-eval-harness-healthtech-docs/es-419/adr/adr-0023-hybrid-retrieval/) añadió un reordenador cross-encoder). Cada tarjeta dorada tiene relevancia 1
     (las etiquetas no llevan relevancia graduada); `DCG = Σ 1/log2(rank+2)` sobre las
     posiciones del top-k que contienen una tarjeta dorada (rango basado en 0); `IDCG` suma lo mismo
     sobre `min(|gold|, k)` posiciones ideales, de modo que nDCG nunca supera 1.0 cuando las doradas
@@ -174,19 +174,19 @@ Las decisiones fijadas:
 - **Desacoplar la relevancia de la suficiencia de citación.** Si las cifras de recall lo justifican,
   añadir un campo explícito de identificadores-relevantes separado del disyuntivo
   `must_cite_one_of`, y ampliar la cobertura de gold sintético para es-419 / pt-BR
-  hacia la paridad con en ([ADR-0019](./adr-0019-synthetic-only-data-invariant.md) exclusivamente sintético).
+  hacia la paridad con en ([ADR-0019](/ai-agent-eval-harness-healthtech-docs/es-419/adr/adr-0019-synthetic-only-data-invariant/) exclusivamente sintético).
 - **Conectar un archivo de línea base comprometido + paso de restauración/actualización de CI** para hacer
   que la ruta de tolerancia a regresiones esté en vivo para todas las dimensiones de agregado.
 
 ## Reversión
 
 Eliminar el evaluador de recall de recuperación del conjunto por defecto del runner; la métrica
-simplemente deja de calcularse. La canalización de recuperación ([ADR-0023](./adr-0023-hybrid-retrieval.md)) queda intacta.
+simplemente deja de calcularse. La canalización de recuperación ([ADR-0023](/ai-agent-eval-harness-healthtech-docs/es-419/adr/adr-0023-hybrid-retrieval/)) queda intacta.
 
 ## Véase también
 
-- [ADR-0023](./adr-0023-hybrid-retrieval.md) (recuperación híbrida): la superficie que este evaluador mide.
-- [ADR-0021](./adr-0021-parent-document-retrieval.md) (recuperación de documento padre): el paso de deduplicación por padre que define
+- [ADR-0023](/ai-agent-eval-harness-healthtech-docs/es-419/adr/adr-0023-hybrid-retrieval/) (recuperación híbrida): la superficie que este evaluador mide.
+- [ADR-0021](/ai-agent-eval-harness-healthtech-docs/es-419/adr/adr-0021-parent-document-retrieval/) (recuperación de documento padre): el paso de deduplicación por padre que define
   la identidad de tarjeta usada aquí.
-- [ADR-0003](./adr-0003-eval-harness.md) (arnés de evaluación): la arquitectura de evaluador / runner / puerta extendida.
-- [ADR-0019](./adr-0019-synthetic-only-data-invariant.md) (invariante de datos exclusivamente sintéticos): restringe cualquier ampliación de etiquetas doradas.
+- [ADR-0003](/ai-agent-eval-harness-healthtech-docs/es-419/adr/adr-0003-eval-harness/) (arnés de evaluación): la arquitectura de evaluador / runner / puerta extendida.
+- [ADR-0019](/ai-agent-eval-harness-healthtech-docs/es-419/adr/adr-0019-synthetic-only-data-invariant/) (invariante de datos exclusivamente sintéticos): restringe cualquier ampliación de etiquetas doradas.

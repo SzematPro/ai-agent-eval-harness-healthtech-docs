@@ -12,11 +12,11 @@ This documentation describes a public reference implementation evaluated on 100%
 - Status: Accepted
 - Date: 2026-05-20
 - Decision-makers: Waldemar Szemat
-- Supersedes (in part): [ADR-0003](./adr-0003-eval-harness.md), on the judge-model choice only
+- Supersedes (in part): [ADR-0003](/ai-agent-eval-harness-healthtech-docs/en/adr/adr-0003-eval-harness/), on the judge-model choice only
 
 ## Context and Problem Statement
 
-[ADR-0003](./adr-0003-eval-harness.md) ("Eval harness") was accepted on
+[ADR-0003](/ai-agent-eval-harness-healthtech-docs/en/adr/adr-0003-eval-harness/) ("Eval harness") was accepted on
 2026-03-18. It selected the overall eval architecture (a hand-rolled
 pytest core orchestrating DeepEval, Ragas, Phoenix, and Promptfoo) and,
 inside that architecture, named **Anthropic Claude Haiku** as the pinned
@@ -184,8 +184,8 @@ match a stale document rather than the reverse.
 
 ## More Information
 
-- [ADR-0003: Eval harness](./adr-0003-eval-harness.md) (the superseded-in-part decision)
-- [ADR-0002: LLM vendor abstraction](./adr-0002-llm-vendor-abstraction.md) (the LLM client Protocol the judge adapter implements)
+- [ADR-0003: Eval harness](/ai-agent-eval-harness-healthtech-docs/en/adr/adr-0003-eval-harness/) (the superseded-in-part decision)
+- [ADR-0002: LLM vendor abstraction](/ai-agent-eval-harness-healthtech-docs/en/adr/adr-0002-llm-vendor-abstraction/) (the LLM client Protocol the judge adapter implements)
 - Cerebras Inference documentation: <https://inference-docs.cerebras.ai/>
 - MADR 4.0.0: <https://adr.github.io/madr/>
 

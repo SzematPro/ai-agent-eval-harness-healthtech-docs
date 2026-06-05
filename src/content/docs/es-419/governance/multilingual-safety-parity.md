@@ -14,9 +14,9 @@ Esta documentación describe una implementación de referencia pública evaluada
 > español latinoamericano (es-419) y portugués brasileño (pt-BR). Esta evaluación
 > determina si los usuarios en las tres configuraciones regionales reciben protecciones de seguridad equivalentes.
 >
-> Léase junto con la [declaración de datos](../reference/data.md), la
-> [ficha del modelo](../reference/model-card.md) y el
-> [modelo de amenazas OWASP ATLAS](owasp-atlas-threat-model.md).
+> Léase junto con la [declaración de datos](/ai-agent-eval-harness-healthtech-docs/es-419/reference/data/), la
+> [ficha del modelo](/ai-agent-eval-harness-healthtech-docs/es-419/reference/model-card/) y el
+> [modelo de amenazas OWASP ATLAS](/ai-agent-eval-harness-healthtech-docs/es-419/governance/owasp-atlas-threat-model/).
 
 ## Cobertura por configuración regional
 
@@ -164,8 +164,8 @@ Lograr una paridad de seguridad multilingüe plena en un despliegue en producci�
 
 ## Véase también
 
-- [Declaración de datos](../reference/data.md) -- ficha del conjunto de datos sintético con metodología por configuración regional
-- [Ficha del modelo](../reference/model-card.md) -- CHAI Applied Model Card, sección de equidad
-- [Política de consentimiento de voz y deepfakes](voice-consent-deepfake.md) -- política de consentimiento de voz
-- [Redacción de PII](pii-redaction.md) -- redacción de PII por configuración regional
-- [Diseño de barreras de seguridad](../adr/adr-0005-guardrails.md) -- diseño de barreras de seguridad
+- [Declaración de datos](/ai-agent-eval-harness-healthtech-docs/es-419/reference/data/) -- ficha del conjunto de datos sintético con metodología por configuración regional
+- [Ficha del modelo](/ai-agent-eval-harness-healthtech-docs/es-419/reference/model-card/) -- CHAI Applied Model Card, sección de equidad
+- [Política de consentimiento de voz y deepfakes](/ai-agent-eval-harness-healthtech-docs/es-419/governance/voice-consent-deepfake/) -- política de consentimiento de voz
+- [Redacción de PII](/ai-agent-eval-harness-healthtech-docs/es-419/governance/pii-redaction/) -- redacción de PII por configuración regional
+- [Diseño de barreras de seguridad](/ai-agent-eval-harness-healthtech-docs/es-419/adr/adr-0005-guardrails/) -- diseño de barreras de seguridad

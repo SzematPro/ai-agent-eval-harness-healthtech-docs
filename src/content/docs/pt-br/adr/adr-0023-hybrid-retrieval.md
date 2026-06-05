@@ -14,7 +14,7 @@ Esta documentação descreve uma implementação de referência pública avaliad
 
 ## Contexto
 
-A camada de recuperação apresentava o contexto com um único caminho denso (bi-encoder): o turno do usuário é embutido com o prefixo de consulta BGE e os subchunks mais próximos são lidos do Chroma ([ADR-0004](./adr-0004-rag-stack.md)), depois deduplicados para cartões pais ([ADR-0021](./adr-0021-parent-document-retrieval.md)). A recuperação densa captura similaridade semântica, mas perde correspondências lexicais exatas quando a consulta e um cartão compartilham tokens raros (um nome de medicamento, um modelo de dispositivo, uma unidade de dose específica) que o embedding suaviza. Um índice puramente lexical tem a fraqueza inversa: ele perde a paráfrase. Para um agente de adesão à medicação cujo corpus é denso em entidades nomeadas, nenhum sinal sozinho é suficiente.
+A camada de recuperação apresentava o contexto com um único caminho denso (bi-encoder): o turno do usuário é embutido com o prefixo de consulta BGE e os subchunks mais próximos são lidos do Chroma ([ADR-0004](/ai-agent-eval-harness-healthtech-docs/pt-br/adr/adr-0004-rag-stack/)), depois deduplicados para cartões pais ([ADR-0021](/ai-agent-eval-harness-healthtech-docs/pt-br/adr/adr-0021-parent-document-retrieval/)). A recuperação densa captura similaridade semântica, mas perde correspondências lexicais exatas quando a consulta e um cartão compartilham tokens raros (um nome de medicamento, um modelo de dispositivo, uma unidade de dose específica) que o embedding suaviza. Um índice puramente lexical tem a fraqueza inversa: ele perde a paráfrase. Para um agente de adesão à medicação cujo corpus é denso em entidades nomeadas, nenhum sinal sozinho é suficiente.
 
 O remédio padrão é a recuperação híbrida: rodar um gerador lexical e um denso em paralelo, fundir suas classificações e, então, reavaliar os candidatos fundidos com um cross-encoder que lê consulta e candidato conjuntamente. Esta ADR registra as decisões tomadas ao adicionar esse pipeline.
 
@@ -24,7 +24,7 @@ Substituir o passo de recuperação apenas denso por um pipeline de três estág
 
 1. **Dois geradores de candidatos paralelos** sobre o mesmo corpus de subchunks: BM25 (lexical) e o caminho denso existente do Chroma (semântico).
 2. **Reciprocal Rank Fusion** combina as duas listas classificadas em uma única, sem calibração de score entre os sistemas.
-3. **Rerank com cross-encoder** reavalia os candidatos fundidos contra o texto da consulta; os sobreviventes são então deduplicados para pais ([ADR-0021](./adr-0021-parent-document-retrieval.md)), truncados para `top_k` e filtrados pelo limiar de similaridade mínima existente.
+3. **Rerank com cross-encoder** reavalia os candidatos fundidos contra o texto da consulta; os sobreviventes são então deduplicados para pais ([ADR-0021](/ai-agent-eval-harness-healthtech-docs/pt-br/adr/adr-0021-parent-document-retrieval/)), truncados para `top_k` e filtrados pelo limiar de similaridade mínima existente.
 
 As escolhas de engenharia fixadas:
 
@@ -81,7 +81,7 @@ Usar a filtragem `where` do Chroma junto com a busca densa em vez de um índice 
 
 ### Neutras
 
-- A invariante de deduplicação por pai ([ADR-0021](./adr-0021-parent-document-retrieval.md)) permanece inalterada: ela roda após a fusão + rerank, ainda sobre as identidades de subchunk.
+- A invariante de deduplicação por pai ([ADR-0021](/ai-agent-eval-harness-healthtech-docs/pt-br/adr/adr-0021-parent-document-retrieval/)) permanece inalterada: ela roda após a fusão + rerank, ainda sobre as identidades de subchunk.
 - A tokenização é minúsculas + remoção de pontuação; a tokenização sensível à localidade para es-419 / pt-BR é adiada até que as métricas de recall a justifiquem.
 
 ## Notas de implementação
@@ -103,5 +103,5 @@ Definir o sinalizador de env de opt-out do híbrido para restaurar o caminho ape
 
 ## Veja também
 
-- [ADR-0004](./adr-0004-rag-stack.md) (pilha de RAG): o store denso + embedder que este pipeline estende.
-- [ADR-0021](./adr-0021-parent-document-retrieval.md) (recuperação de documento pai): o passo de deduplicação por pai que roda após a fusão + rerank.
+- [ADR-0004](/ai-agent-eval-harness-healthtech-docs/pt-br/adr/adr-0004-rag-stack/) (pilha de RAG): o store denso + embedder que este pipeline estende.
+- [ADR-0021](/ai-agent-eval-harness-healthtech-docs/pt-br/adr/adr-0021-parent-document-retrieval/) (recuperação de documento pai): o passo de deduplicação por pai que roda após a fusão + rerank.

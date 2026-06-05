@@ -13,7 +13,7 @@ Esta documentação descreve uma implementação de referência pública avaliad
 > exportação (Langfuse Cloud Hobby, Phoenix auto-hospedado, OTLP genérico) e
 > um acumulador de custo + latência por turno que chega em cada resposta de
 > `/chat` e em cada relatório de avaliação. Veja a
-> [ADR-0006](../adr/adr-0006-observability.md) para a decisão; este arquivo é o
+> [ADR-0006](/ai-agent-eval-harness-healthtech-docs/pt-br/adr/adr-0006-observability/) para a decisão; este arquivo é o
 > manual do operador.
 
 ## 1. Visão geral
@@ -140,7 +140,7 @@ tracer, então o span da camada do grafo mantém a topologia consistente.
 
 O tempo por nó também é exposto fora do pipeline OTel. O modo de streaming SSE
 em `/chat` e `/chat/resume` (veja a
-[ADR-0010](../adr/adr-0010-streaming-execution-graph.md)) emite um evento
+[ADR-0010](/ai-agent-eval-harness-healthtech-docs/pt-br/adr/adr-0010-streaming-execution-graph/)) emite um evento
 `node_started` e um `node_completed` por nó executado, com o `node_completed`
 carregando um `duration_ms` medido pelo emissor - o intervalo de relógio de
 parede entre os eventos de início e fim do nó para o run id correspondente.
@@ -167,7 +167,7 @@ Cada span carrega apenas METADADOS:
 resposta do assistente ou qualquer PHI.** Isto é imposto por um teste de
 unidade dedicado que afirma o invariante de privacidade. Violar este invariante
 significa um gate de CI reprovado. A motivação é a
-[postura regulatória](regulatory-posture.md): os traces deixam o processo
+[postura regulatória](/ai-agent-eval-harness-healthtech-docs/pt-br/reference/regulatory-posture/): os traces deixam o processo
 local; as mensagens do usuário não devem.
 
 Se você precisar inspecionar uma transcrição, faça isso a partir dos logs do

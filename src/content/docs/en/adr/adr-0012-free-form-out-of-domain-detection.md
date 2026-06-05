@@ -184,7 +184,7 @@ OpenTelemetry spans in the `guardrail_pre` node gain two new attributes:
 
 ## More Information
 
-- Guardrails ADR: [ADR-0005](./adr-0005-guardrails.md)
-- Observability ADR: [ADR-0006](./adr-0006-observability.md)
-- Corpus expansion strategy (companion ADR): [ADR-0013](./adr-0013-corpus-expansion-strategy.md)
+- Guardrails ADR: [ADR-0005](/ai-agent-eval-harness-healthtech-docs/en/adr/adr-0005-guardrails/)
+- Observability ADR: [ADR-0006](/ai-agent-eval-harness-healthtech-docs/en/adr/adr-0006-observability/)
+- Corpus expansion strategy (companion ADR): [ADR-0013](/ai-agent-eval-harness-healthtech-docs/en/adr/adr-0013-corpus-expansion-strategy/)
 - MADR 4.0.0: <https://adr.github.io/madr/>

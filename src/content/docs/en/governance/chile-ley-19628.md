@@ -15,8 +15,8 @@ This documentation describes a public reference implementation evaluated on 100%
 > 2024. This document evaluates which data protection principles the reference
 > implementation observes and what a Chilean deployment would require.
 >
-> Read alongside the [regulatory posture](../reference/regulatory-posture.md) and
-> the [HIPAA readiness assessment](hipaa-readiness.md).
+> Read alongside the [regulatory posture](/ai-agent-eval-harness-healthtech-docs/en/reference/regulatory-posture/) and
+> the [HIPAA readiness assessment](/ai-agent-eval-harness-healthtech-docs/en/governance/hipaa-readiness/).
 
 ## Legislative Context
 
@@ -118,8 +118,8 @@ would require:
 
 ## See Also
 
-- [Regulatory posture](../reference/regulatory-posture.md) -- regulatory boundary
-- [CMF Norma 20 mapping](cmf-norma-20.md) -- Chilean financial regulator mapping
-- [HIPAA readiness assessment](hipaa-readiness.md) -- HIPAA readiness assessment
-- [PII redaction documentation](pii-redaction.md) -- PII redaction documentation
-- [Observability design](../adr/adr-0006-observability.md) -- observability design
+- [Regulatory posture](/ai-agent-eval-harness-healthtech-docs/en/reference/regulatory-posture/) -- regulatory boundary
+- [CMF Norma 20 mapping](/ai-agent-eval-harness-healthtech-docs/en/governance/cmf-norma-20/) -- Chilean financial regulator mapping
+- [HIPAA readiness assessment](/ai-agent-eval-harness-healthtech-docs/en/governance/hipaa-readiness/) -- HIPAA readiness assessment
+- [PII redaction documentation](/ai-agent-eval-harness-healthtech-docs/en/governance/pii-redaction/) -- PII redaction documentation
+- [Observability design](/ai-agent-eval-harness-healthtech-docs/en/adr/adr-0006-observability/) -- observability design

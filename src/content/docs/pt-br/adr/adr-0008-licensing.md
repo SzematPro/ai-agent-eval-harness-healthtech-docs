@@ -295,5 +295,5 @@ adaptada e integrada.
   <https://opensource.org/license/apache-2-0>
 - Orientação da Apache Software Foundation sobre arquivos NOTICE:
   <https://www.apache.org/legal/src-headers.html>
-- ADR adjacente: [ADR-0007: Alvo de implantação](./adr-0007-deployment.md)
+- ADR adjacente: [ADR-0007: Alvo de implantação](/ai-agent-eval-harness-healthtech-docs/pt-br/adr/adr-0007-deployment/)
 - MADR 4.0.0: <https://adr.github.io/madr/>

@@ -9,13 +9,13 @@ Esta documentación describe una implementación de referencia pública evaluada
 
 # ADR-0003: Arnés de evaluación (núcleo pytest hecho a mano + evaluadores componibles)
 
-- Estado: Accepted; reemplazado en parte por [ADR-0009](./adr-0009-judge-model-cerebras.md) en la elección del modelo juez
+- Estado: Accepted; reemplazado en parte por [ADR-0009](/ai-agent-eval-harness-healthtech-docs/es-419/adr/adr-0009-judge-model-cerebras/) en la elección del modelo juez
 - Fecha: 2026-03-18
 - Responsables de la decisión: Waldemar Szemat
 
 > Nota de reemplazo: este ADR registra a Anthropic Claude Haiku como el juez
 > LLM fijado. Esa elección específica queda reemplazada por
-> [ADR-0009](./adr-0009-judge-model-cerebras.md), que registra a Cerebras
+> [ADR-0009](/ai-agent-eval-harness-healthtech-docs/es-419/adr/adr-0009-judge-model-cerebras/), que registra a Cerebras
 > (`gpt-oss-120b`) como el juez de evaluación que el arnés ejecuta hoy. El resto
 > de este ADR (el núcleo pytest hecho a mano, la composición de DeepEval /
 > Ragas / Phoenix / Promptfoo, los tres flujos de trabajo) sigue vigente. El
@@ -103,7 +103,7 @@ arnés tiene tres flujos de trabajo:
 
 Phoenix es el sumidero de observabilidad durante las corridas de evaluación:
 cada turno emite spans OTel a través del cableado OpenInference existente del
-proyecto (ver [ADR-0006](./adr-0006-observability.md)), Phoenix los recolecta,
+proyecto (ver [ADR-0006](/ai-agent-eval-harness-healthtech-docs/es-419/adr/adr-0006-observability/)), Phoenix los recolecta,
 y el arnés adjunta las URLs de traza de Phoenix al informe de evaluación.
 Inspect AI (UK AISI) queda reservado como una tarea bonus de evaluación de
 capacidades, opcional para el hito inicial.

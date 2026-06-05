@@ -14,7 +14,7 @@ This documentation describes a public reference implementation evaluated on 100%
 
 ## Context
 
-The retrieval layer surfaced context with a single dense (bi-encoder) path: the user turn is embedded with the BGE query prefix and the nearest sub-chunks are read from Chroma ([ADR-0004](./adr-0004-rag-stack.md)), then de-duplicated to parent cards ([ADR-0021](./adr-0021-parent-document-retrieval.md)). Dense retrieval captures semantic similarity but misses exact lexical matches when the query and a card share rare tokens (a drug name, a device model, a specific dose unit) that the embedding smooths over. A pure lexical index has the inverse weakness: it misses paraphrase. For a medication-adherence agent whose corpus is dense with named entities, neither signal alone is sufficient.
+The retrieval layer surfaced context with a single dense (bi-encoder) path: the user turn is embedded with the BGE query prefix and the nearest sub-chunks are read from Chroma ([ADR-0004](/ai-agent-eval-harness-healthtech-docs/en/adr/adr-0004-rag-stack/)), then de-duplicated to parent cards ([ADR-0021](/ai-agent-eval-harness-healthtech-docs/en/adr/adr-0021-parent-document-retrieval/)). Dense retrieval captures semantic similarity but misses exact lexical matches when the query and a card share rare tokens (a drug name, a device model, a specific dose unit) that the embedding smooths over. A pure lexical index has the inverse weakness: it misses paraphrase. For a medication-adherence agent whose corpus is dense with named entities, neither signal alone is sufficient.
 
 The standard remedy is hybrid retrieval: run a lexical and a dense generator in parallel, fuse their rankings, then re-score the fused candidates with a cross-encoder that reads query and candidate jointly. This ADR records the decisions made when adding that pipeline.
 
@@ -24,7 +24,7 @@ Replace the dense-only retrieve step with a three-stage pipeline, gated behind a
 
 1. **Two parallel candidate generators** over the same sub-chunk corpus: BM25 (lexical) and the existing dense Chroma path (semantic).
 2. **Reciprocal Rank Fusion** combines the two ranked lists into one without score calibration between the systems.
-3. **Cross-encoder rerank** re-scores the fused candidates against the query text; the survivors are then de-duplicated to parents ([ADR-0021](./adr-0021-parent-document-retrieval.md)), truncated to `top_k`, and filtered by the existing minimum-similarity threshold.
+3. **Cross-encoder rerank** re-scores the fused candidates against the query text; the survivors are then de-duplicated to parents ([ADR-0021](/ai-agent-eval-harness-healthtech-docs/en/adr/adr-0021-parent-document-retrieval/)), truncated to `top_k`, and filtered by the existing minimum-similarity threshold.
 
 The locked engineering choices:
 
@@ -81,7 +81,7 @@ Use Chroma's `where` filtering alongside dense search instead of a separate BM25
 
 ### Neutral
 
-- The dedupe-by-parent invariant ([ADR-0021](./adr-0021-parent-document-retrieval.md)) is unchanged: it runs after fusion + rerank, still on sub-chunk identities.
+- The dedupe-by-parent invariant ([ADR-0021](/ai-agent-eval-harness-healthtech-docs/en/adr/adr-0021-parent-document-retrieval/)) is unchanged: it runs after fusion + rerank, still on sub-chunk identities.
 - Tokenization is lowercase + punctuation-strip; locale-aware tokenization for es-419 / pt-BR is deferred until recall metrics warrant it.
 
 ## Implementation notes
@@ -103,5 +103,5 @@ Set the hybrid opt-out env flag to restore the dense-only path with no code chan
 
 ## See also
 
-- [ADR-0004](./adr-0004-rag-stack.md) (RAG stack): the dense store + embedder this pipeline extends.
-- [ADR-0021](./adr-0021-parent-document-retrieval.md) (parent-document retrieval): the dedupe-by-parent step that runs after fusion + rerank.
+- [ADR-0004](/ai-agent-eval-harness-healthtech-docs/en/adr/adr-0004-rag-stack/) (RAG stack): the dense store + embedder this pipeline extends.
+- [ADR-0021](/ai-agent-eval-harness-healthtech-docs/en/adr/adr-0021-parent-document-retrieval/) (parent-document retrieval): the dedupe-by-parent step that runs after fusion + rerank.

@@ -16,7 +16,7 @@ Esta documentación describe una implementación de referencia pública evaluada
 
 El nodo de generación de respuesta del agente almacenaba en búfer la respuesta completa del LLM antes de que se dispararan el análisis posterior, la verificación de citaciones y el evento SSE de nodo completado. La latencia visible para el usuario era, por lo tanto, el tiempo de reloj desde el primer token hasta el último token, más el paso de análisis, antes de que apareciera algo en la SPA. En una respuesta de modo JSON de 500 tokens a los típicos 250 tok/s de Groq, eso son ~2 segundos de silencio entre el evento de nodo iniciado y el primer carácter del mensaje del asistente.
 
-El endpoint de Groq desplegado ya expone una superficie de streaming de Server-Sent-Events (`chat/completions` con `stream: true`); los deltas por token llegan por la red a medida que el modelo los genera. La SPA ya ejecuta un EventSource contra el endpoint de chat y consume los eventos del ciclo de vida SSE por nodo ([ADR-0010](./adr-0010-streaming-execution-graph.md)). La infraestructura para hacer aflorar los deltas existe; este ADR registra las decisiones de diseño tomadas al conectar los dos extremos.
+El endpoint de Groq desplegado ya expone una superficie de streaming de Server-Sent-Events (`chat/completions` con `stream: true`); los deltas por token llegan por la red a medida que el modelo los genera. La SPA ya ejecuta un EventSource contra el endpoint de chat y consume los eventos del ciclo de vida SSE por nodo ([ADR-0010](/ai-agent-eval-harness-healthtech-docs/es-419/adr/adr-0010-streaming-execution-graph/)). La infraestructura para hacer aflorar los deltas existe; este ADR registra las decisiones de diseño tomadas al conectar los dos extremos.
 
 ## Decisión
 
@@ -51,7 +51,7 @@ Un método de Protocolo; el streaming es una retrollamada que el adaptador invoc
 Maximiza la cobertura de streaming extendiendo los adaptadores de Cerebras y OpenAI al mismo tiempo.
 
 - Pro: más beneficios para el usuario por incremento.
-- Contra: El streaming de Cerebras y OpenAI bajo el cambio de nivel del respaldo en cascada no está validado; podría filtrar respuestas a medio transmitir en un respaldo; el diseño en cascada en sí mismo es solo de búfer (según el diseño de respaldo en [ADR-0002](./adr-0002-llm-vendor-abstraction.md)).
+- Contra: El streaming de Cerebras y OpenAI bajo el cambio de nivel del respaldo en cascada no está validado; podría filtrar respuestas a medio transmitir en un respaldo; el diseño en cascada en sí mismo es solo de búfer (según el diseño de respaldo en [ADR-0002](/ai-agent-eval-harness-healthtech-docs/es-419/adr/adr-0002-llm-vendor-abstraction/)).
 - Diferida: anotada como trabajo futuro más abajo.
 
 ### A4: La SPA renderiza los deltas en un panel aparte; el área principal del mensaje aún almacena en búfer
@@ -74,7 +74,7 @@ Dos destinos de renderizado: un panel de stream en bruto al estilo de depuració
 ### Negativas
 
 - El respaldo en cascada se omite al hacer streaming. Ante un fallo del stream primario de Groq, el consumidor ve un evento de error SSE y debe reintentar. El respaldo en cascada para turnos transmitidos es un diseño de estado futuro al que este ADR no se compromete.
-- El renderizado progresivo de la SPA debe manejar estados de JSON parcial (el LLM está en modo JSON según [ADR-0020](./adr-0020-structured-agent-reply.md); los tokens llegan como `{"kind":"...","text":"..."}` carácter por carácter). La capa de renderizado descarta la envoltura JSON y renderiza solo el valor interno `text`; un `"text":"...` parcial requiere una lógica de UI cuidadosa.
+- El renderizado progresivo de la SPA debe manejar estados de JSON parcial (el LLM está en modo JSON según [ADR-0020](/ai-agent-eval-harness-healthtech-docs/es-419/adr/adr-0020-structured-agent-reply/); los tokens llegan como `{"kind":"...","text":"..."}` carácter por carácter). La capa de renderizado descarta la envoltura JSON y renderiza solo el valor interno `text`; un `"text":"...` parcial requiere una lógica de UI cuidadosa.
 - La cifra de latencia del bloque de streaming es el tiempo acumulado desde que se abrió el stream; el delta de tiempo de reloj por bloque no se reporta porque rara vez es significativo para la contabilidad posterior.
 
 ### Neutrales
@@ -101,6 +101,6 @@ Revertir el cambio de la SPA restaura el renderizado en búfer sin ningún otro 
 
 ## Véase también
 
-- [ADR-0002](./adr-0002-llm-vendor-abstraction.md) (abstracción de proveedor de LLM): la superficie de Protocolo que este ADR extiende.
-- [ADR-0010](./adr-0010-streaming-execution-graph.md) (grafo de ejecución con streaming): el marco SSE al que este ADR añade un evento.
-- [ADR-0020](./adr-0020-structured-agent-reply.md) (respuesta estructurada del agente): el contrato de modo JSON que los deltas transmitidos llevan a través sin cambios.
+- [ADR-0002](/ai-agent-eval-harness-healthtech-docs/es-419/adr/adr-0002-llm-vendor-abstraction/) (abstracción de proveedor de LLM): la superficie de Protocolo que este ADR extiende.
+- [ADR-0010](/ai-agent-eval-harness-healthtech-docs/es-419/adr/adr-0010-streaming-execution-graph/) (grafo de ejecución con streaming): el marco SSE al que este ADR añade un evento.
+- [ADR-0020](/ai-agent-eval-harness-healthtech-docs/es-419/adr/adr-0020-structured-agent-reply/) (respuesta estructurada del agente): el contrato de modo JSON que los deltas transmitidos llevan a través sin cambios.

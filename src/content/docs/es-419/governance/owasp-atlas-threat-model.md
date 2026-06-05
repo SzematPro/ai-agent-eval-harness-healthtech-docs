@@ -15,8 +15,8 @@ y la matriz adversaria de amenazas [MITRE ATLAS](https://atlas.mitre.org/). Este
 documento identifica qué amenazas mitigan los controles existentes, cuáles están
 parcialmente abordadas y cuáles requieren trabajo adicional para el despliegue en producción.
 
-Léase junto con la [postura regulatoria](../reference/regulatory-posture.md), el
-[mapeo del NIST AI RMF](nist-ai-rmf.md) y la [decisión de barreras de seguridad](../adr/adr-0005-guardrails.md).
+Léase junto con la [postura regulatoria](/ai-agent-eval-harness-healthtech-docs/es-419/reference/regulatory-posture/), el
+[mapeo del NIST AI RMF](/ai-agent-eval-harness-healthtech-docs/es-419/governance/nist-ai-rmf/) y la [decisión de barreras de seguridad](/ai-agent-eval-harness-healthtech-docs/es-419/adr/adr-0005-guardrails/).
 
 ## Alcance del modelo de amenazas
 
@@ -51,7 +51,7 @@ capa gratuita de Hugging Face Spaces y no está diseñada para la seguridad de i
 | Propiedad | Valor |
 |----------|-------|
 | **Amenaza** | Proveedor de LLM comprometido, pesos de modelo envenenados o dependencia maliciosa |
-| **Mitigaciones implementadas** | La abstracción de Protocol del cliente LLM (véase la [decisión de abstracción de proveedores de LLM](../adr/adr-0002-llm-vendor-abstraction.md)) permite cambiar de proveedor sin cambios en el código; el archivo de bloqueo de dependencias fija todas las dependencias; el monitoreo automatizado de dependencias está habilitado; sin descargas de modelos en tiempo de ejecución (los modelos preentrenados se acceden vía API) |
+| **Mitigaciones implementadas** | La abstracción de Protocol del cliente LLM (véase la [decisión de abstracción de proveedores de LLM](/ai-agent-eval-harness-healthtech-docs/es-419/adr/adr-0002-llm-vendor-abstraction/)) permite cambiar de proveedor sin cambios en el código; el archivo de bloqueo de dependencias fija todas las dependencias; el monitoreo automatizado de dependencias está habilitado; sin descargas de modelos en tiempo de ejecución (los modelos preentrenados se acceden vía API) |
 | **Riesgo residual** | No hay verificación de la integridad del proveedor de LLM; no hay atestación de procedencia del modelo; la fijación de dependencias previene la deriva pero no previene un compromiso inicial |
 | **Control** | La capa del cliente LLM, el archivo de bloqueo de dependencias y el monitoreo automatizado de dependencias |
 
@@ -192,9 +192,9 @@ Un despliegue en producción necesitaría reforzar las mitigaciones en varias di
 
 ## Véase también
 
-- [Postura regulatoria](../reference/regulatory-posture.md) -- frontera regulatoria
-- [Mapeo del NIST AI RMF](nist-ai-rmf.md) -- mapeo del NIST AI RMF
-- [Clasificación de la Ley de IA de la UE](eu-ai-act.md) -- clasificación de la Ley de IA de la UE
-- [Decisión de barreras de seguridad](../adr/adr-0005-guardrails.md) -- diseño de barreras de seguridad
-- [Decisión de observabilidad](../adr/adr-0006-observability.md) -- diseño de observabilidad
-- [Decisión de abstracción de proveedores de LLM](../adr/adr-0002-llm-vendor-abstraction.md) -- abstracción de proveedores de LLM
+- [Postura regulatoria](/ai-agent-eval-harness-healthtech-docs/es-419/reference/regulatory-posture/) -- frontera regulatoria
+- [Mapeo del NIST AI RMF](/ai-agent-eval-harness-healthtech-docs/es-419/governance/nist-ai-rmf/) -- mapeo del NIST AI RMF
+- [Clasificación de la Ley de IA de la UE](/ai-agent-eval-harness-healthtech-docs/es-419/governance/eu-ai-act/) -- clasificación de la Ley de IA de la UE
+- [Decisión de barreras de seguridad](/ai-agent-eval-harness-healthtech-docs/es-419/adr/adr-0005-guardrails/) -- diseño de barreras de seguridad
+- [Decisión de observabilidad](/ai-agent-eval-harness-healthtech-docs/es-419/adr/adr-0006-observability/) -- diseño de observabilidad
+- [Decisión de abstracción de proveedores de LLM](/ai-agent-eval-harness-healthtech-docs/es-419/adr/adr-0002-llm-vendor-abstraction/) -- abstracción de proveedores de LLM

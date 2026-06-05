@@ -17,7 +17,7 @@ expensive to reverse and explains why it was made.
 ## Conventions
 
 - **Format**: [MADR 4.0.0](https://adr.github.io/madr/). The canonical
-  template is [the ADR template](./adr-template.md). Copy it for any
+  template is [the ADR template](/ai-agent-eval-harness-healthtech-docs/en/adr/adr-template/). Copy it for any
   new decision; do not invent ad-hoc structures.
 - **Status lifecycle**: `Proposed` -> `Accepted` -> `Superseded`. A
   superseded ADR is never deleted; it is renamed to keep the historical
@@ -36,14 +36,14 @@ expensive to reverse and explains why it was made.
 
 | ID | Title | Status | One-line summary |
 |----|-------|--------|------------------|
-| [ADR-0001](./adr-0001-orchestration.md) | Orchestration framework | Accepted | LangGraph 1.x over CrewAI, Microsoft Agent Framework, Claude Agent SDK, Pydantic AI, AutoGen. Six-node graph with an optional `interrupt()` HITL `review_response` node and a `MemorySaver` / `AsyncPostgresSaver` checkpointer factory. |
-| [ADR-0002](./adr-0002-llm-vendor-abstraction.md) | LLM vendor abstraction | Accepted | Thin `LLMClient` Protocol over LangChain adapters plus direct Groq / Cerebras via OpenAI-compatible REST, switched by an `LLM_PROVIDER` environment variable. |
-| [ADR-0003](./adr-0003-eval-harness.md) | Eval harness | Accepted; superseded in part by ADR-0009 | Hand-rolled pytest core + DeepEval + Ragas + Phoenix + Promptfoo. The judge-model choice (Anthropic Claude Haiku) is superseded by ADR-0009. |
-| [ADR-0004](./adr-0004-rag-stack.md) | RAG stack | Accepted | Chroma embedded primary with `BAAI/bge-small-en-v1.5` as the default embedder using asymmetric instruction-aware retrieval; Qdrant Cloud and Voyage AI documented as cloud alternatives. |
-| [ADR-0005](./adr-0005-guardrails.md) | Guardrails and regulatory posture | Accepted | Scope classifier, refusal templates, and a deterministic seven-category escalation router as first-class modules; design contract = FDA 2026 General Wellness / CDS Software guidance line. |
-| [ADR-0006](./adr-0006-observability.md) | Observability stack | Accepted | OpenTelemetry + OpenInference wire format; Langfuse Cloud Hobby for live demo, self-hosted Phoenix for eval runs, Pydantic Logfire documented as alternative. |
-| [ADR-0007](./adr-0007-deployment.md) | Deployment target | Accepted | Hugging Face Spaces, Docker SDK, CPU Basic free tier; Render Web Service documented as the operator's second choice. Deployment-resilience layer: per-session rate limiter, Groq -> Cerebras -> Anthropic provider fallback, short-TTL response cache. |
-| [ADR-0008](./adr-0008-licensing.md) | Code license | Accepted | Code license switched from MIT to Apache 2.0 at v1.0.0. |
+| [ADR-0001](/ai-agent-eval-harness-healthtech-docs/en/adr/adr-0001-orchestration/) | Orchestration framework | Accepted | LangGraph 1.x over CrewAI, Microsoft Agent Framework, Claude Agent SDK, Pydantic AI, AutoGen. Six-node graph with an optional `interrupt()` HITL `review_response` node and a `MemorySaver` / `AsyncPostgresSaver` checkpointer factory. |
+| [ADR-0002](/ai-agent-eval-harness-healthtech-docs/en/adr/adr-0002-llm-vendor-abstraction/) | LLM vendor abstraction | Accepted | Thin `LLMClient` Protocol over LangChain adapters plus direct Groq / Cerebras via OpenAI-compatible REST, switched by an `LLM_PROVIDER` environment variable. |
+| [ADR-0003](/ai-agent-eval-harness-healthtech-docs/en/adr/adr-0003-eval-harness/) | Eval harness | Accepted; superseded in part by ADR-0009 | Hand-rolled pytest core + DeepEval + Ragas + Phoenix + Promptfoo. The judge-model choice (Anthropic Claude Haiku) is superseded by ADR-0009. |
+| [ADR-0004](/ai-agent-eval-harness-healthtech-docs/en/adr/adr-0004-rag-stack/) | RAG stack | Accepted | Chroma embedded primary with `BAAI/bge-small-en-v1.5` as the default embedder using asymmetric instruction-aware retrieval; Qdrant Cloud and Voyage AI documented as cloud alternatives. |
+| [ADR-0005](/ai-agent-eval-harness-healthtech-docs/en/adr/adr-0005-guardrails/) | Guardrails and regulatory posture | Accepted | Scope classifier, refusal templates, and a deterministic seven-category escalation router as first-class modules; design contract = FDA 2026 General Wellness / CDS Software guidance line. |
+| [ADR-0006](/ai-agent-eval-harness-healthtech-docs/en/adr/adr-0006-observability/) | Observability stack | Accepted | OpenTelemetry + OpenInference wire format; Langfuse Cloud Hobby for live demo, self-hosted Phoenix for eval runs, Pydantic Logfire documented as alternative. |
+| [ADR-0007](/ai-agent-eval-harness-healthtech-docs/en/adr/adr-0007-deployment/) | Deployment target | Accepted | Hugging Face Spaces, Docker SDK, CPU Basic free tier; Render Web Service documented as the operator's second choice. Deployment-resilience layer: per-session rate limiter, Groq -> Cerebras -> Anthropic provider fallback, short-TTL response cache. |
+| [ADR-0008](/ai-agent-eval-harness-healthtech-docs/en/adr/adr-0008-licensing/) | Code license | Accepted | Code license switched from MIT to Apache 2.0 at v1.0.0. |
 | ADR-0009 | Eval judge model | Accepted | Eval judge is Cerebras (`gpt-oss-120b`); supersedes the Anthropic Claude Haiku judge choice in ADR-0003. |
 | ADR-0010 | Streaming the agent execution graph to the UI | Accepted | The v1.1 Agent Execution Graph streams per-node events to the SPA over server-sent events, opt-in via `Accept`-header content negotiation; the v1.0.0 `/chat` JSON contract is unchanged. Supersedes nothing. |
 | ADR-0011 | Data layer (Supabase for demo operational data) | Accepted | Supabase free tier managed Postgres for demo keys, interactions, improvement suggestions, demo-key requests, demo-key consents, demo sessions, and demo turn usage. RAG remains Chroma (ADR-0004, unchanged). |

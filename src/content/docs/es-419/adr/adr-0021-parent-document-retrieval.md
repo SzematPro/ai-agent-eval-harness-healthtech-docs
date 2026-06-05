@@ -257,13 +257,13 @@ La migración se publicó en tres etapas:
 
 ## Más información
 
-- [ADR-0001](./adr-0001-orchestration.md) — estado del agente y LangGraph;
+- [ADR-0001](/ai-agent-eval-harness-healthtech-docs/es-419/adr/adr-0001-orchestration/) — estado del agente y LangGraph;
   define la forma del fragmento de contexto.
-- [ADR-0004](./adr-0004-rag-stack.md) — stack de incrustaciones y almacén
+- [ADR-0004](/ai-agent-eval-harness-healthtech-docs/es-419/adr/adr-0004-rag-stack/) — stack de incrustaciones y almacén
   persistente de Chroma.
-- [ADR-0005](./adr-0005-guardrails.md) — contrato de extracción y
+- [ADR-0005](/ai-agent-eval-harness-healthtech-docs/es-419/adr/adr-0005-guardrails/) — contrato de extracción y
   verificación de citaciones; sin cambios por este ADR.
-- [ADR-0020](./adr-0020-structured-agent-reply.md) — respuesta estructurada del
+- [ADR-0020](/ai-agent-eval-harness-healthtech-docs/es-419/adr/adr-0020-structured-agent-reply/) — respuesta estructurada del
   agente; el fragmento de contexto expandido a padre mantiene la invariante de
   contexto del LLM de la que depende el prompt de modo JSON.
 - MADR 4.0.0: <https://adr.github.io/madr/>

@@ -51,7 +51,7 @@ Escrito por Waldemar Szemat como uma implementação de referência pública.
 Sem financiamento externo. Sem patrocinador corporativo. Sem parceiro
 institucional. Os datasets sintéticos são publicados sob a licença MIT. O
 código que os envolve é licenciado sob Apache-2.0 (foi MIT até a v0.6.0 e
-mudou na v1.0.0, veja [ADR-0008](../adr/adr-0008-licensing.md)); as decisões
+mudou na v1.0.0, veja [ADR-0008](/ai-agent-eval-harness-healthtech-docs/pt-br/adr/adr-0008-licensing/)); as decisões
 de licença dos dados e de licença do código são independentes.
 
 ## Motivação
@@ -86,7 +86,7 @@ Usos fora de escopo: treinar um modelo de produção destinado à interação co
 pacientes reais; validação clínica de qualquer alegação clínica; substituição
 de pesquisa com seres humanos aprovada por IRB; benchmarking de ferramentas de
 clinical decision support (o dataset é voltado ao paciente, não ao profissional
-de saúde, por design - veja [postura regulatória](regulatory-posture.md)).
+de saúde, por design - veja [postura regulatória](/ai-agent-eval-harness-healthtech-docs/pt-br/reference/regulatory-posture/)).
 
 ## Sujeito primário dos dados
 
@@ -147,7 +147,7 @@ acima é o registro de como o corpus foi construído.
 A expansão do corpus acrescentou 24 novos cartões de KB e 138 novos casos de
 avaliação em oito domínios de adesão à medicação, seguindo a estratégia de
 acrescentar-ao-existente decidida na
-[ADR-0013](../adr/adr-0013-corpus-expansion-strategy.md).
+[ADR-0013](/ai-agent-eval-harness-healthtech-docs/pt-br/adr/adr-0013-corpus-expansion-strategy/).
 
 ### Novos domínios de cartões de KB (24 cartões, 3 por domínio)
 
@@ -204,7 +204,7 @@ independentes.
 
 - **Código: Apache-2.0.** O código foi MIT até a v0.6.0 e mudou para Apache-2.0
   na v1.0.0; a justificativa está na
-  [ADR-0008](../adr/adr-0008-licensing.md).
+  [ADR-0008](/ai-agent-eval-harness-healthtech-docs/pt-br/adr/adr-0008-licensing/).
 - **Corpus de avaliação sintético: MIT**, distribuído dentro do repositório.
 - **Cartões de KB sintéticos: MIT** para o conteúdo parafraseado dos cartões; a
   atribuição ao DailyMed / MedlinePlus / WHO EML é preservada nos metadados de
@@ -283,9 +283,9 @@ supervisiona nenhuma extensão dessas.
   diverso em tópicos é roteiro; ele também permitiria habilitar o limiar de
   similaridade de recuperação (`retrieval_min_similarity`, entregue desativado)
   - veja a limitação de fora do corpus quase correspondente no
-  [cartão do modelo](model-card.md). A expansão do corpus acrescentou 24
+  [cartão do modelo](/ai-agent-eval-harness-healthtech-docs/pt-br/reference/model-card/). A expansão do corpus acrescentou 24
   cartões de KB e 138 casos de avaliação em 8 novos domínios, documentada na
-  [ADR-0013](../adr/adr-0013-corpus-expansion-strategy.md).
+  [ADR-0013](/ai-agent-eval-harness-healthtech-docs/pt-br/adr/adr-0013-corpus-expansion-strategy/).
 - **Paridade de locale.** es-419 e pt-BR são mantidos na mesma barra no
   arcabouço de avaliação, mas a geração de personas subjacente tem um viés
   conhecido em direção ao vocabulário clínico em inglês dos EUA. O loop
@@ -310,11 +310,11 @@ supervisiona nenhuma extensão dessas.
 
 ## Veja também
 
-- [cartão do modelo](model-card.md) - o cartão do modelo do agente, em formato
+- [cartão do modelo](/ai-agent-eval-harness-healthtech-docs/pt-br/reference/model-card/) - o cartão do modelo do agente, em formato
   CHAI Applied Model Card.
-- [postura regulatória](regulatory-posture.md) - o limite regulatório que os
+- [postura regulatória](/ai-agent-eval-harness-healthtech-docs/pt-br/reference/regulatory-posture/) - o limite regulatório que os
   dados respeitam.
-- [política de segurança](security.md) - política de divulgação e a restrição
+- [política de segurança](/ai-agent-eval-harness-healthtech-docs/pt-br/reference/security/) - política de divulgação e a restrição
   rígida de "nunca PHI".
 - Google Data Cards Playbook: <https://sites.research.google/datacardsplaybook/>.
 - Formato CHAI Applied Model Card: <https://www.chai.org/workgroup/applied-model>.

@@ -158,8 +158,8 @@ Comportamiento:
 
 ## Más información
 
-- [ADR-0007](./adr-0007-deployment.md) -- objetivo de despliegue y el
+- [ADR-0007](/ai-agent-eval-harness-healthtech-docs/es-419/adr/adr-0007-deployment/) -- objetivo de despliegue y el
   presupuesto de $0/mes
-- [ADR-0015](./adr-0015-cascading-llm-provider-fallback.md) -- la capa
+- [ADR-0015](/ai-agent-eval-harness-healthtech-docs/es-419/adr/adr-0015-cascading-llm-provider-fallback/) -- la capa
   complementaria de respaldo en cascada
 - MADR 4.0.0: <https://adr.github.io/madr/>
