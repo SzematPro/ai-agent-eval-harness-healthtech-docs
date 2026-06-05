@@ -195,7 +195,7 @@ platform.
 
 ## More Information
 
-- DeepEval documentation: <https://docs.deepeval.com/>
+- DeepEval documentation: <https://deepeval.com/>
 - Ragas documentation: <https://docs.ragas.io/>
 - Phoenix (Arize) documentation:
   <https://docs.arize.com/phoenix>

@@ -10,7 +10,7 @@ This documentation describes a public reference implementation evaluated on 100%
 # CMF Norma 20 Model Risk Management Mapping
 
 > Maps the `ai-agent-eval-harness-healthtech` reference implementation against
-> [Norma de Caracter General No. 20](https://www.cmfchile.cl/institucional/normativa/normativa.php) (CMF NCG 20),
+> [Norma de Caracter General No. 20](https://www.cmfchile.cl/portal/principal/613/w3-channel.html) (CMF NCG 20),
 > the Chilean Comision para el Mercado Financiero (CMF) regulation on risk-based
 > capital requirements and model risk management for financial institutions. While
 > this system is not a financial product, the governance patterns it demonstrates --

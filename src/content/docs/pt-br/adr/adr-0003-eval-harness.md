@@ -196,7 +196,7 @@ fechada.
 
 ## Mais Informações
 
-- Documentação do DeepEval: <https://docs.deepeval.com/>
+- Documentação do DeepEval: <https://deepeval.com/>
 - Documentação do Ragas: <https://docs.ragas.io/>
 - Documentação do Phoenix (Arize):
   <https://docs.arize.com/phoenix>

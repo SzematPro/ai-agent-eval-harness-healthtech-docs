@@ -91,6 +91,6 @@ de revisión manual).
 
 ## Más información
 
-- Documentación upstream: <https://example.com/docs>
-- Artículo de apoyo: <https://example.com/blog>
+- Documentación upstream: `https://example.com/docs`
+- Artículo de apoyo: `https://example.com/blog`
 - MADR 4.0.0: <https://adr.github.io/madr/>

@@ -10,7 +10,7 @@ Esta documentação descreve uma implementação de referência pública avaliad
 # Mapeamento de gestão de risco de modelos da CMF Norma 20
 
 > Mapeia a implementação de referência `ai-agent-eval-harness-healthtech` frente à
-> [Norma de Carácter General N.º 20](https://www.cmfchile.cl/institucional/normativa/normativa.php) (CMF NCG 20),
+> [Norma de Carácter General N.º 20](https://www.cmfchile.cl/portal/principal/613/w3-channel.html) (CMF NCG 20),
 > a regulação da Comisión para el Mercado Financiero (CMF) do Chile sobre requisitos de
 > capital baseados em risco e gestão de risco de modelos para instituições financeiras. Embora
 > este sistema não seja um produto financeiro, os padrões de governança que ele demonstra --

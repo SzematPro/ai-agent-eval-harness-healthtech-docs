@@ -199,5 +199,5 @@ habilitados de forma independente por variáveis de ambiente.
   <https://github.com/Arize-ai/phoenix>
 - Pydantic Logfire: <https://pydantic.dev/logfire>
 - Preços do Pydantic Logfire:
-  <https://pydantic.dev/logfire/pricing>
+  <https://pydantic.dev/logfire>
 - MADR 4.0.0: <https://adr.github.io/madr/>

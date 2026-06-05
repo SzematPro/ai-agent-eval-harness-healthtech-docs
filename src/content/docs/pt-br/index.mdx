@@ -11,7 +11,7 @@ hero:
       variant: primary
 ---
 
-import { Card, CardGrid } from '@astrojs/starlight/components';
+import { CardGrid, LinkCard } from '@astrojs/starlight/components';
 
 :::caution[Documentação de referência: não é um dispositivo médico]
 Este site é uma **referência de capacidades e prontidão**, não uma certificação de conformidade nem aconselhamento jurídico. O sistema é construído e avaliado com **dados 100% sintéticos**; **não é um dispositivo médico**, não é clinicamente validado e não manipula **PHI de produção**.
@@ -20,16 +20,24 @@ Este site é uma **referência de capacidades e prontidão**, não uma certifica
 Esta é a referência pública de uma implementação de referência que demonstra **engenharia de IA generativa orientada à medição para setores regulados**: um agente conversacional de saúde para adesão à medicação cuja afirmação clínica sempre deve citar um cartão verificado da base de conhecimento, acompanhado de um arcabouço de avaliação validado por CI que o comprova.
 
 <CardGrid>
-	<Card title="Governança e prontidão" icon="approve-check">
-		Como o sistema se mapeia à prontidão para HIPAA, ao Regulamento de IA da UE, ao NIST AI RMF, à norma ISO/IEC 42001 e a regimes regionais de proteção de dados.
-	</Card>
-	<Card title="Decisões de arquitetura" icon="open-book">
-		Os registros de decisões de arquitetura (ADRs) por trás do grafo do agente, da recuperação, das salvaguardas, da avaliação e da implantação.
-	</Card>
-	<Card title="Diagramas" icon="puzzle">
-		Visões C4 de contexto, contêiner e componentes, a máquina de estados do agente, a sequência de requisições e o pipeline de avaliação.
-	</Card>
-	<Card title="Referência" icon="document">
-		A postura regulatória, o cartão do modelo, a declaração de dados, o glossário e a pilha empresarial do agente.
-	</Card>
+	<LinkCard
+		title="Governança e prontidão"
+		href="governance/"
+		description="Como o sistema se mapeia à prontidão para HIPAA, ao Regulamento de IA da UE, ao NIST AI RMF, à norma ISO/IEC 42001 e a regimes regionais de proteção de dados."
+	/>
+	<LinkCard
+		title="Decisões de arquitetura"
+		href="adr/"
+		description="Os registros de decisões de arquitetura (ADRs) por trás do grafo do agente, da recuperação, das salvaguardas, da avaliação e da implantação."
+	/>
+	<LinkCard
+		title="Diagramas"
+		href="diagrams/"
+		description="Visões C4 de contexto, contêiner e componentes, a máquina de estados do agente, a sequência de requisições e o pipeline de avaliação."
+	/>
+	<LinkCard
+		title="Referência"
+		href="reference/"
+		description="A postura regulatória, o cartão do modelo, a declaração de dados, o glossário e a pilha empresarial do agente."
+	/>
 </CardGrid>

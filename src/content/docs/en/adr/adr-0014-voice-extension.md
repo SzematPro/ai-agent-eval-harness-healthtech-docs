@@ -335,6 +335,6 @@ cost and complexity of a persistent audio WebSocket.
 - Guardrails and privacy redaction: [ADR-0005](./adr-0005-guardrails.md)
 - ElevenLabs API documentation: <https://elevenlabs.io/docs/api-reference>
 - ElevenLabs `eleven_multilingual_v2` model: <https://elevenlabs.io/docs/speech-synthesis/models>
-- ElevenLabs Scribe STT: <https://elevenlabs.io/docs/speech-to-text>
+- ElevenLabs Scribe STT: <https://elevenlabs.io/docs/capabilities/speech-to-text>
 - ElevenLabs pricing and free-tier limits: <https://elevenlabs.io/pricing>
 - MADR 4.0.0: <https://adr.github.io/madr/>

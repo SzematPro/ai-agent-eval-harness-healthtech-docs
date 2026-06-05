@@ -11,7 +11,7 @@ hero:
       variant: primary
 ---
 
-import { Card, CardGrid } from '@astrojs/starlight/components';
+import { CardGrid, LinkCard } from '@astrojs/starlight/components';
 
 :::caution[Documentación de referencia: no es un dispositivo médico]
 Este sitio es una **referencia de capacidades y preparación**, no una certificación de cumplimiento ni asesoría legal. El sistema se construye y evalúa con **datos 100% sintéticos**; **no es un dispositivo médico**, no está validado clínicamente y no maneja **PHI de producción**.
@@ -20,16 +20,24 @@ Este sitio es una **referencia de capacidades y preparación**, no una certifica
 Esta es la referencia pública de una implementación de referencia que demuestra **ingeniería de IA generativa orientada a la medición para industrias reguladas**: un agente conversacional de salud para la adherencia a la medicación cuya afirmación clínica siempre debe citar una tarjeta verificada de la base de conocimiento, junto con un arnés de evaluación validado por CI que lo demuestra.
 
 <CardGrid>
-	<Card title="Gobernanza y preparación" icon="approve-check">
-		Cómo el sistema se mapea a la preparación para HIPAA, la Ley de IA de la UE, el NIST AI RMF, la norma ISO/IEC 42001 y regímenes regionales de protección de datos.
-	</Card>
-	<Card title="Decisiones de arquitectura" icon="open-book">
-		Los registros de decisiones de arquitectura (ADR) detrás del grafo del agente, la recuperación, las barreras de seguridad, la evaluación y el despliegue.
-	</Card>
-	<Card title="Diagramas" icon="puzzle">
-		Vistas C4 de contexto, contenedor y componentes, la máquina de estados del agente, la secuencia de solicitudes y la canalización de evaluación.
-	</Card>
-	<Card title="Referencia" icon="document">
-		La postura regulatoria, la ficha del modelo, la declaración de datos, el glosario y el stack empresarial del agente.
-	</Card>
+	<LinkCard
+		title="Gobernanza y preparación"
+		href="governance/"
+		description="Cómo el sistema se mapea a la preparación para HIPAA, la Ley de IA de la UE, el NIST AI RMF, la norma ISO/IEC 42001 y regímenes regionales de protección de datos."
+	/>
+	<LinkCard
+		title="Decisiones de arquitectura"
+		href="adr/"
+		description="Los registros de decisiones de arquitectura (ADR) detrás del grafo del agente, la recuperación, las barreras de seguridad, la evaluación y el despliegue."
+	/>
+	<LinkCard
+		title="Diagramas"
+		href="diagrams/"
+		description="Vistas C4 de contexto, contenedor y componentes, la máquina de estados del agente, la secuencia de solicitudes y la canalización de evaluación."
+	/>
+	<LinkCard
+		title="Referencia"
+		href="reference/"
+		description="La postura regulatoria, la ficha del modelo, la declaración de datos, el glosario y el stack empresarial del agente."
+	/>
 </CardGrid>

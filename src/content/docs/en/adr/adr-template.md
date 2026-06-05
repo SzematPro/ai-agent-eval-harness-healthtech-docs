@@ -88,6 +88,6 @@ import-test, eval-gate, manual review checklist).
 
 ## More Information
 
-- Upstream documentation: <https://example.com/docs>
-- Supporting article: <https://example.com/blog>
+- Upstream documentation: `https://example.com/docs`
+- Supporting article: `https://example.com/blog`
 - MADR 4.0.0: <https://adr.github.io/madr/>

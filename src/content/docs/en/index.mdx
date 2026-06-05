@@ -11,7 +11,7 @@ hero:
       variant: primary
 ---
 
-import { Card, CardGrid } from '@astrojs/starlight/components';
+import { CardGrid, LinkCard } from '@astrojs/starlight/components';
 
 :::caution[Reference documentation: not a medical device]
 This site is a **capability and readiness reference**, not a compliance certification or legal advice. The system is built and evaluated on **100% synthetic data**; it is **not a medical device**, is not clinically validated, and handles **no production PHI**.
@@ -20,16 +20,24 @@ This site is a **capability and readiness reference**, not a compliance certific
 This is the public reference for a reference implementation that demonstrates **measurement-first GenAI engineering for regulated industries**: a conversational health agent for medication adherence whose every clinical assertion must cite a verified knowledge-base card, paired with a CI-gated evaluation harness that proves it.
 
 <CardGrid>
-	<Card title="Governance & readiness" icon="approve-check">
-		How the system maps to HIPAA readiness, the EU AI Act, the NIST AI RMF, ISO/IEC 42001, and regional data-protection regimes.
-	</Card>
-	<Card title="Architecture decisions" icon="open-book">
-		The architecture decision records (ADRs) behind the agent graph, retrieval, guardrails, evaluation, and deployment.
-	</Card>
-	<Card title="Diagrams" icon="puzzle">
-		C4 context, container, and component views, the agent state machine, the request sequence, and the evaluation pipeline.
-	</Card>
-	<Card title="Reference" icon="document">
-		The regulatory posture, model card, data statement, glossary, and the enterprise agent stack.
-	</Card>
+	<LinkCard
+		title="Governance & readiness"
+		href="governance/"
+		description="How the system maps to HIPAA readiness, the EU AI Act, the NIST AI RMF, ISO/IEC 42001, and regional data-protection regimes."
+	/>
+	<LinkCard
+		title="Architecture decisions"
+		href="adr/"
+		description="The architecture decision records (ADRs) behind the agent graph, retrieval, guardrails, evaluation, and deployment."
+	/>
+	<LinkCard
+		title="Diagrams"
+		href="diagrams/"
+		description="C4 context, container, and component views, the agent state machine, the request sequence, and the evaluation pipeline."
+	/>
+	<LinkCard
+		title="Reference"
+		href="reference/"
+		description="The regulatory posture, model card, data statement, glossary, and the enterprise agent stack."
+	/>
 </CardGrid>

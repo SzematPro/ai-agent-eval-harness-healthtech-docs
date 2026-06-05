@@ -360,6 +360,6 @@ persistente.
 - Barreras de seguridad y redacción de privacidad: [ADR-0005](./adr-0005-guardrails.md)
 - Documentación de la API de ElevenLabs: <https://elevenlabs.io/docs/api-reference>
 - Modelo `eleven_multilingual_v2` de ElevenLabs: <https://elevenlabs.io/docs/speech-synthesis/models>
-- ElevenLabs Scribe STT: <https://elevenlabs.io/docs/speech-to-text>
+- ElevenLabs Scribe STT: <https://elevenlabs.io/docs/capabilities/speech-to-text>
 - Precios y límites de capa gratuita de ElevenLabs: <https://elevenlabs.io/pricing>
 - MADR 4.0.0: <https://adr.github.io/madr/>

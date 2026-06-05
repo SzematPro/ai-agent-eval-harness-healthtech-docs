@@ -90,6 +90,6 @@ revisão manual).
 
 ## Mais Informações
 
-- Documentação upstream: <https://example.com/docs>
-- Artigo de apoio: <https://example.com/blog>
+- Documentação upstream: `https://example.com/docs`
+- Artigo de apoio: `https://example.com/blog`
 - MADR 4.0.0: <https://adr.github.io/madr/>
