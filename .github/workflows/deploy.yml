@@ -1,0 +1,43 @@
+# GitHub Pages deploy for the trilingual Starlight docs site.
+# Active in the public `-docs` repo (this file is synced there from the
+# source-first docs project). Builds the Astro site (Starlight runs Pagefind as
+# part of the build) and deploys the static output to GitHub Pages.
+name: Deploy docs to GitHub Pages
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+# Least-privilege token: read the repo, write Pages, mint the OIDC token.
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# One in-flight Pages deploy at a time; let a running deploy finish.
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Build with Astro
+        # Auto-detects the package manager, runs `astro build` (which triggers
+        # Starlight's Pagefind index), and uploads the Pages artifact.
+        uses: withastro/action@v3
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

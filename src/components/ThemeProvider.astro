@@ -1,0 +1,17 @@
+---
+// Dark-only override of Starlight's ThemeProvider.
+// Forces `data-theme="dark"` on every load and pins the stored preference,
+// ignoring any system or previously-selected theme. Paired with an empty
+// ThemeSelect (the toggle is removed): the site is dark-only by design.
+---
+
+<script is:inline>
+	(() => {
+		document.documentElement.dataset.theme = 'dark';
+		try {
+			localStorage.setItem('starlight-theme', 'dark');
+		} catch (err) {
+			/* localStorage unavailable; the CSS default keeps the site dark. */
+		}
+	})();
+</script>

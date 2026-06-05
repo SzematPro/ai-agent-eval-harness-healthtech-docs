@@ -1,0 +1,35 @@
+---
+title: AI Agent Eval Harness
+description: Public technical reference and governance documentation for the AI Agent Eval Harness (healthtech). Capability and readiness mapping, trilingual EN/ES/PT-BR. No source code.
+template: splash
+hero:
+  tagline: 'A measurement-first health agent: every answer cites a verified source, or the agent refuses. Citation enforcement is automated and CI-gated on every change.'
+  actions:
+    - text: View the live demo
+      link: https://huggingface.co/spaces/SzematPro/ai-agent-eval-harness-healthtech
+      icon: external
+      variant: primary
+---
+
+import { Card, CardGrid } from '@astrojs/starlight/components';
+
+:::caution[Reference documentation: not a medical device]
+This site is a **capability and readiness reference**, not a compliance certification or legal advice. The system is built and evaluated on **100% synthetic data**; it is **not a medical device**, is not clinically validated, and handles **no production PHI**.
+:::
+
+This is the public reference for a reference implementation that demonstrates **measurement-first GenAI engineering for regulated industries**: a conversational health agent for medication adherence whose every clinical assertion must cite a verified knowledge-base card, paired with a CI-gated evaluation harness that proves it.
+
+<CardGrid>
+	<Card title="Governance & readiness" icon="approve-check">
+		How the system maps to HIPAA readiness, the EU AI Act, the NIST AI RMF, ISO/IEC 42001, and regional data-protection regimes.
+	</Card>
+	<Card title="Architecture decisions" icon="open-book">
+		The architecture decision records (ADRs) behind the agent graph, retrieval, guardrails, evaluation, and deployment.
+	</Card>
+	<Card title="Diagrams" icon="puzzle">
+		C4 context, container, and component views, the agent state machine, the request sequence, and the evaluation pipeline.
+	</Card>
+	<Card title="Reference" icon="document">
+		The regulatory posture, model card, data statement, glossary, and the enterprise agent stack.
+	</Card>
+</CardGrid>
