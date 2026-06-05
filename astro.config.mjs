@@ -1,6 +1,8 @@
 // @ts-check
 import { defineConfig } from 'astro/config';
 import starlight from '@astrojs/starlight';
+import mermaid from 'astro-mermaid';
+import starlightLinksValidator from 'starlight-links-validator';
 
 // Public documentation site: trilingual (en / es-419 / pt-BR) technical
 // reference and governance documentation for the AI Agent Eval Harness
@@ -22,7 +24,15 @@ export default defineConfig({
 		'/': `${BASE}/en/`,
 	},
 	integrations: [
+		// Client-side Mermaid rendering (CI-safe: no build-time browser). Must come
+		// before Starlight so it intercepts ```mermaid code blocks. Dark to match.
+		mermaid({ theme: 'dark' }),
 		starlight({
+			// Fail the build on any broken internal link or anchor (DOC link gate).
+			// Allow relative .md links: under a base path, root-absolute links do not
+			// get the base prepended and would 404, so relative links are the correct
+			// style here. The validator still verifies every target resolves.
+			plugins: [starlightLinksValidator({ errorOnRelativeLinks: false })],
 			title: 'AI Agent Eval Harness',
 			description:
 				'Public technical reference and governance documentation for the AI Agent Eval Harness (healthtech). Capability and readiness mapping, trilingual EN/ES/PT-BR. No source code.',
@@ -70,8 +80,16 @@ export default defineConfig({
 					href: 'https://github.com/SzematPro/ai-agent-eval-harness-healthtech-docs',
 				},
 			],
-			// Sidebar is auto-generated from the file tree until the curated content
-			// lands, at which point it becomes an explicit grouped nav.
+			// Explicit grouped nav; each group auto-generates from the per-locale
+			// content tree. Per-page labels come from each page's frontmatter title
+			// (localized per locale); group labels are localized via the i18n
+			// dictionary in the translation phases.
+			sidebar: [
+				{ label: 'Governance & Readiness', items: [{ autogenerate: { directory: 'governance' } }] },
+				{ label: 'Architecture Decisions', items: [{ autogenerate: { directory: 'adr' } }] },
+				{ label: 'Diagrams', items: [{ autogenerate: { directory: 'diagrams' } }] },
+				{ label: 'Reference', items: [{ autogenerate: { directory: 'reference' } }] },
+			],
 			lastUpdated: false,
 			pagination: false,
 		}),
