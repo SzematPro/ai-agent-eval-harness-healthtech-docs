@@ -15,6 +15,12 @@ const BASE = '/ai-agent-eval-harness-healthtech-docs';
 export default defineConfig({
 	site: SITE,
 	base: BASE,
+	// No root locale (all locales are path-prefixed), so the bare base URL has no
+	// page. Redirect it to the default locale so the docs home resolves. Astro
+	// does not prepend `base` to redirect targets, so include it explicitly.
+	redirects: {
+		'/': `${BASE}/en/`,
+	},
 	integrations: [
 		starlight({
 			title: 'AI Agent Eval Harness',
