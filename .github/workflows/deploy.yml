@@ -29,7 +29,10 @@ jobs:
       - name: Build with Astro
         # Auto-detects the package manager, runs `astro build` (which triggers
         # Starlight's Pagefind index), and uploads the Pages artifact.
+        # Astro 6 requires Node >=22.12.0; pin the build Node version.
         uses: withastro/action@v3
+        with:
+          node-version: 22
 
   deploy:
     needs: build
