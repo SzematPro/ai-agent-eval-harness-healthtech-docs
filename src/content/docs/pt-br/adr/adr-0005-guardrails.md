@@ -218,20 +218,44 @@ inspecionável, o desvio é detectável por diff, e a revisão acontece na mesma
 cadência que o resto do módulo de guardrails.
 
 **Taxonomia de red-flag aguda.** O roteador de escalonamento determinístico
-cobre sete categorias agudas: ideação suicida, anafilaxia / reação alérgica
+cobre dez categorias agudas: ideação suicida, anafilaxia / reação alérgica
 grave, dor no peito cardíaca aguda, sangramento grave, asma grave / dificuldade
-respiratória aguda, **AVC / sinais FAST** e **emergência hipertensiva**. Esse
-conjunto de sete categorias é o que o módulo de escalonamento distribui, o que a
-lista de red-flag publicada documenta e o que a referência de postura
-regulatória registra. O recall de escalonamento é mantido em >= 0.95. A detecção
-é intencionalmente cega a negações - uma escolha deliberada de alto recall
-motivada pela assimetria de custo de falso-negativo declarada acima (escalonar
-em "sem dor no peito" é um falso positivo aceito; uma red flag não detectada
-não é).
+respiratória aguda, **AVC / sinais FAST**, **emergência hipertensiva**,
+**hipoglicemia grave**, **overdose / intenção letal** e a **coocorrência
+gravidez + teratógeno**. Esse conjunto de dez categorias é o que o módulo de
+escalonamento distribui, o que a lista de red-flag publicada documenta e o que a
+referência de postura regulatória registra. Cada categoria carrega um backstop
+es-419 / pt-BR ao lado de seus padrões em inglês, de modo que o piso
+determinístico se sustenta de forma idêntica nos três locais. Duas categorias
+são delimitadas por intenção ou por coocorrência para manter alto recall sem
+disparar em excesso: overdose / intenção letal dispara sozinha diante de um
+léxico de letalidade inequívoco, enquanto tokens ambíguos (perigoso, demais)
+escalonam apenas quando um enquadramento de autoconsumo os habilita, de modo que
+"quantos comprimidos vêm em uma caixa" nunca dispara; o braço gravidez +
+teratógeno dispara apenas quando um sinal de gravidez e um medicamento
+teratógeno curado coocorrem na mesma cláusula, de modo que "grávida + vitamina
+pré-natal" nunca dispara. O recall de escalonamento é mantido em >= 0.95. A
+detecção é intencionalmente cega a negações - uma escolha deliberada de alto
+recall motivada pela assimetria de custo de falso-negativo declarada acima
+(escalonar em "sem dor no peito" é um falso positivo aceito; uma red flag não
+detectada não é).
 
-**Dois padrões adiados para a camada de prompt** (não o roteador
-determinístico): distúrbio visual súbito em um anticoagulante, e a
-coocorrência gravidez + teratógeno. O caso gravidez + teratógeno é
-um padrão de conjunção que precisa de um léxico de nomes de medicamentos que uma
-lista plana de regex não consegue carregar; ele é tratado pela camada de prompt
-no ínterim. O adiamento é registrado na docstring do módulo de escalonamento.
+**Um padrão adiado para a camada de prompt** (não o roteador determinístico):
+um distúrbio visual súbito em um anticoagulante. Ele é tratado pela camada de
+prompt no ínterim; o adiamento é registrado na docstring do módulo de
+escalonamento.
+
+### Detecção resistente à ofuscação
+
+A detecção de red-flag no nó pré-guardrail roda sobre uma cópia normalizada com
+NFKC do turno que remove os caracteres Unicode `Cf` (de largura zero) e dobra um
+conjunto curado de homoglifos cirílicos / gregos para latim, aplicado **antes**
+do curto-circuito de validação de entrada, de modo que a ideação entremeada com
+caracteres de largura zero escalona em vez de se desviar para uma recusa por
+entrada malformada. O conjunto de dobra é uma denylist deliberada de
+confundíveis de alta frequência, não a tabela completa de confundíveis do
+Unicode, para evitar dobrar em excesso letras acentuadas legítimas de es-419 /
+pt-BR; a evasão residual com homoglifos exóticos é uma limitação aceita coberta
+pelo backstop do LLM. A normalização é apenas para detecção - o texto original
+do usuário (com PII redigida) continua sendo o registro transparente e nunca é
+sobrescrito com a forma normalizada.

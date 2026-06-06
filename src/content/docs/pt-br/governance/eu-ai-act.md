@@ -43,7 +43,7 @@ O agente é um coach de bem-estar para a adesão à medicação, voltado ao paci
 - Atua como dispositivo médico que exige marcação CE segundo o MDR/IVDR
 - Influencia eleições, opera infraestrutura crítica ou desempenha funções de aplicação da lei
 
-O recurso de escalonamento por sinais de alerta reconhece sete padrões agudos e apresenta
+O recurso de escalonamento por sinais de alerta reconhece dez padrões agudos e apresenta
 orientações de serviços de emergência. Explicitamente, não é uma ferramenta de triagem; não
 prioriza, não roteia e não despacha. A lógica de escalonamento é determinística e baseada em regras
 (uma lista de padrões versionada), projetada de modo que o operador humano, e não o modelo,
@@ -68,7 +68,7 @@ modelos, não sobre esta aplicação a jusante.
 | Art. 12 (Manutenção de registros / logging) | Registro automático de eventos para rastreabilidade | Spans de OpenTelemetry e OpenInference em cada nó, chamada de LLM, recuperação, decisão de salvaguarda (veja a [decisão de observabilidade](/ai-agent-eval-harness-healthtech-docs/pt-br/adr/adr-0006-observability/)); sinks Langfuse Cloud e Phoenix | O logging existe, mas é de nível de observabilidade, não de nível de auditoria; sem logs à prova de adulteração; sem período de retenção definido |
 | Art. 13 (Transparência e prestação de informações) | Sistema projetado para transparência; usuários compreendem os resultados | Trace de decisões de salvaguarda em cada resposta; conjunto de citações em cada afirmação clínica; cartão do modelo público; a resposta da demonstração inclui aviso | A transparência é em nível de resposta; o Art. 13 exige documentação voltada ao implantador e explicações voltadas ao usuário |
 | Art. 14 (Supervisão humana) | Projetado para supervisão humana eficaz | Nó opcional de revisão com humano no circuito que usa uma interrupção do LangGraph (veja a [decisão do grafo de execução em streaming](/ai-agent-eval-harness-healthtech-docs/pt-br/adr/adr-0010-streaming-execution-graph/)); o operador humano pode aprovar/editar/rejeitar rascunhos de alto risco | A revisão com humano no circuito está desativada por padrão; sem interface dedicada de supervisão humana para monitoramento; sem documentação do mecanismo de override |
-| Art. 15 (Exatidão, robustez, cibersegurança) | Níveis apropriados de exatidão, robustez e cibersegurança | Portão de avaliação determinístico (218/218 aprovados); red-team noturno; salvaguardas antes do LLM; redação de PII; instrumentação com OpenTelemetry; varredura de segredos na CI | A exatidão é medida em dados sintéticos; a robustez é testada em um conjunto adversarial curado; sem teste de penetração nem avaliação formal de segurança |
+| Art. 15 (Exatidão, robustez, cibersegurança) | Níveis apropriados de exatidão, robustez e cibersegurança | Portão de avaliação determinístico (315/315 aprovados); red-team noturno; salvaguardas antes do LLM; redação de PII; instrumentação com OpenTelemetry; varredura de segredos na CI | A exatidão é medida em dados sintéticos; a robustez é testada em um conjunto adversarial curado; sem teste de penetração nem avaliação formal de segurança |
 | Art. 17 (Sistema de gestão da qualidade) | SGQ documentado para sistemas de alto risco | O arcabouço de avaliação como sistema de medição; controle de alterações baseado em registros de decisão; portões de avaliação que bloqueiam alterações; notas de versão | Sem SGQ formal; sem manual da qualidade; sem ciclo de auditoria interna |
 
 ## Estado atual

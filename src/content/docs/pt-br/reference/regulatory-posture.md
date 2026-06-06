@@ -150,9 +150,10 @@ Um coach de bem-estar para adesão à medicação voltado ao paciente não é,
 em si, um sistema de alto risco do Anexo III. O agente não faz triagem de
 chamadas de emergência, não aloca benefícios públicos, não pontua
 capacidade de crédito. O ramo de "Escalonamento por sinais de alerta" do
-agente reconhece sete padrões agudos (ideação suicida, anafilaxia, dor
-torácica cardíaca aguda, sangramento grave, asma grave, AVC / sinais FAST
-e emergência hipertensiva) e exibe orientação local de serviços de
+agente reconhece dez padrões agudos (ideação suicida, anafilaxia, dor
+torácica cardíaca aguda, sangramento grave, asma grave, AVC / sinais FAST,
+emergência hipertensiva, hipoglicemia grave, overdose / intenção letal
+e coocorrência gravidez + teratógeno) e exibe orientação local de serviços de
 emergência sem atuar como ferramenta de triagem em si. A lógica de
 escalonamento é deliberadamente determinística e baseada em regras, de modo
 que o operador humano, não o modelo, detenha a decisão de roteamento.

@@ -22,10 +22,10 @@ Esta documentación describe una implementación de referencia pública evaluada
 
 | Dimensión | en | es-419 | pt-BR |
 |-----------|-----|--------|-------|
-| Plantillas de rechazo | Sí (5 categorías) | Sí (5 categorías) | Sí (5 categorías) |
+| Plantillas de rechazo | Sí (10 plantillas) | Sí (10 plantillas) | Sí (10 plantillas) |
 | Clasificador de alcance | Sí (patrones de regex) | Sí (patrones de regex) | Sí (patrones de regex) |
-| Plantillas de escalamiento | Sí (7 categorías agudas) | Sí (7 categorías agudas) | Sí (7 categorías agudas) |
-| Casos del corpus de evaluación | 100 | 59 | 59 |
+| Plantillas de escalamiento | Sí (2 plantillas; 10 subcategorías) | Sí (2 plantillas; 10 subcategorías) | Sí (2 plantillas; 10 subcategorías) |
+| Casos del corpus de evaluación | 105 | 105 | 105 |
 | Tarjetas de KB | 36 (inglés) | usa la KB en inglés | usa la KB en inglés |
 | Aviso legal de la demo | Sí | Sí | Sí |
 | Voces de TTS | Sarah | Matilda | Bella |
@@ -34,13 +34,18 @@ Esta documentación describe una implementación de referencia pública evaluada
 
 ### Paridad de plantillas de rechazo
 
-Las plantillas de rechazo cubren cinco categorías en las tres configuraciones regionales:
+Las plantillas de rechazo están completamente localizadas en las tres configuraciones
+regionales (10 plantillas cada una, sin herencia del inglés), cubriendo:
 
-1. Rechazo de asesoría de dosificación
-2. Rechazo de diagnóstico
-3. Rechazo de interpretación de laboratorio/imágenes
-4. Rechazo de cambio de prescripción
-5. Rechazo por estar fuera de alcance
+1. Rechazo de asesoría de dosificación (`out-of-scope-dosing`)
+2. Rechazo de diagnóstico (`out-of-scope-diagnosis`)
+3. Rechazo de interpretación de laboratorio/imágenes/dispositivos (`out-of-scope-interpretation`)
+4. Rechazo de manejo de PII (`pii-blocked`, `out-of-scope-pii`)
+5. Rechazo de entrada malformada (`input-malformed`)
+6. Rechazo por falta de fuente verificada (`no-context`)
+7. Rechazo meta de autorrevelación / juego de roles (`out-of-scope-meta`)
+8. Rechazo genérico por estar fuera de alcance (`default`)
+9. Repliegue elegante por estar fuera de dominio (`out-of-domain`)
 
 Cada plantilla sigue la misma estructura en todas las configuraciones regionales: un rechazo claro, redirección
 al profesional de salud apropiado y el aviso legal de pie adecuado a la configuración regional.
@@ -57,8 +62,10 @@ lo que significa que las barreras de seguridad deterministas se activan de forma
 | Corrección de escalamiento | = 1.000 | en, es-419, pt-BR (idéntico) |
 
 Las tres porciones por configuración regional se sujetan a los mismos umbrales en el arnés de evaluación. Una
-regresión específica de configuración regional reprueba la compilación. La compuerta determinista de CI ejecuta los 218
-casos (100 en + 59 es-419 + 59 pt-BR) en cada cambio.
+regresión específica de configuración regional reprueba la compilación. La compuerta determinista de CI ejecuta los 315
+casos (105 en + 105 es-419 + 105 pt-BR) en cada cambio: las porciones no inglesas son
+traducciones completas del maestro en inglés con etiquetas de comportamiento idénticas y
+los mismos card-ids de referencia, de modo que cada configuración regional ejercita los mismos escenarios.
 
 ### Paridad de redacción de PII
 
@@ -70,7 +77,7 @@ El módulo de redacción de PII cubre patrones de identificadores específicos d
 | Números telefónicos | Formatos de EE. UU. | Formatos chilenos (+56, patrones de móvil) | Formatos brasileños (+55, móvil/fijo) |
 | Identificación nacional | Patrones de SSN | Patrones de RUT (XX.XXX.XXX-X) | Patrones de CPF (XXX.XXX.XXX-XX) |
 | Tarjeta de crédito | Validada con Luhn | Validada con Luhn | Validada con Luhn |
-| Identificadores de salud | MRN, DOB | Patrones de DNI | MRN, DOB |
+| Identificadores de salud | MRN, DOB | DNI + registro clínico (ficha/historia clínica, expediente) | contexto de CPF, registro clínico (prontuário, registro hospitalar, atendimento) |
 
 La redacción de PII se aplica tanto en la etapa de entrada como en la de salida, independientemente de la configuración regional. Los
 patrones de redacción para las tres configuraciones regionales se prueban en el conjunto de pruebas unitarias.
@@ -90,10 +97,11 @@ Las siguientes brechas de paridad se reconocen honestamente:
    El bucle productor-crítico corrige esto parcialmente, pero el sesgo residual se documenta
    en la declaración de datos en lugar de declararse resuelto.
 
-3. **Tamaños asimétricos del corpus de evaluación**: El corpus de evaluación en inglés (100 casos) es casi
-   el doble del tamaño del corpus de es-419 (59) o pt-BR (59). Si bien el arnés de evaluación
-   aplica los mismos umbrales, los tamaños de muestra más pequeños para es-419 y pt-BR implican
-   que algunos modos de falla pueden estar subrepresentados en esas configuraciones regionales.
+3. **El corpus de evaluación es simétrico entre configuraciones regionales**: las porciones en, es-419 y
+   pt-BR contienen cada una los mismos 105 escenarios con etiquetas de comportamiento idénticas y los mismos
+   card-ids de referencia, de modo que ninguna configuración regional queda submuestreada respecto al inglés.
+   La calidad de la recuperación translingüe aún depende del embedder en inglés (véase la brecha 4), pero la
+   cobertura de escenarios es igual.
 
 4. **Cobertura de idiomas del embedder**: El embedder por defecto (`BAAI/bge-small-en-v1.5`) está
    enfocado en inglés. La recuperación translingüe para es-419 y pt-BR depende de la
@@ -111,13 +119,15 @@ los siguientes mecanismos:
 
 - **Umbrales de evaluación idénticos**: Las tres porciones por configuración regional se puntúan bajo los mismos
   umbrales en cada ejecución de CI. Una regresión específica de configuración regional es una falla de compilación.
-- **Plantillas de rechazo sensibles a la configuración regional**: Las cinco categorías de rechazo tienen plantillas en
+- **Plantillas de rechazo sensibles a la configuración regional**: Las diez plantillas de rechazo tienen versiones nativas en
   en, es-419 y pt-BR, que siguen la misma estructura y se exigen mediante las mismas dimensiones
   de evaluación.
 - **Redacción de PII sensible a la configuración regional**: Los patrones de identificadores para EE. UU., Chile y Brasil se
   detectan y se redactan en la misma etapa del pipeline.
 - **Escalamiento sensible a la configuración regional**: Las plantillas de escalamiento por señal de alerta están disponibles en las
-  tres configuraciones regionales, cubriendo las siete categorías agudas.
+  tres configuraciones regionales (dos plantillas: emergencia médica y crisis
+  de salud mental), cubriendo las diez subcategorías agudas (incluida la coocurrencia
+  de embarazo + teratógeno).
 - **Casos de evaluación de es-419 y pt-BR**: Porciones dedicadas del corpus de evaluación prueban el
   comportamiento específico de cada configuración regional en cada cambio.
 
@@ -126,8 +136,9 @@ de escalamiento son 1.000 en las tres configuraciones regionales en cada ejecuci
 se activan de forma idéntica independientemente de la configuración regional del usuario.
 
 La evaluación honesta es que la paridad de seguridad se logra en la capa de barreras de seguridad (determinista,
-comprobable, reproducible) pero no plenamente en la capa del modelo (probabilística, dependiente de la configuración regional)
-ni en la capa de conocimiento (KB en inglés, tamaños de corpus asimétricos).
+comprobable, reproducible) y en la capa de cobertura de evaluación (un corpus simétrico de 105 casos por
+configuración regional), pero no plenamente en la capa del modelo (probabilística, dependiente de la
+configuración regional) ni en la capa de conocimiento (las tarjetas de KB siguen en inglés).
 
 ## Camino a producción
 

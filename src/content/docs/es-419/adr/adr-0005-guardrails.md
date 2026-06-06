@@ -221,21 +221,44 @@ revisión ocurre con la misma cadencia que el resto del módulo de barreras de
 seguridad.
 
 **Taxonomía de señales de alerta agudas.** El enrutador de escalamiento
-determinista cubre siete categorías agudas: ideación suicida, anafilaxia /
+determinista cubre diez categorías agudas: ideación suicida, anafilaxia /
 reacción alérgica severa, dolor de pecho cardíaco agudo, sangrado severo, asma
 severa / dificultad respiratoria aguda, **accidente cerebrovascular / signos
-FAST** y **emergencia hipertensiva**. Este conjunto de siete categorías es el
-que el módulo de escalamiento distribuye, el que la lista publicada de señales
-de alerta documenta y el que la referencia de postura regulatoria registra.
-El recall de escalamiento se mantiene en >= 0.95. La detección es
-intencionalmente ciega a la negación - una decisión deliberada de alto recall
-impulsada por la asimetría del costo del falso negativo señalada arriba
-(escalar ante "sin dolor de pecho" es un falso positivo aceptado; una señal de
-alerta omitida no lo es).
+FAST**, **emergencia hipertensiva**, **hipoglucemia severa**, **sobredosis /
+intención letal** y la **co-ocurrencia de embarazo + teratógeno**. Este
+conjunto de diez categorías es el que el módulo de escalamiento distribuye, el
+que la lista publicada de señales de alerta documenta y el que la referencia de
+postura regulatoria registra. Cada categoría lleva un backstop es-419 / pt-BR
+junto a sus patrones en inglés, de modo que el piso determinista se sostiene de
+forma idéntica en los tres locales. Dos categorías están acotadas por intención
+o por co-ocurrencia para mantener alto recall sin sobre-disparar: sobredosis /
+intención letal dispara por sí sola ante un léxico de letalidad inequívoco,
+mientras que tokens ambiguos (peligroso, demasiado) escalan solo cuando un marco
+de autoconsumo los habilita, de modo que "cuántas pastillas trae una caja" nunca
+dispara; el brazo de embarazo + teratógeno dispara solo cuando una señal de
+embarazo y un medicamento teratógeno curado co-ocurren en la misma cláusula, de
+modo que "embarazada + vitamina prenatal" nunca dispara. El recall de
+escalamiento se mantiene en >= 0.95. La detección es intencionalmente ciega a la
+negación - una decisión deliberada de alto recall impulsada por la asimetría del
+costo del falso negativo señalada arriba (escalar ante "sin dolor de pecho" es un
+falso positivo aceptado; una señal de alerta omitida no lo es).
 
-**Dos patrones diferidos a la capa de prompt** (no al enrutador determinista):
-perturbación visual súbita en un anticoagulante, y la co-ocurrencia de embarazo
-+ teratógeno. El caso de embarazo + teratógeno es un patrón de conjunción que
-necesita un léxico de nombres de medicamentos que una lista plana de regex no
-puede llevar; lo maneja la capa de prompt mientras tanto. La diferición se
-registra en el docstring del módulo de escalamiento.
+**Un patrón diferido a la capa de prompt** (no al enrutador determinista): una
+perturbación visual súbita en un anticoagulante. Lo maneja la capa de prompt
+mientras tanto; la diferición se registra en el docstring del módulo de
+escalamiento.
+
+### Detección resistente a la ofuscación
+
+La detección de señales de alerta en el nodo pre-barrera se ejecuta sobre una
+copia normalizada con NFKC del turno que elimina los caracteres Unicode `Cf`
+(de ancho cero) y pliega un conjunto curado de homoglifos cirílicos / griegos a
+latín, aplicado **antes** del corto-circuito de validación de entrada, de modo
+que la ideación entreverada con caracteres de ancho cero escala en lugar de
+desviarse a un rechazo por entrada malformada. El conjunto de plegado es una
+denylist deliberada de confundibles de alta frecuencia, no la tabla completa de
+confundibles de Unicode, para evitar sobre-plegar letras acentuadas legítimas de
+es-419 / pt-BR; la evasión residual con homoglifos exóticos es una limitación
+aceptada cubierta por el backstop del LLM. La normalización es solo para
+detección - el texto original del usuario (con PII redactada) sigue siendo el
+registro transparente y nunca se sobrescribe con la forma normalizada.

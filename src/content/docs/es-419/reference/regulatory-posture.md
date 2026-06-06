@@ -153,9 +153,10 @@ Un coach de bienestar para la adherencia a la medicación orientado al
 paciente no es, en sí mismo, un sistema de alto riesgo del Anexo III. El
 agente no realiza triaje de llamadas de emergencia, no asigna prestaciones
 públicas, no califica la solvencia crediticia. La rama de "Escalamiento por
-banderas rojas" del agente reconoce siete patrones agudos (ideación
+banderas rojas" del agente reconoce diez patrones agudos (ideación
 suicida, anafilaxia, dolor torácico cardíaco agudo, hemorragia grave, asma
-grave, ACV / signos FAST y emergencia hipertensiva) y muestra orientación
+grave, ACV / signos FAST, emergencia hipertensiva, hipoglucemia severa,
+sobredosis / intención letal y co-ocurrencia de embarazo + teratógeno) y muestra orientación
 de los servicios de emergencia locales sin actuar como una herramienta de
 triaje en sí misma. La lógica de escalamiento es deliberadamente
 determinista y basada en reglas, de modo que el operador humano, no el

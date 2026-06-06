@@ -33,7 +33,7 @@ Hugging Face Spaces free tier and is not designed for production infrastructure 
 | Property | Value |
 |----------|-------|
 | **Threat** | User input contains instructions designed to override the system prompt or manipulate the LLM's behaviour |
-| **Mitigations in place** | The scope classifier rejects out-of-scope inputs before the LLM; refusal templates for known injection patterns; the Promptfoo nightly red-team exercises 13 OWASP LLM Top 10 injection templates plus 19 hand-crafted adversarial cases |
+| **Mitigations in place** | The scope classifier rejects out-of-scope inputs before the LLM; refusal templates for known injection patterns; the Promptfoo nightly red-team exercises 13 OWASP LLM Top 10 injection templates plus 25 hand-crafted adversarial cases |
 | **Residual risk** | Novel prompt-injection techniques not covered by the scope classifier or adversarial seed bank may bypass deterministic guardrails; the LLM itself may comply with well-crafted jailbreaks after the guardrail layer |
 | **Control** | Scope classifier, refusal templates, and the adversarial seed bank |
 
@@ -129,7 +129,7 @@ techniques. The following table maps ATLAS techniques relevant to this system.
 | **AML.T0002: Collect Public Data** | Attacker gathers KB cards, eval corpus, system prompt from repo | Public data; synthetic only; no sensitive content | Accepted |
 | **AML.T0010: ML Supply Chain Compromise** | Compromised LLM provider or dependency | The LLM client Protocol allows provider switching; the dependency lockfile pins dependencies | Partially mitigated |
 | **AML.T0020: Poison Training Data** | Manipulate KB cards to inject adversarial content | 100% synthetic data; review-gated corpus; provenance metadata | Mitigated |
-| **AML.T0043: Craft Adversarial Data** | Create inputs specifically designed to bypass guardrails | The eval corpus includes 19 adversarial cases; the Promptfoo nightly red-team; the scope classifier rejects known patterns | Partially mitigated -- novel techniques may bypass |
+| **AML.T0043: Craft Adversarial Data** | Create inputs specifically designed to bypass guardrails | The eval corpus includes 25 adversarial cases; the Promptfoo nightly red-team; the scope classifier rejects known patterns | Partially mitigated -- novel techniques may bypass |
 | **AML.T0044: Full Memory Extraction** | Extract system prompt through conversation | The scope classifier includes extraction detection | Partially mitigated |
 | **AML.T0048: Prompt Injection** | Inject instructions to override system behaviour | Scope classifier, refusal templates, pre-LLM guardrails | Partially mitigated |
 | **AML.T0051: LLM Jailbreak** | Bypass safety controls to generate harmful content | Guardrails-before-LLM architecture; refusal on out-of-scope; escalation on acute red flags | Partially mitigated |
@@ -145,7 +145,7 @@ defense-in-depth approach:
    and refusal templates run as deterministic graph nodes before the LLM is invoked.
    This means the most safety-critical decisions do not depend on model behaviour.
 
-2. **Continuous adversarial testing**: The Promptfoo nightly red-team, the 19 adversarial
+2. **Continuous adversarial testing**: The Promptfoo nightly red-team, the 25 adversarial
    eval cases, and the 13 hand-crafted red-team cases exercise the system against known
    attack patterns. New patterns discovered by red-team runs are folded back into the
    adversarial seed bank.
@@ -154,7 +154,7 @@ defense-in-depth approach:
    regulatory posture, and the public source code make the system's design and limitations
    visible. Transparency reduces the asymmetry between attacker and defender.
 
-4. **Eval harness as regression gate**: Every change is tested against the full 218-case
+4. **Eval harness as regression gate**: Every change is tested against the full 315-case
    corpus. A regression in safety, citation, or escalation metrics fails the build.
 
 The honest assessment is that these mitigations are reference-implementation-grade. They

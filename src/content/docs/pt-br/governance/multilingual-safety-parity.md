@@ -22,10 +22,10 @@ Esta documentação descreve uma implementação de referência pública avaliad
 
 | Dimensão | en | es-419 | pt-BR |
 |-----------|-----|--------|-------|
-| Modelos de recusa | Sim (5 categorias) | Sim (5 categorias) | Sim (5 categorias) |
+| Modelos de recusa | Sim (10 modelos) | Sim (10 modelos) | Sim (10 modelos) |
 | Classificador de escopo | Sim (padrões regex) | Sim (padrões regex) | Sim (padrões regex) |
-| Modelos de escalonamento | Sim (7 categorias agudas) | Sim (7 categorias agudas) | Sim (7 categorias agudas) |
-| Casos do corpus de eval | 100 | 59 | 59 |
+| Modelos de escalonamento | Sim (2 modelos; 10 subcategorias) | Sim (2 modelos; 10 subcategorias) | Sim (2 modelos; 10 subcategorias) |
+| Casos do corpus de eval | 105 | 105 | 105 |
 | Cards de KB | 36 (inglês) | usa a KB em inglês | usa a KB em inglês |
 | Aviso de demo | Sim | Sim | Sim |
 | Vozes de TTS | Sarah | Matilda | Bella |
@@ -34,13 +34,18 @@ Esta documentação descreve uma implementação de referência pública avaliad
 
 ### Paridade dos modelos de recusa
 
-Os modelos de recusa cobrem cinco categorias nas três configurações regionais:
+Os modelos de recusa estão totalmente localizados nas três configurações regionais
+(10 modelos cada, sem herança do inglês), cobrindo:
 
-1. Recusa de aconselhamento de dosagem
-2. Recusa de diagnóstico
-3. Recusa de interpretação de exames laboratoriais/de imagem
-4. Recusa de alteração de prescrição
-5. Recusa por estar fora de escopo
+1. Recusa de aconselhamento de dosagem (`out-of-scope-dosing`)
+2. Recusa de diagnóstico (`out-of-scope-diagnosis`)
+3. Recusa de interpretação de exames laboratoriais/de imagem/dispositivos (`out-of-scope-interpretation`)
+4. Recusa de manejo de PII (`pii-blocked`, `out-of-scope-pii`)
+5. Recusa de entrada malformada (`input-malformed`)
+6. Recusa por falta de fonte verificada (`no-context`)
+7. Recusa meta de autodivulgação / interpretação de papéis (`out-of-scope-meta`)
+8. Recusa genérica por estar fora de escopo (`default`)
+9. Fallback gracioso por estar fora de domínio (`out-of-domain`)
 
 Cada modelo segue a mesma estrutura entre as configurações regionais: uma recusa clara, redirecionamento
 ao profissional de saúde apropriado e o aviso de rodapé apropriado à configuração regional.
@@ -57,8 +62,10 @@ o que significa que os guardrails determinísticos disparam de forma idêntica i
 | Correção de escalonamento | = 1,000 | en, es-419, pt-BR (idênticos) |
 
 As três fatias de configuração regional são mantidas sob os mesmos limiares no harness de eval. Uma
-regressão específica de configuração regional reprova o build. O gate determinístico de CI executa todos os 218
-casos (100 en + 59 es-419 + 59 pt-BR) a cada mudança.
+regressão específica de configuração regional reprova o build. O gate determinístico de CI executa todos os 315
+casos (105 en + 105 es-419 + 105 pt-BR) a cada mudança: as fatias não inglesas são
+traduções completas do mestre em inglês com rótulos de comportamento idênticos e os mesmos
+card-ids de referência, de modo que cada configuração regional exercita os mesmos cenários.
 
 ### Paridade da redação de PII
 
@@ -70,7 +77,7 @@ O módulo de redação de PII cobre padrões de identificador específicos de ca
 | Telefones | Formatos dos EUA | Formatos chilenos (+56, padrões de celular) | Formatos brasileiros (+55, celular/fixo) |
 | ID nacional | Padrões de SSN | Padrões de RUT (XX.XXX.XXX-X) | Padrões de CPF (XXX.XXX.XXX-XX) |
 | Cartão de crédito | Validado por Luhn | Validado por Luhn | Validado por Luhn |
-| Identificadores de saúde | MRN, DOB | Padrões de DNI | MRN, DOB |
+| Identificadores de saúde | MRN, DOB | DNI + registro clínico (ficha/historia clínica, expediente) | contexto de CPF, registro clínico (prontuário, registro hospitalar, atendimento) |
 
 A redação de PII é aplicada tanto na entrada quanto na saída, independentemente da configuração regional. Os
 padrões de redação das três configurações regionais são testados na suíte de testes de unidade.
@@ -90,10 +97,11 @@ As seguintes lacunas de paridade são reconhecidas honestamente:
    O loop produtor-crítico corrige isso parcialmente, mas o viés residual é documentado
    no data statement em vez de ser declarado resolvido.
 
-3. **Tamanhos assimétricos do corpus de eval**: O corpus de eval em inglês (100 casos) é quase
-   o dobro do tamanho do corpus es-419 (59) ou pt-BR (59). Embora o harness de eval
-   aplique os mesmos limiares, os tamanhos de amostra menores para es-419 e pt-BR significam
-   que alguns modos de falha podem estar sub-representados nessas configurações regionais.
+3. **O corpus de eval é simétrico entre configurações regionais**: as fatias en, es-419 e pt-BR
+   contêm cada uma os mesmos 105 cenários com rótulos de comportamento idênticos e os mesmos
+   card-ids de referência, de modo que nenhuma configuração regional fica sub-amostrada em relação ao inglês.
+   A qualidade da recuperação interlíngue ainda depende do embedder em inglês (veja a lacuna 4), mas a
+   cobertura de cenários é igual.
 
 4. **Cobertura de idiomas do embedder**: O embedder padrão (`BAAI/bge-small-en-v1.5`) é
    focado em inglês. A recuperação interlíngue para es-419 e pt-BR depende da
@@ -111,13 +119,15 @@ seguintes mecanismos:
 
 - **Limiares de eval idênticos**: As três fatias de configuração regional são pontuadas sob os mesmos
   limiares em cada execução de CI. Uma regressão específica de configuração regional é uma falha de build.
-- **Modelos de recusa cientes da configuração regional**: Todas as cinco categorias de recusa têm modelos em
+- **Modelos de recusa cientes da configuração regional**: Todos os dez modelos de recusa têm versões nativas em
   en, es-419 e pt-BR, seguindo a mesma estrutura e impostas pelas mesmas dimensões
   de eval.
 - **Redação de PII ciente da configuração regional**: Os padrões de identificador para EUA, Chile e Brasil são
   detectados e redigidos na mesma etapa do pipeline.
 - **Escalonamento ciente da configuração regional**: Os modelos de escalonamento de red-flag estão disponíveis nas três
-  configurações regionais, cobrindo as sete categorias agudas.
+  configurações regionais (dois modelos: emergência médica e crise de saúde
+  mental), cobrindo as dez subcategorias agudas (incluindo a coocorrência de
+  gravidez + teratógeno).
 - **Casos de eval em es-419 e pt-BR**: Slices dedicados do corpus de eval testam o
   comportamento específico de configuração regional a cada mudança.
 
@@ -126,8 +136,9 @@ escalonamento são 1,000 nas três configurações regionais em cada execução.
 segurança disparam de forma idêntica independentemente da configuração regional do usuário.
 
 A avaliação honesta é que a paridade de segurança é alcançada na camada de guardrails (determinística,
-testável, reprodutível), mas não totalmente na camada do modelo (probabilística, dependente da configuração regional)
-nem na camada de conhecimento (KB em inglês, tamanhos assimétricos de corpus).
+testável, reprodutível) e na camada de cobertura de eval (um corpus simétrico de 105 casos por
+configuração regional), mas não totalmente na camada do modelo (probabilística, dependente da configuração
+regional) nem na camada de conhecimento (os cards de KB permanecem em inglês).
 
 ## Caminho até produção
 

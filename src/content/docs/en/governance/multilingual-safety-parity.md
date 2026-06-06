@@ -22,10 +22,10 @@ This documentation describes a public reference implementation evaluated on 100%
 
 | Dimension | en | es-419 | pt-BR |
 |-----------|-----|--------|-------|
-| Refusal templates | Yes (5 categories) | Yes (5 categories) | Yes (5 categories) |
+| Refusal templates | Yes (10 slugs) | Yes (10 slugs) | Yes (10 slugs) |
 | Scope classifier | Yes (regex patterns) | Yes (regex patterns) | Yes (regex patterns) |
-| Escalation templates | Yes (7 acute categories) | Yes (7 acute categories) | Yes (7 acute categories) |
-| Eval corpus cases | 100 | 59 | 59 |
+| Escalation templates | Yes (2 templates; 10 subcategories) | Yes (2 templates; 10 subcategories) | Yes (2 templates; 10 subcategories) |
+| Eval corpus cases | 105 | 105 | 105 |
 | KB cards | 36 (English) | uses English KB | uses English KB |
 | Demo disclaimer | Yes | Yes | Yes |
 | Voice TTS voices | Sarah | Matilda | Bella |
@@ -34,13 +34,18 @@ This documentation describes a public reference implementation evaluated on 100%
 
 ### Refusal Template Parity
 
-The refusal templates cover five categories in all three locales:
+The refusal templates are fully localized for all three locales (10 slugs each,
+full override, no English inheritance), covering:
 
-1. Dosing advice refusal
-2. Diagnosis refusal
-3. Lab/imaging interpretation refusal
-4. Prescription change refusal
-5. Out-of-scope refusal
+1. Dosing-advice refusal (`out-of-scope-dosing`)
+2. Diagnosis refusal (`out-of-scope-diagnosis`)
+3. Lab/imaging/device interpretation refusal (`out-of-scope-interpretation`)
+4. PII-handling refusal (`pii-blocked`, `out-of-scope-pii`)
+5. Malformed-input refusal (`input-malformed`)
+6. No-verified-source refusal (`no-context`)
+7. Self-disclosure / role-play meta refusal (`out-of-scope-meta`)
+8. Generic out-of-scope refusal (`default`)
+9. Out-of-domain graceful fallback (`out-of-domain`)
 
 Each template follows the same structure across locales: a clear refusal, redirection
 to the appropriate healthcare professional, and the locale-appropriate footer disclaimer.
@@ -57,8 +62,10 @@ meaning the deterministic guardrails fire identically regardless of locale.
 | Escalation correctness | = 1.000 | en, es-419, pt-BR (identical) |
 
 All three locale slices are held to the same thresholds in the eval harness. A
-locale-specific regression fails the build. The deterministic CI gate runs all 218
-cases (100 en + 59 es-419 + 59 pt-BR) on every change.
+locale-specific regression fails the build. The deterministic CI gate runs all 315
+cases (105 en + 105 es-419 + 105 pt-BR) on every change: the non-English slices are
+full translations of the English master with identical behavioural labels and gold
+card-ids, so every locale exercises the same scenarios.
 
 ### PII Redaction Parity
 
@@ -70,7 +77,7 @@ The PII redaction module covers locale-specific identifier patterns:
 | Phone numbers | US formats | Chilean formats (+56, mobile patterns) | Brazilian formats (+55, mobile/landline) |
 | National ID | SSN patterns | RUT patterns (XX.XXX.XXX-X) | CPF patterns (XXX.XXX.XXX-XX) |
 | Credit card | Luhn-validated | Luhn-validated | Luhn-validated |
-| Health identifiers | MRN, DOB | DNI patterns | MRN, DOB |
+| Health identifiers | MRN, DOB | DNI + clinical-record (ficha/historia clínica, expediente) | CPF-context, clinical-record (prontuário, registro hospitalar, atendimento) |
 
 PII redaction is applied at both input and output stages, regardless of locale. The
 redaction patterns for all three locales are tested in the unit test suite.
@@ -90,10 +97,10 @@ The following parity gaps are acknowledged honestly:
    The producer-critic loop partially corrects this, but residual bias is documented
    in the data statement rather than claimed solved.
 
-3. **Asymmetric eval corpus sizes**: The English eval corpus (100 cases) is almost
-   twice the size of either the es-419 (59) or pt-BR (59) corpus. While the eval harness
-   applies the same thresholds, the smaller sample sizes for es-419 and pt-BR mean
-   that some failure modes may be under-represented in those locales.
+3. **Eval corpus is symmetric across locales**: the en, es-419, and pt-BR slices each
+   carry the same 105 scenarios with identical behavioural labels and gold card-ids, so
+   no locale is under-sampled relative to English. Cross-lingual retrieval quality still
+   depends on the English embedder (see gap 4), but scenario coverage is equal.
 
 4. **Embedder language coverage**: The default embedder (`BAAI/bge-small-en-v1.5`) is
    English-focused. Cross-lingual retrieval for es-419 and pt-BR relies on the
@@ -111,13 +118,15 @@ the following mechanisms:
 
 - **Identical eval thresholds**: All three locale slices are scored under the same
   thresholds on every CI run. A locale-specific regression is a build failure.
-- **Locale-aware refusal templates**: All five refusal categories have templates in
+- **Locale-aware refusal templates**: All ten refusal slugs have native templates in
   en, es-419, and pt-BR, following the same structure and enforced by the same eval
   dimensions.
 - **Locale-aware PII redaction**: Identifier patterns for US, Chile, and Brazil are
   detected and redacted in the same pipeline stage.
 - **Locale-aware escalation**: Red-flag escalation templates are available in all
-  three locales, covering the seven acute categories.
+  three locales (two templates: emergency-medical and mental-health-crisis),
+  covering the ten acute red-flag subcategories (including the pregnancy + teratogen
+  co-occurrence).
 - **es-419 and pt-BR eval cases**: Dedicated eval corpus slices test
   locale-specific behaviour on every change.
 
@@ -126,8 +135,9 @@ correctness are 1.000 across all three locales on every run. This means the safe
 guardrails fire identically regardless of the user's locale.
 
 The honest assessment is that safety parity is achieved at the guardrail layer (deterministic,
-testable, reproducible) but not fully at the model layer (probabilistic, locale-dependent)
-or the knowledge layer (English KB, asymmetric corpus sizes).
+testable, reproducible) and at the eval-coverage layer (a symmetric 105-case corpus per
+locale), but not fully at the model layer (probabilistic, locale-dependent) or the
+knowledge layer (the KB cards remain English).
 
 ## Production Path
 

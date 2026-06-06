@@ -36,10 +36,10 @@ licencia MIT. El código circundante es Apache-2.0.
 | Propiedad | Valor |
 |----------|-------|
 | Formato | JSONL (un objeto JSON por línea) |
-| Tamaño | 218 casos (100 en, 59 es-419, 59 pt-BR) |
+| Tamaño | 315 casos (105 en, 105 es-419, 105 pt-BR) |
 | Generación | Generación alineada a persona/guion por LLM con bucle productor-crítico |
 | Curaduría | 100% de revisión manual por el autor |
-| Semillas adversariales | 19 redactadas a mano en inglés más porciones adversariales en es-419/pt-BR |
+| Semillas adversariales | 25 redactadas a mano en inglés más porciones adversariales en es-419/pt-BR |
 | Licencia | MIT |
 
 La metodología de generación sigue un pipeline de cuatro etapas: creación de personas (cinco grupos de
@@ -86,8 +86,8 @@ El corpus de evaluación se organiza en tres categorías en todas las configurac
 | Adversarial | Intentos de dosificación, diagnóstico, inyección de prompts y coerción de rol |
 | Sin coincidencia | Preguntas clínicas sin coincidencia de tarjeta de KB |
 
-La porción en inglés (100 casos) es la más grande -- casi el doble del tamaño de cada
-porción no inglesa; las porciones es-419 y pt-BR (59 casos cada una)
+La porción en inglés (105 casos) tiene el mismo tamaño que cada
+porción no inglesa; las porciones es-419 y pt-BR (105 casos cada una)
 incluyen cobertura tanto dorada como adversarial. La base de conocimiento comprende 36
 tarjetas de contenido de adherencia a la medicación.
 

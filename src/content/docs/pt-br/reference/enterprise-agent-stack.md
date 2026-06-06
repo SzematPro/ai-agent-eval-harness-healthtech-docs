@@ -33,7 +33,7 @@ graph TB
 
     LLM[LLM Providers<br/>Groq / Cerebras / Anthropic]
     TTS[ElevenLabs<br/>TTS + STT]
-    KB[Knowledge Base<br/>Chroma Embedded<br/>12-36 Synthetic KB Cards]
+    KB[Knowledge Base<br/>Chroma Embedded<br/>36 Synthetic KB Cards]
     Obs[Observability<br/>OTel / Langfuse / Phoenix]
     Supabase[(Supabase<br/>Demo Operational Data)]
 
@@ -67,7 +67,7 @@ graph TB
         FastAPI[FastAPI<br/>Single Uvicorn Worker]
         Graph[LangGraph StateGraph<br/>6 Nodes + Optional HITL]
         MemorySaver[MemorySaver<br/>In-Memory Checkpointer]
-        Chroma[Chroma Embedded<br/>DuckDB + Parquet<br/>12-36 Synthetic Cards]
+        Chroma[Chroma Embedded<br/>DuckDB + Parquet<br/>36 Synthetic Cards]
         Resilience[Resilience Layer<br/>Rate Limiter + Fallback + Cache]
         OTel[OTel Exporter]
     end
@@ -112,7 +112,7 @@ graph TB
     subgraph TestInfra["Test Infrastructure"]
         StubLLM[StubLLMClient<br/>Deterministic, Key-Free]
         Phoenix[Phoenix Self-Hosted<br/>Docker Compose Profile]
-        GoldenCorpus[Golden Corpus<br/>218 Cases / 3 Locales<br/>JSONL Format]
+        GoldenCorpus[Golden Corpus<br/>315 Cases / 3 Locales<br/>JSONL Format]
     end
 
     Build --> Pytest

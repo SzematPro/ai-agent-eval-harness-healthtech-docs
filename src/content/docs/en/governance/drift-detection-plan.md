@@ -70,7 +70,7 @@ eval corpus evolves with the threat landscape.
 
 ### Golden Corpus Stability
 
-The eval corpus (218 cases across three locales) is a fixed golden dataset. It provides
+The eval corpus (315 cases across three locales) is a fixed golden dataset. It provides
 a stable baseline against which performance is measured. Because the corpus is committed
 and version-controlled, any performance change on the same corpus version must be due
 to a change in the system (model, guardrails, retrieval, or prompts), not a change in

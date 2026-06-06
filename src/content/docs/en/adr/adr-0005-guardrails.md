@@ -216,20 +216,43 @@ inspectable, drift is detectable by diff, and review happens on the same
 cadence as the rest of the guardrails module.
 
 **Acute red-flag taxonomy.** The deterministic escalation router covers
-seven acute categories: suicidal ideation, anaphylaxis / severe
+ten acute categories: suicidal ideation, anaphylaxis / severe
 allergic reaction, acute cardiac chest pain, severe bleeding, severe
-asthma / acute breathing difficulty, **stroke / FAST signs**, and
-**hypertensive emergency**. This seven-category set is the one the
-escalation module ships, the one the published red-flag list documents,
-and the one the regulatory posture reference records.
-Escalation-recall is held to >= 0.95. Detection is intentionally
-negation-blind - a deliberate high-recall choice driven by the
-false-negative-cost asymmetry stated above (escalating on "no chest
-pain" is an accepted false positive; a missed red flag is not).
+asthma / acute breathing difficulty, **stroke / FAST signs**,
+**hypertensive emergency**, **severe hypoglycemia**, **overdose /
+lethality intent**, and the **pregnancy + teratogen co-occurrence**.
+This ten-category set is the one the escalation module ships, the one
+the published red-flag list documents, and the one the regulatory
+posture reference records. Every category carries an es-419 / pt-BR
+backstop alongside its English patterns, so the deterministic floor
+holds identically across all three locales. Two categories are intent-
+or co-occurrence-scoped to stay high-recall without over-firing:
+overdose / lethality fires on an unambiguous lethality lexicon on its
+own, while ambiguous tokens (dangerous, too much) escalate only when
+gated by a self-consumption frame, so "how many pills are in a pack"
+never trips; the pregnancy + teratogen arm fires only when a pregnancy
+cue and a curated teratogen drug co-occur in the same clause, so
+"pregnant + prenatal vitamin" never trips. Escalation-recall is held to
+>= 0.95. Detection is intentionally negation-blind - a deliberate
+high-recall choice driven by the false-negative-cost asymmetry stated
+above (escalating on "no chest pain" is an accepted false positive; a
+missed red flag is not).
 
-**Two patterns deferred to the prompt layer** (not the deterministic
-router): sudden visual disturbance on an anticoagulant, and the
-pregnancy + teratogen co-occurrence. The pregnancy + teratogen case is
-a conjunction pattern that needs a drug-name lexicon a flat regex list
-cannot carry; it is handled by the prompt layer in the interim. The
-deferral is recorded in the escalation module docstring.
+**One pattern deferred to the prompt layer** (not the deterministic
+router): a sudden visual disturbance on an anticoagulant. It is handled
+by the prompt layer in the interim; the deferral is recorded in the
+escalation module docstring.
+
+### Obfuscation-resistant detection
+
+Red-flag detection in the pre-guardrail node runs on an NFKC-normalized
+copy of the turn that strips Unicode `Cf` (zero-width) characters and
+folds a curated set of Cyrillic / Greek homoglyphs to Latin, applied
+**before** the input-validation short-circuit so zero-width-laced
+ideation escalates instead of mis-routing to a malformed-input refusal.
+The fold set is a deliberate denylist of high-frequency confusables, not
+the full Unicode confusables table, to avoid over-folding legitimate
+es-419 / pt-BR accented letters; residual exotic-homoglyph evasion is an
+accepted limitation covered by the LLM backstop. Normalization is
+detection-only - the user's original (PII-redacted) text remains the
+transparent record and is never overwritten with the normalized form.

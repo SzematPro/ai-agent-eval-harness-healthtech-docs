@@ -36,10 +36,10 @@ licença MIT. O código ao redor é Apache-2.0.
 | Propriedade | Valor |
 |----------|-------|
 | Formato | JSONL (um objeto JSON por linha) |
-| Tamanho | 218 casos (100 en, 59 es-419, 59 pt-BR) |
+| Tamanho | 315 casos (105 en, 105 es-419, 105 pt-BR) |
 | Geração | Geração alinhada a personas/roteiros por LLM com loop produtor-crítico |
 | Curadoria | Revisão 100% manual pelo autor |
-| Sementes adversariais | 19 elaboradas manualmente em inglês mais slices adversariais em es-419/pt-BR |
+| Sementes adversariais | 25 elaboradas manualmente em inglês mais slices adversariais em es-419/pt-BR |
 | Licença | MIT |
 
 A metodologia de geração segue um pipeline de quatro etapas: criação de personas (cinco clusters de
@@ -86,8 +86,8 @@ O corpus de eval está organizado em três categorias em todas as configuraçõe
 | Adversarial | Tentativas de dosagem, diagnóstico, prompt-injection e coerção de papel |
 | No-match | Perguntas clínicas sem card de KB correspondente |
 
-O slice em inglês (100 casos) é o maior -- quase o dobro do tamanho de cada
-slice não inglês; os slices es-419 e pt-BR (59 casos cada)
+O slice em inglês (105 casos) tem o mesmo tamanho que cada
+slice não inglês; os slices es-419 e pt-BR (105 casos cada)
 incluem cobertura golden e adversarial. A base de conhecimento é composta por 36
 cards de conteúdo de adesão à medicação.
 

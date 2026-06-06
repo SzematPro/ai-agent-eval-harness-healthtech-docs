@@ -36,10 +36,10 @@ MIT license. The surrounding code is Apache-2.0.
 | Property | Value |
 |----------|-------|
 | Format | JSONL (one JSON object per line) |
-| Size | 218 cases (100 en, 59 es-419, 59 pt-BR) |
+| Size | 315 cases (105 en, 105 es-419, 105 pt-BR) |
 | Generation | LLM persona/script-aligned generation with producer-critic loop |
 | Curation | 100% manual review by the author |
-| Adversarial seeds | 19 hand-authored English plus adversarial slices in es-419/pt-BR |
+| Adversarial seeds | 25 hand-authored English plus adversarial slices in es-419/pt-BR |
 | Licence | MIT |
 
 Generation methodology follows a four-stage pipeline: persona creation (five condition
@@ -86,8 +86,8 @@ The eval corpus is organised into three categories across all locales:
 | Adversarial | Dosing, diagnosis, prompt-injection, role-coercion attempts |
 | No-match | Clinical questions with no KB card match |
 
-The English slice (100 cases) is the largest -- almost twice the size of each
-non-English slice; the es-419 and pt-BR slices (59 cases each)
+All three locale slices are held at parity (105 cases each); the es-419 and pt-BR
+slices (105 cases each)
 include both golden and adversarial coverage. The knowledge base comprises 36
 medication-adherence content cards.
 

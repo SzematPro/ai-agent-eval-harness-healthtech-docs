@@ -32,7 +32,7 @@ context where it would process PHI on behalf of a covered entity.
 
 | Requirement | Current State | Production Path |
 |-------------|--------------|-----------------|
-| **PHI handling** | No PHI present. The system uses 100% synthetic data (36 KB cards, 218 eval cases). No real patient data, no real EHR, no real clinical records. | A production deployment would need to define what constitutes PHI in its context, implement policies for PHI ingestion, processing, storage, and disposal, and ensure the minimum necessary standard is applied |
+| **PHI handling** | No PHI present. The system uses 100% synthetic data (36 KB cards, 315 eval cases). No real patient data, no real EHR, no real clinical records. | A production deployment would need to define what constitutes PHI in its context, implement policies for PHI ingestion, processing, storage, and disposal, and ensure the minimum necessary standard is applied |
 | **Minimum Necessary** | Not applicable -- no PHI handled | Access controls limiting PHI exposure to the minimum necessary for each function; role-based access with audit logging |
 | **Patient rights** | Not applicable -- no real patients | Mechanisms for patients to access, amend, and receive an accounting of disclosures of their PHI; request processing within HIPAA timeframes |
 | **Notice of Privacy Practices** | Demo disclaimer on every response ("This is a demonstration. Not medical advice.") | Formal Notice of Privacy Practices document; patient acknowledgement of receipt |

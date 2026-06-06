@@ -43,7 +43,7 @@ The agent is a medication-adherence wellness coach, patient-facing, that does no
 - Act as a medical device requiring CE marking under the MDR/IVDR
 - Influence elections, operate critical infrastructure, or perform law enforcement functions
 
-The red-flag escalation feature recognises seven acute patterns and surfaces emergency-services
+The red-flag escalation feature recognises ten acute patterns and surfaces emergency-services
 guidance. It is explicitly not a triage tool; it does not prioritise, route, or dispatch.
 The escalation logic is deterministic and rule-based (a versioned pattern list), designed so
 the human operator, not the model, holds the routing decision.
@@ -67,7 +67,7 @@ downstream application.
 | Art. 12 (Record-keeping / logging) | Automatic logging of events for traceability | OpenTelemetry and OpenInference spans on every node, LLM call, retrieval, guardrail decision (see the [observability decision](/ai-agent-eval-harness-healthtech-docs/en/adr/adr-0006-observability/)); Langfuse Cloud and Phoenix sinks | Logging exists but is observability-grade, not audit-grade; no tamper-evident logs; no defined retention period |
 | Art. 13 (Transparency and provision of information) | System designed for transparency; users understand outcomes | Guardrail-decision trace on every response; citation set on every clinical assertion; public model card; demo response carries disclaimer | Transparency is response-level; Art. 13 requires deployer-facing documentation and user-facing explanations |
 | Art. 14 (Human oversight) | Designed for effective human oversight | Optional human-in-the-loop review node using a LangGraph interrupt (see the [streaming execution graph decision](/ai-agent-eval-harness-healthtech-docs/en/adr/adr-0010-streaming-execution-graph/)); human operator can approve/edit/reject high-risk drafts | Human-in-the-loop review is off by default; no dedicated human-oversight interface for monitoring; no override mechanism documentation |
-| Art. 15 (Accuracy, robustness, cybersecurity) | Appropriate levels of accuracy, robustness, and cybersecurity | Deterministic eval gate (218/218 pass); nightly red-team; guardrails-before-LLM; PII redaction; OpenTelemetry instrumentation; secret scanning in CI | Accuracy measured on synthetic data; robustness tested on curated adversarial set; no penetration testing or formal security assessment |
+| Art. 15 (Accuracy, robustness, cybersecurity) | Appropriate levels of accuracy, robustness, and cybersecurity | Deterministic eval gate (315/315 pass); nightly red-team; guardrails-before-LLM; PII redaction; OpenTelemetry instrumentation; secret scanning in CI | Accuracy measured on synthetic data; robustness tested on curated adversarial set; no penetration testing or formal security assessment |
 | Art. 17 (Quality management system) | Documented QMS for high-risk systems | Eval harness as measurement system; decision-record-based change control; change-blocking eval gates; release notes | No formal QMS; no quality manual; no internal audit cycle |
 
 ## Current State

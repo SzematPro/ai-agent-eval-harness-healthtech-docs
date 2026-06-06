@@ -33,7 +33,7 @@ capa gratuita de Hugging Face Spaces y no está diseñada para la seguridad de i
 | Propiedad | Valor |
 |----------|-------|
 | **Amenaza** | La entrada del usuario contiene instrucciones diseñadas para anular el prompt del sistema o manipular el comportamiento del LLM |
-| **Mitigaciones implementadas** | El clasificador de alcance rechaza las entradas fuera de alcance antes del LLM; plantillas de rechazo para patrones de inyección conocidos; el red-team nocturno de Promptfoo pone a prueba 13 plantillas de inyección del OWASP LLM Top 10 más 19 casos adversarios elaborados a mano |
+| **Mitigaciones implementadas** | El clasificador de alcance rechaza las entradas fuera de alcance antes del LLM; plantillas de rechazo para patrones de inyección conocidos; el red-team nocturno de Promptfoo pone a prueba 13 plantillas de inyección del OWASP LLM Top 10 más 25 casos adversarios elaborados a mano |
 | **Riesgo residual** | Técnicas novedosas de inyección de prompts no cubiertas por el clasificador de alcance o el banco de semillas adversarias podrían eludir las barreras de seguridad deterministas; el propio LLM podría cumplir con jailbreaks bien elaborados después de la capa de barreras de seguridad |
 | **Control** | Clasificador de alcance, plantillas de rechazo y el banco de semillas adversarias |
 
@@ -129,7 +129,7 @@ específicas de la IA. La siguiente tabla mapea las técnicas de ATLAS relevante
 | **AML.T0002: Recopilar datos públicos** | El atacante reúne las tarjetas de la KB, el corpus de evaluación, el prompt del sistema desde el repositorio | Datos públicos; solo sintéticos; sin contenido sensible | Aceptado |
 | **AML.T0010: Compromiso de la cadena de suministro de ML** | Proveedor de LLM o dependencia comprometidos | El Protocol del cliente LLM permite cambiar de proveedor; el archivo de bloqueo de dependencias fija las dependencias | Parcialmente mitigado |
 | **AML.T0020: Envenenar datos de entrenamiento** | Manipular las tarjetas de la KB para inyectar contenido adversario | Datos 100% sintéticos; corpus sujeto a revisión; metadatos de procedencia | Mitigado |
-| **AML.T0043: Elaborar datos adversarios** | Crear entradas diseñadas específicamente para eludir las barreras de seguridad | El corpus de evaluación incluye 19 casos adversarios; el red-team nocturno de Promptfoo; el clasificador de alcance rechaza patrones conocidos | Parcialmente mitigado -- técnicas novedosas podrían eludir |
+| **AML.T0043: Elaborar datos adversarios** | Crear entradas diseñadas específicamente para eludir las barreras de seguridad | El corpus de evaluación incluye 25 casos adversarios; el red-team nocturno de Promptfoo; el clasificador de alcance rechaza patrones conocidos | Parcialmente mitigado -- técnicas novedosas podrían eludir |
 | **AML.T0044: Extracción completa de la memoria** | Extraer el prompt del sistema mediante la conversación | El clasificador de alcance incluye detección de extracción | Parcialmente mitigado |
 | **AML.T0048: Inyección de prompts** | Inyectar instrucciones para anular el comportamiento del sistema | Clasificador de alcance, plantillas de rechazo, barreras de seguridad previas al LLM | Parcialmente mitigado |
 | **AML.T0051: Jailbreak de LLM** | Eludir los controles de seguridad para generar contenido dañino | Arquitectura con barreras de seguridad antes del LLM; rechazo ante lo que queda fuera de alcance; escalamiento ante señales de alarma agudas | Parcialmente mitigado |
@@ -145,7 +145,7 @@ enfoque de defensa en profundidad:
    y las plantillas de rechazo se ejecutan como nodos deterministas del grafo antes de invocar el LLM.
    Esto significa que las decisiones más críticas para la seguridad no dependen del comportamiento del modelo.
 
-2. **Pruebas adversarias continuas**: El red-team nocturno de Promptfoo, los 19 casos
+2. **Pruebas adversarias continuas**: El red-team nocturno de Promptfoo, los 25 casos
    adversarios de evaluación y los 13 casos de red-team elaborados a mano ponen a prueba el sistema frente a
    patrones de ataque conocidos. Los nuevos patrones descubiertos por las ejecuciones de red-team se reincorporan al
    banco de semillas adversarias.
@@ -154,7 +154,7 @@ enfoque de defensa en profundidad:
    postura regulatoria y el código fuente público hacen visibles el diseño y las limitaciones del
    sistema. La transparencia reduce la asimetría entre atacante y defensor.
 
-4. **Arnés de evaluación como compuerta de regresión**: Cada cambio se prueba frente al corpus completo de 218
+4. **Arnés de evaluación como compuerta de regresión**: Cada cambio se prueba frente al corpus completo de 315
    casos. Una regresión en las métricas de seguridad, citación o escalamiento hace fallar la construcción.
 
 La evaluación honesta es que estas mitigaciones son de grado de implementación de referencia. Ellas

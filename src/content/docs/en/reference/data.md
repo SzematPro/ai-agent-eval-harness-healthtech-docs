@@ -22,9 +22,9 @@ surrounds them is licensed separately under Apache-2.0 (see the
 License declaration section); the data license and the code license
 are independent.
 
-1. **Eval corpus** - 218 curated multi-turn conversational cases between
-   a simulated patient and the agent: 100 English (spanning golden,
-   adversarial, no-match, and expanded-domain cases), 59 es-419, and 59 pt-BR.
+1. **Eval corpus** - 315 curated multi-turn conversational cases between
+   a simulated patient and the agent: 105 English (spanning golden,
+   adversarial, no-match, and expanded-domain cases), 105 es-419, and 105 pt-BR.
    Each case is labelled with the eval dimensions it exercises
    (scope-compliance, groundedness, hallucination, escalation, MI
    fidelity, persona stability, empathic tone, locale, latency/cost
@@ -129,7 +129,7 @@ removal of any accidentally-identifying detail, and (d) locale parity
 (es-419 and pt-BR turns held to the same bar as en-US turns).
 
 **Stage 4 - Adversarial cases.** Adversarial cases are hand-authored
-and folded into the eval corpus (19 of the English cases are
+and folded into the eval corpus (25 of the English cases are
 adversarial, plus adversarial slices in es-419 and pt-BR). They cover:
 dosing-advice elicitation, diagnosis fishing, prompt-injection
 (system-prompt extraction, role-coercion, jailbreak templates from the
@@ -146,7 +146,7 @@ methodology above is the record of how the corpus was built.
 
 ## Corpus expansion
 
-The corpus expansion appended 24 new KB cards and 138 new eval cases
+The corpus expansion appended 24 new KB cards and 235 new eval cases
 across eight medication-adherence domains, following the append-to-existing
 strategy decided in
 [ADR-0013](/ai-agent-eval-harness-healthtech-docs/en/adr/adr-0013-corpus-expansion-strategy/).
@@ -168,10 +168,10 @@ strategy decided in
 
 | Locale | Before expansion | After expansion | New cases |
 |--------|----------------|----------------|-----------|
-| en | 60 | 100 | +40 |
-| es-419 | 10 | 59 | +49 |
-| pt-BR | 10 | 59 | +49 |
-| **Total** | **80** | **218** | **+138** |
+| en | 60 | 105 | +45 |
+| es-419 | 10 | 105 | +95 |
+| pt-BR | 10 | 105 | +95 |
+| **Total** | **80** | **315** | **+235** |
 
 All new data is 100% synthetic with public-domain sources (US government
 publications, WHO EML paraphrased). Card IDs use domain-specific prefixes
@@ -247,10 +247,10 @@ The distribution ships the curated, gold-labelled datasets
 themselves as committed, version-controlled JSONL. A reader does not
 regenerate them; they are inspectable in full directly in the repository:
 
-- The English eval cases (100 cases spanning golden, adversarial,
+- The English eval cases (105 cases spanning golden, adversarial,
   no-match, and expanded-domain categories).
-- The es-419 eval cases (59 cases).
-- The pt-BR eval cases (59 cases).
+- The es-419 eval cases (105 cases).
+- The pt-BR eval cases (105 cases).
 - The 36-card knowledge base.
 - A per-source license audit and the card-provenance notes.
 - The 13 hand-crafted red-team cases driven by the Promptfoo gate.
@@ -279,7 +279,7 @@ extension.
 
 ## Open questions and known limitations
 
-- **Coverage.** The 218-case corpus and the 36-card knowledge base are
+- **Coverage.** The 315-case corpus and the 36-card knowledge base are
   small relative to the surface a real conversational health agent
   encounters. The corpus is intentionally narrow: it is an eval set,
   not a training set, and its job is to exercise the ten eval
@@ -288,7 +288,7 @@ extension.
   threshold (`retrieval_min_similarity`, shipped disabled) be enabled -
   see the near-miss off-corpus limitation in
   [model card](/ai-agent-eval-harness-healthtech-docs/en/reference/model-card/). The corpus expansion added 24 KB cards
-  and 138 eval cases across 8 new domains, documented in
+  and 235 eval cases across 8 new domains, documented in
   [ADR-0013](/ai-agent-eval-harness-healthtech-docs/en/adr/adr-0013-corpus-expansion-strategy/).
 - **Locale parity.** es-419 and pt-BR are held to the same bar in
   the eval harness, but the underlying persona generation has a known

@@ -34,7 +34,7 @@ desplegara en un contexto en el que procesaría PHI en nombre de una entidad cub
 
 | Requisito | Estado actual | Camino a producción |
 |-------------|--------------|-----------------|
-| **Manejo de PHI** | No hay PHI presente. El sistema usa datos 100% sintéticos (36 KB de tarjetas, 218 casos de evaluación). Sin datos reales de pacientes, sin EHR real, sin registros clínicos reales. | Un despliegue en producción necesitaría definir qué constituye PHI en su contexto, implementar políticas para la ingesta, el procesamiento, el almacenamiento y la eliminación de PHI, y asegurar que se aplique el estándar de mínimo necesario |
+| **Manejo de PHI** | No hay PHI presente. El sistema usa datos 100% sintéticos (36 KB de tarjetas, 315 casos de evaluación). Sin datos reales de pacientes, sin EHR real, sin registros clínicos reales. | Un despliegue en producción necesitaría definir qué constituye PHI en su contexto, implementar políticas para la ingesta, el procesamiento, el almacenamiento y la eliminación de PHI, y asegurar que se aplique el estándar de mínimo necesario |
 | **Mínimo necesario** | No aplica -- no se maneja PHI | Controles de acceso que limiten la exposición de PHI al mínimo necesario para cada función; acceso basado en roles con registro de auditoría |
 | **Derechos del paciente** | No aplica -- no hay pacientes reales | Mecanismos para que los pacientes accedan, corrijan y reciban un registro de las divulgaciones de su PHI; procesamiento de solicitudes dentro de los plazos de HIPAA |
 | **Aviso de Prácticas de Privacidad** | Aviso de demostración en cada respuesta ("Esto es una demostración. No es asesoría médica.") | Documento formal de Aviso de Prácticas de Privacidad; acuse de recibo por parte del paciente |

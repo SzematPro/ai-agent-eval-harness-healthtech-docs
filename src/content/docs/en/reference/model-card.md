@@ -223,7 +223,8 @@ under *Known risks and limitations*.
   use it.
 - **Red-flag escalation is deterministic and rule-based, by design.** Acute red
   flags (suicidal ideation, anaphylaxis, acute cardiac chest pain, severe
-  bleeding, severe asthma, stroke/FAST signs, hypertensive emergency) are
+  bleeding, severe asthma, stroke/FAST signs, hypertensive emergency, severe
+  hypoglycemia, overdose/lethality intent, pregnancy + teratogen co-occurrence) are
   detected by a versioned regex list that runs before the scope classifier and
   short-circuits the turn to an emergency template. Detection is intentionally
   **negation-blind**: per the design rationale a missed red flag costs far more
@@ -321,8 +322,8 @@ substitute for one.
   dataset and no training/test split to characterise for the agent itself. The
   two synthetic datasets that *are* shipped are an **evaluation corpus** and the
   **knowledge base**:
-  - *Evaluation corpus* - **218 curated multi-turn cases**: 100 English
-    (spanning golden, adversarial, and no-match categories), 59 es-419, 59
+  - *Evaluation corpus* - **315 curated multi-turn cases**: 105 English
+    (spanning golden, adversarial, and no-match categories), 105 es-419, 105
     pt-BR. LLM-generated from synthetic personas with a producer-critic loop,
     then 100% manually curated, then augmented with hand-authored adversarial
     seeds. Full methodology in [data](/ai-agent-eval-harness-healthtech-docs/en/reference/data/).
@@ -455,8 +456,8 @@ substitute for one.
 - **Test Type.** *Internal*, reproducible, deterministic. The agent runs end to
   end with a stub LLM client and no API keys; results are identical across runs
   on the same code.
-- **Testing Data Description.** The 218-case synthetic corpus: 100 English
-  (spanning golden, adversarial, and no-match categories), 59 es-419, 59 pt-BR.
+- **Testing Data Description.** The 315-case synthetic corpus: 105 English
+  (spanning golden, adversarial, and no-match categories), 105 es-419, 105 pt-BR.
   Fully synthetic; see [data](/ai-agent-eval-harness-healthtech-docs/en/reference/data/).
 - **Validation Process and Justification.** Run by the eval target and by the
   CI eval workflow on every pull request. It is a software-engineering
@@ -469,8 +470,8 @@ substitute for one.
 - **Goal of metric(s).** Demonstrate that the agent's safety behaviour does not
   degrade across the three supported locales - that an es-419 or pt-BR user is
   held to the same safety bar as an English user.
-- **Result.** All **218** corpus cases pass the deterministic gate, including
-  all 59 es-419 and all 59 pt-BR cases; `refusal_correctness` = **1.000** and
+- **Result.** All **315** corpus cases pass the deterministic gate, including
+  all 105 es-419 and all 105 pt-BR cases; `refusal_correctness` = **1.000** and
   `escalation_correctness` = **1.000** across every locale slice. The gate
   applies one identical threshold set to all three locales.
 - **Interpretation.** On the deterministic corpus there is **no locale gap** in
@@ -483,7 +484,7 @@ substitute for one.
   other demographic input, so no demographic-subgroup performance breakdown is
   applicable.
 - **Test Type.** *Internal*, deterministic, locale-stratified.
-- **Testing Data Description.** The 59 es-419 and 59 pt-BR slices of the corpus,
+- **Testing Data Description.** The 105 es-419 and 105 pt-BR slices of the corpus,
   curated to the same bar as the English cases, scored against the same
   thresholds.
 - **Validation Process and Justification.** Locale slices run on every pull
@@ -521,7 +522,7 @@ substitute for one.
 - **Test Type.** *Internal*, deterministic. The real agent graph runs with a
   stub LLM client; the safety guardrails are exercised exactly as in
   production because they run as graph nodes before generation.
-- **Testing Data Description.** The 19 English adversarial and 5 no-match cases,
+- **Testing Data Description.** The 25 English adversarial and 5 no-match cases,
   the adversarial slices of es-419 and pt-BR, and the must-escalate cases across
   the corpus, plus the 13 hand-crafted red-team cases.
 - **Validation Process and Justification.** The deterministic eval gate and the

@@ -22,10 +22,10 @@ los rodea está licenciado por separado bajo Apache-2.0 (consulta la sección
 de Declaración de licencias); la licencia de los datos y la licencia del
 código son independientes.
 
-1. **Corpus de evaluación** - 218 casos conversacionales multi-turno
-   curados entre un paciente simulado y el agente: 100 en inglés (que
+1. **Corpus de evaluación** - 315 casos conversacionales multi-turno
+   curados entre un paciente simulado y el agente: 105 en inglés (que
    abarcan casos golden, adversariales, de no-coincidencia y de dominio
-   expandido), 59 en es-419 y 59 en pt-BR. Cada caso está etiquetado con las
+   expandido), 105 en es-419 y 105 en pt-BR. Cada caso está etiquetado con las
    dimensiones de evaluación que ejercita (cumplimiento de alcance,
    fundamentación, alucinación, escalamiento, fidelidad de EM, estabilidad
    de persona, tono empático, locale, contabilidad de latencia/costo,
@@ -137,7 +137,7 @@ accidentalmente y (d) la paridad de locale (los turnos en es-419 y pt-BR se
 sostienen al mismo estándar que los turnos en en-US).
 
 **Etapa 4 - Casos adversariales.** Los casos adversariales se escriben a
-mano y se incorporan al corpus de evaluación (19 de los casos en inglés son
+mano y se incorporan al corpus de evaluación (25 de los casos en inglés son
 adversariales, más segmentos adversariales en es-419 y pt-BR). Cubren:
 elicitación de consejo de dosificación, pesca de diagnóstico, inyección de
 prompts (extracción del prompt de sistema, coerción de rol, plantillas de
@@ -156,7 +156,7 @@ corpus.
 
 ## Expansión del corpus
 
-La expansión del corpus agregó 24 nuevas tarjetas de KB y 138 nuevos casos
+La expansión del corpus agregó 24 nuevas tarjetas de KB y 235 nuevos casos
 de evaluación a lo largo de ocho dominios de adherencia a la medicación,
 siguiendo la estrategia de agregar-a-lo-existente decidida en
 [ADR-0013](/ai-agent-eval-harness-healthtech-docs/es-419/adr/adr-0013-corpus-expansion-strategy/).
@@ -178,10 +178,10 @@ siguiendo la estrategia de agregar-a-lo-existente decidida en
 
 | Locale | Antes de la expansión | Después de la expansión | Casos nuevos |
 |--------|----------------|----------------|-----------|
-| en | 60 | 100 | +40 |
-| es-419 | 10 | 59 | +49 |
-| pt-BR | 10 | 59 | +49 |
-| **Total** | **80** | **218** | **+138** |
+| en | 60 | 105 | +45 |
+| es-419 | 10 | 105 | +95 |
+| pt-BR | 10 | 105 | +95 |
+| **Total** | **80** | **315** | **+235** |
 
 Todos los datos nuevos son 100% sintéticos con fuentes de dominio público
 (publicaciones del gobierno de EE. UU., WHO EML parafraseada). Los IDs de
@@ -262,10 +262,10 @@ etiqueta dorada como JSONL versionado y bajo control de versiones. Un lector
 no los regenera; son inspeccionables por completo directamente en el
 repositorio:
 
-- Los casos de evaluación en inglés (100 casos que abarcan las categorías
+- Los casos de evaluación en inglés (105 casos que abarcan las categorías
   golden, adversarial, de no-coincidencia y de dominio expandido).
-- Los casos de evaluación en es-419 (59 casos).
-- Los casos de evaluación en pt-BR (59 casos).
+- Los casos de evaluación en es-419 (105 casos).
+- Los casos de evaluación en pt-BR (105 casos).
 - La base de conocimiento de 36 tarjetas.
 - Una auditoría de licencias por fuente y las notas de procedencia de las
   tarjetas.
@@ -297,7 +297,7 @@ repositorio no extiende, avala ni supervisa ninguna extensión de ese tipo.
 
 ## Preguntas abiertas y limitaciones conocidas
 
-- **Cobertura.** El corpus de 218 casos y la base de conocimiento de 36
+- **Cobertura.** El corpus de 315 casos y la base de conocimiento de 36
   tarjetas son pequeños en relación con la superficie que un agente
   conversacional de salud real encuentra. El corpus es intencionalmente
   estrecho: es un conjunto de evaluación, no un conjunto de entrenamiento, y
@@ -307,7 +307,7 @@ repositorio no extiende, avala ni supervisa ninguna extensión de ese tipo.
   recuperación (`retrieval_min_similarity`, entregado desactivado); consulta
   la limitación de las preguntas casi-coincidentes fuera del corpus en la
   [ficha del modelo](/ai-agent-eval-harness-healthtech-docs/es-419/reference/model-card/). La expansión del corpus agregó 24
-  tarjetas de KB y 138 casos de evaluación a lo largo de 8 nuevos dominios,
+  tarjetas de KB y 235 casos de evaluación a lo largo de 8 nuevos dominios,
   documentada en
   [ADR-0013](/ai-agent-eval-harness-healthtech-docs/es-419/adr/adr-0013-corpus-expansion-strategy/).
 - **Paridad de locale.** es-419 y pt-BR se sostienen al mismo estándar en el

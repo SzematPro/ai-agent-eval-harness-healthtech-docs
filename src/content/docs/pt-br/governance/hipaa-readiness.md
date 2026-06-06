@@ -33,7 +33,7 @@ contexto no qual processaria PHI em nome de uma entidade coberta.
 
 | Requisito | Estado atual | Caminho para produção |
 |-------------|--------------|-----------------|
-| **Manipulação de PHI** | Nenhuma PHI presente. O sistema usa dados 100% sintéticos (36 KB de cartões, 218 casos de avaliação). Sem dados reais de pacientes, sem EHR real, sem registros clínicos reais. | Uma implantação em produção precisaria definir o que constitui PHI em seu contexto, implementar políticas para ingestão, processamento, armazenamento e descarte de PHI, e garantir a aplicação do padrão do mínimo necessário |
+| **Manipulação de PHI** | Nenhuma PHI presente. O sistema usa dados 100% sintéticos (36 KB de cartões, 315 casos de avaliação). Sem dados reais de pacientes, sem EHR real, sem registros clínicos reais. | Uma implantação em produção precisaria definir o que constitui PHI em seu contexto, implementar políticas para ingestão, processamento, armazenamento e descarte de PHI, e garantir a aplicação do padrão do mínimo necessário |
 | **Mínimo necessário** | Não aplicável -- nenhuma PHI manipulada | Controles de acesso que limitam a exposição de PHI ao mínimo necessário para cada função; acesso baseado em papéis com registro de auditoria |
 | **Direitos do paciente** | Não aplicável -- nenhum paciente real | Mecanismos para que os pacientes acessem, corrijam e recebam uma prestação de contas das divulgações de sua PHI; processamento de solicitações dentro dos prazos da HIPAA |
 | **Aviso de Práticas de Privacidade** | Aviso de demonstração em cada resposta ("Isto é uma demonstração. Não é aconselhamento médico.") | Documento formal de Aviso de Práticas de Privacidade; reconhecimento de recebimento pelo paciente |

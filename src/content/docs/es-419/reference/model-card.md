@@ -363,9 +363,9 @@ sustituye una.
   caracterizar para el agente en sí. Los dos conjuntos de datos sintéticos que
   *sí* se entregan son un **corpus de evaluación** y la **base de
   conocimiento**:
-  - *Corpus de evaluación* - **218 casos multi-turno curados**: 100 en inglés
-    (que abarcan las categorías golden, adversarial y de no-coincidencia), 59
-    en es-419, 59 en pt-BR. Generados por LLM a partir de personas sintéticas
+  - *Corpus de evaluación* - **315 casos multi-turno curados**: 105 en inglés
+    (que abarcan las categorías golden, adversarial y de no-coincidencia), 105
+    en es-419, 105 en pt-BR. Generados por LLM a partir de personas sintéticas
     con un bucle productor-crítico, luego curados manualmente al 100%, luego
     aumentados con semillas adversariales escritas a mano. Metodología completa
     en los [datos](/ai-agent-eval-harness-healthtech-docs/es-419/reference/data/).
@@ -518,9 +518,9 @@ sustituye una.
   ejecuta de extremo a extremo con un cliente LLM de prueba (stub) y sin
   claves de API; los resultados son idénticos entre corridas sobre el mismo
   código.
-- **Descripción de los datos de prueba.** El corpus sintético de 218 casos:
-  100 en inglés (que abarcan las categorías golden, adversarial y de
-  no-coincidencia), 59 en es-419, 59 en pt-BR. Plenamente sintético; consulta
+- **Descripción de los datos de prueba.** El corpus sintético de 315 casos:
+  105 en inglés (que abarcan las categorías golden, adversarial y de
+  no-coincidencia), 105 en es-419, 105 en pt-BR. Plenamente sintético; consulta
   los [datos](/ai-agent-eval-harness-healthtech-docs/es-419/reference/data/).
 - **Proceso de validación y justificación.** Ejecutada por el target de
   evaluación y por el flujo de trabajo de CI de evaluación en cada pull
@@ -535,8 +535,8 @@ sustituye una.
   seguridad del agente no se degrada a lo largo de los tres locales soportados
   -que un usuario de es-419 o pt-BR se sostiene a la misma barra de seguridad
   que un usuario de inglés.
-- **Resultado.** Los **218** casos del corpus pasan la puerta determinista,
-  incluidos los 59 de es-419 y los 59 de pt-BR; `refusal_correctness` =
+- **Resultado.** Los **315** casos del corpus pasan la puerta determinista,
+  incluidos los 105 de es-419 y los 105 de pt-BR; `refusal_correctness` =
   **1.000** y `escalation_correctness` = **1.000** a lo largo de cada segmento
   de locale. La puerta aplica un conjunto de umbrales idéntico a los tres
   locales.
@@ -551,7 +551,7 @@ sustituye una.
   agente no toma raza, sexo, edad ni ningún otro input demográfico, así que no
   hay desglose de desempeño por subgrupo demográfico aplicable.
 - **Tipo de prueba.** *Interna*, determinista, estratificada por locale.
-- **Descripción de los datos de prueba.** Los segmentos de 59 de es-419 y 59
+- **Descripción de los datos de prueba.** Los segmentos de 105 de es-419 y 105
   de pt-BR del corpus, curados a la misma barra que los casos en inglés,
   puntuados contra los mismos umbrales.
 - **Proceso de validación y justificación.** Los segmentos de locale se
@@ -594,7 +594,7 @@ sustituye una.
   ejecuta con un cliente LLM de prueba (stub); las barreras de seguridad se
   ejercitan exactamente como en producción porque se ejecutan como nodos del
   grafo antes de la generación.
-- **Descripción de los datos de prueba.** Los 19 casos adversariales en
+- **Descripción de los datos de prueba.** Los 25 casos adversariales en
   inglés y los 5 de no-coincidencia, los segmentos adversariales de es-419 y
   pt-BR, y los casos que deben escalar a lo largo del corpus, más los 13 casos
   de red-team hechos a mano.

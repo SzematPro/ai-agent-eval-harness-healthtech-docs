@@ -240,7 +240,8 @@ correspondentes em *Riscos e limitações conhecidos*.
 - **O escalonamento por sinais de alerta é determinístico e baseado em regras,
   por design.** Sinais de alerta agudos (ideação suicida, anafilaxia, dor
   torácica cardíaca aguda, sangramento grave, asma grave, AVC/sinais FAST,
-  emergência hipertensiva) são detectados por uma lista de regex versionada
+  emergência hipertensiva, hipoglicemia grave, overdose/intenção de letalidade
+  e a coocorrência de gravidez + teratógeno) são detectados por uma lista de regex versionada
   que roda antes do classificador de escopo e curto-circuita o turno para um
   modelo de emergência. A detecção é intencionalmente **cega a negação**: pela
   justificativa de design, um sinal de alerta perdido custa muito mais do que
@@ -349,9 +350,9 @@ substitui uma dessas revisões.
   dataset de treinamento nem divisão treino/teste a caracterizar para o próprio
   agente. Os dois datasets sintéticos que *são* entregues são um **corpus de
   avaliação** e a **base de conhecimento**:
-  - *Corpus de avaliação* - **218 casos multi-turno curados**: 100 em inglês
-    (abrangendo as categorias golden, adversarial e de não-correspondência), 59
-    es-419, 59 pt-BR. Gerados por LLM a partir de personas sintéticas com um
+  - *Corpus de avaliação* - **315 casos multi-turno curados**: 105 em inglês
+    (abrangendo as categorias golden, adversarial e de não-correspondência), 105
+    es-419, 105 pt-BR. Gerados por LLM a partir de personas sintéticas com um
     loop produtor-crítico, depois 100% curados manualmente, depois aumentados
     com sementes adversariais redigidas à mão. Metodologia completa em
     [dados](/ai-agent-eval-harness-healthtech-docs/pt-br/reference/data/).
@@ -500,9 +501,9 @@ substitui uma dessas revisões.
 - **Tipo de teste.** *Interno*, reproduzível, determinístico. O agente roda de
   ponta a ponta com um cliente LLM stub e sem chaves de API; os resultados são
   idênticos entre execuções no mesmo código.
-- **Descrição dos dados de teste.** O corpus sintético de 218 casos: 100 em
+- **Descrição dos dados de teste.** O corpus sintético de 315 casos: 105 em
   inglês (abrangendo as categorias golden, adversarial e de
-  não-correspondência), 59 es-419, 59 pt-BR. Totalmente sintético; veja
+  não-correspondência), 105 es-419, 105 pt-BR. Totalmente sintético; veja
   [dados](/ai-agent-eval-harness-healthtech-docs/pt-br/reference/data/).
 - **Processo de validação e justificativa.** Executado pelo alvo de avaliação e
   pelo workflow de CI de avaliação em cada pull request. É uma validação de
@@ -516,8 +517,8 @@ substitui uma dessas revisões.
   agente não se degrada entre os três locales suportados - que um usuário
   es-419 ou pt-BR é mantido na mesma barra de segurança que um usuário em
   inglês.
-- **Resultado.** Todos os **218** casos do corpus passam no gate determinístico,
-  incluindo todos os 59 casos es-419 e todos os 59 casos pt-BR;
+- **Resultado.** Todos os **315** casos do corpus passam no gate determinístico,
+  incluindo todos os 105 casos es-419 e todos os 105 casos pt-BR;
   `refusal_correctness` = **1,000** e `escalation_correctness` = **1,000** em
   cada fatia de locale. O gate aplica um conjunto idêntico de limiares aos três
   locales.
@@ -532,7 +533,7 @@ substitui uma dessas revisões.
   sexo, idade ou outra demografia, então nenhum detalhamento de desempenho por
   subgrupo demográfico é aplicável.
 - **Tipo de teste.** *Interno*, determinístico, estratificado por locale.
-- **Descrição dos dados de teste.** As fatias de 59 casos es-419 e 59 casos
+- **Descrição dos dados de teste.** As fatias de 105 casos es-419 e 105 casos
   pt-BR do corpus, curadas na mesma barra que os casos em inglês, avaliadas
   contra os mesmos limiares.
 - **Processo de validação e justificativa.** As fatias de locale rodam em cada
@@ -574,7 +575,7 @@ substitui uma dessas revisões.
 - **Tipo de teste.** *Interno*, determinístico. O grafo real do agente roda com
   um cliente LLM stub; as salvaguardas de segurança são exercitadas exatamente
   como em produção porque rodam como nós do grafo antes da geração.
-- **Descrição dos dados de teste.** Os 19 casos adversariais em inglês e os 5
+- **Descrição dos dados de teste.** Os 25 casos adversariais em inglês e os 5
   casos de não-correspondência, as fatias adversariais de es-419 e pt-BR e os
   casos de must-escalate ao longo do corpus, mais os 13 casos de red-team feitos
   à mão.

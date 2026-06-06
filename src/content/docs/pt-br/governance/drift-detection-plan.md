@@ -70,7 +70,7 @@ corpus de eval evolua junto com o cenário de ameaças.
 
 ### Estabilidade do corpus golden
 
-O corpus de eval (218 casos em três configurações regionais) é um conjunto de dados golden fixo. Ele fornece
+O corpus de eval (315 casos em três configurações regionais) é um conjunto de dados golden fixo. Ele fornece
 uma baseline estável contra a qual o desempenho é medido. Como o corpus é versionado
 e está sob controle de versão, qualquer mudança de desempenho na mesma versão do corpus deve decorrer
 de uma mudança no sistema (modelo, guardrails, recuperação ou prompts), não de uma mudança nos

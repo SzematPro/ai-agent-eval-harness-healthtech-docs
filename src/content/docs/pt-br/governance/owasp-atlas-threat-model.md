@@ -33,7 +33,7 @@ nível gratuito do Hugging Face Spaces e não é projetada para segurança de in
 | Propriedade | Valor |
 |----------|-------|
 | **Ameaça** | A entrada do usuário contém instruções projetadas para sobrepor o prompt do sistema ou manipular o comportamento do LLM |
-| **Mitigações em vigor** | O classificador de escopo rejeita entradas fora de escopo antes do LLM; modelos de recusa para padrões de injeção conhecidos; o red-team noturno com Promptfoo submete 13 modelos de injeção do OWASP LLM Top 10 mais 19 casos adversariais elaborados manualmente |
+| **Mitigações em vigor** | O classificador de escopo rejeita entradas fora de escopo antes do LLM; modelos de recusa para padrões de injeção conhecidos; o red-team noturno com Promptfoo submete 13 modelos de injeção do OWASP LLM Top 10 mais 25 casos adversariais elaborados manualmente |
 | **Risco residual** | Técnicas inéditas de injeção de prompt não cobertas pelo classificador de escopo ou pelo banco de sementes adversariais podem contornar as salvaguardas determinísticas; o próprio LLM pode obedecer a jailbreaks bem elaborados após a camada de salvaguarda |
 | **Controle** | Classificador de escopo, modelos de recusa e o banco de sementes adversariais |
 
@@ -129,7 +129,7 @@ específicas de IA. A tabela a seguir mapeia as técnicas do ATLAS relevantes pa
 | **AML.T0002: Collect Public Data** | O atacante reúne cartões da KB, corpus de avaliação e prompt do sistema do repositório | Dados públicos; apenas sintéticos; sem conteúdo sensível | Aceito |
 | **AML.T0010: ML Supply Chain Compromise** | Provedor de LLM ou dependência comprometida | O Protocol do cliente de LLM permite a troca de provedor; o lockfile de dependências fixa as dependências | Parcialmente mitigado |
 | **AML.T0020: Poison Training Data** | Manipular os cartões da KB para injetar conteúdo adversarial | Dados 100% sintéticos; corpus submetido a revisão; metadados de proveniência | Mitigado |
-| **AML.T0043: Craft Adversarial Data** | Criar entradas projetadas especificamente para contornar as salvaguardas | O corpus de avaliação inclui 19 casos adversariais; o red-team noturno com Promptfoo; o classificador de escopo rejeita padrões conhecidos | Parcialmente mitigado -- técnicas inéditas podem contornar |
+| **AML.T0043: Craft Adversarial Data** | Criar entradas projetadas especificamente para contornar as salvaguardas | O corpus de avaliação inclui 25 casos adversariais; o red-team noturno com Promptfoo; o classificador de escopo rejeita padrões conhecidos | Parcialmente mitigado -- técnicas inéditas podem contornar |
 | **AML.T0044: Full Memory Extraction** | Extrair o prompt do sistema por meio de conversa | O classificador de escopo inclui detecção de extração | Parcialmente mitigado |
 | **AML.T0048: Prompt Injection** | Injetar instruções para sobrepor o comportamento do sistema | Classificador de escopo, modelos de recusa, salvaguardas pré-LLM | Parcialmente mitigado |
 | **AML.T0051: LLM Jailbreak** | Contornar os controles de segurança para gerar conteúdo prejudicial | Arquitetura com salvaguardas antes do LLM; recusa para itens fora de escopo; escalonamento em sinais de alerta agudos | Parcialmente mitigado |
@@ -146,7 +146,7 @@ abordagem de defesa em profundidade:
    invocado. Isso significa que as decisões mais críticas de segurança não dependem do comportamento
    do modelo.
 
-2. **Testes adversariais contínuos**: O red-team noturno com Promptfoo, os 19 casos adversariais de
+2. **Testes adversariais contínuos**: O red-team noturno com Promptfoo, os 25 casos adversariais de
    avaliação e os 13 casos de red-team elaborados manualmente submetem o sistema a padrões de ataque
    conhecidos. Novos padrões descobertos pelas execuções de red-team são reincorporados ao
    banco de sementes adversariais.
@@ -156,7 +156,7 @@ abordagem de defesa em profundidade:
    sistema. A transparência reduz a assimetria entre atacante e defensor.
 
 4. **Arcabouço de avaliação como portão de regressão**: Cada alteração é testada frente ao corpus
-   completo de 218 casos. Uma regressão nas métricas de segurança, citação ou escalonamento reprova
+   completo de 315 casos. Uma regressão nas métricas de segurança, citação ou escalonamento reprova
    a build.
 
 A avaliação honesta é de que essas mitigações são de nível de implementação de referência. Elas

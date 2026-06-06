@@ -70,7 +70,7 @@ corpus de evaluación evolucione con el panorama de amenazas.
 
 ### Estabilidad del corpus dorado
 
-El corpus de evaluación (218 casos en tres configuraciones regionales) es un conjunto de datos dorado fijo. Proporciona
+El corpus de evaluación (315 casos en tres configuraciones regionales) es un conjunto de datos dorado fijo. Proporciona
 una línea base estable contra la cual se mide el desempeño. Como el corpus está confirmado
 y bajo control de versiones, cualquier cambio de desempeño sobre la misma versión del corpus debe deberse
 a un cambio en el sistema (modelo, barreras de seguridad, recuperación o prompts), no a un cambio en

@@ -144,9 +144,10 @@ A patient-facing medication-adherence wellness coach is not, in itself,
 an Annex III high-risk system. The agent does not triage emergency
 calls, does not allocate public benefits, does not score
 creditworthiness. The "Red-flag escalation" branch of the agent
-recognises seven acute patterns (suicidal ideation, anaphylaxis, acute
+recognises ten acute patterns (suicidal ideation, anaphylaxis, acute
 cardiac chest pain, severe bleeding, severe asthma, stroke / FAST
-signs, and hypertensive emergency) and surfaces local emergency-services
+signs, hypertensive emergency, severe hypoglycemia, overdose /
+lethality intent, and pregnancy + teratogen co-occurrence) and surfaces local emergency-services
 guidance without acting as a triage tool itself. The escalation logic
 is deliberately deterministic and rule-based so that the human
 operator, not the model, holds the routing decision.
@@ -200,13 +201,13 @@ Concretely:
 - The agent never substitutes for a clinician interaction. It always
   carries the disclaimer that clinical questions go to the user's
   health-care provider, and it escalates explicit acute red flags -
-  the seven deterministic categories (suicidal ideation, anaphylaxis,
+  the ten deterministic categories (suicidal ideation, anaphylaxis,
   acute cardiac chest pain, severe bleeding, severe asthma, stroke /
-  FAST signs, hypertensive emergency) - by surfacing emergency-services
-  guidance and ending the in-app interaction. The pregnancy + teratogen
-  pattern is handled by the LLM and system-prompt layer, not the
-  deterministic router (it needs a drug-name lexicon a regex list
-  cannot carry); see [ADR-0005](/ai-agent-eval-harness-healthtech-docs/en/adr/adr-0005-guardrails/).
+  FAST signs, hypertensive emergency, severe hypoglycemia, overdose /
+  lethality intent, pregnancy + teratogen co-occurrence) - by surfacing emergency-services
+  guidance and ending the in-app interaction. A sudden visual disturbance
+  on an anticoagulant is handled by the LLM and system-prompt layer, not the
+  deterministic router; see [ADR-0005](/ai-agent-eval-harness-healthtech-docs/en/adr/adr-0005-guardrails/).
 
 ## What the agent does NOT do
 
